@@ -23,7 +23,7 @@ max-cards: 3
 
 @party
 title: Party Affairs
-card-image: img/el_socialista.png
+card-image: img/el_socialista.jpg
 is-deck: true
 
 - #party_affairs
