@@ -398,30 +398,26 @@ Q.other_monarchists_in_government = 0;
 Q.jons_in_government = 0;
 
 Q.in_right_coalition = 0;
-// Weimar coalition = SPD + Z + DDP
-Q.in_weimar_coalition = 0;
-// Grand coalition = SPD + Z + BVP + DDP + DVP
-// also includes the "new grand coalition" of SPD + Z + BVP + DDP + DVP + Others
-Q.in_grand_coalition = 0;
-// Popular front = SPD + KPD + Z + DDP
+// Republican-socialist coalition = PSOE + Left Republicans + PRR + PRRS + AR + Regionalists
+Q.in_republican_socialist_coalition = 0;
+// Left republican coalition = PSOE + AR + Left Republicans + PRRS
+Q.in_left_republican_coalition = 0;
+// Popular front = PSOE + AR + Left Republicans + PCE + Left splinters
 Q.in_popular_front = 0;
-// left coalition = SPD + KPD + left-splinters
+// left coalition = PSOE + PCE + Left splinters
 Q.in_left_front = 0;
-// emergency government containing the SPD: only president Braun can do this.
+// emergency government appointed by Alcala-Zamora containing the PSOE
 Q.in_emergency_government = 0;
-Q.in_spd_majority = 0;
-Q.grand_coalition_failed = 0;
-// if the SPD is ruling as part of a minority government
+Q.in_spoe_majority = 0;
+Q.republican_socialist_coalition_failed = 0;
+// if the PSOEis ruling as part of a minority government
 Q.in_minority_government = 0;
-// national unity governmet
 
-// if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
+// if you're in a coalition, this is an incremental counter for how many times dissent has happened from the burguois parties.
 Q.coalition_dissent = 0;
-// dissent from the KPD, in a popular front or left front government
-Q.kpd_coalition_dissent = 0;
 
 // does the SPD tolerate the government even if it is not a participant?
-Q.spd_toleration = 0;
+Q.psoe_toleration = 0;
 
 // is the current government a presidential minority government?
 Q.minority_government = 0;
