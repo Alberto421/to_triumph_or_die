@@ -13,8 +13,9 @@ for (var c of Q.classes) {
 }
 
 Q.pro_republic = Math.round(Q.pro_republic);
-Q.nationalism = Math.round(Q.nationalism);
 Q.socialism = Math.round(Q.socialism);
+Q.polarization = Math.round(Q.polarization);
+Q.literacy = Math.round(Q.literacy);
 
 if (Q.pro_republic < 0) {
     Q.pro_republic = 0;
@@ -22,6 +23,28 @@ if (Q.pro_republic < 0) {
 if (Q.pro_republic >= 100) {
     Q.pro_republic = 99;
 }
+
+if (Q.socialism < 0) {
+    Q.socialism = 0;
+}
+if (Q.socialism >= 100) {
+    Q.socialism = 99;
+}
+
+if (Q.polarization < 0) {
+    Q.polarization = 0;
+}
+if (Q.polarization >= 100) {
+    Q.polarization = 99;
+}
+
+if (Q.polarization < 0) {
+    Q.polarization = 0;
+}
+if (Q.literacy >= 100) {
+    Q.literacy = 99;
+}
+
 // re-calculate party support
 // calculate normalized class voting for the achievements
 for (var c of Q.classes) {
