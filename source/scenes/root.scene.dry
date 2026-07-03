@@ -434,14 +434,14 @@ Q.labor_minister = 'Largo Caballero';
 Q.labor_minister_party = 'PSOE';
 Q.reichswehr_minister = 'Manuel Azana'; // War
 Q.reichswehr_minister_party = 'AR';
-Q.economic_minister = 'Luis Nicolau d'Olwer';
+Q.economic_minister = 'Luis Nicolau d\'Olwer';
 Q.economic_minister_party = 'Regionalists';
 Q.finance_minister = 'Indalecio Prieto';
 Q.finance_minister_party = 'PSOE';
 Q.public_works_minister = 'Alvaro de Albornoz'; // Fomento
 Q.public_works_minister_party = 'PRRS';
 Q.education_minister = 'Marcelino Domingo';
-Q.education_minister_party = 'PRRS'
+Q.education_minister_party = 'PRRS';
 Q.agriculture_minister = 'Marcelino Domingo';
 Q.agriculture_minister_party = 'PRRS';
 
