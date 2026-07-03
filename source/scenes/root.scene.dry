@@ -416,31 +416,34 @@ Q.in_minority_government = 0;
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the burguois parties.
 Q.coalition_dissent = 0;
 
-// does the SPD tolerate the government even if it is not a participant?
+// does the PSOE tolerate the government even if it is not a participant?
 Q.psoe_toleration = 0;
 
 // is the current government a presidential minority government?
 Q.minority_government = 0;
 
 // ministries - which parties control the ministries?
-// starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet
-// is the agricultural ministry useful at all?
-Q.foreign_minister = 'Streseman';
-Q.foreign_minister_party = 'DVP';
-Q.interior_minister = 'von Keudell';
-Q.interior_minister_party = 'DNVP';
-Q.justice_minister = 'Hergt';
-Q.justice_minister_party = 'DNVP';
-Q.labor_minister = 'Brauns';
-Q.labor_minister_party = 'Z';
-Q.reichswehr_minister = 'Groener';
-Q.reichswehr_minister_party = 'I';
-Q.economic_minister = 'Curtius';
-Q.economic_minister_party = 'DVP';
-Q.finance_minister = 'Köhler';
-Q.finance_minister_party = 'Z';
-Q.agriculture_minister = 'Schiele';
-Q.agriculture_minister_party = 'DNVP';
+// starting with the 1st 1931 Provisional Government https://es.wikipedia.org/wiki/Anexo:Primer_Gobierno_provisional_de_la_Segunda_Rep%C3%BAblica_espa%C3%B1ola
+Q.foreign_minister = 'Alejandro Lerroux'; // Estado
+Q.foreign_minister_party = 'PRR';
+Q.interior_minister = 'Miguel Maura';
+Q.interior_minister_party = 'DLR';
+Q.justice_minister = 'Fernando de los Rios';
+Q.justice_minister_party = 'PSOE';
+Q.labor_minister = 'Largo Caballero';
+Q.labor_minister_party = 'PSOE';
+Q.reichswehr_minister = 'Manuel Azana'; // War
+Q.reichswehr_minister_party = 'AR';
+Q.economic_minister = 'Luis Nicolau d'Olwer';
+Q.economic_minister_party = 'Regionalists';
+Q.finance_minister = 'Indalecio Prieto';
+Q.finance_minister_party = 'PSOE';
+Q.public_works_minister = 'Alvaro de Albornoz'; // Fomento
+Q.public_works_minister_party = 'PRRS';
+Q.education_minister = 'Marcelino Domingo';
+Q.education_minister_party = 'PRRS'
+Q.agriculture_minister = 'Marcelino Domingo';
+Q.agriculture_minister_party = 'PRRS';
 
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 0;
