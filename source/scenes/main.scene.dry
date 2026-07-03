@@ -14,7 +14,7 @@ max-cards: 3
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
+[? if year = 1931 and month = 5 : The provisional government has been formed; however the people didn't vote us for the Cortes, they did vote for a municipal election that became a referendum on the monarchy. Constituent elections are slated for June of this year. ?]
 
 - @party
 - @govt
@@ -30,7 +30,6 @@ is-deck: true
 
 @govt
 title: Government Affairs
-view-if: time >= 6
 card-image: img/cortes_1.jpg
 is-deck: true
 
