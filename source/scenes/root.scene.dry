@@ -148,8 +148,6 @@ Q.ejercito_loyalty = 0.2;
 // The state of the country
 
 // on a binary scale
-// secularization vs laicism (0 = complete separation of church and state, 100 = total church control)
-Q.secularization = 80;
 // socialism vs capitalism
 Q.socialism = 35;
 // pro-republic vs anti-republic
