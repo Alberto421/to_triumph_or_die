@@ -6,7 +6,7 @@ go-to: post_event if started = 1; start_menu if started = 0
 new-page: true
 go-to: start_menu_2
 
-= Social Democracy: An Alternate History
+= To triumph or die: An Alternate History
 
 @start_menu_2
 
@@ -21,8 +21,8 @@ on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
-Q.year = 1928;
-Q.month = 1;
+Q.year = 1931;
+Q.month = 7;
 // how many actions have been taken this month?
 Q.month_actions = 0;
 
@@ -38,7 +38,12 @@ Q.use_decimals = 0;
 // party resources
 Q.resources = 2;
 // party dues
-Q.dues = 2;
+Q.dues = 2; // preguntar que es
+
+// ugt resources
+Q.ugt_resources = 2;
+// ugt dues
+Q.ugt_dues = 2;
 
 // the state of the party
 // overall dissent reduces every increase in party support.
@@ -46,281 +51,324 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['left', 'center', 'labor', 'reformist', 'neorevisionist'];
+Q.factions = ['caballeristas', 'prietistas', 'besteiristas'];
 // should this be normalized to 100%?
-Q.left_strength = 15;
-Q.left_dissent = 20;
-Q.center_strength = 30;
-Q.center_dissent = 0;
-Q.labor_strength = 25;
-Q.labor_dissent = 5;
-Q.reformist_strength = 25;
-Q.reformist_dissent = 5;
-Q.neorevisionist_strength = 5;
-Q.neorevisionist_dissent = 10;
+Q.caballeristas_strength = 30;
+Q.caballeristas_dissent = 20;
+Q.prietistas_strength = 45;
+Q.prietistas_dissent = 0;
+Q.besteiristas_strength = 25;
+Q.besteiristas_dissent = 5;
 
 // secret events...
-Q.unions_independent = 0;
-Q.centrists_resign = 0;
-Q.left_split = 0;
-Q.reformists_resigned = 0;
+Q.besteiristas_split = 0;
+Q.caballeristas_split = 0;
+Q.prietistas_resigned = 0;
 
-// have we discovered neorevisionism?
-Q.neorevisionism = 0;
-
-// crisis_urgency indicates how seriously the SPD is taking the economic crisis - scale from 0 to 10.
-Q.crisis_urgency = 0;
-// nazi_urgency indicates how seriously the SPD takes the nazis - scale from 0 to 10.
-Q.nazi_urgency = 0;
-// radicalization indicates how radical the SPD's rhetoric is - scale from 0 to 10.
+// agrarian_reform_urgency indicates how seriously the PSOE is taking the agrarian question - scale from 0 to 10.
+Q.agrarian_reform_urgency = 0;
+// falange_urgency indicates how seriously the PSOE takes the falange - scale from 0 to 10.
+Q.falange_urgency = 0;
+// radicalization indicates how radical the PSOE's rhetoric is - scale from 0 to 10.
 Q.radicalization = 0;
-// Support for the WTB plan and proto-Keynesian works creation plans in general
-Q.wtb_support = 0;
-// Support for Pacifism within the SPD relative to 1928
-Q.pacifism = 0;
-// Support for democratic reform within the SPD relative to 1928
+// Support for democratic reform within the PSOE relative to 1931
 Q.democratization = 0;
-// Support for a communist coalition relative to 1928
+// Support for a communist coalition relative to 1931
 Q.communist_coalition = 0;
-// economic_plan: have we adopted *any* economic plan?
-// 1 - WTB plan, 2 - AfA-bund plan, 3 - radical plan (mass nationalization of industries)
-Q.economic_plan = 0;
-// have we officially adopted the WTB plan?
-Q.wtb_adopted = 0;
-// have we formed the iron front?
-Q.iron_front_formed = 0;
-// people's party support
-Q.peoples_party_support = 0;
-// support for nationalizations
-Q.nationalization_support = 0;
-Q.nationalization_adopted = 0;
-// moderate economic plan
-Q.moderate_plan_support = 0;
-Q.moderate_plan_adopted = 0;
-
-// organizations
 
 // inter-party relations
-Q.z_relation = 50;
-Q.kpd_relation = 25;
-Q.ddp_relation = 60;
-Q.dvp_relation = 35;
-// DNVP and NSDAP are invariably hostile
-Q.DNVP_relation = 10;
-Q.NSDAP_relation = 0;
+// republicans
+Q.ar_relation = 70; //accion republicana
+Q.prrs_relation = 65; //partido republicano radical socialista
+Q.other_left_republicans_relation = 55;
+Q.prr_relation = 40; //partido republicano radical
+Q.dlr_relation = 50; //derecha liberal republicana
+Q.other_right_republicans_relation = 35;
 
-Q.kpd_leader = "Thälmann";
-// alternative is the Conciliators as party leader
-Q.kpd_party_leader = "Thälmann";
-Q.z_leader = "Brüning";
-// party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
-Q.z_party_leader = "Marx";
-Q.nsdap_leader = "Hitler";
+// regionalists
+Q.regionalists_relation = 50;
 
-// hmm... maybe we can play nice with Hindenburg???
-Q.hindenburg_relation = 25;
-// whether or not hindenburg can dismiss the government.
-Q.hindenburg_enabled = 0;
+// far-left
+Q.pce_relation = 70; //partido comunista de espana
 
+// anti-republicans
+Q.agrarian_relation = 20;
+Q.ap_relation = 10; //accion popular
+Q.other_monarchists_relation = 5;
+Q.jons_relation = 5;
 
-// Does the SPD lead in Prussia?
-Q.spd_prussia = 1;
-// Options: spd, z, dnvp, papen, nsdap
-Q.prussian_government = "SPD";
+// party leaders
+Q.ar_ir_leader = "Manuel Azana";
+Q.prrs_leader = "Marcelino Domingo";
+Q.other_left_republicans_leader = "Joaquin Pi i Arsuaga";
+Q.prr_leader = "Alejandro Lerroux";
+Q.dlr_leader = "Alcala Zamora";
+Q.other_right_republicans_leader = "Juan March";
+Q.regionalists_leader = "Francesc Macia";
+Q.pce_leader = "Jose Diaz";
+Q.agrarios_leader = "Martinez de Velasco";
+Q.ap_leader = "Angel Herrera Oria";
+Q.other_monarchists_leader = "Joaquin Beunza";
+Q.jons_leader = "Onesimo Redondo";
+
+// presidential activity
+Q.alcala_zamora_relation = 70;
+// whether or not Alcala Zamora can dismiss the government.
+Q.alcala_zamora_enabled = 0;
 
 // The array of forces - paramilitary groups
-// Number of members in 1928 (in thousands)
-// Reichsbanner, stahlhelm, SA, rotfrontkämpferbund
-Q.rb_strength = 2000;
-Q.rb_militancy = 0.01;
-Q.women_in_rb = 0;
-Q.rb_banned = 0;
-Q.sh_strength = 500;
-Q.sh_militancy = 0.5;
-Q.sh_banned = 0;
-Q.sh_banned_prussia = 0;
-Q.sa_strength = 80;
-Q.sa_militancy = 0.5;
-Q.sa_banned = 0;
-Q.sa_banned_prussia = 0;
-Q.rfb_strength = 130;
-Q.rfb_militancy = 0.5;
-Q.rfb_banned = 0;
-Q.rfb_banned_prussia = 0;
+// Number of members in 1931 (in thousands) PLACEHOLDER BUSCAR CIRFAS
+// Ejercito, Guardia Civil, Guardia de Asalto, Juventudes Socialistas, Milicias Comunistas, Milicias Anarquistas, Milicias Falangistas
+Q.js_strength = 50;
+Q.js_militancy = 0.01;
+Q.js_banned = 0;
+Q.mc_strength = 10;
+Q.mc_militancy = 0.5;
+Q.mc_banned = 0;
+Q.ma_strength = 150;
+Q.ma_militancy = 0.7;
+Q.ma_banned = 0;
+Q.mf_strength = 2;
+Q.mf_militancy = 0.8;
+Q.mf_banned = 0;
 
-Q.interior_police_strength = 50;
-Q.interior_police_militancy = 1;
-Q.interior_police_loyalty = 0.45;
+Q.guardia_asalto_strength = 10;
+Q.guardia_asalto_militancy = 0.8;
+Q.guardia_asalto_loyalty = 0.85;
 
-Q.prussian_police_strength = 90;
-Q.prussian_police_militancy = 1;
-Q.prussian_police_loyalty = 0.5;
+Q.guardia_civil_strength = 35;
+Q.guardia_civil_militancy = 0.9;
+Q.guardia_civil_loyalty = 0.45;
 
 // strength includes actual military and de facto reserves?
-Q.reichswehr_strength = 100;
-Q.reichswehr_militancy = 5;
-Q.reichswehr_loyalty = 0.2;
+Q.ejercito_strength = 120;
+Q.ejercito_militancy = 5;
+Q.ejercito_loyalty = 0.2;
 
 // The state of the country
 
-// popular opinion
-// national ideology - on a binary scale
-// nationalism vs internationalism or pacifism or non-nationalism
-Q.nationalism = 60;
+// on a binary scale
+// secularization vs laicism (0 = complete separation of church and state, 100 = total church control)
+Q.secularization = 80;
 // socialism vs capitalism
-Q.socialism = 40;
+Q.socialism = 35;
 // pro-republic vs anti-republic
 Q.pro_republic = 59;
+// polarization (0 = pacific coexistence, 100 = total polarization)
+Q.polarization = 25;
+// literacy
+Q.literacy = 60;
 
-Q.emergency_rule = 0;
+// state of war
+Q.state_of_war = 0;
+Q.ley_defensa_republica = 0;
 
 // minimum percentage of votes to be represented in the Reichstag
 Q.electoral_threshold = 0;
 // constitutional reform level
 Q.constitutional_reform = 0;
-// constructive vote of no confidence
-Q.constructive_vonc = 0;
-// reduction in presidential powers
-Q.presidential_powers = 0;
+// regional autonomy
+Q.regional_autonomy = 0;
+// military reform
+Q. military_reform = 0;
 // allows banning of non-constitutional parties
-Q.constitutional_protection = 0;
-Q.kpd_banned = 0;
-Q.nsdap_banned = 0;
+Q.constitutional_protection = 0; //que es
+Q.pce_banned = 0;
+Q.ceda_banned = 0;
+Q.fe_banned = 0;
+Q.cnt_banned = 0;
 
 // coups and capital strikes happen when you upset the right or the capitalists too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
 // when coup_progress reaches 10 or capital_strike_progress reaches 10, there's a special event that launches the coup.
 Q.coup_progress = 0;
 Q.capital_strike_progress = 0;
+// agrarian and general strikes happen when you upset the left or the landowners too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
+Q.agrarian_strike_progress = 0;
+Q.general_strike_progress = 0;
 
 Q.budget = 4;
 
-// Proportion of different social groups
-// source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 45, table 3.4 - using 1925 figures
-Q.workers = 48; // industry and trade
-Q.old_middle = 13; // "old mittelstand"
-// 16.4 trade & commerce, 6.6 public and private services, 4.4 domestic help
-Q.new_middle = 14; // "new mittelstand"
-Q.rural = 25; // agriculture and forestry employment... but many of those are proletarians so...
-// source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3
-Q.unemployed = 8.6;
-Q.catholics = 30;
+// Proportion of different social groups 
+Q.workers = 25; // industry and trade
+Q.middle = 12; // small owners, civil servants, professionals, intellectuals
+Q.rural = 35; // Landless jornaleros (Andalusia, Extremadura) - prime base for UGT and CNT
+Q.smallholders = 25; // Small landowners, leaseholders
+Q.elites = 3; // large landowners, industrialists, high clergy, military officers
+Q.unemployed = 9; //va aparte? PREGUNTAR
+Q.catholics = 85; //va aparte? PREGUNTAR
 
-// unemployment: 1929 - 13.3, 1930 - 22.7, 1931 - 34.3, 1932 - 43.8 (same source as above)
+// REVISAR VOCABULARIO REPUBLICANO - TODO PLACEHOLDER POR SI NO QUEDA CLARO
 
 // income for industrial workers in reichsmarks/year - 1928 = 1600 Reichsmarks/year; 1931 = 1440 Reichsmarks/year; 1933 = 1138 Reichsmarks/year - source: https://babel.hathitrust.org/cgi/pt?id=uiug.30112104147985&seq=50
-Q.income = 1600;
+Q.workers_income = 2500;
+Q.rural_income = 1000;
+
 // what about incomes for different classes? rural workers? middle-class workers?
 
 // inflation (in %; 1928: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BSPDRWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/rezession-betrachtung-032009.pdf?__blob=publicationFile
-Q.inflation = 2.9;
+Q.inflation = 3.5;
 
 // economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
-Q.economic_growth = 4.4;
+Q.economic_growth = -1.5;
 
 // economic expansion timer
 Q.economic_expansion = 0;
 
-// quality of life (as % of 1928 - currently unused - should be welfare-adjusted.)
-Q.workers_qol = 100;
-Q.rural_qol = 100;
-Q.unemployed_qol = 100;
-Q.old_middle_qol = 100;
-Q.new_middle_qol = 100;
+Q.classes = ['workers', 'middle', 'smallholders', 'elites', 'rural', 'unemployed', 'catholics'];
+Q.parties = ['ar', 'prrs', 'other_left_republicans', 'prr', 'dlr', 'other_right_republicans', 'regionalists', 'pce','agrarios', 'ap', 'other_monarchists', 'jons'];
 
-Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
-
-// TODO: add 'sapd' later on
-Q.sapd_formed = 0;
+// TODO: add new parties later on
+Q.ceda_formed = 0;
+Q.fe_formed = 0; // Falange Espanola
+Q.ir_formed = 0; // Izquierda republicana
+Q.ur_formed = 0; // Union Republicana
+Q.poum_formed = 0; //Trotskysts
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_spd = 60;
-Q.workers_kpd = 20;
-Q.workers_z = 5;
-Q.workers_ddp = 0;
-Q.workers_dvp = 0;
-Q.workers_dnvp = 5;
-Q.workers_nsdap = 0;
-Q.workers_other = 10;
+Q.workers_psoe = 60;
+Q.workers_ar = 10;
+Q.workers_prrs = 10;
+Q.workers_other_left_republicans = 10;
+Q.workers_prr = 10;
+Q.workers_dlr = 10;
+Q.workers_other_right_republicans = 10;
+Q.workers_regionalists = 10;
+Q.workers_pce = 10;
+Q.workers_agrarios = 10;
+Q.workers_ap = 10;
+Q.workers_other_monarchists = 10;
+Q.workers_jons = 10;
 
-Q.old_middle_spd = 5;
-Q.old_middle_kpd = 0;
-Q.old_middle_z = 5;
-Q.old_middle_ddp= 10;
-Q.old_middle_dvp = 25;
-Q.old_middle_dnvp = 25;
-Q.old_middle_nsdap = 10;
-Q.old_middle_other = 10;
+Q.middle_psoe = 5;
+Q.middle_ar = 10;
+Q.middle_prrs = 10;
+Q.middle_other_left_republicans = 10;
+Q.middle_prr = 10;
+Q.middle_dlr = 10;
+Q.middle_other_right_republicans = 10;
+Q.middle_regionalists = 10;
+Q.middle_pce = 10;
+Q.middle_agrarios = 10;
+Q.middle_ap = 10;
+Q.middle_other_monarchists = 10;
+Q.middle_jons = 10;
 
-Q.new_middle_spd = 5;
-Q.new_middle_kpd = 1;
-Q.new_middle_z = 10;
-Q.new_middle_ddp= 25;
-Q.new_middle_dvp = 25;
-Q.new_middle_dnvp = 10;
-Q.new_middle_nsdap = 5;
-Q.new_middle_other = 15;
+Q.smallholders_psoe = 5;
+Q.smallholders_ar = 10;
+Q.smallholders_prrs = 10;
+Q.smallholders_other_left_republicans = 10;
+Q.smallholders_prr = 10;
+Q.smallholders_dlr = 10;
+Q.smallholders_other_right_republicans = 10;
+Q.smallholders_regionalists = 10;
+Q.smallholders_pce = 10;
+Q.smallholders_agrarios = 10;
+Q.smallholders_ap = 10;
+Q.smallholders_other_monarchists = 10;
+Q.smallholders_jons = 10;
 
-Q.rural_spd = 10;
-Q.rural_kpd = 0;
-Q.rural_z = 5;
-Q.rural_ddp= 5;
-Q.rural_dvp = 15;
-Q.rural_dnvp = 45;
-Q.rural_nsdap = 5;
-Q.rural_other = 10;
+Q.elites_psoe = 5;
+Q.elites_ar = 10;
+Q.elites_prrs = 10;
+Q.elites_other_left_republicans = 10;
+Q.elites_prr = 10;
+Q.elites_dlr = 10;
+Q.elites_other_right_republicans = 10;
+Q.elites_regionalists = 10;
+Q.elites_pce = 10;
+Q.elites_agrarios = 10;
+Q.elites_ap = 10;
+Q.elites_other_monarchists = 10;
+Q.elites_jons = 10;
 
-Q.unemployed_spd = 25;
-Q.unemployed_kpd = 55;
-Q.unemployed_z = 1;
-Q.unemployed_ddp = 0;
-Q.unemployed_dvp = 0;
-Q.unemployed_dnvp = 5;
-Q.unemployed_nsdap = 15;
-Q.unemployed_other = 9;
+Q.rural_psoe = 10;
+Q.rural_ar = 10;
+Q.rural_prrs = 10;
+Q.rural_other_left_republicans = 10;
+Q.rural_prr = 10;
+Q.rural_dlr = 10;
+Q.rural_other_right_republicans = 10;
+Q.rural_regionalists = 10;
+Q.rural_pce = 10;
+Q.rural_agrarios = 10;
+Q.rural_ap = 10;
+Q.rural_other_monarchists = 10;
+Q.rural_jons = 10;
 
-Q.catholics_spd = 15;
-Q.catholics_kpd = 2;
-Q.catholics_z = 50;
-Q.catholics_ddp = 0;
-Q.catholics_dvp = 5;
-Q.catholics_dnvp = 5;
-Q.catholics_nsdap = 0;
-Q.catholics_other = 12;
+Q.unemployed_psoe = 25;
+Q.unemployed_ar = 10;
+Q.unemployed_prrs = 10;
+Q.unemployed_other_left_republicans = 10;
+Q.unemployed_prr = 10;
+Q.unemployed_dlr = 10;
+Q.unemployed_other_right_republicans = 10;
+Q.unemployed_regionalists = 10;
+Q.unemployed_pce = 10;
+Q.unemployed_agrarios = 10;
+Q.unemployed_ap = 10;
+Q.unemployed_other_monarchists = 10;
+Q.unemployed_jons = 10;
 
+Q.catholics_psoe = 15;
+Q.catholics_ar = 10;
+Q.catholics_prrs = 10;
+Q.catholics_other_left_republicans = 10;
+Q.catholics_prr = 10;
+Q.catholics_dlr = 10;
+Q.catholics_other_right_republicans = 10;
+Q.catholics_regionalists = 10;
+Q.catholics_pce = 10;
+Q.catholics_agrarios = 10;
+Q.catholics_ap = 10;
+Q.catholics_other_monarchists = 10;
+Q.catholics_jons = 10;
 
-// Current Reichstag composition
-// % of Reichstag in Jan 1928
-// source: wikipedia
-// note: the Z figures also include the BVP (Bavarian people's party)
-// since they were ideologically similar, but they were separate parties.
-// They did not have a CDU/CSU-style relationship.
-Q.spd_r = 26;
-Q.kpd_r = 9;
-Q.z_r = 17;
-Q.ddp_r = 6;
-Q.dvp_r = 10;
-Q.dnvp_r = 20;
-Q.nsdap_r = 3;
-Q.other_r = 9;
+// Current Cortes Composition (Based on June 1931 Constituent Elections)
+Q.psoe_r = 25;
+Q.ar_r = 6;
+Q.prrs_r = 13;
+Q.other_left_republicans_r = 9;
+Q.prr_r = 19;
+Q.dlr_r = 5;
+Q.other_right_republicans_r = 3;
+Q.regionalists_r = 14;
+Q.pce_r = 0;
+Q.agrarios_r = 3;
+Q.ap_r = 1;
+Q.other_monarchists_r = 2;
+Q.jons_r = 0;
 
-// diff from prev
-Q.old_spd_r = 26;
-Q.old_kpd_r = 9;
-Q.old_z_r = 17;
-Q.old_ddp_r = 6;
-Q.old_dvp_r = 10;
-Q.old_dnvp_r = 20;
-Q.old_nsdap_r = 3;
-Q.old_other_r = 9;
+// Previous Cortes Composition (Historical comparison tracking)
+Q.old_psoe_r = 25;
+Q.old_ar_r = 6;
+Q.old_prrs_r = 13;
+Q.old_other_left_republicans_r = 9;
+Q.old_prr_r = 19;
+Q.old_dlr_r = 5;
+Q.old_other_right_republicans_r = 3;
+Q.old_regionalists_r = 14;
+Q.old_pce_r = 0;
+Q.old_agrarios_r = 3;
+Q.old_ap_r = 1;
+Q.old_other_monarchists_r = 2;
+Q.old_jons_r = 0;
 
-// sapd isn't formed yet, but it may be formed
-Q.sapd_r = 0;
-Q.old_sapd_r = 0;
+// Future dynamic party representations for new factions / split-offs (Initialized at 0)
+Q.ceda_r = 0;
+Q.old_ceda_r = 0;
+Q.falange_r = 0;
+Q.old_falange_r = 0;
+Q.izquierda_republicana_r = 0;
+Q.old_izquierda_republicana_r = 0;
+Q.union_republicana_r = 0;
+Q.old_union_republicana_r = 0;
+Q.poum_r = 0;
+Q.old_poum_r = 0;
 
-// for changing the DDP's name to the DStP
-Q.ddp_name = "DDP";
+// Party evolution name flags
+Q.ar_name = "AR"; // Changes later to IR after mergers
+Q.ap_name = "AP"; // Changes to CEDA when formed
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
