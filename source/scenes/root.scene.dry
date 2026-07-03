@@ -636,7 +636,7 @@ For more information on the politics and government of the Second Spanish Republ
 // AQUI HE BORRADO LAS OTRAS DIFICULTADES PORQUE BLEH, SI NO FUNCIONA; PREGUNTAR O VOLVER A COPIAR DEL BASE
 
 - @1931_main: Begin (normal difficulty)
-
+!}
 
 go-to: 1931_main // NO ENTIENDO
 
