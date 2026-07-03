@@ -620,7 +620,6 @@ Q.negrin_advisor = 0;
 // Caballeristas
 Q.largo_caballero_advisor = 1;
 Q.nelken_advisor = 0;
-
 !}
 
 set-bg: img/fondo_manifa.jpg
