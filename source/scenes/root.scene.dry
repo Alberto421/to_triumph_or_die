@@ -615,15 +615,13 @@ Q.nelken_advisor = 0;
 set-bg: img/fondo_manifa.jpg
 new-page: true
 
-> *"The Provisional Government of the Republic has taken power without any paperwork nor any resistance or protocolary opposition; it is the people who have elevated it to the position where it stands, and it is the people who throughout Spain yield it compliance and invest it with authority. By his virtue, the President of the Provisional Government of the Republic assumes from this moment the headship of the State with the express assent of the triumphant political forces and of the popular will, which was fully aware of the composition of the Provisional Government before casting its ballots. Interpreting the unequivocal desire of the Nation, the Committee of the allied political forces for the establishment of the new regime designates Mr. Niceto Alcala-Zamora y Torres to the office of President of the Provisional Government of the Republic. "*
+> *"The Provisional Government of the Republic has taken power without any paperwork nor any resistance or protocolary opposition; it is the people who have elevated it to the position where it stands, and it is the people who throughout Spain yield it compliance and invest it with authority. By his virtue, the President of the Provisional Government of the Republic assumes from this moment the headship of the State with the express assent of the triumphant political forces and of the popular will, which was fully aware of the composition of the Provisional Government before casting its ballots. Interpreting the unequivocal desire of the Nation, the Committee of the allied political forces for the establishment of the new regime designates Mr. Niceto Alcala-Zamora y Torres to the office of President of the Provisional Government of the Republic".*
 
  - Official Declaration of the Second Spanish Republic, April 14, 1931
 
 This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
 
 For more information on the politics and government of the Second Spanish Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
-
-// AQUI HE BORRADO LAS OTRAS DIFICULTADES PORQUE BLEH, SI NO FUNCIONA; PREGUNTAR O VOLVER A COPIAR DEL BASE
 
 - @1931_main: Begin (normal difficulty)
 
@@ -635,6 +633,6 @@ go-to: main
 
 = 1931
 
-The Second Republica was greeted with hreat hope, particulary in rural areas characterized by sustained population growth and a highly unequal land-ownership structure. Unemployement, lack of schooling and hunger was what the Bourbons left behind upon their departure. Following the proclamation of the republic, a provisional government has been formed, bringing together the country's main republican forces from both the left and the right. 
+The Second Republica was greeted with great hope, particulary in rural areas characterized by sustained population growth and a highly unequal land-ownership structure. Unemployement, lack of schooling and hunger was what the Bourbons left behind upon their departure. Following the proclamation of the republic, a provisional government has been formed, bringing together the country's main republican forces from both the left and the right. 
 
 Now, the task of Social Democracy is to prepare for the constituent's election in June. Now, the historic task of Social Democracy is to consolidate the new regime. As the strongest political force in the Coalition, the PSOE holds the ministries of Labor, Justice, and Finance. We must drive forward the secularization of education, create modern labor frameworks and execute the crucial Agrarian Reform to relieve the jornaleros (landless peasants). Let us swear to triumph or die.
