@@ -612,16 +612,16 @@ Q.negrin_advisor = 0;
 Q.largo_caballero_advisor = 1;
 Q.nelken_advisor = 0;
 !}
-set-bg: img/map_2.jpg
+set-bg: img/fondo_manifa.jpg
 new-page: true
 
-> *"Such a general development cannot be attributed to the false tactics of any single party or to the mistakes of individual leaders. On the contrary, the conduct of individual leaders is determined largely by the sentiments of the people as a whole. It would be erroneous, however, to regard the sentiments of the moment as reflecting the natural make-up and character of the people. They are merely the consequence of the special circumstances which have brought about this profound degradation of the entire nation."*
+> *"The Provisional Government of the Republic has taken power without any paperwork nor any resistance or protocolary opposition; it is the people who have elevated it to the position where it stands, and it is the people who throughout Spain yield it compliance and invest it with authority. By his virtue, the President of the Provisional Government of the Republic assumes from this moment the headship of the State with the express assent of the triumphant political forces and of the popular will, which was fully aware of the composition of the Provisional Government before casting its ballots. Interpreting the unequivocal desire of the Nation, the Committee of the allied political forces for the establishment of the new regime designates Mr. Niceto Alcala-Zamora y Torres to the office of President of the Provisional Government of the Republic. "*
 
- - Karl Kautsky, *Hitlerism and Social Democracy*, 1934
+ - Official Declaration of the Second Spanish Republic, April 14, 1931
 
 This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
 
-For more information on the politics and government of the German Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
+For more information on the politics and government of the Second Spanish Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
 - @1928_easy: Begin (easy difficulty)
 - @1928_main: Begin (normal difficulty)
