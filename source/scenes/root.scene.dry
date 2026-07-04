@@ -213,7 +213,7 @@ Q.economic_growth = -1.5;
 Q.economic_expansion = 0;
 
 Q.classes = ['workers', 'middle', 'smallholders', 'elites', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['ar', 'prrs', 'other_left_republicans', 'prr', 'dlr', 'other_right_republicans', 'regionalists', 'pce','agrarios', 'ap', 'other_monarchists', 'jons'];
+Q.parties = ['psoe', 'ar', 'prrs', 'other_left_republicans', 'prr', 'dlr', 'other_right_republicans', 'regionalists', 'pce','agrarios', 'ap', 'other_monarchists', 'jons'];
 
 // TODO: add new parties later on
 Q.ceda_formed = 0;
@@ -485,7 +485,8 @@ Q.factory_takeovers = 0;
 Q.education_teachers = 0;
 Q.education_mix_classrooms = 0;
 Q.education_rural_schools = 0;
-Q.laicist_education = 0;
+Q.science = 0;
+Q.education_science = 0;
 
 // Tax rates relative to 1931  baseline
 Q.lower_tax_rates = 0;
@@ -520,7 +521,7 @@ Q.timers = ['advisor_action', 'confronting_right', 'crisis_program',
             'moroccan_affairs', 'womens_rights', 'economic_democracy', 'agrarian_reform',
             'dealing_with_toleration',
             'constitutional_reform', 'labor_rights',
-            'education', 'curriculum',
+            'education', 'education_science', 'curriculum',
             // events
             'emergency_cuts', 'unemployment_insurance',
             'fe_ban', 'cnt_ban', 'pce_ban', 'sanjurjada',
@@ -581,6 +582,7 @@ Q.dealing_with_toleration_timer = 0;
 Q.constitutional_reform_timer = 0;
 Q.labor_rights_timer = 0;
 Q.education_timer = 0;
+Q.education_science_timer = 0;
 Q.curriculum_timer = 0;
 
 // event timers
