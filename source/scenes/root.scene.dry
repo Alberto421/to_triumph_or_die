@@ -192,7 +192,7 @@ Q.middle = 12; // small owners, civil servants, professionals, intellectuals
 Q.rural = 35; // Landless jornaleros (Andalusia, Extremadura) - prime base for UGT and CNT
 Q.smallholders = 25; // Small landowners, leaseholders
 Q.elites = 3; // large landowners, industrialists, high clergy, military officers
-Q.unemployed = 9; //va aparte? PREGUNTAR
+Q.unemployed = 12; //va aparte? PREGUNTAR
 Q.catholics = 85; //va aparte? PREGUNTAR
 
 // REVISAR VOCABULARIO REPUBLICANO - TODO PLACEHOLDER POR SI NO QUEDA CLARO
@@ -203,11 +203,11 @@ Q.rural_income = 1000;
 
 // what about incomes for different classes? rural workers? middle-class workers?
 
-// inflation (in %; 1928: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BSPDRWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/rezession-betrachtung-032009.pdf?__blob=publicationFile
-Q.inflation = 3.5;
+// inflation 
+Q.inflation = -2;
 
-// economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
-Q.economic_growth = -1.5;
+// economic growth - 
+Q.economic_growth = -2;
 
 // economic expansion timer
 Q.economic_expansion = 0;
