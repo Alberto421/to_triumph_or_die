@@ -14,8 +14,6 @@ for (var c of Q.classes) {
 
 Q.pro_republic = Math.round(Q.pro_republic);
 Q.socialism = Math.round(Q.socialism);
-Q.polarization = Math.round(Q.polarization);
-Q.literacy = Math.round(Q.literacy);
 
 if (Q.pro_republic < 0) {
     Q.pro_republic = 0;
@@ -206,17 +204,49 @@ if (Q.month_actions >= 1) {
         Q.economic_growth -= 0.3;
     }
 
-    //////////////////////////////// Education & Science support/economic changes
-    if (Q.major_curriculum && Q.major_curriculum == "democratic") {
+    //////////////////////////////// Education & Science support/literacy/economic changes
+// Democratic Curriculum is No No to the church so polarization  
+if (Q.major_curriculum && Q.major_curriculum == "democratic") {
         if (Q.pro_republic < 60) {
             Q.pro_republic += 0.5;
+        } 
+        if (Q.literacy < 100) {
+            Q.literacy += 0.2;
+        } 
+        if (Q.polarization < 100) {
+            Q.polarization += 0.5;
         } 
     }
     if (Q.minor_curriculum && Q.minor_curriculum == "democratic") {
         if (Q.pro_republic < 60) {
             Q.pro_republic += 0.3;
         } 
+        if (Q.literacy < 100) {
+            Q.literacy += 0.05;
+        } 
     }
+    if (Q.education_rural_schools && Q.education_rural_schools >= 1) {
+        if (Q.literacy < 100) {
+            Q.literacy += 0.3 * Q.education_rural_schools;
+        }
+    }
+    if (Q.education_teachers && Q.education_teachers >= 1) {
+        if (Q.pro_republic < 75) {
+            Q.pro_republic += 0.2 * Q.education_teachers;
+        } 
+        if (Q.literacy < 100) {
+            Q.literacy += 0.2 * Q.education_teachers;
+        } 
+    }
+    if (Q.education_mix_classrooms && Q.education_mix_classrooms >= 1) {
+        if (Q.pro_republic < 70) {
+            Q.pro_republic += 0.1;
+        } 
+        if (Q.polarization < 100) {
+            Q.polarization += 0.3;
+        }  
+    }
+
     // science bonus to economic growth
     // education bonus
     Q.science_bonus = 0;
@@ -261,11 +291,6 @@ if (Q.month_actions >= 1) {
             Q.economic_expansion += Q.economic_growth;
         }
     }
-    if (Q.economic_growth > 0 && Q.reparations <= -2 && Q.spd_in_government) {
-        Q.economic_expansion += Q.economic_growth;
-    } else if (Q.economic_growth > 0 && Q.spd_in_government) {
-        Q.economic_expansion += Q.economic_growth/2;
-    }
     /////////////////////////////// update opinions based on economy
     if (Q.unemployed > 15 && Q.pro_republic > 40) {
         Q.pro_republic -= 1;
@@ -279,7 +304,7 @@ if (Q.month_actions >= 1) {
 
     ///////////////////////////// change party support based on pro_republic
     // if pro_republic is less than the support of the Weimar coalition, reduce SPD support...
-    if (Q.pro_republic < (Q.spd_votes + Q.ddp_votes + Q.z_votes - 3)) {
+    if (Q.pro_republic < (Q.psoe_votes + Q.ar_votes + Q.prrs_votes + Q.prr_votes - 3)) {
         if (Q.new_middle_spd > 0) {
             Q.new_middle_spd -= 5/12;
             Q.new_middle_nsdap += 3/12;
