@@ -396,10 +396,10 @@ Q.other_monarchists_in_government = 0;
 Q.jons_in_government = 0;
 
 Q.in_right_coalition = 0;
-// Republican-socialist coalition = PSOE + Left Republicans + PRR + PRRS + AR + Regionalists
-Q.in_republican_socialist_coalition = 0;
+// Republican-socialist conjunction = PSOE + Left Republicans + PRR + PRRS + AR + Regionalists
+Q.in_republican_socialist_conjunction = 0;
 // Left republican coalition = PSOE + AR + Left Republicans + PRRS
-Q.in_left_republican_coalition = 0;
+Q.in_left_republican_conjunction = 0;
 // Popular front = PSOE + AR + Left Republicans + PCE + Left splinters
 Q.in_popular_front = 0;
 // left coalition = PSOE + PCE + Left splinters
