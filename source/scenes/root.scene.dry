@@ -399,7 +399,7 @@ Q.in_right_coalition = 0;
 // Republican-socialist conjunction = PSOE + Left Republicans + PRR + PRRS + AR + Regionalists
 Q.in_republican_socialist_conjunction = 0;
 // Left republican coalition = PSOE + AR + Left Republicans + PRRS
-Q.in_left_republican_conjunction = 0;
+Q.in_left_republican_coalition = 0;
 // Popular front = PSOE + AR + Left Republicans + PCE + Left splinters
 Q.in_popular_front = 0;
 // left coalition = PSOE + PCE + Left splinters
@@ -449,6 +449,7 @@ Q.women_suffrage_debate_seen = 0;
 Q.constitution_drafted_seen = 0;
 Q.sanjurjada_seen = 0;
 Q.casas_viejas_seen = 0;
+Q.asturias_revolution_seen = 0;
 Q.straperlo_scandal_seen = 0;
 Q.blutmai = 0; // QUE ES
 
