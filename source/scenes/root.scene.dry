@@ -123,13 +123,13 @@ Q.js_strength = 50;
 Q.js_militancy = 0.01;
 Q.js_banned = 0;
 Q.mc_strength = 10;
-Q.mc_militancy = 0.5;
+Q.mc_militancy = 0.2;
 Q.mc_banned = 0;
 Q.ma_strength = 150;
-Q.ma_militancy = 0.7;
+Q.ma_militancy = 0.4;
 Q.ma_banned = 0;
 Q.mf_strength = 2;
-Q.mf_militancy = 0.8;
+Q.mf_militancy = 0.2;
 Q.mf_banned = 0;
 
 Q.guardia_asalto_strength = 10;
