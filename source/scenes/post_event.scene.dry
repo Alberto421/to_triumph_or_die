@@ -379,25 +379,25 @@ if (Q.major_curriculum && Q.major_curriculum == "democratic") {
     } else if (Q.year == 1932) {
         Q.smallholders_ap += 10/12;
         Q.middle_ap += 12/12;
-        Q.js_strength += 50/12;
-        Q.ma_strength += 100/12;
+        Q.js_strength += 20/12;
+        Q.ma_strength += 10/12;
         Q.catholics_ap += 20/12;
        if (!Q.works_program) {
             Q.unemployed += 4/12;
             Q.rural_pce += 6/12; 
             Q.middle_ap += 6/12;
             Q.workers_pce += 4/12;
-            Q.ma_strength += 50/12;
-            Q.ma_militancy += 0.5/12;
+            Q.ma_strength += 30/12;
+            Q.ma_militancy += 0.3/12;
         }
     } else if (Q.year == 1933) {
         Q.middle_ap += 12/12;
         Q.smallholders_ap += 12/12;
         Q.workers_ap += 12/12;
         Q.catholics_ap += 20/12;
-        Q.ma_strength += 100/12;
+        Q.ma_strength += 30/12;
         Q.ma_militancy += 0.1/12;
-        Q.fe_strength += 100/12;
+        Q.fe_strength += 10/12;
         Q.fe_militancy += 0.05/12;
         if (!Q.works_program) {
             Q.rural_psoe -= 4/12;
@@ -411,12 +411,16 @@ if (Q.major_curriculum && Q.major_curriculum == "democratic") {
         Q.middle_prr -= 12/12;
         Q.middle_prrs -= 12/12;
         Q.catholics_ap += 20/12;
-        Q.ma_strength += 100/12;
+        Q.ma_strength += 50/12;
         Q.ma_militancy += 0.3/12;
-        Q.fe_strength += 100/12;
+        Q.ma_strength += 50/12;
+        Q.ma_militancy += 0.2/12;
+        Q.fe_strength += 10/12;
         Q.fe_militancy += 0.1/12;
     } else if (Q.year == 1935) {
         Q.workers_pce += 20/12;
+        Q.ma_strength += 100/12;
+        Q.ma_militancy += 0.1/12;
         Q.ma_strength += 100/12;
         Q.ma_militancy += 0.1/12;
         Q.fe_strength += 100/12;
@@ -424,6 +428,8 @@ if (Q.major_curriculum && Q.major_curriculum == "democratic") {
     } else if (Q.year >= 1936) {
         Q.ma_strength += 100/12;
         Q.ma_militancy += 0.1/12;
+        Q.ma_strength += 100/12;
+        Q.ma_militancy += 0.2/12;
         Q.fe_strength += 100/12;
         Q.fe_militancy += 0.3/12;
     }
