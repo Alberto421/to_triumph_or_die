@@ -20,7 +20,7 @@ if (Q.economic_growth) {
 
 Resources available: [+ resources +]
 
-PSOE position: [? if psoe_toleration : toleration ?][? if psoe_in_government : in government - ?][? if psoe_toleration == 0 and psoe_in_government == 0 and psoe_caretaker == 0 : opposition ?][? if psoe_caretaker : caretaker government ?]
+PSOE position: [? if psoe_toleration : toleration ?][? if psoe_in_government : in government ?][? if psoe_toleration == 0 and psoe_in_government == 0 and psoe_caretaker == 0 : opposition ?][? if psoe_caretaker : caretaker government ?]
 [? if in_republican_socialist_coalition and psoe_in_government: republican-socialist conjunction ?][? if in_popular_front and psoe_in_government: Popular Front ?] [? if in_left_front and psoe_in_government: Left Front ?][? if in_psoe_majority and psoe_in_government: psoe majority ?][? if in_minority_government and psoe_in_government: minority government ?][? if in_emergency_government and psoe_in_government: emergency government ?]
 
 [? if psoe_in_government and not in_psoe_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
@@ -74,10 +74,9 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Inter-party Relations
 
+{!<span class="tooltip-text" title="Republican Action">!}[? if not ar_name: AR?][? if ar_name != 0 : [+ ar_name +]?]{!</span>!}: [+ ar_relation : relationships +] // Mirar esto porque igual para la CEDA tambien, tengo que ver como funciona
 
 {!<span class="tooltip-text" title="Radical Socialist Republican Party">PRRS</span>!}: [+ prrs_relation : relationships +]
-
-{!<span class="tooltip-text" title="Republican Action">!}[? if not ar_name: AR?][? if ar_name != 0 : [+ ar_name +]?]{!</span>!}: [+ ar_relation : relationships +] // Mirar esto porque igual para la CEDA tambien, tengo que ver como funciona
 
 {!<span class="tooltip-text" title="Other Left Republicans">Other Left Rep.</span>!}: [+ other_left_republicans_relation : relationships +]
 
@@ -140,7 +139,7 @@ Milicias Anarquistas Militarization: [+ ma_militancy : militancy +]
 
 Milicias Falangistas Militarization: [+ mf_militancy : militancy +]
 
-= Official military/paramilitaries
+= Security Forces
 
 Ejercito: [+ ejercito_strength +] thousand troops.
 
@@ -148,7 +147,7 @@ Ejercito Loyalty: [+ ejercito_loyalty : loyalty +]
 
 Guardia de Asalto: [+ guardia_asalto_strength +] thousand members.
 
-Guardia de Asaltoy: [+ guardia_asalto_loyalty : loyalty +]
+Guardia de Asalto: [+ guardia_asalto_loyalty : loyalty +]
 
 [? if psoe_in_government : Guardia Civil loyalty: [+ guardia_civil_loyalty : loyalty +] ?]
 
@@ -205,4 +204,4 @@ Unemployed: PSOE: [+ unemployed_psoe_display +]%, AR: [+ unemployed_ar_display +
 
 Catholics: PSOE: [+ catholics_psoe_display +]%, AR: [+ catholics_ar_display +]%, PRRS: [+ catholics_prrs_display +]%, Other Left Rep: [+ catholics_other_left_republicans_display +]%, PRR: [+ catholics_prr_display +]%, DLR: [+ catholics_dlr_display +]%, Other Right Rep: [+ catholics_other_right_republicans_display +]%, Regionalists: [+ catholics_regionalists_display +]%, PCE: [+ catholics_pce_display +]%, Agrarios: [+ catholics_agrarios_display +]%, AP: [+ catholics_ap_display +]%, Monarchists: [+ catholics_other_monarchists_display +]%, JONS: [+ catholics_jons_display +]%
 
-Support for the Republic: [+ pro_republic_disp +]%
+Support for the REPUBLIC: [+ pro_republic_disp +]%
