@@ -29,7 +29,7 @@ title: Workers' General Union coordination
 subtitle: Transfers funds from the PSOE to the UGT.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; Q.resources -= 1; Q.ugt_resources = 1;
+on-arrival: advisor_action_timer = 6; Q.resources -= 1; Q.ugt_resources += 1;
 
 We have transfered funds from the PSOE to the UGT.
 
