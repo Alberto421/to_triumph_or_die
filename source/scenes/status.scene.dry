@@ -75,81 +75,87 @@ Economic growth: [+ economic_growth_2 +]%
 = Inter-party Relations
 
 
-{!<span class="tooltip-text" title="Center Party">Z</span>!}: [+ z_relation : relationships +]
+{!<span class="tooltip-text" title="Radical Socialist Republican Party">PRRS</span>!}: [+ prrs_relation : relationships +]
 
-{!<span class="tooltip-text" title="German Democratic Party">!}[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_relation : relationships +]
+{!<span class="tooltip-text" title="Republican Action">!}[? if not ar_name: AR?][? if ar_name != 0 : [+ ar_name +]?]{!</span>!}: [+ ar_relation : relationships +] // Mirar esto porque igual para la CEDA tambien, tengo que ver como funciona
 
-{!<span class="tooltip-text" title="German People's Party">DVP</span>!}: [+ dvp_relation : relationships +]
+{!<span class="tooltip-text" title="Other Left Republicans">Other Left Rep.</span>!}: [+ other_left_republicans_relation : relationships +]
+
+{!<span class="tooltip-text" title="Liberal Republican Right">DLR</span>!}: [+ dlr_relation : relationships +]
+
+{!<span class="tooltip-text" title="Other Right Republicans">Other Right Rep.</span>!}: [+ other_right_republicans_relation : relationships +]
 
 {!<span class="tooltip-text" title="Communist Party of Germany">PCE</span>!}: [+ pce_relation : relationships +]
 
-{!<span class="tooltip-text" title="German National People's Party">DNVP</span>!}: [+ dnvp_relation : relationships +]
+{!<span class="tooltip-text" title="Agrarian Party">Agrarian</span>!}: [+ agrarios_relation : relationships +]
 
-{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)">NSDAP</span>!}: [+ nsdap_relation : relationships +]
+{!<span class="tooltip-text" title="Popular Action">AP</span>!}: [+ ap_relation : relationships +]
+
+{!<span class="tooltip-text" title="Other Monarchists">Monarchists.</span>!}: [+ other_monarchists_relation : relationships +]
+
+{!<span class="tooltip-text" title="National-Syndicalist Offensive Juntas">JONS</span>!}: [+ jons_relation : relationships +]
+
+{!<span class="tooltip-text" title="Regionalist Parties">Regionalists</span>!}: [+ regionalists_relation : relationships +]
 
 = Internal Factions of the PSOE
 
-{!<span class="tooltip-text" title="The Left is interested in radical, transformative policies and cooperation with the PCE.">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
+{!<span class="tooltip-text" title="The Caballeristas are interested in radical, transformative policies, union mobilization and cooperation with the PCE.">Caballeristas</span>!} strength: [+ caballeristas_strength : strength +], dissent: [+ caballeristas_dissent : dissent +]
 
-{!<span class="tooltip-text" title="The Center is a faction of Center Marxists, between reform and revolution.">Center</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +]
+{!<span class="tooltip-text" title="The Prietistas are pragmatic Center Marxists, they support the democratic Republic and coalitions with Left Republicans.">Prietistas</span>!} strength: [+ prietistas_strength : strength +], dissent: [+ prietistas_dissent : dissent +]
 
-{!<span class="tooltip-text" title="Labor's goal is economic reform and benefits for organized workers.">Labor</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +]
-
-{!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">Reformist</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
-
-[? if neorevisionism > 0 : Neorevisionist strength: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?]
+{!<span class="tooltip-text" title="The Besteiristas are focused on peaceful democratic consolidation, institutional work and trade union development in order to expand the welfare state and defend the democratic Republic.">Besteiristas</span>!} strength: [+ besteiristas_strength : strength +], dissent: [+ besteiristas_dissent : dissent +]
 
 
 @paramilitaries
 on-arrival: {!
-if (Q.rb_strength) {
-    Q.rb_strength_2 = Q.rb_strength.toFixed(1);
+if (Q.js_strength) {
+    Q.js_strength_2 = Q.js_strength.toFixed(1);
 }
-if (Q.rfb_strength) {
-    Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
+if (Q.mc_strength) {
+    Q.mc_strength_2 = Q.mc_strength.toFixed(1);
 }
-if (Q.sh_strength) {
-    Q.sh_strength_2 = Q.sh_strength.toFixed(1);
+if (Q.ma_strength) {
+    Q.ma_strength_2 = Q.ma_strength.toFixed(1);
 }
-if (Q.sa_strength) {
-    Q.sa_strength_2 = Q.sa_strength.toFixed(1);
+if (Q.mf_strength) {
+    Q.mf_strength_2 = Q.mf_strength.toFixed(1);
 }
 !}
 
 = Paramilitaries
 
-{!<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the PSOE.">Reichsbanner</span>!} Strength: [+ rb_strength_2 +] thousand
+{!<span class="tooltip-text" title="The Juventudes Socialistas is is the youth organisation of the PSOE.">Socialist Youths</span>!} Strength: [+ js_strength_2 +] thousand
 
-Reichsbanner Militarization: [+ rb_militancy : militancy +]
+Juventudes Socialistas Militarization: [+ js_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the PCE.">RFB</span>!} Strength: [+ rfb_strength_2 +] thousand
+{!<span class="tooltip-text" title="The Milicias Comunistas are the paramilitary group of the PCE.">Milicia Comunista</span>!} Strength: [+ mc_strength_2 +] thousand
 
-RFB Militarization: [+ rfb_militancy : militancy +]
+Milicias Comunistas Militarization: [+ mc_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the DNVP.">Stahlhelm</span>!} Strength: [+ sh_strength_2 +] thousand
+{!<span class="tooltip-text" title="The Milicias Anarquistas are the paramilitary group of the CNT.">Milicia Anarquista</span>!} Strength: [+ ma_strength_2 +] thousand
 
-Stahlhelm Militarization: [+ sh_militancy : militancy +]
+Milicias Anarquistas Militarization: [+ ma_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary.">SA</span>!} Strength: [+ sa_strength_2 +] thousand
+{!<span class="tooltip-text" title="The Milicias Falangistas are the falangists paramilitary.">Milicias Falangistas</span>!} Strength: [+ mf_strength_2 +] thousand
 
-SA Militarization: [+ sa_militancy : militancy +]
+Milicias Falangistas Militarization: [+ mf_militancy : militancy +]
 
 = Official military/paramilitaries
 
-Reichswehr: [+ reichswehr_strength +] thousand troops.
+Ejercito: [+ ejercito_strength +] thousand troops.
 
-Reichswehr Loyalty: [+ reichswehr_loyalty : loyalty +]
+Ejercito Loyalty: [+ ejercito_loyalty : loyalty +]
 
-Prussian police: [+ prussian_police_strength +] thousand members.
+Guardia de Asalto: [+ guardia_asalto_strength +] thousand members.
 
-Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
+Guardia de Asaltoy: [+ guardia_asalto_loyalty : loyalty +]
 
-[? if psoe_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
+[? if psoe_in_government : Guardia Civil loyalty: [+ guardia_civil_loyalty : loyalty +] ?]
 
 @polls
 on-arrival: {!
 Q.pro_republic_disp = Math.round(Q.pro_republic);
-Q.nationalism_disp = Math.round(Q.nationalism);
+Q.polarization_disp = Math.round(Q.polarization);
 Q.socialism_disp = Math.round(Q.socialism);
 !}
 
@@ -159,34 +165,44 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 PSOE: [+ psoe_votes +]%
 
-[? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
-
-Z + BVP: [+ z_votes +]%
+PRRS: [+ prrs_votes +]%
 
 PCE: [+ pce_votes +]%
 
-[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
+[? if not ar_name: AR?][? if ar_name != 0 : [+ ar_name +]?]: [+ ar_votes +]%
 
-DVP: [+ dvp_votes +]%
+Other Left Republicans: [+ other_left_republicans_votes +]%
 
-DNVP: [+ dnvp_votes +]%
+PRR: [+ prr_votes +]%
 
-NSDAP: [+ nsdap_votes +]%
+DLR: [+ dlr_votes +]%
 
-Others: [+ other_votes +]%
+Other Right Republicans: [+ other_right_republicans_votes +]%
+
+Regionalists: [+ regionalists_votes +]%
+
+Agrarios: [+ agrarios_votes +]%
+
+AP: [+ ap_votes +]%
+
+Monarchists: [+ other_monarchists_votes +]%
+
+JONS: [+ jons_votes +]%
 
 **Detailed results for each demographic**
 
-Workers: PSOE: [+ workers_psoe_display +]%, Z: [+ workers_z_display +]%, PCE: [+ workers_pce_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ workers_ddp_display +]%, DVP: [+ workers_dvp_display +]%; DNVP: [+ workers_dnvp_display +]%, NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Workers: PSOE: [+ workers_psoe_display +]%, AR: [+ workers_ar_display +]%, PRRS: [+ workers_prrs_display +]%, Other Left Rep: [+ workers_other_left_republicans_display +]%, PRR: [+ workers_prr_display +]%, DLR: [+ workers_dlr_display +]%, Other Right Rep: [+ workers_other_right_republicans_display +]%, Regionalists: [+ workers_regionalists_display +]%, PCE: [+ workers_pce_display +]%, Agrarios: [+ workers_agrarios_display +]%, AP: [+ workers_ap_display +]%, Monarchists: [+ workers_other_monarchists_display +]%, JONS: [+ workers_jons_display +]%
 
-New Middle Class: PSOE: [+ new_middle_psoe_display +]%, Z: [+ new_middle_z_display +]%, PCE: [+ new_middle_pce_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ new_middle_ddp_display +]%, DVP: [+ new_middle_dvp_display +]%; DNVP: [+ new_middle_dnvp_display +]%, NSDAP: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+Middle Class: PSOE: [+ middle_psoe_display +]%, AR: [+ middle_ar_display +]%, PRRS: [+ middle_prrs_display +]%, Other Left Rep: [+ middle_other_left_republicans_display +]%, PRR: [+ middle_prr_display +]%, DLR: [+ middle_dlr_display +]%, Other Right Rep: [+ middle_other_right_republicans_display +]%, Regionalists: [+ middle_regionalists_display +]%, PCE: [+ middle_pce_display +]%, Agrarios: [+ middle_agrarios_display +]%, AP: [+ middle_ap_display +]%, Monarchists: [+ middle_other_monarchists_display +]%, JONS: [+ middle_jons_display +]%
 
-Old Middle Class: PSOE: [+ old_middle_psoe_display +]%, Z: [+ old_middle_z_display +]%, PCE: [+ old_middle_pce_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ old_middle_ddp_display +]%, DVP: [+ old_middle_dvp_display +]%; DNVP: [+ old_middle_dnvp_display +]%, NSDAP: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Smallholders: PSOE: [+ smallholders_psoe_display +]%, AR: [+ smallholders_ar_display +]%, PRRS: [+ smallholders_prrs_display +]%, Other Left Rep: [+ smallholders_other_left_republicans_display +]%, PRR: [+ smallholders_prr_display +]%, DLR: [+ smallholders_dlr_display +]%, Other Right Rep: [+ smallholders_other_right_republicans_display +]%, Regionalists: [+ smallholders_regionalists_display +]%, PCE: [+ smallholders_pce_display +]%, Agrarios: [+ smallholders_agrarios_display +]%, AP: [+ smallholders_ap_display +]%, Monarchists: [+ smallholders_other_monarchists_display +]%, JONS: [+ smallholders_jons_display +]%
 
-Rural: PSOE: [+ rural_psoe_display +]%, Z: [+ rural_z_display +]%, PCE: [+ rural_pce_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ rural_ddp_display +]%, DVP: [+ rural_dvp_display +]%; DNVP: [+ rural_dnvp_display +]%, NSDAP: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Elites: PSOE: [+ elites_psoe_display +]%, AR: [+ elites_ar_display +]%, PRRS: [+ elites_prrs_display +]%, Other Left Rep: [+ elites_other_left_republicans_display +]%, PRR: [+ elites_prr_display +]%, DLR: [+ elites_dlr_display +]%, Other Right Rep: [+ elites_other_right_republicans_display +]%, Regionalists: [+ elites_regionalists_display +]%, PCE: [+ elites_pce_display +]%, Agrarios: [+ elites_agrarios_display +]%, AP: [+ elites_ap_display +]%, Monarchists: [+ elites_other_monarchists_display +]%, JONS: [+ elites_jons_display +]%
 
-Unemployed: PSOE: [+ unemployed_psoe_display +]%, Z: [+ unemployed_z_display +]%, PCE: [+ unemployed_pce_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, DVP: [+ unemployed_dvp_display +]%; DNVP: [+ unemployed_dnvp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Rural Laborers: PSOE: [+ rural_psoe_display +]%, AR: [+ rural_ar_display +]%, PRRS: [+ rural_prrs_display +]%, Other Left Rep: [+ rural_other_left_republicans_display +]%, PRR: [+ rural_prr_display +]%, DLR: [+ rural_dlr_display +]%, Other Right Rep: [+ rural_other_right_republicans_display +]%, Regionalists: [+ rural_regionalists_display +]%, PCE: [+ rural_pce_display +]%, Agrarios: [+ rural_agrarios_display +]%, AP: [+ rural_ap_display +]%, Monarchists: [+ rural_other_monarchists_display +]%, JONS: [+ rural_jons_display +]%
 
-Catholics: PSOE: [+ catholics_psoe_display +]%, Z: [+ catholics_z_display +]%, PCE: [+ catholics_pce_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Unemployed: PSOE: [+ unemployed_psoe_display +]%, AR: [+ unemployed_ar_display +]%, PRRS: [+ unemployed_prrs_display +]%, Other Left Rep: [+ unemployed_other_left_republicans_display +]%, PRR: [+ unemployed_prr_display +]%, DLR: [+ unemployed_dlr_display +]%, Other Right Rep: [+ unemployed_other_right_republicans_display +]%, Regionalists: [+ unemployed_regionalists_display +]%, PCE: [+ unemployed_pce_display +]%, Agrarios: [+ unemployed_agrarios_display +]%, AP: [+ unemployed_ap_display +]%, Monarchists: [+ unemployed_other_monarchists_display +]%, JONS: [+ unemployed_jons_display +]%
+
+Catholics: PSOE: [+ catholics_psoe_display +]%, AR: [+ catholics_ar_display +]%, PRRS: [+ catholics_prrs_display +]%, Other Left Rep: [+ catholics_other_left_republicans_display +]%, PRR: [+ catholics_prr_display +]%, DLR: [+ catholics_dlr_display +]%, Other Right Rep: [+ catholics_other_right_republicans_display +]%, Regionalists: [+ catholics_regionalists_display +]%, PCE: [+ catholics_pce_display +]%, Agrarios: [+ catholics_agrarios_display +]%, AP: [+ catholics_ap_display +]%, Monarchists: [+ catholics_other_monarchists_display +]%, JONS: [+ catholics_jons_display +]%
 
 Support for the Republic: [+ pro_republic_disp +]%
