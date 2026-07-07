@@ -1,0 +1,52 @@
+title: Julian Besteiro
+is-pinned-card: true
+tags: advisor, besteiristas
+card-image: img/portraits/besteiro.jpg
+view-if: besteiro_advisor = 1
+new-page: true 
+
+= Julian Besteiro
+
+Besteiro is a prominent professor, leader of the reformist wing of the PSOE and president of the UGT Union.
+
+- @white_collar
+- @union_unity
+- @coalition_rsc
+- @coalition_lrc
+- @root: Return to main
+
+@white_collar
+title: Organizing white-collar workers
+subtitle: Improve our standing among the middle class.
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
+on-arrival: advisor_action_timer = 6; middle_psoe += 6*(1-dissent);
+
+We have increased our organizing among white-collar workers.
+
+@ugt_president
+title: Workers' General Union coordination
+subtitle: Transfers funds from the PSOE to the UGT.
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; Q.resources -= 1; Q.ugt_resources = 1;
+
+We have transfered funds from the PSOE to the UGT.
+
+@coalition_rsc
+title: Negotiating with the Republican Socialist Conjunction
+subtitle: Besteiro can improve our relationships with our coalition partners.
+choose-if: advisor_action_timer <= 0 and in_republican_socialist_conjunction = 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psoe_in_government: The PSOE is not in government. ?]
+on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if psoe_in_government = 1 and coalition_dissent > 0; ar_relation += 5; prr_relation += 5; prrs_relation += 5; regionalists_relation += 5; other_left_republicans_relation += 5; other_right_republicans_relation += 5; dlr_relation += 5
+
+We have improved our relations with the [+ ar_name +], PRR, DLR, various republican and regionalist parties and PRRS, and reduced tensions with the coalition.
+
+@coalition_lrc
+title: Negotiating with the Left Republican Coalition
+subtitle: Besteiro can improve our relationships with our coalition partners.
+choose-if: advisor_action_timer <= 0 and in_left_republican_coalition = 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psoe_in_government: The PSOE is not in government. ?]
+on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if psoe_in_government = 1 and coalition_dissent > 0; ar_relation += 5; other_left_republicans_relation += 5; prrs_relation += 5
+
+We have improved our relations with the [+ ar_name +], DLR, PRRS and various left republican parties, and reduced tensions with the coalition.
