@@ -406,9 +406,9 @@ Q.in_popular_front = 0;
 Q.in_left_front = 0;
 // emergency government appointed by Alcala-Zamora containing the PSOE
 Q.in_emergency_government = 0;
-Q.in_spoe_majority = 0;
+Q.in_psoe_majority = 0;
 Q.republican_socialist_coalition_failed = 0;
-// if the PSOEis ruling as part of a minority government
+// if the PSOE is ruling as part of a minority government
 Q.in_minority_government = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the burguois parties.
