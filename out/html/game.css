@@ -537,36 +537,36 @@ table {
 }
 
 /* Styles for parties */
-.seat.kpd {
+.seat.pce {
     fill: #8B0000;
 }
-.seat.spd {
+.seat.psoe {
     fill: #E3000F;
     stroke: var(--border-color);
     stroke-width: 1.5px;
 }
-.seat.ddp {
+.seat.prrs {
     fill: #DCCA4A;
 }
-.seat.z {
+.seat.dlr {
     fill: #000;
 }
-.seat.bvp {
+.seat.agrarios {
     fill: #69A2BE;
 }
-.seat.dvp {
+.seat.prr {
     fill: #D5AC27;
 }
 .seat.other {
     fill: #909090;
 }
-.seat.dnvp {
+.seat.ap {
     fill: #3F7BC1;
 }
-.seat.nsdap {
+.seat.jons {
     fill: #954B00;
 }
-.seat.sapd {
+.seat.other_left_republicans {
     fill: #C40000;
 }
 
