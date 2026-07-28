@@ -17,12 +17,13 @@ Largo Caballero is the leader of the UGT trade union and the figurehead of the s
 - @root: Return to main
 
 @organize_workers
-title: International Party Relations
-subtitle: Breitscheid is one of our contacts with international socialist parties.
+title: UGT Mass Mobilization
+subtitle: Strengthen union organization in factories and workplaces.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer == 0
-on-arrival: advisor_action_timer = 6; international_relations_timer -= 12; last_advisor_action = 1
-go-to: international_relations
+on-arrival: advisor_action_timer = 6; workers_spd +=5; radicalization +=1; middle_psoe -= 2
+
+We launch an aggressive membership drive and organizational campaign through the UGT. Working-class loyalty to the party grows significantly, though middle-class voters grow nervous over rising trade union power.
 
 @land_reform
 title: Land Reform
