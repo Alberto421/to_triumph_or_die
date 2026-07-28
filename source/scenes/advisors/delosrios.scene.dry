@@ -25,7 +25,7 @@ on-arrival: advisor_action_timer = 6; rural_psoe += 4; smallholders_psoe += 4; c
 We send travelling libraries, theatrical troupes, and educational films to isolated rural communities. This cultural outreach builds respect for the Republic and the socialist movement without inciting class warfare.
 
 @education_minister_action
-title: [Ministry] Direct Educational Policy
+title: Educational Policy
 subtitle: Use our control of the Education Ministry to build secular schools.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if psoe_in_government = 0 : PSOE not in government: ?] [? if education_minister_party != "PSOE" : The PSOE does not control the education ministry. ?]
 choose-if: advisor_action_timer == 0 and psoe_in_government == 1 and education_minister_party == "PSOE"
