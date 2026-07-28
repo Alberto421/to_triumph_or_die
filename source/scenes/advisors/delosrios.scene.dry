@@ -29,8 +29,8 @@ title: [Ministry] Direct Educational Policy
 subtitle: Use our control of the Education Ministry to build secular schools.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if psoe_in_government = 0 : PSOE not in government: ?] [? if education_minister_party != "PSOE" : The PSOE does not control the education ministry. ?]
 choose-if: advisor_action_timer == 0 and psoe_in_government == 1 and education_minister_party == "PSOE"
-on-arrival: advisor_action_timer = 6; education_policy_timer -= 6; last_advisor_action = 1
-go-to: education_policy
+on-arrival: advisor_action_timer = 6; education_science_timer -= 6; last_advisor_action = 1
+go-to: education_science
 
 @democratic_rally
 title: Rally for democracy
