@@ -19,3 +19,7 @@ besteiro.jpg: Por Agence de presse Meurisse - Bibliothèque nationale de France,
 delosrios.jpg: By Harris & Ewing, photographer - Library of CongressCatalog: https://lccn.loc.gov/2016878638Image download: https://cdn.loc.gov/master/pnp/hec/33900/33935a.tifOriginal url: https://www.loc.gov/pictures/item/2016878638/, Public Domain, https://commons.wikimedia.org/w/index.php?curid=67757849
 
 largo_caballero.jpg: Por Anónimo - [1], Dominio público, https://commons.wikimedia.org/w/index.php?curid=122720226
+
+nelken.jpg: Por Desconocido - Este archivo procede de la hemeroteca digital de la Biblioteca Nacional de España, y está disponible en línea con el identificador:924d31e8-f355-47c2-83f7-4f7b9ce1bacd, Dominio público, https://commons.wikimedia.org/w/index.php?curid=146915113
+
+negrin.png: Por Desconocido - Канторович А. (сост.) Чапаев. Батальон двадцати одной национальности. М.: Художественная литература, 1939., Dominio público, https://commons.wikimedia.org/w/index.php?curid=59286283
