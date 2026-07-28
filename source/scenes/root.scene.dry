@@ -522,7 +522,7 @@ Q.timers = ['advisor_action', 'confronting_right', 'crisis_program',
             'moroccan_affairs', 'womens_rights', 'economic_democracy', 'agrarian_reform',
             'dealing_with_toleration',
             'constitutional_reform', 'labor_rights',
-            'education', 'education_science', 'curriculum',
+            'education_policy', 'education_science', 'curriculum',
             // events
             'emergency_cuts', 'unemployment_insurance',
             'fe_ban', 'cnt_ban', 'pce_ban', 'sanjurjada',
@@ -582,7 +582,7 @@ Q.agrarian_reform_timer = 0;
 Q.dealing_with_toleration_timer = 0;
 Q.constitutional_reform_timer = 0;
 Q.labor_rights_timer = 0;
-Q.education_timer = 0;
+Q.education_policy_timer = 0;
 Q.education_science_timer = 0;
 Q.curriculum_timer = 0;
 
