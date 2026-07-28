@@ -518,9 +518,9 @@ Q.timers = ['advisor_action', 'confronting_right', 'crisis_program',
             'agricultural_policy', 'domestic_enemies', 'fiscal_policy',
             'foreign_policy', 'judiciary', 'labor_affairs', 'military_policy',
             'police', 'regional_statutes', 'shuffle_cabinet', 'social_welfare',
-            'laicism_policy', 'economic_policy', 'coalition_affairs',
-            'moroccan_affairs', 'womens_rights', 'economic_democracy', 'agrarian_reform',
-            'dealing_with_toleration', 'constitutional_reform', 'labor_rights', 'education_science', 'curriculum',
+            'economic_policy', 'coalition_affairs', 'moroccan_affairs', 
+            'womens_rights', 'economic_democracy', 'dealing_with_toleration', 
+            'constitutional_reform', 'labor_rights', 'education_science', 'curriculum',
             // events
             'emergency_cuts', 'unemployment_insurance',
             'fe_ban', 'cnt_ban', 'pce_ban', 'sanjurjada',
@@ -571,12 +571,10 @@ Q.police_timer = 0;
 Q.regional_statutes_timer = 0;
 Q.shuffle_cabinet_timer = 0;
 Q.social_welfare_timer = 0;
-Q.laicism_policy_timer = 0;
 Q.womens_rights_timer = 0;
 Q.economic_democracy_timer = 0;
 Q.coalition_affairs_timer = 0;
 Q.moroccan_affairs_timer = 0;
-Q.agrarian_reform_timer = 0;
 Q.dealing_with_toleration_timer = 0;
 Q.constitutional_reform_timer = 0;
 Q.labor_rights_timer = 0;
@@ -603,11 +601,11 @@ Q.delosrios_advisor = 1;
 
 // Prietistas
 Q.prieto_advisor = 1;
-Q.negrin_advisor = 0;
+Q.negrin_advisor = 1;
 
 // Caballeristas
 Q.largo_caballero_advisor = 1;
-Q.nelken_advisor = 0;
+Q.nelken_advisor = 1;
 !}
 set-bg: img/fondo_manifa.jpg
 new-page: true
