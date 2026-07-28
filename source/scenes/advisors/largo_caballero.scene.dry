@@ -1,21 +1,22 @@
-title: Rudolf Breitscheid
+title: Francisco Largo Caballero
 is-pinned-card: true 
-tags: advisor, centrist
-card-image: img/portraits/BreitscheidRudolf.jpg
+tags: advisor, caballeristas
+card-image: img/portraits/largo_caballero.jpg
 new-page: true
-view-if: breitscheid_advisor = 1
+view-if: largo_caballero_advisor = 1
 
-= Rudolf Breitscheid
+= Francisco Largo Caballero
 
-Breitscheid is a long-time SPD leader, who was at one time part of the anti-war USPD. He came from a working-class family, but has a doctorate degree and started his political career as a liberal.
+Largo Caballero is the leader of the UGT trade union and the figurehead of the socialist left.
 
-- @breitscheid_international
-- @breitscheid_foreign
-- @party_discipline
-- @snap_election
+- @organize_workers
+- @land_reform
+- @labor_minister_action
+- @building_the_left
+- @pce_cooperation
 - @root: Return to main
 
-@breitscheid_international
+@organize_workers
 title: International Party Relations
 subtitle: Breitscheid is one of our contacts with international socialist parties.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
@@ -23,30 +24,36 @@ choose-if: advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6; international_relations_timer -= 12; last_advisor_action = 1
 go-to: international_relations
 
-@breitscheid_foreign
-title: Foreign Policy
-subtitle: As Foreign Minister, Breitscheid can set our foreign policy.
-unavailable-subtitle: [? if not spd_in_government: The SPD is not in government. ?] [? if foreign_minister_party != "SPD" : The SPD does not control the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer == 0 and spd_in_government and foreign_minister_party == "SPD"
-on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 8; last_advisor_action = 1
-go-to: foreign_policy
+@land_reform
+title: Land Reform
+subtitle: Use our control of the Agriculture Ministry to push the agrarian reforms.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if psoe_in_government = 0 : PSOE not in government: ?] [? if agricultural_minister_party != "PSOE" : The PSOE does not control the agricultural ministry. ?]
+choose-if: advisor_action_timer == 0 and psoe_in_government == 1 and education_minister_party == "PSOE"
+on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advisor_action = 1
+go-to: agricultural_policy
 
+@labor_minister_action
+title: Labor Policy
+subtitle: Use our control of the Labor Ministry to improve the conditions of our workers.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if psoe_in_government = 0 : PSOE not in government: ?] [? if labor_minister_party != "PSOE" : The PSOE does not control the labor ministry. ?]
+choose-if: advisor_action_timer == 0 and psoe_in_government == 1 and education_minister_party == "PSOE"
+on-arrival: advisor_action_timer = 6; labor_rights_timer -= 6; last_advisor_action = 1
+go-to: labor_rights
 
-@party_discipline
-title: Party Discipline
-subtitle: Reduce dissent across the party.
-choose-if: advisor_action_timer = 0
+@building_the_left
+title: Building the Left
+subtitle: Push the PSOE to the left.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; center_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
+choose-if: advisor_action_timer = 0
+on-arrival: advisor_action_timer = 6; caballeristas_strength += 10; caballeristas_dissent -= 8; besteiristas_dissent += 5; prietistas_dissent += 3
 
-We have enforced party discipline to reduce dissent across all factions.
+We have increased the strength of the left faction within the PSOE. This raised concern among the moderate reformists in the party.
 
+@pce_cooperation
+title: Cooperation with the PCE
+subtitle: Any cooperation between the parties requires compromise from the PCE as well as the PSOE.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer = 0
+on-arrival: advisor_action_timer = 6; caballeristas_strength += 5; pce_relation += 6*(1-dissent); besteiristas_dissent += 3; communist_coalition += 1 if pce_cooperation_seen <= 1; pce_cooperation_seen += 1
 
-@snap_election
-title: Snap Election
-subtitle: Call a snap election.
-unavailable-subtitle: [? if chancellor != "Breitscheid" : Breitscheid must be Chancellor. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer == 0 and chancellor == "Breitscheid"
-on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
-
-We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
+Largo Caballero attempts to reach out to the PCE to work on commmon goals. 
