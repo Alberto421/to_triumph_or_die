@@ -1,51 +1,51 @@
-title: Siegfried Aufhäuser
+title: Fernando de los Rios
 is-pinned-card: true
-tags: advisor, reformist
-card-image: img/portraits/AufhäuserSiegfried.jpg
-view-if: aufhauser_advisor = 1
+tags: advisor, besteiristas
+card-image: img/portraits/delosrios.jpg
+view-if: delosrios_advisor = 1
 new-page: true 
 
-= Siegfried Aufhäuser
+= Fernando de los Rios
 
-Aufhäuser is a leader of the AfA-Bund, the federation of socialist white-collar trade unions.
+Fernando de los Rios is a law professor, humanist and one of the most respected moral figures of democratic socialism. He advocates for republican education as the true driver of social transformation.
 
-- @white_collar
-- @union_unity
-- @crisis
-- @moderate_economic_plan
+- @misiones_pedagogicas
+- @education_minister_action
+- @democratic_rally
+- @constitutional_defense
 - @root: Return to main
 
-@white_collar
-title: Organizing white-collar workers
-subtitle: Improve our standing among the new middle class.
-choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
-on-arrival: advisor_action_timer = 6; new_middle_spd += 6*(1-dissent);
-
-We have increased our organizing among white-collar workers.
-
-@union_unity
-title: Union-party coordination
-subtitle: Reduce dissent among the unions.
-choose-if: advisor_action_timer <= 0
+@misiones_pedagogicas
+title: Pedagogical Missions
+subtitle: Bring culture, books, and cinema to rural villages with the help of republican intellectuals.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; labor_dissent -= 10;
+choose-if: advisor_action_timer == 0
+on-arrival: advisor_action_timer = 6; rural_psoe += 4; smallholders_psoe += 4; catholics_psoe += 2; pro_republic += 2; education_rural_schools += 1
 
-We have reduced tensions with the Labor faction.
+We send travelling libraries, theatrical troupes, and educational films to isolated rural communities. This cultural outreach builds respect for the Republic and the socialist movement without inciting class warfare.
 
-@crisis
-title: Addressing the economic crisis
-subtitle: Aufhäuser can help support a left-wing economic program.
-choose-if: advisor_action_timer <= 0 and nationalization_adopted == 0 and black_thursday_seen == 1 and nationalization_support <= 3
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if nationalization_adopted > 0 : We have already adopted the Left plan. ?]
-on-arrival: advisor_action_timer = 6; 
-go-to: crisis_program.support_left 
+@education_minister_action
+title: [Ministry] Direct Educational Policy
+subtitle: Use our control of the Education Ministry to build secular schools.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if psoe_in_government = 0 : PSOE not in government: ?] [? if education_minister_party != "PSOE" : The PSOE does not control the education ministry. ?]
+choose-if: advisor_action_timer == 0 and psoe_in_government == 1 and education_minister_party == "PSOE"
+on-arrival: advisor_action_timer = 6; education_policy_timer -= 6; last_advisor_action = 1
+go-to: education_policy
 
-@moderate_economic_plan
-title: Support the reformist economic plan
-subtitle: Aufhäuser can also support a moderate economic plan.
-choose-if: advisor_action_timer = 0 and moderate_plan_adopted = 0 and black_thursday_seen = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if moderate_economic_plan = 0 : We have already adopted the reformist economic plan. ?] [? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?]
-on-arrival: advisor_action_timer = 6
-go-to: crisis_program.support_moderate
+@democratic_rally
+title: Rally for democracy
+subtitle: Rally our party and the Spanish people to defend democracy and freedom.
+choose-if: advisor_action_timer == 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; pro_republic += 5; democratization += 1; besteiristas_strength += 5; prietistas_strength += 3; workers_psoe += 4*(1-dissent) if democratization >= 2; middle_psoe += 3*(1-dissent) if democratization >= 3
 
+De los Rios helps us to rally the people in defense of democracy.
+
+@constitutional_defense
+title: Constitutional Defense
+subtitle: Reduce political tension through dialogue with moderate politicians.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if radicalization > 4 : The PSOE contributes too much to the polarization to be credible: ?]
+choose-if: advisor_action_timer == 0 and radicalization < 5
+on-arrival: advisor_action_timer = 6; polarization -= 4
+
+Leveraging his immense personal prestige, De los Rios acts as a diplomatic bridge between the left and middle-class republicans, lowering polarization and stabilizing the regime.
