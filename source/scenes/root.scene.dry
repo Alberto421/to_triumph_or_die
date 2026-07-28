@@ -602,11 +602,10 @@ Q.anarchist_uprising_timer = 0;
 // Advisors
 // Besteiristas
 Q.besteiro_advisor = 1;
-Q.saborit_advisor = 0;
+Q.delosrios_advisor = 1;
 
 // Prietistas
 Q.prieto_advisor = 1;
-Q.de_los_rios_advisor = 0;
 Q.negrin_advisor = 0;
 
 // Caballeristas
