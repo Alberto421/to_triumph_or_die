@@ -1,39 +1,41 @@
-title: Anna Siemsen
+title: Margarita Nelken
 is-pinned-card: true
-tags: advisor, left
-card-image: img/portraits/SiemsenAnna.jpg
-view-if: siemsen_advisor = 1
+tags: advisor, caballeristas
+card-image: img/portraits/nelken.jpg
+view-if: nelken_advisor = 1
 new-page: true 
 
-= Anna Siemsen
+= Margarita Nelken
 
-Anna Siemsen is an educational reform advocate and pacifist, who was one of the few German women to receive a PhD in the pre-war period. She was a former member of the USPD.
+Margarita Nelken is an art critic, writer, and one of the first female deputies elected.
 
-- @campaign_pacifism
+- @womens_rights_
+- @organizing_women
 - @structure_
-- @curriculum_
 - @root: Return to main
 
-@campaign_pacifism
-title: Rally for pacifism.
-subtitle: Campaign for internationalism and against militarism.
+@womens_rights_
+title: Women's rights
+subtitle: Enact policy with regards to women's rights.
+choose-if: advisor_action_timer = 0 and psoe_in_government
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psoe_in_government : The PSOE is not currently in government. ?]
+on-arrival: advisor_action_timer = 6; womens_rights_timer -= 10; last_advisor_action = 1
+go-to: womens_rights
+
+@organizing_women
+title: Organizing women
+subtitle: Focus the sindical efforts on women.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6;
-go-to: rally.pacifism
+on-arrival: womens_rights += 1; workers_spd += 4*(1-dissent); rural_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent); advisor_action_timer = 6
 
+By focusing on working-class mothers, maternity insurance, and workplace nurseries, Nelken cements the loyalty of female industrial and agricultural workers to the socialist movement.
 
-@curriculum_
-title: Change the educational curriculum.
-choose-if: advisor_action_timer = 0 and spd_in_government and chancellor_party = "SPD" and spd_prussia and curriculum_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not currently in government. ?][? if chancellor_party != "SPD": The SPD must control the chancellorship. ?][? if not spd_prussia: The SPD must control the Prussian government. ?][? if curriculum_timer > 0 : It is too early to change the curriculum again. ?]
-on-arrival: advisor_action_timer = 6; last_advisor_action = 1
-go-to: education_science.curriculum
-
+[? if spd_r < 50 : Unfortunately, women still disproportionately support the conservative parties. ?]
 
 @structure_
 title: Change the structure and funding of education.
-choose-if: advisor_action_timer = 0 and spd_in_government and chancellor_party = "SPD" and spd_prussia
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not currently in government. ?][? if chancellor_party != "SPD": The SPD must control the chancellorship. ?][? if not spd_prussia: The SPD must control the Prussian government. ?]
+choose-if: advisor_action_timer = 0 and psoe_in_government and chancellor_party = "PSOE"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The PSOE is not currently in government. ?][? if chancellor_party != "PSOE": The PSOE must control the presidency of the ministers' gabinet. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: education_science.structure
