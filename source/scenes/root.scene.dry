@@ -216,9 +216,6 @@ Q.classes = ['workers', 'middle', 'smallholders', 'elites', 'rural', 'unemployed
 Q.parties = ['psoe', 'ar', 'prrs', 'other_left_republicans', 'prr', 'dlr', 'other_right_republicans', 'regionalists', 'pce','agrarios', 'ap', 'other_monarchists', 'jons'];
 
 // TODO: add new parties later on
-Q.ceda_formed = 0;
-Q.fe_formed = 0; // Falange Espanola
-Q.ir_formed = 0; // Izquierda republicana
 Q.ur_formed = 0; // Union Republicana
 Q.poum_formed = 0; //Trotskysts
 
@@ -353,12 +350,6 @@ Q.old_other_monarchists_r = 2;
 Q.old_jons_r = 0;
 
 // Future dynamic party representations for new factions / split-offs (Initialized at 0)
-Q.ceda_r = 0;
-Q.old_ceda_r = 0;
-Q.falange_r = 0;
-Q.old_falange_r = 0;
-Q.izquierda_republicana_r = 0;
-Q.old_izquierda_republicana_r = 0;
 Q.union_republicana_r = 0;
 Q.old_union_republicana_r = 0;
 Q.poum_r = 0;
@@ -367,6 +358,7 @@ Q.old_poum_r = 0;
 // Party evolution name flags
 Q.ar_name = "AR"; // Changes later to IR after mergers
 Q.ap_name = "AP"; // Changes to CEDA when formed
+Q.jons_name = "JONS"; // Changes to FE when formed
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
