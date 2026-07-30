@@ -296,29 +296,29 @@ go-to: coalition_menu
 
 [? if poum_formed : {!<tr><td><div class="box" style='background-color:#A30000'> </div> !}POUM: {!</td><td>!} [+ poum_r +]% {!</td><td>!} [+ str_change_poum +] {!</td></tr>!} ?]
 
-[? if ur_formed : {!<tr><td><div class="box" style='background-color:#F5D033'> </div> !}UR: {!</td><td>!} [+ ur_r +]% {!</td><td>!} [+ str_change_ur +] {!</td></tr>!} ?]
+[? if ur_formed : {!<tr><td><div class="box" style='background-color:#9f7c60'> </div> !}UR: {!</td><td>!} [+ ur_r +]% {!</td><td>!} [+ str_change_ur +] {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}PCE: {!</td><td>!} [+ pce_r +]% {!</td><td>!} [+ str_change_pce +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div> !} [+ ar_name +]: {!</td><td>!} [+ ar_r +]% {!</td><td>!} [+ str_change_ar +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#e31cb9'> </div> !} [+ ar_name +]: {!</td><td>!} [+ ar_r +]% {!</td><td>!} [+ str_change_ar +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#E6C200'> </div> !} PRRS: {!</td><td>!} [+ prrs_r +]% {!</td><td>!} [+ str_change_prrs +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#fa9105'> </div> !} PRRS: {!</td><td>!} [+ prrs_r +]% {!</td><td>!} [+ str_change_prrs +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#C2B280'> </div> !} Other Left Republicans: {!</td><td>!} [+ other_left_republicans_r +]% {!</td><td>!} [+ str_change_other_left_republicans +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} PRR (Radicals): {!</td><td>!} [+ prr_r +]% {!</td><td>!} [+ str_change_prr +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} PRR: {!</td><td>!} [+ prr_r +]% {!</td><td>!} [+ str_change_prr +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#998033'> </div> !} DLR (Derecha Republicana): {!</td><td>!} [+ dlr_r +]% {!</td><td>!} [+ str_change_dlr +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#998033'> </div> !} DLR: {!</td><td>!} [+ dlr_r +]% {!</td><td>!} [+ str_change_dlr +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#A0A0A0'> </div> !} Other Right Republicans: {!</td><td>!} [+ other_right_republicans_r +]% {!</td><td>!} [+ str_change_other_right_republicans +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#7B68EE'> </div> !} Regionalists (Lliga/PNV/ERC): {!</td><td>!} [+ regionalists_r +]% {!</td><td>!} [+ str_change_regionalists +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#cee817'> </div> !} Regionalists (Lliga/PNV/ERC): {!</td><td>!} [+ regionalists_r +]% {!</td><td>!} [+ str_change_regionalists +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#228B22'> </div> !} Agrarios: {!</td><td>!} [+ agrarios_r +]% {!</td><td>!} [+ str_change_agrarios +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#1E90FF'> </div> !} [+ ap_name +]: {!</td><td>!} [+ ap_r +]% {!</td><td>!} [+ str_change_ap +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#00008B'> </div> !} [+ ap_name +]: {!</td><td>!} [+ ap_r +]% {!</td><td>!} [+ str_change_ap +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#00008B'> </div> !} Monarchists / Traditionalists: {!</td><td>!} [+ other_monarchists_r +]% {!</td><td>!} [+ str_change_other_monarchists +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#000043'> </div> !} Monarchists / Traditionalists: {!</td><td>!} [+ other_monarchists_r +]% {!</td><td>!} [+ str_change_other_monarchists +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#000000'> </div> !} [+ jons_name +]: {!</td><td>!} [+ jons_r +]% {!</td><td>!} [+ str_change_jons +] {!</td></tr>!}
 
