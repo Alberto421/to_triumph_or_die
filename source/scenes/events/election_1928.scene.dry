@@ -107,8 +107,6 @@ Q.left_front = Q.psoe_r + Q.pce_r;
 
 Q.leverage = Q.psoe_r;
 
-
-// IGUAL HAY QUE QUITARLO
 Q.grand_coalition_failed = 0;
 // Reset government and ministers... Based on Brüning's 1930 govt
 Q.coalition_dissent = 0;
