@@ -352,9 +352,6 @@ There are some potential coalition arrangements.
 - @popular_front_coalition
 - @right_coalition
 
-# TODO: black-brown coalition
-
-
 @popular_front_coalition
 title: A new "Popular Front" coalition?
 subtitle: SPD + KPD + Z + [+ ddp_name +]  [? if sapd_formed: + SAPD ?]([+ popular_front_coalition +]%)
