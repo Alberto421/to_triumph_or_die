@@ -103,7 +103,6 @@ Q.left_republican_coalition = Q.psoe_r + Q.ar_r + Q.prrs_r + Q.other_left_republ
 Q.popular_front = Q.psoe_r + Q.ar_r + Q.prrs_r + Q.other_left_republicans_r + Q.pce_r + Q.regionalists_r;
 Q.right_coalition = Q.prr_r + Q.ap_r + Q.agrarios_r + Q.dlr_r + Q.other_right_republicans_r;
 Q.left_front = Q.psoe_r + Q.pce_r;
-!}
 
 Q.leverage = Q.psoe_r;
 
