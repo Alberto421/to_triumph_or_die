@@ -225,19 +225,19 @@ data = data.concat([
         "id": "prr",
         "legend": "PRR",
         "name": "PRR",
-        "seats": Math.round(Q.dvp_r*4.73),
+        "seats": Math.round(Q.prr_r*4.73),
     },
     {
         "id": "other_left_republicans",
         "legend": "Other Left Republicans",
         "name": "Other Left Republicans",
-        "seats": Math.round(Q.other_left_republicans*4.73),
+        "seats": Math.round(Q.other_left_republicans_r*4.73),
     },
     {
         "id": "other_right_republicans",
         "legend": "Other Right Republicans",
         "name": "Other Right Republicans",
-        "seats": Math.round(Q.other_right_republicans*4.73),
+        "seats": Math.round(Q.other_right_republicans_r*4.73),
     },
     {
         "id": "dlr",
@@ -251,7 +251,6 @@ data = data.concat([
         "name": "Other Monarchists",
         "seats": Math.round(Q.other_monarchists_r*4.73),
     },
-
     {
         "id": "regionalists",
         "legend": "Regionalists",
@@ -280,7 +279,7 @@ if (window && d3) {
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#reichstag").datum(data).call(parliament);
+    d3.select("#cortes").datum(data).call(parliament);
 }
 !}
 go-to: coalition_menu
