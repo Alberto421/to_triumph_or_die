@@ -394,7 +394,7 @@ view-if: president == "Azana"
 go-to: popular_front_success
 
 @popular_front_success
-on-arrival: psoe_in_government = 1; in_popular_front = 1; chancellor = "Casares Quiroga"; chancellor_party = [+ ar_name +]; pce_relation += 10; coup_progress += 2; in_left_front = 0; in_republican_socialist_conjunction_coalition = 0; in_left_republican_coalition = 0; in_right_front = 0; coalition_dissent = 0;
+on-arrival: psoe_in_government = 1; in_popular_front = 1; chancellor = "Casares Quiroga"; chancellor_party = ar_name; pce_relation += 10; coup_progress += 2; in_left_front = 0; in_republican_socialist_conjunction_coalition = 0; in_left_republican_coalition = 0; in_right_front = 0; coalition_dissent = 0;
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 achievement: volksfront
 
