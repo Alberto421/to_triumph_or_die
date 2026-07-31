@@ -1238,7 +1238,7 @@ go-to: ministries
 @drop_reichswehr
 title: Drop the War Ministry.
 view-if: reichswehr_minister_party = "PSOE"
-on-arrival: reichswehr_minister_party = [+ ar_name +]; reichswehr_minister = "Azana"; leverage += 15; reichswehr_minister_party = I if in_popular_front; reichswehr_minister = "Hernandez Saravia" if in_popular_front;
+on-arrival: reichswehr_minister_party = ar_name; reichswehr_minister = "Azana"; leverage += 15; reichswehr_minister_party = I if in_popular_front; reichswehr_minister = "Hernandez Saravia" if in_popular_front;
 tags: drop_mins_1928
 go-to: ministries
 
