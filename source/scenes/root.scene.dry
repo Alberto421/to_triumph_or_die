@@ -369,7 +369,7 @@ Q.economic_records = [];
 
 
 // State of the government
-Q.president = "Alcala-Zamora (DLR)"; //Igual tengo que quitar el partido por los parentesis
+Q.president = "Alcala-Zamora"; //Igual tengo que quitar el partido por los parentesis
 // starting chancellor: Alcala-Zamora
 Q.chancellor = "Alcala-Zamora";
 Q.chancellor_party = 'DLR';
