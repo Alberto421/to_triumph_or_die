@@ -29,7 +29,7 @@ Since we are currently ruling as part of an emergency government, we may use qua
 - @election_algorithm: No, let's hold the elections.
 
 @cancel_elections_2
-on-departure: next_election_year = next_election_year + 1; next_election_time = time + 12; pro_republic -= 10; ar_relation -= 8; prr_relation -= 8; dlr_relation -= 8; agrarian_relation -= 8; regionalists_relation -= 8; prrs_relation -= 8; other_left_republicans_relation -= 10; other_right_republicans_relation -= 8; coup_progress += 2; workers_psoe -= 4; middle_psoe -= 5; rural_psoe -= 5; catholics_psoe -= 5; unemployed_psoe -= 5; coup_progress += 2 if ap_normalized >= 0.3; coup_progress += 4 if ap_normalized >= 0.5; mf_strength += 100 if coup_progress >= 7
+on-departure: next_election_year = next_election_year + 1; next_election_time = time + 12; pro_republic -= 10; ar_relation -= 8; prr_relation -= 8; dlr_relation -= 8; agrarios_relation -= 8; regionalists_relation -= 8; prrs_relation -= 8; other_left_republicans_relation -= 10; other_right_republicans_relation -= 8; coup_progress += 2; workers_psoe -= 4; middle_psoe -= 5; rural_psoe -= 5; catholics_psoe -= 5; unemployed_psoe -= 5; coup_progress += 2 if ap_normalized >= 0.3; coup_progress += 4 if ap_normalized >= 0.5; mf_strength += 100 if coup_progress >= 7
 achievement: ausnahmezustand
 
 Fine. President [+ president +] has taken the unprecedented step of canceling these elections. New elections are scheduled for [+ next_election_month : month +] [+ next_election_year +].
@@ -424,40 +424,40 @@ The President manages to diffuse some of the hostility from the Ejercito and the
 
 @far_right_coalition
 title: Far-right coalition
-subtitle: NSDAP + DNVP ([+ far_right_coalition +]%)
+subtitle: PRR + CEDA + Agrarians ([+ far_right_coalition +]%)
 view-if: far_right_coalition >= 50
-go-to: far_right_win if (year >= 1932 or nsdap_r >= 44) and president != "Braun"; far_right_fail if (year < 1932 and nsdap_r < 44) and president != "Braun"; far_right_braun if president == "Braun"
+go-to: far_right_win if ((year >= 1934 or ap_r >= 44) and (president != "Prieto" and president != "Largo Caballero")); far_right_fail if (year < 1934 and ap_r < 44); far_right_braun if (president == "Prieto" or president == "Largo Caballero)
 priority: 2
 
-There are enough votes for the Nazis and the DNVP to form a coalition. [+ nsdap_leader +] has made his participation in government contingent on being appointed chancellor. It is up to President [+ president +] to decide.
+There are enough votes for the Radicals and the CEDA to form a coalition alongside the agrarians. It is up to President [+ president +] to decide.
 
 @far_right_win
-on-arrival: chancellor = nsdap_leader; chancellor_party = "NSDAP"
+on-arrival: chancellor = ap_leader; chancellor_party = ap_name
 
-[? if president == "Hindenburg" : President Hindenburg's camarilla ?][? if president == "Braun" : President Braun somehow ?] has decided that [+ nsdap_leader +] must be chancellor [? if president == "Hindenburg": , and the aging president accepts their recommendations. ?][? if president == "Braun" : because it is what the constitution would stipulate. ?]
+[? if president == "Alcala-Zamora" : President Alcala-Zamora ?][? if president == "Prieto" : President Prieto somehow ?][? if president == "Largo Caballero" : President Largo Caballero somehow ?]  has decided that the [+ ap_name +] and PRR can form governement because it is what the constitution would stipulate.
 
 - @hitler_takes_power: What do we do now?
 
 
 @far_right_fail
-on-arrival: chancellor = "Schleicher"; chancellor_party = "I"; pro_republic -= 10; next_election_time = time+5; next_election_month = month + 5; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
+on-arrival: chancellor = "Lerroux"; chancellor_party = "PRR"; pro_republic -= 10; next_election_time = time+5; next_election_month = month + 5; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 
-The reactionary establishment is still very skeptical of the Nazis, so instead, [+ president +] appoints Kurt von Schleicher, a former general, as chancellor, to try to "tame" the Nazis.
+The President is very skeptical of the CEDA because they refuse to oath loyalty to the Constitution and the Republic, so instead, [+ president +] appoints Alejandro Lerroux, leader of the PRR and second force of the parliament to form governement without CEDA ministers.
 
-Schleicher's government is deeply unpopular among all parties of the Reichstag. Despite his support for a coalition with the NSDAP, the Nazis want power all to themselves, without Schleicher.
+The CEDA is out of the governement... For the meantime. 
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 @far_right_braun
 on-arrival: coup_progress += 2
 
-President Braun faces a dilemma. Is it "democratic" to let democracy be destroyed, if the majority of voters have willed it so? Some, even on the left, suggest that the Nazis would not *truly* be as horrific as their platform suggests, and that giving them power would let them discredit themselves in the eyes of the public.
+President [+ president +] faces a dilemma. Is it "democratic" to let democracy be destroyed, if the majority of voters have willed it so? Some, even on the left, suggest that the CEDA would not *truly* be as horrific as their platform suggests, and that giving them power would let them discredit themselves in the eyes of the public.
 
-Alternatively, Braun could use the emergency powers of the presidency. Article 48 has been used by Hindenburg to promulgate anti-democratic and anti-worker policies; can Article 48 be used for good as well as evil?
+Alternatively, [+ president +] could use the emergency powers of the presidency. Articles 42 and 80 could be used to stop an incumbing CEDA governement, it would need the approval of the Cortes. 
 
-- @emergency_braun: We will form an emergency government with Braun's support.
+- @emergency_braun: We will form an emergency government with [+ president +]'s support.
 - @new_elections: We will have new elections.
-- @far_right_win: Let the Nazis form their government.
+- @far_right_win: Let the CEDA in the government.
 
 
 @left_coalition
@@ -664,7 +664,7 @@ There is no path to a majority government for now. The scheming around President
 title: PSOE majority alone CAMBIAR NOMBRE DE MINISTROS
 subtitle: PSOE: [+ psoe_r +]%
 view-if: psoe_r >= 50
-on-arrival: chancellor = "Empty"; chancellor_party = "PSOE"; psoe_in_government = 1; in_psoe_majority = 1; pro_republic += 5; foreign_minister_party = "PSOE"; foreign_minister = "Breitscheid"; interior_minister_party = "PSOE"; interior_minister = "Severing"; justice_minister_party = "PSOE"; justice_minister = "Radbruch"; labor_minister_party = "PSOE"; labor_minister = "Wissell"; reichswehr_minister_party = "PSOE"; reichswehr_minister = "Leber"; economic_minister_party = "PSOE"; economic_minister = "Schmidt"; finance_minister_party = "PSOE"; finance_minister = "Hilferding"; agriculture_minister_party = "PSOE"; agriculture_minister = "Baade"; reichswehr_loyalty -= 0.05; 
+on-arrival: chancellor = "Empty"; chancellor_party = "PSOE"; psoe_in_government = 1; in_psoe_majority = 1; pro_republic += 5; foreign_minister_party = "PSOE"; foreign_minister = "Breitscheid"; interior_minister_party = "PSOE"; interior_minister = "Severing"; justice_minister_party = "PSOE"; justice_minister = "Radbruch"; labor_minister_party = "PSOE"; labor_minister = "Wissell"; reichswehr_minister_party = "PSOE"; reichswehr_minister = "Leber"; economic_minister_party = "PSOE"; economic_minister = "Schmidt"; finance_minister_party = "PSOE"; finance_minister = "Hilferding"; agriculture_minister_party = "PSOE"; agriculture_minister = "Baade"; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"; public_works_minister_party = "PSOE"; public_works_minister = "Indalecio Prieto"; ejercito_loyalty -= 0.05; 
 achievement: majority_party
 
 Finally, the PSOE can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
@@ -723,46 +723,44 @@ on-arrival: sa_strength += 100; sh_strength += 100; in_emergency_government = 1
 
 Yes, an emergency minority government, with the support of the SPD. Who should lead this emergency minority government?
 
-- @braun_emergency_chancellor: Otto Braun for Chancellor-President!
-- @breitscheid_emergency_chancellor: Rudolf Breitscheid for emergency Chancellor.
-- @bruning_emergency_chancellor: Brüning of the Center Party, as a goodwill gesture toward the bourgeoisie.
-- @wirth_emergency_chancellor: Joseph Wirth of the Center Party, as a gesture of republican unity.
+- @braun_emergency_chancellor: Francisco Largo Caballero for president of the Council of Ministers.
+- @breitscheid_emergency_chancellor: Indalecio Prieto for president of the Council of Ministers.
+- @bruning_emergency_chancellor: Martinez Barrios of the Union Republicana, as a goodwill gesture toward the bourgeoisie.
+- @wirth_emergency_chancellor: Azana of the Izquierda Republicana, as a gesture of republican unity.
 
 @braun_emergency_chancellor
 subtitle: This is unprecedented.
-view-if: not historical_mode or not spd_prussia
-on-arrival: chancellor = "Braun"; chancellor_party = "SPD"; spd_in_government = 1; pro_republic -= 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1; 
+view-if: president != "Largo Caballero"
+on-arrival: chancellor = "Largo Caballero"; chancellor_party = "PSOE"; psoe_in_government = 1; in_psoe_majority = 1; pro_republic += 5; foreign_minister_party = "PSOE"; foreign_minister = "Breitscheid"; interior_minister_party = "PSOE"; interior_minister = "Severing"; justice_minister_party = "PSOE"; justice_minister = "Radbruch"; labor_minister_party = "PSOE"; labor_minister = "Wissell"; reichswehr_minister_party = "PSOE"; reichswehr_minister = "Leber"; economic_minister_party = "PSOE"; economic_minister = "Schmidt"; finance_minister_party = "PSOE"; finance_minister = "Hilferding"; agriculture_minister_party = "PSOE"; agriculture_minister = "Baade"; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"; public_works_minister_party = "PSOE"; public_works_minister = "Indalecio Prieto"; ejercito_loyalty -= 0.1; 
 
-Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Chancellor *must* be a member of the Reichstag).
-
-Thus, we have Chancellor-President Otto Braun. He claims that he will resign as soon as the economic-political crisis is over. The right-wing parties, who were once clamoring to replace parliamentary rule with dictatorship or monarchy, are now clamoring for the restoration of democracy.
+We have appointed Largo Caballero as president of the Council of Ministers.
 
 - @far_right_coup
 - @emergency_no_confidence: The Nazis immediately call a no-confidence vote against us...
 
 @breitscheid_emergency_chancellor
-subtitle: The Communists are warming to him...
-on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD"; spd_in_government = 1; kpd_relation += 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1;
+view-if: president != "Prieto"
+on-arrival: chancellor = "Prieto"; chancellor_party = "PSOE"; psoe_in_government = 1; in_psoe_majority = 1; pro_republic += 5; foreign_minister_party = "PSOE"; foreign_minister = "Breitscheid"; interior_minister_party = "PSOE"; interior_minister = "Severing"; justice_minister_party = "PSOE"; justice_minister = "Radbruch"; labor_minister_party = "PSOE"; labor_minister = "Wissell"; reichswehr_minister_party = "PSOE"; reichswehr_minister = "Leber"; economic_minister_party = "PSOE"; economic_minister = "Schmidt"; finance_minister_party = "PSOE"; finance_minister = "Hilferding"; agriculture_minister_party = "PSOE"; agriculture_minister = "Baade"; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"; public_works_minister_party = "PSOE"; public_works_minister = "Indalecio Prieto"; ejercito_loyalty -= 0.1; 
 
-We have appointed Rudolf Breitscheid as emergency chancellor. The Communists consider him less objectionable than the alternatives, although it is unclear whether they will tolerate this government.
+We have appointed Indalecio Prieto as president of the Council of Ministers.
 
 - @far_right_coup
 - @emergency_no_confidence
 
 
 @bruning_emergency_chancellor
-on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; spd_in_government = 1; z_relation += 10; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD" 
+on-arrival: chancellor = "Martinez Barrios"; chancellor_party = "UR"; psoe_in_government = 1; in_psoe_majority = 1; pro_republic += 5; foreign_minister_party = "PSOE"; foreign_minister = "Breitscheid"; interior_minister_party = "PSOE"; interior_minister = "Severing"; justice_minister_party = "PSOE"; justice_minister = "Radbruch"; labor_minister_party = "PSOE"; labor_minister = "Wissell"; reichswehr_minister_party = "PSOE"; reichswehr_minister = "Leber"; economic_minister_party = "PSOE"; economic_minister = "Schmidt"; finance_minister_party = "PSOE"; finance_minister = "Hilferding"; agriculture_minister_party = "PSOE"; agriculture_minister = "Baade"; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"; public_works_minister_party = "PSOE"; public_works_minister = "Indalecio Prieto"; ejercito_loyalty -= 0.1; 
 
-The Center Party is pleased, and somewhat surprised, that we have appointed [+ chancellor +] as chancellor.
+The Union Republicana is pleased, and somewhat surprised, that we have appointed [+ chancellor +] as president of the Council of Ministers.
 
 - @far_right_coup
 - @emergency_no_confidence
 
 @wirth_emergency_chancellor
-view-if: z_party_leader == "Joos"
-on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; z_relation += 10; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD" 
+view-if: president != "Azana"
+on-arrival: chancellor = "Azana"; chancellor_party = ar_name; psoe_in_government = 1; in_psoe_majority = 1; pro_republic += 5; foreign_minister_party = "PSOE"; foreign_minister = "Breitscheid"; interior_minister_party = "PSOE"; interior_minister = "Severing"; justice_minister_party = "PSOE"; justice_minister = "Radbruch"; labor_minister_party = "PSOE"; labor_minister = "Wissell"; reichswehr_minister_party = "PSOE"; reichswehr_minister = "Leber"; economic_minister_party = "PSOE"; economic_minister = "Schmidt"; finance_minister_party = "PSOE"; finance_minister = "Hilferding"; agriculture_minister_party = "PSOE"; agriculture_minister = "Baade"; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"; public_works_minister_party = "PSOE"; public_works_minister = "Indalecio Prieto"; ejercito_loyalty -= 0.1; 
 
-The Center Party is pleased that we have appointed [+ chancellor +] as chancellor.
+The Izquierda Republicana is pleased that we have appointed [+ chancellor +] as president of the Council of Ministers.
 
 - @far_right_coup
 - @emergency_no_confidence
@@ -770,27 +768,27 @@ The Center Party is pleased that we have appointed [+ chancellor +] as chancello
 
 
 @far_right_coup
-title: The far-right parties immediately launch a military coup against us...
+title: The conservative and reactionary parties immediately launch a military coup against us...
 view-if: far_right_coalition >= 45
-on-arrival: sh_strength += 150; sa_strength += 150; sh_militancy += 0.05; sa_militancy += 0.05
+on-arrival: mf_strength += 150; rc_strength += 150; mf_militancy += 0.05; rc_militancy += 0.05
 
 The far-right parties, seeing that we are willing to deny them government by questionably democratic means, have decided that they can only take power by undemocratic means, and have risen up in force against the sitting government.
 
-Their numbers are bolstered by the many government workers who are against the prospect of a unified Socialist government. Police and soldiers defect to the SA and Stahlhelm.
+Their numbers are bolstered by the many government workers who are against the prospect of a unified Socialist government. Police and soldiers defect to the Requetes and Milicias Falangistas.
 
 - @civil_war: It is war.
 
 
 @emergency_no_confidence
-title: The Nazis immediately call a no-confidence vote against us...
+title: The CEDA immediately call a no-confidence vote against us...
 view-if: far_right_coalition < 45
-on-arrival: z_no_confidence = 1 if z_relation < 45; kpd_no_confidence = 1 if kpd_relation < 45; other_no_confidence = 1 if (z_relation + dvp_relation)/2 < 45; dvp_no_confidence = 1 if dvp_relation < 45; sa_strength += 200; sh_strength += 200; no_confidence_votes = nsdap_r + dnvp_r; no_confidence_votes += z_r if z_no_confidence; no_confidence_votes += dvp_r if dvp_no_confidence; no_confidence_votes += kpd_r if kpd_no_confidence; no_confidence_votes += other_r if other_no_confidence; no_confidence_succeeds = 1 if no_confidence_votes > 50
+on-arrival: prr_no_confidence = 1 if prr_relation < 45; prrs_no_confidence = 1 if prrs_relation < 45; regionalists_no_confidence = 1 if regionalists_relation < 45; dlr_no_confidence = 1 if dlr_relation < 45; other_no_confidence = 1 if (other_left_republicans_relation + other_right_republicans_relation)/2 < 45; ar_no_confidence = 1 if ar_relation < 45; mf_strength += 200; pce_no_confidence = 1 if pce_relation < 45; rc_strength += 70; no_confidence_votes = ap_r + agrarios_r + re_r + jons_r; no_confidence_votes += prr_r if prr_no_confidence; no_confidence_votes += prrs_r if prrs_no_confidence; no_confidence_votes += pce_r if pce_no_confidence; no_confidence_votes += ar_r if ar_no_confidence; no_confidence_votes += dlr_r if dlr_no_confidence; no_confidence_votes += regionalists_r if regionalists_no_confidence; no_confidence_votes += other_r if other_no_confidence; no_confidence_succeeds = 1 if no_confidence_votes > 50
 
-The NSDAP and DNVP will vote against us, of course. The other parties vote their conscience. [? if z_no_confidence: The Center Party is voting against us. ?] [? if kpd_no_confidence: The KPD votes against us. ?] [? if other_no_confidence: The assortment of minor parties are voting against us. ?]
+The CEDA, RE and agrarians will vote against us, of course. The other parties vote their conscience. [? if z_no_confidence: The Center Party is voting against us. ?] [? if kpd_no_confidence: The KPD votes against us. ?] [? if other_no_confidence: The assortment of minor parties are voting against us. ?]
 
-In total, [+ no_confidence_votes +]% of the Reichstag is against us. [? if no_confidence_succeeds : We have lost the vote of no confidence. ?]
+In total, [+ no_confidence_votes +]% of the Cortes is against us. [? if no_confidence_succeeds : We have lost the vote of no confidence. ?]
 
-- @no_confidence_elections_new: There will be new elections, which we will try to delay.
+- @no_confidence_elections_new: There will be new elections, which we will try to delay. CAMBIAR EFECTOS
 - @no_confidence_win: We have won, for now.
 
 
@@ -843,7 +841,7 @@ view-if: no_confidence_votes <= 50
 on-arrival: in_minority_government = 1; in_emergency_government = 0;
 achievement: minderheitsregierung
 
-We have won the vote of no confidence, and are currently ruling under an SPD minority government. Now our task is to fix the country.
+We have won the vote of no confidence, and are currently ruling under a PSOE minority government. Now our task is to fix the country.
 
 
 @weimar_coalition
