@@ -118,7 +118,7 @@ Q.alcala_zamora_enabled = 0;
 
 // The array of forces - paramilitary groups
 // Number of members in 1931 (in thousands) PLACEHOLDER BUSCAR CIRFAS
-// Ejercito, Guardia Civil, Guardia de Asalto, Juventudes Socialistas, Milicias Comunistas, Milicias Anarquistas, Milicias Falangistas
+// Ejercito, Guardia Civil, Guardia de Asalto, Juventudes Socialistas, Milicias Comunistas, Milicias Anarquistas, Milicias Falangistas, Requetes Carlistas
 Q.js_strength = 50;
 Q.js_militancy = 0.01;
 Q.js_banned = 0;
@@ -131,6 +131,9 @@ Q.ma_banned = 0;
 Q.mf_strength = 2;
 Q.mf_militancy = 0.2;
 Q.mf_banned = 0;
+Q.rc_strength = 1;
+Q.rc_militancy = 0.7;
+Q.rc_banned = 0;
 
 Q.guardia_asalto_strength = 10;
 Q.guardia_asalto_militancy = 0.8;
@@ -350,10 +353,12 @@ Q.old_other_monarchists_r = 2;
 Q.old_jons_r = 0;
 
 // Future dynamic party representations for new factions / split-offs (Initialized at 0)
-Q.union_republicana_r = 0;
-Q.old_union_republicana_r = 0;
+Q.ur_r = 0;
+Q.old_ur_r = 0;
 Q.poum_r = 0;
 Q.old_poum_r = 0;
+Q.re_r = 0;
+Q.old_re_r = 0;
 
 // Party evolution name flags
 Q.ar_name = "AR"; // Changes later to IR after mergers
