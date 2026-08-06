@@ -348,6 +348,7 @@ There are some potential coalition arrangements.
 - @left_front
 - @popular_front
 - @right_coalition
+- @far_right_coalition
 - @ap_majority
 
 @popular_front
@@ -580,67 +581,55 @@ Even though the DNVP is very reluctant to participate in such a coalition, they 
 
 @no_majority
 title: There is no clear governing majority.
-view-if: weimar_coalition < 50 and (grand_coalition < 50 or grand_coalition_failed == 1) and president = "Hindenburg" and far_right_coalition < 50
+view-if: left_republican_coalition < 50 and left_front < 50 and popular_front < 50 and right_coalition < 50 and (republican_socialist_conjuction < 50 or (year >= 1932 and prr_leader == "Lerroux")) and president = "Alcala-Zamora" and far_right_coalition < 50
 on-arrival: no_majority_elections += 1
-go-to: no_majority_bruning if chancellor = "Brüning" or chancellor = "Wirth"; no_majority_papen if chancellor = "Papen" and no_majority_papen_elections == 0; no_majority_papen_2 if chancellor == "Papen" and no_majority_papen_elections > 0; no_majority_schleicher if chancellor = "Schleicher"; no_majority_spd if chancellor_party = "SPD" or chancellor == "Marx"
-
-# TODO: if there is an anti-democratic coalition majority, you should appoint Papen.
-
-# either new elections, or Hindenburg appoints either Brüning, Papen, Schleicher, or Hitler.
+go-to: no_majority_bruning if chancellor = "Lerroux" or chancellor = "Martinez Barrio" or chancellor = "Samper"; no_majority_papen if chancellor = "Portela" and no_majority_papen_elections == 0; no_majority_papen_2 if chancellor == "Portela" and no_majority_papen_elections > 0; no_majority_schleicher if chancellor = "Schleicher"; no_majority_spd if chancellor_party = "PSOE" or chancellor == "Azana"
 
 @no_majority_spd
-on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
+on-arrival: chancellor = "Lerroux"; chancellor_party = "PRR"
 
-There is no path to an obviously workable majority. Since President Hindenburg is unwilling to work with a minority or caretaker SPD government, his preferred chancellor is Heinrich Brüning of the Center Party, who could lead a "presidential" government.
+There is no path to an obviously workable majority. Since President Alcala-Zamora is unwilling to work with a minority or caretaker PSOE government, his preferred chancellor is Alejandro Lerroux of the Radical Republican Party, who could lead a "presidential" government.
 
-- @toleration_bruning: We will tolerate Brüning.
-- @new_grand_coalition: We will try to form a new grand coalition.
+- @toleration_bruning: We will tolerate Lerroux.
 - @new_elections: We will have new elections.
-
-# - if NSDAP is the largest party and the 
 
 @no_majority_bruning
 go-to: no_majority_bruning_toleration if (no_majority_elections <= 3 and anti_democratic_coalition <= 50); hindenburg_appoints_papen if no_majority_elections > 3 or anti_democratic_coalition > 50
 
 
 @hindenburg_appoints_papen
-on-arrival: chancellor = "Papen"; chancellor_party = "I"; next_election_time = time+3; next_election_month = month + 3; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; sa_banned = 0; pro_republic -= 8; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labor_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; reichswehr_minister = "I";
+on-arrival: chancellor = "Chapaprieta"; chancellor_party = "I"; next_election_time = time+3; next_election_month = month + 3; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; pro_republic -= 8; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labor_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; reichswehr_minister_party = "I"; public_instruction_minister_party = "I"; public_works_minister_party = "I";
 
-There is no path to a majority government. President Hindenburg is tired of the chaos, and appoints Franz von Papen as chancellor instead of Brüning. Papen is a indenpendent formerly from the Center Party, and is significantly to the right of the majority of the Center Party.
+There is no path to a majority government. President Alcala-Zamora is tired of the corruption, and appoints Joaquin Chapaprieta y Torregrosa as chancellor instead of a member of the PRR. Chapaprieta is an indenpendent formerly from the Republican Liberal Right Party and Hacienda Minister under Lerroux governement, and looks to create a concentration governement alongside the Republican Radicals, CEDA, agrarians and various right republican parties.
 
-Papen is immediately faced with a vote of no confidence, given his unpopularity. However the SPD votes, he is guaranteed to fall, due to the unanimous hatred against him from all other parties.
+Chapaprieta is immediately faced with a vote of no confidence, given his unpopularity. However the SPD votes, he is guaranteed to fall, due to the unanimous hatred against him from all other parties.
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 @no_majority_bruning_toleration
 on-arrival: no_majority_bruning_elections += 1
 
-There is no path to a majority government. One option would be to have a continuation of the current Brüning government; if we tolerate it, then it would retain a majority vote against no-confidence.
+There is no path to a majority government. One option would be to have a continuation of the current Radical government; if we tolerate it, then it would retain a majority vote against no-confidence.
 
-Alternatively, we could try to form a "new grand coalition" of all constitutional parties except the NSDAP, KPD, and DNVP. The stumbling block are the minor conservative parties such as the "Economic Party of the Middle Class", who detest any hint of socialism and would ruin the country before working with Marxists.
-
-The third option is to have new elections.
+Alternatively, we could have new elections.
 
 - @toleration_bruning: We will tolerate Brüning.
-- @new_grand_coalition: We will try to form a new grand coalition.
 - @new_elections: We will have new elections.
-- @unity_government
-
 
 @no_majority_papen
 on-arrival: pro_republic -= 10; next_election_time = time+3; next_election_month = month + 3; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; workers_nsdap += 6; unemployed_nsdap += 6; old_middle_nsdap += 5; new_middle_nsdap += 5; rural_nsdap += 5; no_majority_papen_elections += 1; workers_spd -= 8 if pro_republic < 45; workers_spd *= 0.85 if pro_republic < 40; workers_nsdap += 5 if pro_republic < 40;
 
-After the elections, Papen is still deeply unpopular, without any hint of coalition support, and there is a vote of no confidence called against him almost immediately. No matter how we vote, the measure would pass. The Reichstag is dissolved once more.
+After the elections, Chapaprieta is still deeply unpopular, without any hint of coalition support, and there is a vote of no confidence called against him almost immediately. No matter how we vote, the measure would pass. The Reichstag is dissolved once more.
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 
 @no_majority_papen_2
-on-arrival: chancellor = "Schleicher"; pro_republic -= 10; next_election_time = time+5; next_election_month = month + 5; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; workers_nsdap += 5; unemployed_nsdap += 10; old_middle_nsdap += 5; new_middle_nsdap += 5; rural_nsdap += 10; workers_spd -= 8 if pro_republic < 45; workers_spd *= 0.85 if pro_republic < 40; workers_nsdap += 5 if pro_republic < 40; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labor_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; reichswehr_minister = "I";
+on-arrival: chancellor = "Portela"; pro_republic -= 10; next_election_time = time+5; next_election_month = month + 5; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; workers_nsdap += 5; unemployed_nsdap += 10; old_middle_nsdap += 5; new_middle_nsdap += 5; rural_nsdap += 10; workers_spd -= 8 if pro_republic < 45; workers_spd *= 0.85 if pro_republic < 40; workers_nsdap += 5 if pro_republic < 40; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labor_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; reichswehr_minister = "I";
 
-There is no path to a majority government. Hindenburg is displeased with Papen, and calls on him to resign. Now, former army general Kurt von Schleicher has been appointed chancellor, again as part of a presidential government.
+Chapaprieta fails to implement his reforms due to the opposition of the CEDA. Alcala-Zamora is displeased with Chapaprieta, and calls on him to resign. Now, indenpendent formerly from the Dynastic Liberal Party, Manuel Portela Valladares has been appointed chancellor, again as part of a presidential government.
 
-Schleicher's government is deeply unpopular among all parties of the Reichstag. Despite his support for a coalition with the NSDAP, the Nazis want power all to themselves, without Schleicher.
+Portela's government is deeply unpopular among all parties of the Cortes. Despite his support for a centrist build-up, both the left and the right wants new elections.
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
