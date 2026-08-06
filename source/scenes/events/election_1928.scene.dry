@@ -427,7 +427,7 @@ The President manages to diffuse some of the hostility from the Ejercito and the
 title: Far-right coalition
 subtitle: PRR + CEDA + Agrarians ([+ far_right_coalition +]%)
 view-if: far_right_coalition >= 50
-go-to: far_right_win if ((year >= 1934 or ap_r >= 44) and (president != "Prieto" and president != "Largo Caballero")); far_right_fail if (year < 1934 and ap_r < 44); far_right_braun if (president == "Prieto" or president == "Largo Caballero)
+go-to: far_right_win if ((year >= 1934 or ap_r >= 44) and (president != "Prieto" and president != "Largo Caballero")); far_right_fail if (year < 1934 and ap_r < 44); far_right_braun if (president == "Prieto" or president == "Largo Caballero")
 priority: 2
 
 There are enough votes for the Radicals and the CEDA to form a coalition alongside the agrarians. It is up to President [+ president +] to decide.
