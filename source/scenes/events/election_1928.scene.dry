@@ -345,7 +345,7 @@ There are some potential coalition arrangements.
 - @left_republican_coalition
 - @republican_socialist_conjuction
 - @no_majority
-- @left_front
+- @left_coalition
 - @popular_front
 - @right_coalition
 - @far_right_coalition
@@ -677,17 +677,21 @@ on-arrival: chancellor = "Largo Caballero"
 Francisco Largo Caballero has become President of the Council of Ministers of the PSOE majority.
 
 @besteiro_majority_chancellor
-view-if: muller_dead = 0
 on-arrival: chancellor = "Besteiro"
 
 Julian Besteiro has become President of the Council of Ministers of the PSOE majority.
 
+@left_republican_coalition
+view-if: muller_dead = 1
+on-arrival: chancellor = "Besteiro"
 
+Julian Besteiro has become President of the Council of Ministers of the PSOE majority.
 
+@republican_socialist_conjunction
+view-if: muller_dead = 1
+on-arrival: chancellor = "Besteiro"
 
-
-
-
+Julian Besteiro has become President of the Council of Ministers of the PSOE majority.
 
 @brauns_dilemma
 title: There is no clear governing majority.
