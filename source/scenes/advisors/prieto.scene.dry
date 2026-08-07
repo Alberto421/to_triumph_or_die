@@ -23,6 +23,7 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if psoe_in_government = 1 and coalition_dissent > 0; ar_relation += 5; other_left_republicans_relation += 5; prrs_relation += 5
 
 We have improved our relations with the [+ ar_name +], DLR, PRRS and various left republican parties, and reduced tensions with the coalition.
+
 @toleration
 title: Defending Toleration
 subtitle: Prieto supports the toleration arrangement with the bourgeois parties.
