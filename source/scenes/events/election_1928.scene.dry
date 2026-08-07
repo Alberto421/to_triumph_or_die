@@ -581,7 +581,7 @@ Even though the DNVP is very reluctant to participate in such a coalition, they 
 
 @no_majority
 title: There is no clear governing majority.
-view-if: left_republican_coalition < 50 and left_front < 50 and popular_front < 50 and right_coalition < 50 and (republican_socialist_conjuction < 50 or (year >= 1932 and prr_leader == "Lerroux")) and president = "Alcala-Zamora" and far_right_coalition < 50
+view-if: left_republican_coalition < 50 and left_front < 50 and popular_front < 50 and right_coalition < 50 and (republican_socialist_conjunction < 50 or (year >= 1932 and prr_leader == "Lerroux")) and president = "Alcala-Zamora" and far_right_coalition < 50
 on-arrival: no_majority_elections += 1
 go-to: no_majority_bruning if chancellor = "Lerroux" or chancellor = "Martinez Barrio" or chancellor = "Samper"; no_majority_papen if chancellor = "Portela" and no_majority_papen_elections == 0; no_majority_papen_2 if chancellor == "Portela" and no_majority_papen_elections > 0; no_majority_schleicher if chancellor = "Schleicher"; no_majority_spd if chancellor_party = "PSOE" or chancellor == "Azana"
 
@@ -688,6 +688,12 @@ on-arrival: chancellor = "Besteiro"
 Julian Besteiro has become President of the Council of Ministers of the PSOE majority.
 
 @republican_socialist_conjunction
+view-if: muller_dead = 1
+on-arrival: chancellor = "Besteiro"
+
+Julian Besteiro has become President of the Council of Ministers of the PSOE majority.
+
+@ap_majority
 view-if: muller_dead = 1
 on-arrival: chancellor = "Besteiro"
 
