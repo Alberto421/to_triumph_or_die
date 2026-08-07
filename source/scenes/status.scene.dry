@@ -119,6 +119,9 @@ if (Q.ma_strength) {
 if (Q.mf_strength) {
     Q.mf_strength_2 = Q.mf_strength.toFixed(1);
 }
+if (Q.rc_strength) {
+    Q.rc_strength_2 = Q.rc_strength.toFixed(1);
+}
 !}
 
 = Paramilitaries
@@ -138,6 +141,10 @@ Milicias Anarquistas Militarization: [+ ma_militancy : militancy +]
 {!<span class="tooltip-text" title="The Milicias Falangistas are the falangists paramilitary.">Milicias Falangistas</span>!} Strength: [+ mf_strength_2 +] thousand
 
 Milicias Falangistas Militarization: [+ mf_militancy : militancy +]
+
+{!<span class="tooltip-text" title="The Carlist Requetes are the Carlist paramilitary.">Requetes Carlist</span>!} Strength: [+ rc_strength_2 +] thousand
+
+Requetes Carlist Militarization: [+ rc_militancy : militancy +]
 
 = Security Forces
 
