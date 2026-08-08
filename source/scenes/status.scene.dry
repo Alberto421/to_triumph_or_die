@@ -201,7 +201,6 @@ Monarchists: [+ other_monarchists_votes +]%
 
 [? if re_formed: RE: [+ re_votes +]% ?]
 
-JONS: [+ jons_votes +]%
 [? if not jons_name: JONS?][? if jons_name != 0 : [+ jons_name +]?]: [+ jons_votes +]%
 
 
