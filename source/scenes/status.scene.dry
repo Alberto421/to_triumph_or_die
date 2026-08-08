@@ -37,11 +37,11 @@ President of the Government: [+ chancellor +] ([+ chancellor_party +])
 
 Cortes composition:
 
-# 1928: 30, 1930: 25, 1932: 22  // QUE ES ESTO?
 {!<span class="tooltip-text" title="Socialist Worker Party of Spain">PSOE</span>!}: [+ psoe_r +]%
-[? if ceda_formed and ceda_r > 0: CEDA: [+ ceda_r +]% ?]  // NO SE SI ESTO ES ASI
-# 1928: 15, 1930: 15, 1932: 
-{!<span class="tooltip-text" title="Republican Action">AR</span>!}: [+ ar_votes +]%
+[? if ur_formed and ur_r > 0: UR: [+ ur_r +]% ?]
+[? if poum_formed and poum_r > 0: POUM: [+ poum_r +]% ?]
+[? if re_formed and re_r > 0: RE: [+ re_r +]% ?]
+{!<span class="tooltip-text" title="Republican Action">!}[? if not ar_name: AR?][? if ar_name != 0 : [+ ar_name +]?]{!</span>!}: [+ ar_r +]%
 {!<span class="tooltip-text" title="Radical Socialist Republican Party">PRRS</span>!}: [+ prrs_votes +]%
 {!<span class="tooltip-text" title="Other Left Republicans">Other Left Rep.</span>!}: [+ other_left_republicans_votes +]%
 {!<span class="tooltip-text" title="Radical Republican Party">PRR</span>!}: [+ prr_votes +]%
@@ -49,10 +49,12 @@ Cortes composition:
 {!<span class="tooltip-text" title="Other Right Republicans">Other Right Rep.</span>!}: [+ other_right_republicans_votes +]%
 {!<span class="tooltip-text" title="Communist Party of Spain">PCE</span>!}: [+ pce_votes +]%
 {!<span class="tooltip-text" title="Agrarian Party">Agrarios</span>!}: [+ agrarios_votes +]%
+{!<span class="tooltip-text" title="Popular Action">!}[? if not ap_name: AP?][? if ap_name != 0 : [+ ap_name +]?]{!</span>!}: [+ ap_r +]%
 {!<span class="tooltip-text" title="Popular Action / CEDA">AP</span>!}: [+ ap_votes +]%
 {!<span class="tooltip-text" title="Other Monarchists / Carlists">Monarchists</span>!}: [+ other_monarchists_votes +]%
-{!<span class="tooltip-text" title="National-Syndicalist Offensive Juntas">JONS</span>!}: [+ jons_votes +]%
+{!<span class="tooltip-text" title="National-Syndicalist Offensive Juntas">!}[? if not jons_name: JONS?][? if jons_name != 0 : [+ jons_name +]?]{!</span>!}: [+ jons_r +]%
 {!<span class="tooltip-text" title*="Regionalist Parties">Regionalists</span>!}: [+ regionalists_votes +]%
+
 
 [? if psoe_in_government = 1 : Budget: [+ budget +] ?]
 
@@ -62,7 +64,7 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 Inflation: [+ inflation_2 +]%
 
-[? if asturias_revolution_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]  // No estoy seguro de esto
+[? if asturias_revolution_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]
 
 Economic growth: [+ economic_growth_2 +]%
 
@@ -74,7 +76,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Inter-party Relations
 
-{!<span class="tooltip-text" title="Republican Action">!}[? if not ar_name: AR?][? if ar_name != 0 : [+ ar_name +]?]{!</span>!}: [+ ar_relation : relationships +] // Mirar esto porque igual para la CEDA tambien, tengo que ver como funciona
+{!<span class="tooltip-text" title="Republican Action">!}[? if not ar_name: AR?][? if ar_name != 0 : [+ ar_name +]?]{!</span>!}: [+ ar_relation : relationships +]
 
 {!<span class="tooltip-text" title="Radical Socialist Republican Party">PRRS</span>!}: [+ prrs_relation : relationships +]
 
@@ -88,11 +90,11 @@ Economic growth: [+ economic_growth_2 +]%
 
 {!<span class="tooltip-text" title="Agrarian Party">Agrarian</span>!}: [+ agrarios_relation : relationships +]
 
-{!<span class="tooltip-text" title="Popular Action">AP</span>!}: [+ ap_relation : relationships +]
+{!<span class="tooltip-text" title="Popular Action">!}[? if not ap_name: AP?][? if ap_name != 0 : [+ ap_name +]?]{!</span>!}: [+ ap_relation : relationships +]
 
 {!<span class="tooltip-text" title="Other Monarchists">Monarchists.</span>!}: [+ other_monarchists_relation : relationships +]
 
-{!<span class="tooltip-text" title="National-Syndicalist Offensive Juntas">JONS</span>!}: [+ jons_relation : relationships +]
+{!<span class="tooltip-text" title="National-Syndicalist Offensive Juntas">!}[? if not jons_name: JONS?][? if jons_name != 0 : [+ jons_name +]?]{!</span>!}: [+ jons_relation : relationships +]
 
 {!<span class="tooltip-text" title="Regionalist Parties">Regionalists</span>!}: [+ regionalists_relation : relationships +]
 
@@ -175,9 +177,13 @@ PRRS: [+ prrs_votes +]%
 
 PCE: [+ pce_votes +]%
 
+[? if poum_formed: POUM: [+ poum_votes +]% ?]
+
 [? if not ar_name: AR?][? if ar_name != 0 : [+ ar_name +]?]: [+ ar_votes +]%
 
 Other Left Republicans: [+ other_left_republicans_votes +]%
+
+[? if ur_formed: UR: [+ ur_votes +]% ?]
 
 PRR: [+ prr_votes +]%
 
@@ -189,11 +195,17 @@ Regionalists: [+ regionalists_votes +]%
 
 Agrarios: [+ agrarios_votes +]%
 
-AP: [+ ap_votes +]%
+[? if not ap_name: AP?][? if ap_name != 0 : [+ ap_name +]?]: [+ ap_votes +]%
 
 Monarchists: [+ other_monarchists_votes +]%
 
+[? if re_formed: RE: [+ re_votes +]% ?]
+
 JONS: [+ jons_votes +]%
+[? if not jons_name: JONS?][? if jons_name != 0 : [+ jons_name +]?]: [+ jons_votes +]%
+
+
+
 
 **Detailed results for each demographic**
 
