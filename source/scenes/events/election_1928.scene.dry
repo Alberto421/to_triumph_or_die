@@ -1564,4 +1564,3 @@ view-if: public_instruction_party = "PSOE"
 on-arrival: public_instruction_party = "PRRS"; public_instruction_minister = "Domingo"; leverage += 10; public_instruction_minister_party = "PCE" if in_left_front; public_instruction_minister = "Hernandez Tomas" if in_left_front;
 tags: drop_mins_1928
 go-to: ministries
-go-to: ministries
