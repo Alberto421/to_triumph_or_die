@@ -687,7 +687,7 @@ on-arrival: chancellor = "Prieto"
 Indalecio Prieto has become President of the Council of Ministers of the PSOE majority.
 
 @largo_caballero_majority_chancellor
-view-if: president != "Prieto"
+view-if: president != "Largo Caballero"
 on-arrival: chancellor = "Largo Caballero"
 
 Francisco Largo Caballero has become President of the Council of Ministers of the PSOE majority.
