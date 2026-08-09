@@ -100,7 +100,7 @@ if (Q.ap_r >= Q.psoe_r && Q.ap_r >= Q.prr_r) {
 // coalitions
 Q.republican_socialist_conjunction = Q.psoe_r + Q.ar_r + Q.prrs_r + Q.prr_r + Q.dlr_r + Q.other_left_republicans_r + Q.other_right_republicans_r + Q.regionalists_r;
 Q.left_republican_coalition = Q.psoe_r + Q.ar_r + Q.prrs_r + Q.other_left_republicans_r;
-Q.popular_front = Q.psoe_r + Q.ar_r + Q.prrs_r + Q.other_left_republicans_r + Q.pce_r + Q.regionalists_r + Q.poum_r;
+Q.popular_front = Q.psoe_r + Q.ar_r + Q.prrs_r + Q.other_left_republicans_r + Q.pce_r + Q.regionalists_r + Q.poum_r + Q.ur_r;
 Q.right_coalition = Q.prr_r + Q.agrarios_r + Q.dlr_r + Q.other_right_republicans_r;
 Q.far_right_coalition = Q.prr_r + Q.ap_r + Q.agrarios_r + Q.re_r
 Q.left_front = Q.psoe_r + Q.pce_r + Q.poum_r;
@@ -425,7 +425,7 @@ There are some potential coalition arrangements.
 ########################################## CONJUNCION REPUBLICANA SOCIALISTA
 
 @republican_socialist_conjunction
-
+TRABAJAR SOBRE LA GRAN COALICION, EN VEZ DE DVP QUE SEA PRR
 
 ########################################## LEFT REPUBLICAN COALITION
 
@@ -508,9 +508,120 @@ The President manages to diffuse some of the hostility from the Ejercito and the
 
 @right_coalition
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ########################################## LEFT COALITION
 
 @left_coalition
+title: Is a United Left coalition possible?
+subtitle: PSOE + PCE [? if poum_formed: + POUM ?] ([+ left_coalition +]%)
+unavailable-subtitle: PSOE + PCE [? if poum_formed: + POUM ?] ([+ left_coalition +]%). [? if pce_relation < 50 : We do not have adequate relations with the PCE. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?] [? if poum_formed and poum_relation < 50 : We do not have adequate relations with the POUM. ?]
+view-if: left_coalition >= 50
+choose-if: (pce_relation >= 50 and (poum_formed == 0 or poum_relation >=50)) and communist_coalition >= 3
+
+There are enough votes for a left coalition government, if such a thing were actually possible.
+
+The far-right might attempt a coup, if such a coalition were formed.
+
+- @left_coalition_impossible: This is impossible.
+- @left_coalition_possible: This could be possible.
+
+@left_coalition_impossible
+go-to: coalition_menu
+
+A far left coalition is impossible.
+
+
+@left_coalition_possible
+
+The PCE is still a little reluctant to join a coalition, despite grassroots friendliness between our memberships. However the VII Congress of the Comunist International allows alliances with other leftist parties. [? if president == "Alcala-Zamora" : There is no chance whatsoever that President Alcala-Zamora would approve of the appointment of a die-hard communist as president of the governement. ?] If our relations with them are good enough, we could convince them to support the appointment of Largo Caballero as President of the Council of Ministers.
+
+- @thalmann_chancellor: Appoint Jose Diaz as President of the Council of Ministers.
+- @left_coalition_resources
+- @left_coalition_relations
+- @coalition_menu: Try a different governing arrangement.
+
+@thalmann_chancellor
+choose-if: president != "Alcala-Zamora" and besteiristas_strength + prietistas_strength < caballeristas_strength
+unavailable-subtitle: [? if president == "Alcala-Zamora": President [+ president +] would never allow such a thing. ?] [? if besteiristas_strength >= caballeristas_strength : Most in the parliamentary party would not support Diaz as President. ?]
+on-arrival: chancellor = "Diaz"; chancellor_party = "PCE"; pce_relation = 80; in_left_front = 1; psoe_in_government = 1 
+
+With great reluctance, President [+ president +] appoints [+ chancellor +] as President of the Council of Ministers.
+
+Immediately, [+ chancellor +] goes to work building a "Worker and Peasant's Spain": confiscation without indemnization of land and tools, rising by decree the wages of all workers, recognicing the right of seccesion to Catalonia, Basque Country and Galicia, leaving Morocco and all the colonies on Africa and supressing the Guardia Civil, Guardia de Asalto and Officers' Corp.
+
+In response, the right-wing forces launches almost immediately launch an attempted coup. Columns of falangists, carlists and nationalists rose up in different points of Spain. The African Army in Morocco joins the coup. Reactionary officers within the Ejercito have taken their troops out of the barracks and joined them with the reactionary forces to stop the KPD from taking power. 
+
+We are forced to be on the same side as the PCE, whether we want to or not.
+
+
+- @civil_war
+
+
+@left_coalition_resources
+title: Use our resources to smooth things over.
+unavailable-subtitle: Required: 3 resources
+subtitle: -3 resources
+choose-if: resources >= 3
+on-arrival: resources -= 3
+go-to: left_coalition_success
+
+@left_coalition_relations
+title: Convince the PCE to accept democracy.
+unavailable-subtitle: Our relationships with the KPD are not good enough.
+choose-if: pce_relation >= 60 
+go-to: left_coalition_success
+
+
+@left_coalition_success
+on-arrival: psoe_in_government = 1; in_left_front = 1; chancellor = "Largo Caballero"; chancellor_party = "PSOE"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; pce_relation += 10
+go-to: left_coalition_civil_war if coup_progress >= 10; left_coalition_no_civil_war if coup_progress < 10
+achievement: einheitsfront
+
+Somehow, surprisingly, the left coalition is successfully formed, without appointing Diaz as president. The consensus choice to lead the Council of Ministers, accepted by the SPD, KPD, and President [+ president +], is Largo Caballero, who belongs to the left faction of the PSOE.
+
+# just raise the coup limit, don't immediately go to civil war
+
+@left_coalition_no_civil_war
+on-arrival: pce_goals_seen = 0; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; public_instruction_minister_party = "PSOE"; public_works_minister_party = "PSOE"; ejercito_loyalty -= 0.05
+
+In response to the PCE's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
+
+The PCE has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" in the worker's government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that we would inevitably fail, and that our failure would benefit them. 
+
+Whatever their reasoning is, the PSOE has control over the ministries of government.
+
+@left_coalition_civil_war
+on-arrival: reichswehr_loyalty += 0.1
+
+In response to the PCE's entrance into the government, the right-wing immediately launches a coup attempt. Columns of falangists, carlists and nationalists rose up in different points of Spain. The African Army in Morocco joins the coup. Reactionary officers within the Ejercito have taken their troops out of the barracks and joined them with the reactionary forces to stop us from taking power.
+
+The President manages to diffuse some of the hostility from the Ejercito and the Security Forces, but fail to prevent the outbreak of fighting. We are forced to fight on the same side as the PCE, whether we want to or not.
+
+
+
+- @civil_war: A civil war, then.
 
 ########################################## FAR RIGHT COALITION
 
@@ -589,6 +700,23 @@ Julian Besteiro has become President of the Council of Ministers of the PSOE maj
 
 
 ########################################### BRAUNS DILEMA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
