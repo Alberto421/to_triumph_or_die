@@ -435,8 +435,8 @@ Q.finance_minister = 'Indalecio Prieto';
 Q.finance_minister_party = 'PSOE';
 Q.public_works_minister = 'Alvaro de Albornoz'; // Fomento
 Q.public_works_minister_party = 'PRRS';
-Q.education_minister = 'Marcelino Domingo';
-Q.education_minister_party = 'PRRS';
+Q.public_instruction_minister = 'Marcelino Domingo';
+Q.public_instruction_minister_party = 'PRRS';
 Q.agriculture_minister = 'Marcelino Domingo';
 Q.agriculture_minister_party = 'PRRS';
 
