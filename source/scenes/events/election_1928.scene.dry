@@ -614,7 +614,7 @@ Besteiro's appointment is approved by our potential allies.
 @lerroux_chancellor
 title: Let the Radical Republicans lead the coalition.
 subtitle: [+ prr_leader +] will be chancellor. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: caballeristas_dissent += 5; prietistas_dissent += 5; prr_relation += 10; dlr_relation += 5; pce_relation -= 5;[? if prr_leader = Martinez Barrios: chancellor = "Martinez Barrios" ?]; chancellor_party = "PRR"; psoe_in_government = 1; leverage += 5
+on-arrival: caballeristas_dissent += 5; prietistas_dissent += 5; prr_relation += 10; dlr_relation += 5; pce_relation -= 5; chancellor = "Martinez Barrios" if prr_leader == "Martinez Barrios"; chancellor = "Lerroux" if prr_leader == "Lerroux"; chancellor_party = "PRR"; psoe_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the left and center of our party are criticizing this decision.
