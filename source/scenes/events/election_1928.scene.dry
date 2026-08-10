@@ -174,7 +174,7 @@ data = [
         "id": "pce",
         "legend": "PCE",
         "name": "PCE",
-        "seats": Math.round(Q.pce_r*5),
+        "seats": Math.round(Q.pce_r*4.73),
     }
 ];
 if (Q.poum_formed && Q.poum_r) {
@@ -182,7 +182,7 @@ if (Q.poum_formed && Q.poum_r) {
             "id": "poum",
             "legend": "POUM",
             "name": "POUM",
-            "seats": Math.round(Q.poum_r*5),
+            "seats": Math.round(Q.poum_r*4.73),
             });
 }
 if (Q.ur_formed && Q.ur_r) {
@@ -190,7 +190,7 @@ if (Q.ur_formed && Q.ur_r) {
             "id": "ur",
             "legend": "UR",
             "name": "UR",
-            "seats": Math.round(Q.ur_r*5),
+            "seats": Math.round(Q.ur_r*4.73),
             });
 }
 if (Q.re_formed && Q.re_r) {
@@ -198,7 +198,7 @@ if (Q.re_formed && Q.re_r) {
             "id": "re",
             "legend": "RE",
             "name": "RE",
-            "seats": Math.round(Q.ur_r*5),
+            "seats": Math.round(Q.ur_r*4.73),
             });
 }
 data = data.concat([
@@ -206,19 +206,19 @@ data = data.concat([
         "id": "psoe",
         "legend": "PSOE",
         "name": "PSOE",
-        "seats": Math.round(Q.psoe_r*5),
+        "seats": Math.round(Q.psoe_r*4.73),
     },
     {
         "id": "ar",
         "legend": Q.ar_name,
         "name": Q.ar_name,
-        "seats": Math.round(Q.ar_r*5),
+        "seats": Math.round(Q.ar_r*4.73),
     },
     {
         "id": "jons",
         "legend": Q.jons_name,
         "name": Q.jons_name,
-        "seats": Math.round(Q.jons_r*5),
+        "seats": Math.round(Q.jons_r*4.73),
     },
 
     {
@@ -231,49 +231,49 @@ data = data.concat([
         "id": "prrs",
         "legend": "PRRS",
         "name": "PRRS",
-        "seats": Math.round(Q.prrs_r*5),
+        "seats": Math.round(Q.prrs_r*4.73),
     },
     {
         "id": "prr",
         "legend": "PRR",
         "name": "PRR",
-        "seats": Math.round(Q.prr_r*5),
+        "seats": Math.round(Q.prr_r*4.73),
     },
     {
         "id": "other_left_republicans",
         "legend": "Other Left Republicans",
         "name": "Other Left Republicans",
-        "seats": Math.round(Q.other_left_republicans_r*5),
+        "seats": Math.round(Q.other_left_republicans_r*4.73),
     },
     {
         "id": "other_right_republicans",
         "legend": "Other Right Republicans",
         "name": "Other Right Republicans",
-        "seats": Math.round(Q.other_right_republicans_r*5),
+        "seats": Math.round(Q.other_right_republicans_r*4.73),
     },
     {
         "id": "dlr",
         "legend": "DLR",
         "name": "DLR",
-        "seats": Math.round(Q.dlr_r*5),
+        "seats": Math.round(Q.dlr_r*4.73),
     },
     {
         "id": "other_monarchists",
         "legend": "Other Monarchists",
         "name": "Other Monarchists",
-        "seats": Math.round(Q.other_monarchists_r*5),
+        "seats": Math.round(Q.other_monarchists_r*4.73),
     },
     {
         "id": "regionalists",
         "legend": "Regionalists",
         "name": "Regionalists",
-        "seats": Math.round(Q.regionalists_r*5),
+        "seats": Math.round(Q.regionalists_r*4.73),
     },
     {
         "id": "agrarios",
         "legend": "Agrarios",
         "name": "Agrarios",
-        "seats": Math.round(Q.agrarios_r*5),
+        "seats": Math.round(Q.agrarios_r*4.73),
     },
 ]);
 
