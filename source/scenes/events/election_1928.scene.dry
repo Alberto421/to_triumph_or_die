@@ -1055,7 +1055,7 @@ President [+ president +] faces a dilemma. He desperately desires a socialist or
 - @emergency_braun: We will form an emergency government with [+ president +]'s support.
 - @new_elections: We will have new elections.
 - @left_coalition
-- @republican_left_coalition
+- @left_republican_coalition
 - @popular_front_coalition
 - @far_right_coalition
 
