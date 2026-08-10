@@ -111,25 +111,27 @@ Q.leverage = Q.psoe_r;
 Q.grand_coalition_failed = 0;
 // Reset government and ministers... Based on Brüning's 1930 govt
 Q.coalition_dissent = 0;
-Q.kpd_coalition_dissent = 0;
-Q.spd_in_government = 0;
-Q.in_weimar_coalition = 0;
-Q.in_grand_coalition = 0;
+Q.pce_coalition_dissent = 0;
+Q.psoe_in_government = 0;
+Q.in_left_republican_coalition = 0;
+Q.in_republican_socialist_conjunction = 0;
 Q.in_left_front = 0;
 Q.in_popular_front = 0;
 Q.in_emergency_government = 0;
 Q.in_minority_government = 0;
 Q.in_unity_government = 0;
-Q.spd_toleration = 0;
-Q.spd_caretaker = 0;
-Q.foreign_minister_party = 'DVP';
-Q.interior_minister_party = 'Z';
-Q.justice_minister_party = 'I';
-Q.labor_minister_party = 'Z';
-Q.reichswehr_minister_party = 'I';
-Q.economic_minister_party = Q.ddp_name;
-Q.finance_minister_party = 'DVP';
-Q.agriculture_minister_party = 'Z';
+Q.psoe_toleration = 0;
+Q.psoe_caretaker = 0;
+Q.foreign_minister_party = 'Regionalists';
+Q.interior_minister_party = 'PRR';
+Q.justice_minister_party = 'Other Right Republicans';
+Q.labor_minister_party = 'PRR';
+Q.reichswehr_minister_party = 'PRR';
+Q.economic_minister_party = "PRR";
+Q.finance_minister_party = 'PRR';
+Q.agriculture_minister_party = 'DLR';
+Q.public_instruction_minister_party = 'PRR';
+Q.public_works_minister_party = 'Regionalists';
 
 // reset PCE goals
 Q.pce_goals_seen = 0;
@@ -841,39 +843,33 @@ The President manages to diffuse some of the hostility from the Ejercito and the
 ########################################## RIGHT COALITION
 
 @right_coalition
-Title: CAMBIAR AYUDA 2
-view-if: muller_dead = 1
-on-arrival: chancellor = "Besteiro"
+title: Refuse to form a government, so that a right-wing coalition may be formed.
+subtitle: PRR + DLR + Agrarians + Other Right Republicans ([+ right_coalition +]%)
+view-if: right_coalition >= 50
+choose-if: year < 1931
 
-Julian Besteiro has become President of the Council of Ministers of the PSOE majority.
+There are enough votes for a right-wing coalition of the Radical Republicans, DLR, Agrarians, and minor conservative republican parties. [? if largest_party == "PSOE": However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
+
+- @right_coalition_sure: Yes, we will abdicate our responsibility for government formation, and let a right-wing coalition take power.
+- @grand_coalition: Actually, we wish to form a republican socialist conjunction after all.
+
+@no_right_coalition
+go-to: no_majority
+
+However, the DNVP and its leader Hugenberg is refusing to partake in a coalition with the "November criminals" in the Center Party. Thus, there is no clear path towards a Reichstag majority.
+
+@right_coalition_sure
+subtitle: This will be extremely unpopular within our party.
+on-arrival: pro_republic -= 5; prietistas_dissent += 15; caballeristas_dissent += 10; besteiristas_dissent += 25; prr_relation -= 5; prrs_relation -= 5; ar_relation -= 5; dlr_relation -= 5; other_left_republicans -= 5
+go-to: right_coalition_2
 
 
 @right_coalition_2
-Title: CAMBIAR AYUDA 3
-view-if: muller_dead = 1
-on-arrival: chancellor = "Besteiro"
+view-if: right_coalition >= 50
+choose-if: year < 1929
+on-arrival: psoe_in_government = 0; psoe_toleration = 0; in_republican_socialist_conjunction = 0; chancellor = "Lerroux" if prr_leader == "Lerroux"; chancellor = "Martinez Barrios" if prr_leader == "Martinez Barrios"; foreign_minister_party = "Regionalists"; interior_minister_party = "PRR"; justice_minister_party = "Other Right Republicans"; labor_minister_party = "PRR"; reichswehr_minister_party = "PRR"; economic_minister_party = "Other Right Republicans"; finance_minister_party = "PRR"; agriculture_minister_party = "DLR"; public_instruction_minister_party = "PRR"; public_works_minister_party = "PRRE"; in_right_coalition = 1;
 
-Julian Besteiro has become President of the Council of Ministers of the PSOE majority.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+A majority center-right coalition is formed, with [+ chancellor +] as chancellor.
 
 ########################################## LEFT COALITION
 
@@ -949,7 +945,7 @@ Somehow, surprisingly, the left coalition is successfully formed, without appoin
 # just raise the coup limit, don't immediately go to civil war
 
 @left_coalition_no_civil_war
-on-arrival: pce_goals_seen = 0; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; public_instruction_minister_party = "PSOE"; public_works_minister_party = "PSOE"; ejercito_loyalty -= 0.05
+on-arrival: pce_goals_seen = 0; foreign_minister_party = "PSOE"; interior_minister_party = "PSOE"; justice_minister_party = "PSOE"; labor_minister_party = "PSOE"; reichswehr_minister_party = "PSOE"; economic_minister_party = "PSOE"; finance_minister_party = "PSOE"; agriculture_minister_party = "PSOE"; public_instruction_minister_party = "PSOE"; public_works_minister_party = "PSOE"; ejercito_loyalty -= 0.05
 
 In response to the PCE's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
 
@@ -1188,33 +1184,13 @@ achievement: minderheitsregierung
 We have won the vote of no confidence, and are currently ruling under a PSOE minority government. Now our task is to fix the country.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ########################################### No Majority
-
-
 @no_majority
-view-if: no_confidence_votes <= 50
-on-arrival: in_minority_government = 1; in_emergency_government = 0;
-achievement: minderheitsregierung
+view-if: left_republican_coalition < 50 and left_front < 50 and popular_front < 50 and right_coalition < 50 and (republican_socialist_conjunction < 50 or (year >= 1932 and prr_leader == "Lerroux") or grand_coalition_failed == 1) and far_right_coalition < 50
+on-arrival: no_majority_elections += 1; workers_ap += 5; middle_ap += 9; rural_ap += 5; smallholders_ap += 9; workers_pce += 5; next_election_time = time+3; next_election_month = month + 3; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; pro_republic -= 8; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labor_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; reichswehr_minister_party = "I"; public_instruction_minister_party = "I"; public_works_minister_party = "I";
 
-We have won the vote of no confidence, and are currently ruling under a PSOE minority government. Now our task is to fix the country.
 
+There is no path to a majority government. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 
 
