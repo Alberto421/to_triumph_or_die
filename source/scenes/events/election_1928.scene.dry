@@ -412,7 +412,7 @@ There are some potential coalition arrangements.
 @republican_socialist_conjunction
 title: We can form a Republican-Socialist Conjunction.
 view-if: republican_socialist_conjunction >= 50 and grand_coalition_failed == 0
-subtitle: PSOE + PRR + PRRS + [+ ar_name +] + DLR + Other minor republican parties ([+ grand_coalition +]%)
+subtitle: PSOE + PRR + PRRS + [+ ar_name +] + DLR + Other minor republican parties ([+ republican_socialist_conjunction +]%)
 on-arrival: in_republican_socialist_conjunction = 1; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
 go-to: grand_coalition_spd_lead if (psoe_r >= 30 and largest_party == "PSOE"); grand_coalition_z_lead if (prr_r + dlr_r) > 30; grand_coalition_ar_lead if (psoe_r < 30 and prr_r + dlr_r < 30)
 
