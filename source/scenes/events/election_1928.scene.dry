@@ -526,7 +526,7 @@ Unfortunately, the PRR is unwilling to enter into another coalition with the SPD
 - @coalition_menu: What are the other governing arrangements?
 
 
-@beg_prr
+@beg_dvp
 view-if: prr_relation >= 15
 go-to: dvp_conservative if prr_leader == "Lerroux"; dvp_majority if prr_leader == "Martinez Barrios"
 
