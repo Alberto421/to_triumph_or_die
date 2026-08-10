@@ -724,6 +724,7 @@ We have decided to tolerate Azana's government. This means that we will vote aga
 ########################################## LEFT REPUBLICAN COALITION
 
 @left_republican_coalition
+Title: CAMBIAR AYUDA
 view-if: muller_dead = 1
 on-arrival: chancellor = "Besteiro"
 
@@ -840,6 +841,7 @@ The President manages to diffuse some of the hostility from the Ejercito and the
 ########################################## RIGHT COALITION
 
 @right_coalition
+Title: CAMBIAR AYUDA 2
 view-if: muller_dead = 1
 on-arrival: chancellor = "Besteiro"
 
@@ -847,6 +849,7 @@ Julian Besteiro has become President of the Council of Ministers of the PSOE maj
 
 
 @right_coalition_2
+Title: CAMBIAR AYUDA 3
 view-if: muller_dead = 1
 on-arrival: chancellor = "Besteiro"
 
