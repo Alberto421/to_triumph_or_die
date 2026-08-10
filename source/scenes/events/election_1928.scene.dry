@@ -312,7 +312,7 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}PCE: {!</td><td>!} [+ pce_r +]% {!</td><td>!} [+ str_change_pce +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#e31cb9'> </div> !} [+ ar_name +]: {!</td><td>!} [+ ar_r +]% {!</td><td>!} [+ str_change_ar +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8845ba'> </div> !} [+ ar_name +]: {!</td><td>!} [+ ar_r +]% {!</td><td>!} [+ str_change_ar +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#fa9105'> </div> !} PRRS: {!</td><td>!} [+ prrs_r +]% {!</td><td>!} [+ str_change_prrs +] {!</td></tr>!}
 
@@ -851,12 +851,12 @@ choose-if: year < 1931
 There are enough votes for a right-wing coalition of the Radical Republicans, DLR, Agrarians, and minor conservative republican parties. [? if largest_party == "PSOE": However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
 
 - @right_coalition_sure: Yes, we will abdicate our responsibility for government formation, and let a right-wing coalition take power.
-- @grand_coalition: Actually, we wish to form a republican socialist conjunction after all.
+- @republican_socialist_conjunction: Actually, we wish to form a republican socialist conjunction after all.
 
 @no_right_coalition
 go-to: no_majority
 
-However, the DNVP and its leader Hugenberg is refusing to partake in a coalition with the "November criminals" in the Center Party. Thus, there is no clear path towards a Reichstag majority.
+Thus, there is no clear path towards a Cortes majority.
 
 @right_coalition_sure
 subtitle: This will be extremely unpopular within our party.
