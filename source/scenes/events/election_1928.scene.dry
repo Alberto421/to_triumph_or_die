@@ -767,7 +767,7 @@ view-if: president == "Azana"
 go-to: popular_front_success
 
 @popular_front_success
-on-arrival: psoe_in_government = 1; chancellor = "Casares Quiroga"; chancellor_party = ar_name; pce_relation += 10; coup_progress += 2; coalition_dissent = 0; ; in_republican_socialist_conjunction = 0; in_popular_front = 1; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
+on-arrival: psoe_in_government = 1; chancellor = "Casares Quiroga"; chancellor_party = ar_name; pce_relation += 10; coup_progress += 2; coalition_dissent = 0; in_republican_socialist_conjunction = 0; in_popular_front = 1; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
 
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 achievement: volksfront
@@ -890,7 +890,7 @@ go-to: left_coalition_success
 
 
 @left_coalition_success
-on-arrival: psoe_in_government = 1; chancellor = "Largo Caballero"; chancellor_party = "PSOE"; coup_progress += 3; capital_strike_progress += 2; pce_relation += 10: ; in_republican_socialist_conjunction = 0; in_popular_front = 0; in_left_front = 1; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
+on-arrival: psoe_in_government = 1; chancellor = "Largo Caballero"; chancellor_party = "PSOE"; coup_progress += 3; capital_strike_progress += 2; pce_relation += 10; in_republican_socialist_conjunction = 0; in_popular_front = 0; in_left_front = 1; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
 
 go-to: left_coalition_civil_war if coup_progress >= 10; left_coalition_no_civil_war if coup_progress < 10
 achievement: einheitsfront
@@ -965,7 +965,7 @@ Alternatively, [+ president +] could use the emergency powers of the presidency.
 title: PSOE majority alone CAMBIAR NOMBRE DE MINISTROS
 subtitle: PSOE: [+ psoe_r +]%
 view-if: psoe_r >= 50
-on-arrival: chancellor = "Empty"; chancellor_party = "PSOE"; psoe_in_government = 1; pro_republic += 5; foreign_minister_party = "PSOE"; foreign_minister = "Breitscheid"; interior_minister_party = "PSOE"; interior_minister = "Severing"; justice_minister_party = "PSOE"; justice_minister = "Radbruch"; labor_minister_party = "PSOE"; labor_minister = "Wissell"; reichswehr_minister_party = "PSOE"; reichswehr_minister = "Leber"; economic_minister_party = "PSOE"; economic_minister = "Schmidt"; finance_minister_party = "PSOE"; finance_minister = "Hilferding"; agriculture_minister_party = "PSOE"; agriculture_minister = "Baade"; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"; public_works_minister_party = "PSOE"; public_works_minister = "Indalecio Prieto"; ejercito_loyalty -= 0.05; ; in_republican_socialist_conjunction = 0; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 1; in_minority_government = 0
+on-arrival: chancellor = "Empty"; chancellor_party = "PSOE"; psoe_in_government = 1; pro_republic += 5; foreign_minister_party = "PSOE"; foreign_minister = "Breitscheid"; interior_minister_party = "PSOE"; interior_minister = "Severing"; justice_minister_party = "PSOE"; justice_minister = "Radbruch"; labor_minister_party = "PSOE"; labor_minister = "Wissell"; reichswehr_minister_party = "PSOE"; reichswehr_minister = "Leber"; economic_minister_party = "PSOE"; economic_minister = "Schmidt"; finance_minister_party = "PSOE"; finance_minister = "Hilferding"; agriculture_minister_party = "PSOE"; agriculture_minister = "Baade"; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"; public_works_minister_party = "PSOE"; public_works_minister = "Indalecio Prieto"; ejercito_loyalty -= 0.05; in_republican_socialist_conjunction = 0; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 1; in_minority_government = 0
 
 achievement: majority_party
 
