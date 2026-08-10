@@ -846,7 +846,11 @@ on-arrival: chancellor = "Besteiro"
 Julian Besteiro has become President of the Council of Ministers of the PSOE majority.
 
 
+@right_coalition_2
+view-if: muller_dead = 1
+on-arrival: chancellor = "Besteiro"
 
+Julian Besteiro has become President of the Council of Ministers of the PSOE majority.
 
 
 
@@ -1179,6 +1183,46 @@ on-arrival: in_minority_government = 1; in_emergency_government = 0;
 achievement: minderheitsregierung
 
 We have won the vote of no confidence, and are currently ruling under a PSOE minority government. Now our task is to fix the country.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########################################### No Majority
+
+
+@no_majority
+view-if: no_confidence_votes <= 50
+on-arrival: in_minority_government = 1; in_emergency_government = 0;
+achievement: minderheitsregierung
+
+We have won the vote of no confidence, and are currently ruling under a PSOE minority government. Now our task is to fix the country.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
