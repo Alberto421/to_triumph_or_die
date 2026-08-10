@@ -1,0 +1,84 @@
+title: The PCE calls a vote of no confidence against the current government!
+subtitle: We have angered the PCE too much...
+new-page: true
+view-if: pce_in_government = 1 and ((in_popular_front = 1 and pce_coalition_dissent >= 3) or (in_left_front = 1 and pce_coalition_dissent >= 4)) and psoe_r < 50 and not constructive_vonc
+tags: event
+go-to: menu
+
+= Vote of No Confidence
+
+The PCE has called a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be an election in a few months.
+
+@menu
+
+- @try_assuage: Try to assuage them somehow.
+- @support_left_republicans: Could we form a new government based on the PRRS and [+ ar_name +]?
+- @let_it_happen: Let the vote happen.
+
+@try_assuage
+
+How do we assuage the PCE?
+
+- @resources: Use our resources to reduce dissent within the coalition.
+- @thalmann: Appoint Diaz as President of the Council of Ministers instead of [+ chancellor +].
+- @support_left_republicans: Could we form a new government?
+- @let_it_happen: Never mind. Let the vote happen.
+
+@thalmann
+choose-if: president != "Alcala-Zamora"
+subtitle: This would be pretext for a right-wing coup.
+unavailable-subtitle: [? if president == "Alcala-Zamora" : President Alcala-Zamora would never allow this. ?]
+on-arrival: chancellor = "Diaz"; chancellor_party = "PCE"
+
+With great reluctance, President [+ president +] appoints [+ chancellor +] as President of the Council of Ministers.
+
+Immediately, [+ chancellor +] goes to work building a "Worker and Peasant's Spain": confiscation without indemnization of land and tools, rising by decree the wages of all workers, recognicing the right of seccesion to Catalonia, Basque Country and Galicia, leaving Morocco and all the colonies on Africa and supressing the Guardia Civil, Guardia de Asalto and Officers' Corp.
+
+In response, the right-wing forces launches almost immediately launch an attempted coup. Columns of falangists, carlists and nationalists rose up in different points of Spain. The African Army in Morocco joins the coup. Reactionary officers within the Ejercito have taken their troops out of the barracks and joined them with the reactionary forces to stop the KPD from taking power. 
+
+We are forced to be on the same side as the PCE, whether we want to or not.
+
+- @civil_war
+
+
+@resources
+choose-if: resources >= 3 and pce_ultimatum_seen = 0
+unavailable-subtitle: -3 resources - [? if resources < 3 : We do not have enough resources. ?][? if pce_ultimatum_seen : This is beyond the point when resources could fix. ?]
+subtitle: -3 resources
+on-arrival: resources -= 3; pce_coalition_dissent -= 1;
+
+By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution.
+
+
+@support_left_republicans
+choose-if: (left_republican_coalition >= 50 and ar_relation >= 40 and prrs_relation >= 40) or (republican_socialist_conjunction >= 50 and prr_relation >= 45 and ar_relation >= 45)
+unavailable-subtitle: [? if left_republican_coalition < 50 and republican_socialist_conjunction < 50: This would not give us a majority. ?] [? if ar_relation < 45 : After working with the Communists, Azana does not wish to form a coalition with us. ?] [? if prr_relation < 30 : The PRR would rather see the government fall than rescue us from the Communists. ?]
+
+We could try to boot the PCE from our governing coalition, and form a new government[? if psoe_r <= 50 : with the bourgeois parties ?].
+
+- @election_1928.psoe_majority: Form an PSOE government, without the PCE?
+- @election_1928.left_republican_coalition: Form a Left Republican Coalition?
+- @election_1928.republican_socialist_conjunction: Form a Republican Socialist Conjunction?
+- @let_it_happen: There is nothing we can do.
+
+
+@let_it_happen
+view-if: not constructive_vonc
+on-arrival: pce_relation -= 8; workers_pce -= 5; workers_psoe -= 8; unemployed_psoe -= 6
+go-to: let_it_happen_braun if president != "Alcala-Zamora"; let_it_happen_hindenburg if president = "Alcala-Zamora"
+
+# if Braun is president, we are now a caretaker government. If Hindenburg is president, Brüning is a caretaker government
+
+@let_it_happen_braun
+on-arrival: next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; psoe_in_government = 0; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "I"; interior_minister_party = "I"; justice_minister_party = "I"; labor_minister_party = "I"; reichswehr_minister_party = "I"; economic_minister_party = "I"; finance_minister_party = "I"; agriculture_minister_party = "I"; public_instruction_minister_party = "I"; public_works_minister_party = "I"
+
+The vote succeeds, and our coalition has collapsed. [+ chancellor +] will lead a caretaker government until the next election.
+
+New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+
+@let_it_happen_hindenburg
+on-arrival: next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; psoe_in_government = 0; in_popular_front = 0; in_left_front = 0; chancellor = "Portela"; chancellor_party = "I"; foreign_minister_party = "DVP"; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "DVP"; agriculture_minister_party = "Z"; public_instruction_minister_party = "I"; public_works_minister_party = "I"; coalition_dissent = 0; pce_coalition_dissent = 0; pro_republic -= 5; middle_psoe -= 5; workers_psoe -= 3 if pro_republic < 50; workers_psoe -= 4 if pro_republic < 40; middle_ap += 8 if pro_republic < 50
+
+The vote succeeds, and our government has resigned. Portela has been appointed as the head of an acting government, consisting solely of center bourgeois parties.
+
+New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
