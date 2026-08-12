@@ -53,9 +53,9 @@ Q.dissent_percent = 5;
 // factions
 Q.factions = ['caballeristas', 'prietistas', 'besteiristas'];
 // should this be normalized to 100%?
-Q.caballeristas_strength = 30;
+Q.caballeristas_strength = 45;
 Q.caballeristas_dissent = 20;
-Q.prietistas_strength = 45;
+Q.prietistas_strength = 30;
 Q.prietistas_dissent = 0;
 Q.besteiristas_strength = 25;
 Q.besteiristas_dissent = 5;
@@ -98,18 +98,18 @@ Q.other_monarchists_relation = 5;
 Q.jons_relation = 5;
 
 // party leaders
-Q.ar_ir_leader = "Manuel Azana";
+Q.ar_ir_leader = "Azana";
 Q.prrs_leader = "Marcelino Domingo";
-Q.other_left_republicans_leader = "Joaquin Pi i Arsuaga";
-Q.prr_leader = "Alejandro Lerroux";
-Q.dlr_leader = "Alcala Zamora";
-Q.other_right_republicans_leader = "Juan March";
-Q.regionalists_leader = "Francesc Macia";
-Q.pce_leader = "Jose Diaz";
-Q.agrarios_leader = "Martinez de Velasco";
-Q.ap_leader = "Angel Herrera Oria";
-Q.other_monarchists_leader = "Joaquin Beunza";
-Q.jons_leader = "Onesimo Redondo";
+Q.other_left_republicans_leader = "Pi i Arsuaga";
+Q.prr_leader = "Lerroux";
+Q.dlr_leader = "Alcala-Zamora";
+Q.other_right_republicans_leader = "March";
+Q.regionalists_leader = "Macia";
+Q.pce_leader = "Diaz";
+Q.agrarios_leader = "De Velasco";
+Q.ap_leader = "Herrera Oria";
+Q.other_monarchists_leader = "Beunza";
+Q.jons_leader = "Redondo";
 
 // presidential activity
 Q.alcala_zamora_relation = 70;
@@ -147,6 +147,10 @@ Q.guardia_civil_loyalty = 0.45;
 Q.ejercito_strength = 120;
 Q.ejercito_militancy = 5;
 Q.ejercito_loyalty = 0.2;
+
+Q.regulares_strength = 6;
+Q.regulares_militancy = 9;
+Q.regulares_loyalty = 0.1;
 
 // The state of the country
 
@@ -195,8 +199,8 @@ Q.middle = 12; // small owners, civil servants, professionals, intellectuals
 Q.rural = 35; // Landless jornaleros (Andalusia, Extremadura) - prime base for UGT and CNT
 Q.smallholders = 25; // Small landowners, leaseholders
 Q.elites = 3; // large landowners, industrialists, high clergy, military officers
-Q.unemployed = 12; //va aparte? PREGUNTAR
-Q.catholics = 85; //va aparte? PREGUNTAR
+Q.unemployed = 12;
+Q.catholics = 45; // Very conservative catholics, although most of the population was catholic
 
 // REVISAR VOCABULARIO REPUBLICANO - TODO PLACEHOLDER POR SI NO QUEDA CLARO
 
@@ -221,106 +225,107 @@ Q.parties = ['psoe', 'ar', 'prrs', 'other_left_republicans', 'prr', 'dlr', 'othe
 // TODO: add new parties later on
 Q.ur_formed = 0; // Union Republicana
 Q.poum_formed = 0; //Trotskysts
+Q.re_formed = 0; Renovacion Espanola (Monarchists)
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
 Q.workers_psoe = 60;
-Q.workers_ar = 10;
-Q.workers_prrs = 10;
+Q.workers_ar = 5;
+Q.workers_prrs = 15;
 Q.workers_other_left_republicans = 10;
-Q.workers_prr = 10;
-Q.workers_dlr = 10;
-Q.workers_other_right_republicans = 10;
+Q.workers_prr = 6;
+Q.workers_dlr = 3;
+Q.workers_other_right_republicans = 2;
 Q.workers_regionalists = 10;
-Q.workers_pce = 10;
-Q.workers_agrarios = 10;
-Q.workers_ap = 10;
-Q.workers_other_monarchists = 10;
-Q.workers_jons = 10;
+Q.workers_pce = 3;
+Q.workers_agrarios = 0;
+Q.workers_ap = 3;
+Q.workers_other_monarchists = 2;
+Q.workers_jons = 1;
 
 Q.middle_psoe = 5;
-Q.middle_ar = 10;
-Q.middle_prrs = 10;
+Q.middle_ar = 25;
+Q.middle_prrs = 20;
 Q.middle_other_left_republicans = 10;
-Q.middle_prr = 10;
-Q.middle_dlr = 10;
-Q.middle_other_right_republicans = 10;
-Q.middle_regionalists = 10;
-Q.middle_pce = 10;
-Q.middle_agrarios = 10;
-Q.middle_ap = 10;
-Q.middle_other_monarchists = 10;
-Q.middle_jons = 10;
+Q.middle_prr = 25;
+Q.middle_dlr = 7;
+Q.middle_other_right_republicans = 3;
+Q.middle_regionalists = 27;
+Q.middle_pce = 0;
+Q.middle_agrarios = 0;
+Q.middle_ap = 3;
+Q.middle_other_monarchists = 3;
+Q.middle_jons = 1;
 
-Q.smallholders_psoe = 5;
+Q.smallholders_psoe = 3;
 Q.smallholders_ar = 10;
 Q.smallholders_prrs = 10;
-Q.smallholders_other_left_republicans = 10;
-Q.smallholders_prr = 10;
+Q.smallholders_other_left_republicans = 5;
+Q.smallholders_prr = 35;
 Q.smallholders_dlr = 10;
 Q.smallholders_other_right_republicans = 10;
 Q.smallholders_regionalists = 10;
-Q.smallholders_pce = 10;
-Q.smallholders_agrarios = 10;
-Q.smallholders_ap = 10;
-Q.smallholders_other_monarchists = 10;
-Q.smallholders_jons = 10;
+Q.smallholders_pce = 0;
+Q.smallholders_agrarios = 20;
+Q.smallholders_ap = 5;
+Q.smallholders_other_monarchists = 8;
+Q.smallholders_jons = 1;
 
-Q.elites_psoe = 5;
-Q.elites_ar = 10;
-Q.elites_prrs = 10;
-Q.elites_other_left_republicans = 10;
-Q.elites_prr = 10;
+Q.elites_psoe = 0;
+Q.elites_ar = 1;
+Q.elites_prrs = 0;
+Q.elites_other_left_republicans = 1;
+Q.elites_prr = 3;
 Q.elites_dlr = 10;
 Q.elites_other_right_republicans = 10;
-Q.elites_regionalists = 10;
-Q.elites_pce = 10;
+Q.elites_regionalists = 15;
+Q.elites_pce = 0;
 Q.elites_agrarios = 10;
-Q.elites_ap = 10;
-Q.elites_other_monarchists = 10;
-Q.elites_jons = 10;
+Q.elites_ap = 20;
+Q.elites_other_monarchists = 30;
+Q.elites_jons = 1;
 
-Q.rural_psoe = 10;
-Q.rural_ar = 10;
-Q.rural_prrs = 10;
+Q.rural_psoe = 45;
+Q.rural_ar = 2;
+Q.rural_prrs = 20;
 Q.rural_other_left_republicans = 10;
-Q.rural_prr = 10;
-Q.rural_dlr = 10;
-Q.rural_other_right_republicans = 10;
+Q.rural_prr = 15;
+Q.rural_dlr = 0;
+Q.rural_other_right_republicans = 1;
 Q.rural_regionalists = 10;
-Q.rural_pce = 10;
-Q.rural_agrarios = 10;
-Q.rural_ap = 10;
-Q.rural_other_monarchists = 10;
-Q.rural_jons = 10;
+Q.rural_pce = 3;
+Q.rural_agrarios = 2;
+Q.rural_ap = 1;
+Q.rural_other_monarchists = 1;
+Q.rural_jons = 1;
 
-Q.unemployed_psoe = 25;
-Q.unemployed_ar = 10;
-Q.unemployed_prrs = 10;
-Q.unemployed_other_left_republicans = 10;
-Q.unemployed_prr = 10;
-Q.unemployed_dlr = 10;
-Q.unemployed_other_right_republicans = 10;
+Q.unemployed_psoe = 50;
+Q.unemployed_ar = 5;
+Q.unemployed_prrs = 15;
+Q.unemployed_other_left_republicans = 1;
+Q.unemployed_prr = 25;
+Q.unemployed_dlr = 1;
+Q.unemployed_other_right_republicans = 0;
 Q.unemployed_regionalists = 10;
-Q.unemployed_pce = 10;
-Q.unemployed_agrarios = 10;
-Q.unemployed_ap = 10;
-Q.unemployed_other_monarchists = 10;
-Q.unemployed_jons = 10;
+Q.unemployed_pce = 1;
+Q.unemployed_agrarios = 1;
+Q.unemployed_ap = 3;
+Q.unemployed_other_monarchists = 1;
+Q.unemployed_jons = 1;
 
-Q.catholics_psoe = 15;
-Q.catholics_ar = 10;
-Q.catholics_prrs = 10;
-Q.catholics_other_left_republicans = 10;
-Q.catholics_prr = 10;
+Q.catholics_psoe = 0;
+Q.catholics_ar = 0;
+Q.catholics_prrs = 0;
+Q.catholics_other_left_republicans = 3;
+Q.catholics_prr = 50;
 Q.catholics_dlr = 10;
 Q.catholics_other_right_republicans = 10;
 Q.catholics_regionalists = 10;
-Q.catholics_pce = 10;
-Q.catholics_agrarios = 10;
-Q.catholics_ap = 10;
+Q.catholics_pce = 0;
+Q.catholics_agrarios = 5;
+Q.catholics_ap = 20;
 Q.catholics_other_monarchists = 10;
-Q.catholics_jons = 10;
+Q.catholics_jons = 3;
 
 // Current Cortes Composition (Based on June 1931 Constituent Elections)
 Q.psoe_r = 25;
@@ -362,7 +367,7 @@ Q.old_re_r = 0;
 
 // Party evolution name flags
 Q.ar_name = "AR"; // Changes later to IR after mergers
-Q.ap_name = "AP"; // Changes to CEDA when formed
+Q.ap_name = "AP"; // Changes to CEDA when/if formed
 Q.jons_name = "JONS"; // Changes to FE when formed
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
@@ -374,7 +379,7 @@ Q.economic_records = [];
 
 
 // State of the government
-Q.president = "Alcala-Zamora"; //Igual tengo que quitar el partido por los parentesis
+Q.president = "Vacancy";
 // starting chancellor: Alcala-Zamora
 Q.chancellor = "Alcala-Zamora";
 Q.chancellor_party = 'DLR';
@@ -551,9 +556,9 @@ Q.no_majority_elections = 0;
 
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
-Q.next_election_year = 1928;
-Q.next_election_month = 5;
-Q.next_election_time = 5;
+Q.next_election_year = 1931;
+Q.next_election_month = 6;
+Q.next_election_time = 4;
 
 // government affairs timers
 Q.agricultural_policy_timer = 0;
@@ -615,7 +620,7 @@ This is a game of alternate history. While historical accuracy is a major concer
 
 For more information on the politics and government of the Second Spanish Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
-- @1931_main: Begin (normal difficulty)
+- @1931_main: Begin ([s]pain difficulty)
 
 @1931_main
 on-arrival: difficulty = 0; resources = 2; dues = 2; ugt_resources = 2; fjs_strength = 50; ar_relation = 75; prrs_relation = 65; budget = 4;
