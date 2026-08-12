@@ -225,7 +225,7 @@ Q.parties = ['psoe', 'ar', 'prrs', 'other_left_republicans', 'prr', 'dlr', 'othe
 // TODO: add new parties later on
 Q.ur_formed = 0; // Union Republicana
 Q.poum_formed = 0; //Trotskysts
-Q.re_formed = 0; Renovacion Espanola (Monarchists)
+Q.re_formed = 0; // Renovacion Espanola (Monarchists)
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
