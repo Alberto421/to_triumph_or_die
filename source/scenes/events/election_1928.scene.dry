@@ -344,7 +344,7 @@ Left Republican Coalition (PSOE + [+ ar_name +] + PRRS + Other Left Republicans)
 
 Popular Front (PSOE + [+ ar_name +] + PRRS + Other Left Republicans + PCE + Regionalists): [+ popular_front +]%
 
-Right Wing Coalition (PRR + [+ ap_name +] + Agrarians + DLR + Other Right Republicans): [+ right_coalition +]%
+Right Wing Coalition (PRR + Agrarians + DLR + Other Right Republicans): [+ right_coalition +]%
 
 Left Wing Coalition (PSOE + PCE): [+ left_front +]%
 
@@ -416,8 +416,14 @@ title: We can form a Republican-Socialist Conjunction.
 view-if: republican_socialist_conjunction >= 50 and grand_coalition_failed == 0
 subtitle: PSOE + PRR + PRRS + [+ ar_name +] + DLR + Other minor republican parties ([+ republican_socialist_conjunction +]%)
 on-arrival: in_republican_socialist_conjunction = 1; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
-go-to: grand_coalition_spd_lead if (psoe_r >= 30 and largest_party == "PSOE"); grand_coalition_z_lead if (prr_r + dlr_r) > 30; grand_coalition_ar_lead if (psoe_r < 30 and prr_r + dlr_r < 30)
+go-to: grand_coalition_first if n_elections <= 1; grand_coalition_spd_lead if (psoe_r >= 30 and largest_party == "PSOE" and n_elections > 1); grand_coalition_z_lead if (prr_r + dlr_r) > 30 and n_elections > 1; grand_coalition_ar_lead if (psoe_r < 30 and prr_r + dlr_r < 30 and n_elections > 1)
 
+@grand_coalition_first
+view-if: republican_socialist_conjunction >= 50
+on-arrival: psoe_in_government = 1; pro_republic += 5; chancellor = "Alcala-Zamora"; chancellor_party = "DLR"; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; leverage = 25 if leverage >= 25; in_republican_socialist_conjunction = 1; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
+go-to: ministries
+
+The Republican-Socialist Conjunction is able to get a mojority in the Constituyent Cortes due to the disorganization of the monarchical forces. Being a Constituyent Election, Alcala-Zamora remains President of the Provisional Government. Until the Constitution is made, the Head of the State remains in Vacancy. Now, we have to pick our ministries.
 
 
 @grand_coalition_z_lead
