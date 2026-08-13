@@ -6,6 +6,9 @@ cortes_1.jpg: Por Desconocido - Colección propia, Dominio público, https://com
 
 
 = Images (posters):
+alegoria1.jpg: DUBÓN PORTOLÉS, Lluís. República Española, 14 de abril de 1931. https://flic.kr/p/2iPvPgb
+
+feixisme.jpg: PORTA, M. Feixisme No! [detail], 1937. https://flic.kr/p/2mJ8DCQ
 
 reconstruir.jpg: Use: This work is available from the UC San Diego Library. This digital copy of the work is intended to support research, teaching, and private study. https://library.ucsd.edu/dc/object/bb3243166m
 
@@ -13,7 +16,6 @@ suvotoesnecesario.jpg: SUAU. Su voto es necesario, Elecciones municipales, c. 19
 
 yunquepsoe.jpg: https://www.flickr.com/photos/halloweenhjb/49827558573/in/album-72157714070279236
 
-feixisme.jpg: PORTA, M. Feixisme No! [detail], 1937. https://flic.kr/p/2mJ8DCQ
 
 = Images (People)
 
