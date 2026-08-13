@@ -1440,7 +1440,7 @@ go-to: ministries
 
 @drop_public_instruction
 title: Drop the Public Instruction Ministry (Education).
-view-if: public_instruction_party = "PSOE"
-on-arrival: public_instruction_party = "PRRS"; public_instruction_minister = "Domingo"; leverage += 10; public_instruction_minister_party = "PCE" if in_left_front; public_instruction_minister = "Hernandez Tomas" if in_left_front;
+view-if: public_instruction_minister_party = "PSOE"
+on-arrival: public_instruction_minister_party = "PRRS"; public_instruction_minister = "Domingo"; leverage += 10; public_instruction_minister_party = "PCE" if in_left_front; public_instruction_minister = "Hernandez Tomas" if in_left_front;
 tags: drop_mins_1928
 go-to: ministries
