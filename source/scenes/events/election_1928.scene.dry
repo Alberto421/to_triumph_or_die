@@ -88,7 +88,6 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
 // get change arrows and signs
 
 
-// The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'PSOE';
 if (Q.prr_r >= Q.psoe_r && Q.prr_r >= Q.ap_r) {
     Q.largest_party = 'PRR';
@@ -416,7 +415,7 @@ title: We can form a Republican-Socialist Conjunction.
 view-if: republican_socialist_conjunction >= 50 and grand_coalition_failed == 0
 subtitle: PSOE + PRR + PRRS + [+ ar_name +] + DLR + Other minor republican parties ([+ republican_socialist_conjunction +]%)
 on-arrival: in_republican_socialist_conjunction = 1; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
-go-to: grand_coalition_first if n_elections <= 1; grand_coalition_spd_lead if (psoe_r >= 30 and largest_party == "PSOE" and n_elections > 1); grand_coalition_z_lead if (prr_r + dlr_r) > 30 and n_elections > 1; grand_coalition_ar_lead if (psoe_r < 30 and prr_r + dlr_r < 30 and n_elections > 1)
+go-to: grand_coalition_first if n_elections <= 1; grand_coalition_psoe_lead if (psoe_r >= 30 and largest_party == "PSOE" and n_elections > 1); grand_coalition_z_lead if (prr_r + dlr_r) > 30 and n_elections > 1; grand_coalition_ar_lead if (psoe_r < 30 and prr_r + dlr_r < 30 and n_elections > 1)
 
 @grand_coalition_first
 view-if: republican_socialist_conjunction >= 50
@@ -429,7 +428,7 @@ The Republican-Socialist Conjunction is able to get a majority in the Constituye
 @grand_coalition_z_lead
 go-to: grand_coalition_z_lead_2 if prr_relation >= 30; grand_coalition_fail if prr_relation < 30
 
-There are enough votes to form a majority coalition consisting of the PSOE, Radical Republicans (PRR), Socialist Radical Republicans (PRRS), Azana's ([+ ar_name +]), Liberal Republican Right (DLR), and other minor republican parties. Given our rather weak electoral performance, [? if psoe_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_spd = 1 : and the vote of no confidence against us, ?] President [+ President +] has asked the Radical Republican Party (PRR) to take the lead role in forming a government.
+There are enough votes to form a majority coalition consisting of the PSOE, Radical Republicans (PRR), Socialist Radical Republicans (PRRS), Azana's ([+ ar_name +]), Liberal Republican Right (DLR), and other minor republican parties. Given our rather weak electoral performance, [? if psoe_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_psoe = 1 : and the vote of no confidence against us, ?] President [+ President +] has asked the Radical Republican Party (PRR) to take the lead role in forming a government.
 
 @grand_coalition_z_lead_2
 
@@ -525,7 +524,7 @@ The people's faith in democracy is shaken by this ordeal. Of course, the [+ ap_n
 @grand_coalition_fail
 on-arrival: grand_coalition_failed = 1
 
-Unfortunately, the PRR is unwilling to enter into another coalition with the SPD, so the grand coalition is unable to be formed.
+Unfortunately, the PRR is unwilling to enter into another coalition with the PSOE, so the grand coalition is unable to be formed.
 
 - @no_majority: Thus, there is no clear majority.
 - @brauns_dilemma
@@ -572,7 +571,7 @@ As expected, the PRR is too set in their conservative ways.
 
 
 
-@grand_coalition_spd_lead
+@grand_coalition_psoe_lead
 on-arrival: leverage -= 15 if prr_relation < 20
 
 As expected, the PSOE is the largest party, and this time, we are expected to take the lead role in the formation of the next government, including selecting the President of the Government. President [+ president +] has asked us to form a majority coalition with the Radical Republicans (PRR), Socialist Radical Republicans (PRRS), Azana's ([+ ar_name +]), Liberal Republican Right (DLR), and other minor republican parties.
@@ -669,16 +668,16 @@ go-to: no_govt_2
 
 
 @no_govt_2
-on-arrival: besteiristas_dissent += 25; prietistas_dissent += 20; in_weimar_coalition = 0; in_grand_coalition = 0; chancellor = "Azana" if chancellor == "Alcala-Zamora"; spd_in_government = 0; grand_coalition_failed = 1
-go-to: right_coalition_post_spd if right_coalition >= 50 and president == "Alcala-Zamora" and year < 1929; new_elections_spd if (right_coalition < 50 or year >= 1929) and president != "Braun"; brauns_dilemma if president == "Braun"
+on-arrival: besteiristas_dissent += 25; prietistas_dissent += 20; in_weimar_coalition = 0; in_grand_coalition = 0; chancellor = "Azana" if chancellor == "Alcala-Zamora"; psoe_in_government = 0; grand_coalition_failed = 1
+go-to: right_coalition_post_psoe if right_coalition >= 50 and president == "Alcala-Zamora" and year < 1929; new_elections_psoe if (right_coalition < 50 or year >= 1929) and president != "Braun"; brauns_dilemma if president == "Braun"
 
 
-@right_coalition_post_spd
+@right_coalition_post_psoe
 go-to: right_coalition_2
 
 
 
-@new_elections_spd
+@new_elections_psoe
 on-arrival: next_election_time = time+3; next_election_month = month + 3; next_election_year = year; next_election_year = year + 1 if next_election_month > 12; next_election_month = next_election_month - 12 if next_election_month > 12; middle_psoe -= 5; workers_psoe -= 3; catholics_psoe -= 3; in_election = 1
 
 Since the remaining bourgeois and right-wing parties cannot form a tolerable governing agreement, new elections have been called for [+ next_election_month : month +] [+ next_election_year +]. The previous chancellor has resigned, and has been replaced by Manuel Azana, of the [+ ar_name +], as a consensus figure until next elections. 
@@ -688,7 +687,7 @@ We are seen as responsible for the failure to form a government, and many of our
 @grand_coalition_ar_lead
 go-to: grand_coalition_ar_lead_2 if ar_relation >= 30; grand_coalition_fail if ar_relation < 30
 
-There are enough votes to form a majority coalition consisting of the PSOE, Radical Republicans (PRR), Socialist Radical Republicans (PRRS), Azana's ([+ ar_name +]), Liberal Republican Right (DLR), and other minor republican parties. Given our rather weak electoral performance, [? if psoe_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_spd = 1 : and the vote of no confidence against us, ?] President [+ President +] has asked Azana ([+ ar_name +]) to take the lead role in forming a government as a consensus figure.
+There are enough votes to form a majority coalition consisting of the PSOE, Radical Republicans (PRR), Socialist Radical Republicans (PRRS), Azana's ([+ ar_name +]), Liberal Republican Right (DLR), and other minor republican parties. Given our rather weak electoral performance, [? if psoe_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_psoe = 1 : and the vote of no confidence against us, ?] President [+ President +] has asked Azana ([+ ar_name +]) to take the lead role in forming a government as a consensus figure.
 
 @grand_coalition_ar_lead_2
 
@@ -947,7 +946,7 @@ on-arrival: psoe_in_government = 1; chancellor = "Largo Caballero"; chancellor_p
 go-to: left_coalition_civil_war if coup_progress >= 10; left_coalition_no_civil_war if coup_progress < 10
 achievement: einheitsfront
 
-Somehow, surprisingly, the left coalition is successfully formed, without appointing Diaz as president. The consensus choice to lead the Council of Ministers, accepted by the SPD, KPD, and President [+ president +], is Largo Caballero, who belongs to the left faction of the PSOE.
+Somehow, surprisingly, the left coalition is successfully formed, without appointing Diaz as president. The consensus choice to lead the Council of Ministers, accepted by the PSOE, PCE, and President [+ president +], is Largo Caballero, who belongs to the left faction of the PSOE.
 
 # just raise the coup limit, don't immediately go to civil war
 
