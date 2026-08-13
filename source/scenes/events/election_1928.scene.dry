@@ -102,9 +102,9 @@ Q.republican_socialist_conjunction = Q.psoe_r + Q.ar_r + Q.prrs_r + Q.prr_r + Q.
 Q.left_republican_coalition = Q.psoe_r + Q.ar_r + Q.prrs_r + Q.other_left_republicans_r;
 Q.popular_front = Q.psoe_r + Q.ar_r + Q.prrs_r + Q.other_left_republicans_r + Q.pce_r + Q.regionalists_r + Q.poum_r + Q.ur_r;
 Q.right_coalition = Q.prr_r + Q.agrarios_r + Q.dlr_r + Q.other_right_republicans_r;
-Q.far_right_coalition = Q.prr_r + Q.ap_r + Q.agrarios_r + Q.re_r
+Q.far_right_coalition = Q.prr_r + Q.ap_r + Q.agrarios_r + Q.re_r;
 Q.left_front = Q.psoe_r + Q.pce_r + Q.poum_r;
-Q.anti_democratic_coalition = Q.pce_r + Q.ceda_r + Q.re_r + jons_r;
+Q.anti_democratic_coalition = Q.pce_r + Q.ap_r + Q.re_r + jons_r + other_monarchists;
 
 Q.leverage = Q.psoe_r;
 
@@ -348,9 +348,9 @@ Right Wing Coalition (PRR + [+ ap_name +] + Agrarians + DLR + Other Right Republ
 
 Left Wing Coalition (PSOE + PCE): [+ left_front +]%
 
-[? if ap_r >= 20 : The rapid rise in ap_name votes is extremely worrying. Many had believed that the party was marginal; now, some of us consider it to be the greatest threat to the republic in Spain. ?]
+[? if ap_r >= 20 : The rapid rise in ap_name votes is extremely worrying. Many had believed that the party was marginal; now, some of us consider it to be the greatest threat to the republic. ?]
 
-[? if anti_democratic_coalition >= 50 : Together, the anti-democratic PCE, ap_name and jons_name have a majority in the Cortes. A stable governing majority will be almost impossible. ?]
+[? if anti_democratic_coalition >= 50 : Together, the anti-democratic PCE, ap_name, monarchists and jons_name have a majority in the Cortes. A stable governing majority will be almost impossible. ?]
 
 There are some potential coalition arrangements.
 
