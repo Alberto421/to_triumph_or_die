@@ -75,6 +75,8 @@ Q.radicalization = 0;
 Q.democratization = 0;
 // Support for a communist coalition relative to 1931
 Q.communist_coalition = 0;
+// have we formed the JSU?
+Q.jsu_formed = 0;
 
 // inter-party relations
 // republicans
@@ -512,7 +514,7 @@ Q.n_advisors = 3;
 Q.timers = ['advisor_action', 'confronting_right', 'crisis_program',
             'fundraising', 'ideology',
             'inter_party_relationships', 'international_relations',
-            'juventudes_socialistas', 'media', 'enemies',
+            'jsu', 'media', 'enemies',
             'party_organizations', 'rally', 'ugt_affairs',
             'shuffle_leadership', 'streetfighting', 'popular_front',
             'party_disunity',
@@ -537,7 +539,7 @@ Q.fundraising_timer = 0;
 Q.ideology_timer = 0;
 Q.inter_party_relationships_timer = 0;
 Q.international_relations_timer = 0;
-Q.juventudes_socialistas_timer = 0;
+Q.jsu_timer = 0;
 Q.media_timer = 0;
 Q.enemies_timer = 0;
 Q.party_organizations_timer =  0;
