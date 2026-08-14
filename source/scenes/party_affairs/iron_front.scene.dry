@@ -1,57 +1,45 @@
-title: The Iron Front
+title: The Unified Socialist Youth
 new-page: true
 is-card: true
-view-if: iron_front_formed == 1 and iron_front_timer = 0
-on-arrival: iron_front_timer = 7; month_actions += 1; rb_militarization_cost = 2 if rb_militancy > 0.1 else rb_militarization_cost = 1; rb_militarization_cost = 3 if rb_militancy > 0.25
-card-image: img/iron_front.png
+view-if: jsu_formed == 1 and jsu_timer = 0
+on-arrival: jsu_timer = 7; month_actions += 1; js_militarization_cost = 2 if js_militancy > 0.1 else js_militarization_cost = 1; js_militarization_cost = 3 if js_militancy > 0.25
+card-image: img/jsu.jpg
 frequency: 200
 tags: party_affairs, antifascism
 
 = The Iron Front
 
-The Iron Front is our new antifascist coordination front, consisting of the SPD, the trade unions, and the Reichsbanner. How should we use the Iron Front?
+The Unified Socialist Youth (Juventudes Socialistas Unificadas) is our new antifascist coordination front, consisting of the PSOE and the PCE's youths organization. How should we use the Unified Socialist Youth?
 
-[? if workers_spd < 45 or workers_spd < workers_nsdap or workers_spd < workers_kpd : Unfortunately, the Iron Front's effectiveness is dragged down by the SPD's unpopularity, as the SPD is no longer the dominant party among the workers. Many Reichsbanner members have left, and many workers are not interested. ?]
+[? if workers_psoe < 45 or workers_psoe < workers_ap or workers_psoe < workers_prr : Unfortunately, the Unified Socialist Youth's effectiveness is dragged down by the PSOE's unpopularity, as the PSOE is no longer the dominant party among the workers. Many JSU members have left, and many workers are not interested. ?]
 
-- @defense: Rally for defense against the fascists with the Reichsbanner.
-- @pacifism: Rally for pacifism, against nationalism and war.
+- @defense: Rally for defense against the fascists.
 - @republic: Rally to save the democratic republic against dictatorship.
-- @wtb: Rally for economic change and the WTB-Plan.
-- @antisemitism
+- @wtb: Rally for economic change and the Agrarian Reform.
+- @revolution: Rally for the socialist revolution and against the bourgeoisie.
 - @easy_discard
 
 @defense
-subtitle: -[+ rb_militarization_cost +] resources
-choose-if: resources >= rb_militarization_cost
-on-arrival: resources -= rb_militarization_cost; rb_strength += 50; rb_militancy += 0.05; z_relation -= 5 if historical_mode
+subtitle: -[+ js_militarization_cost +] resources
+choose-if: resources >= js_militarization_cost
+on-arrival: resources -= js_militarization_cost; js_strength += 50; js_militancy += 0.05; prr_relation -= 5
 
-The Iron Front rallies for the militant defense of the republic against the fascist paramilitaries, strengthening the Reichsbanner.
-
-[? if historical_mode : The Center Party decries the militarization of the Reichsbanner and Iron Front, and its members are leaving the republican organization. ?]
-
-
-@pacifism
-on-arrival: pacifism += 1; nationalism -= 5 if pacifism >= 3; workers_spd += 5*(1-dissent) if pacifism >= 4; unemployed_spd += 4*(1-dissent) if pacifism >= 4; new_middle_spd += 4*(1-dissent) if pacifism >= 4
-
-The Iron Front rallies against nationalism and war.
+The JSU rallies for the militant defense of the republic against the reactionary paramilitaries, strengthening the Juventudes Socialistas.
 
 @republic
-on-arrival: pro_republic += 5*(1-dissent); democratization += 1; workers_spd += 5*(1-dissent) if democratization >= 4; unemployed_spd += 4*(1-dissent) if democratization >= 4; new_middle_spd += 4*(1-dissent) if democratization >= 4
+on-arrival: pro_republic += 5*(1-dissent); democratization += 1; workers_psoe += 5*(1-dissent) if democratization >= 4; unemployed_psoe += 4*(1-dissent) if democratization >= 4; middle_psoe += 6*(1-dissent) if democratization >= 4
 
-The Iron Front rallies in defense of the democratic republic and against dictatorship.
+The JSU rallies in defense of the democratic republic.
 
 @wtb
 choose-if: return_to_normalcy = 0
 unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
 view-if: wtb_adopted == 1
-on-arrival: workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); new_middle_spd += 5*(1-dissent); old_middle_spd += 3*(1-dissent); rural_spd += 3*(1-dissent);
+on-arrival: workers_psoe += 4*(1-dissent); unemployed_psoe += 6*(1-dissent); rural_psoe += 8*(1-dissent);
 
-The WTB-Plan is the rallying point for the entire SPD and its affiliated organizations, including the Iron Front.
+The Agrarian Reform is the rallying point for the entire PSOE and its affiliated organizations, including the JSU.
 
-@antisemitism
-title: Rally against antisemitism and in defense of Jewish Germans.
-view-if: confronting_antisemitism > 1
-on-arrival: nationalism -= 4*(1-dissent); pro_republic += 3*(1-dissent); confronting_antisemitism += 1; workers_nsdap -= 4*(1-dissent); unemployed_nsdap -= 4*(1-dissent);
+@revolution
+on-arrival: pro_republic -= 6*(1-dissent); democratization -= 1; workers_psoe += 5*(1-dissent) if democratization <= 1; unemployed_psoe += 4*(1-dissent) if democratization <= 4; middle_psoe -= 6; rural_psoe += 5*(1-dissent); ar_relation -= 10; prr_relation -=10; prrs_relation -=10; dlr_relation -=10; other_left_republicans_relation -=10; other_right_republicans_relation -=10; regionalists_relation -=10
 
-# TODO
-The Nazis and other far-right political movements are increasingly turning their hatred against the Jewish community of Germany. The Iron Front rallies in defense of individual Jews and the broader community against violence.
+The JSU rallies against the democratic republic and for the workers and peasants' revolution. 
