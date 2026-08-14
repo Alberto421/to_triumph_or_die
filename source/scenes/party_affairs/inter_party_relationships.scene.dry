@@ -24,7 +24,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; ar_relation += 6*(1 - dissent)
-go-to: left_2 if ar_name == "AR"; left_3 if ar_name == "IR" and ur_formed. dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930; dvp_moribund if year > 1930
+go-to: left_2 if ar_name == "AR"; left_3 if ar_name == "IR" and ur_formed
 
 The [+ ar_name +] has been one of our closest allies through the course of the Republic.
 
