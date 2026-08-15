@@ -419,16 +419,16 @@ go-to: grand_coalition_first if n_elections <= 1; grand_coalition_psoe_lead if (
 
 @grand_coalition_first
 view-if: republican_socialist_conjunction >= 50
-on-arrival: psoe_in_government = 1; pro_republic += 5; chancellor = "Alcala-Zamora"; chancellor_party = "DLR"; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; leverage = 25; in_republican_socialist_conjunction = 1; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
+on-arrival: psoe_in_government = 1; pro_republic += 5; chancellor = "Alcalá-Zamora"; chancellor_party = "DLR"; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; leverage = 25; in_republican_socialist_conjunction = 1; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
 go-to: ministries
 
-The Republican-Socialist Conjunction is able to get a majority in the Constituyent Cortes due to the disorganization of the monarchical forces. Being a Constituyent Election, Alcala-Zamora remains President of the Provisional Government. Until the Constitution is made, the Head of the State remains in Vacancy. Now, we have to pick our ministries.
+The Republican-Socialist Conjunction is able to get a majority in the Constituyent Cortes due to the disorganization of the monarchical forces. Being a Constituyent Election, Alcalá-Zamora remains President of the Provisional Government. Until the Constitution is made, the Head of the State remains in Vacancy. Now, we have to pick our ministries.
 
 
 @grand_coalition_z_lead
 go-to: grand_coalition_z_lead_2 if prr_relation >= 30; grand_coalition_fail if prr_relation < 30
 
-There are enough votes to form a majority coalition consisting of the PSOE, Radical Republicans (PRR), Socialist Radical Republicans (PRRS), Azana's ([+ ar_name +]), Liberal Republican Right (DLR), and other minor republican parties. Given our rather weak electoral performance, [? if psoe_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_psoe = 1 : and the vote of no confidence against us, ?] President [+ President +] has asked the Radical Republican Party (PRR) to take the lead role in forming a government.
+There are enough votes to form a majority coalition consisting of the PSOE, Radical Republicans (PRR), Socialist Radical Republicans (PRRS), Azaña's ([+ ar_name +]), Liberal Republican Right (DLR), and other minor republican parties. Given our rather weak electoral performance, [? if psoe_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_psoe = 1 : and the vote of no confidence against us, ?] President [+ President +] has asked the Radical Republican Party (PRR) to take the lead role in forming a government.
 
 @grand_coalition_z_lead_2
 
@@ -442,13 +442,13 @@ The candidate is likely to be [+ prr_leader +] [? if chancellor = "Lerroux" and 
 
 @join_bruning
 view-if: republican_socialist_conjunction >= 50
-on-arrival: psoe_in_government = 1; chancellor = "Lerroux" if prr_leader == "Lerroux"; chancellor = "Martinez Barrios" if prr_leader == "Martinez Barrios"; chancellor_party = "PRR"; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; leverage = 25 if leverage >= 25; in_republican_socialist_conjunction = 1; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
+on-arrival: psoe_in_government = 1; chancellor = "Lerroux" if prr_leader == "Lerroux"; chancellor = "Martínez Barrios" if prr_leader == "Martínez Barrios"; chancellor_party = "PRR"; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; leverage = 25 if leverage >= 25; in_republican_socialist_conjunction = 1; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
 go-to: ministries
 
 [+ chancellor +] welcomes us into his new cabinet. Now, we have our pick of ministries.
 
 @bruning_oppo
-on-arrival: psoe_in_government = 0; psoe_toleration = 0; chancellor = "Lerroux" if prr_leader == "Lerroux"; chancellor = "Martinez Barrios" if prr_leader == "Martinez Barrios"; chancellor_party = "PRR"; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; grand_coalition_failed = 1
+on-arrival: psoe_in_government = 0; psoe_toleration = 0; chancellor = "Lerroux" if prr_leader == "Lerroux"; chancellor = "Martínez Barrios" if prr_leader == "Martínez Barrios"; chancellor_party = "PRR"; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; grand_coalition_failed = 1
 
 By refusing to join the grand coalition or tolerating it, we essentially throw the balance of government to the right wing. [? if right_coalition >= 50 : There are enough votes to form a right-wing coalition. ?][? if far_right_coalition >= 50 : There are enough votes to form a right-wing coalition alongside the [+ ap_name +]. ?][? if right_coalition < 50 : There are not enough votes to form a right-wing coalition. This means that there is no route to a majority coalition. ?]
 
@@ -464,7 +464,7 @@ If we do not at least "tolerate" the government, there will be new elections in 
 @toleration_bruning
 choose-if: republican_socialist_conjunction >= 50
 unavailable-subtitle: The parties supporting the PRR do not have a majority.
-on-arrival: psoe_in_government = 0; minority_government = 1; chancellor = "Lerroux" if prr_leader == "Lerroux"; chancellor = "Martinez Barrios" if prr_leader == "Martinez Barrios"; chancellor_party = "PRR"; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; pro_republic -= 4; middle_ar -= 5; middle_prrs -= 5; middle_ap += 10; rural_ap += 5; in_republican_socialist_conjunction = 0; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
+on-arrival: psoe_in_government = 0; minority_government = 1; chancellor = "Lerroux" if prr_leader == "Lerroux"; chancellor = "Martínez Barrios" if prr_leader == "Martínez Barrios"; chancellor_party = "PRR"; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; pro_republic -= 4; middle_ar -= 5; middle_prrs -= 5; middle_ap += 10; rural_ap += 5; in_republican_socialist_conjunction = 0; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
 
 We have decided to tolerate [+ chancellor +]'s government. This means that we will vote against no-confidence votes to make sure they fail, but also that we will not be directly participating as ministers in the government. Thus, we can prevent a new election and stop the far right from entering government.
 
@@ -535,12 +535,12 @@ Unfortunately, the PRR is unwilling to enter into another coalition with the PSO
 
 @beg_dvp
 view-if: prr_relation >= 15
-go-to: dvp_conservative if prr_leader == "Lerroux"; dvp_majority if prr_leader == "Martinez Barrios"
+go-to: dvp_conservative if prr_leader == "Lerroux"; dvp_majority if prr_leader == "Martínez Barrios"
 
 @dvp_majority
 go-to: join_bruning
 
-Under the influence of Martinez Barrios, the PRR agrees to allow us into the coalition.
+Under the influence of Martínez Barrios, the PRR agrees to allow us into the coalition.
 
 
 @dvp_conservative
@@ -574,7 +574,7 @@ As expected, the PRR is too set in their conservative ways.
 @grand_coalition_psoe_lead
 on-arrival: leverage -= 15 if prr_relation < 20
 
-As expected, the PSOE is the largest party, and this time, we are expected to take the lead role in the formation of the next government, including selecting the President of the Government. President [+ president +] has asked us to form a majority coalition with the Radical Republicans (PRR), Socialist Radical Republicans (PRRS), Azana's ([+ ar_name +]), Liberal Republican Right (DLR), and other minor republican parties.
+As expected, the PSOE is the largest party, and this time, we are expected to take the lead role in the formation of the next government, including selecting the President of the Government. President [+ president +] has asked us to form a majority coalition with the Radical Republicans (PRR), Socialist Radical Republicans (PRRS), Azaña's ([+ ar_name +]), Liberal Republican Right (DLR), and other minor republican parties.
 
 [? if dvp_relation < 20 : As our relation with the DVP is poor, they are demanding more minister posts in order to remain part of the coalition. ?]
 
@@ -619,7 +619,7 @@ Besteiro's appointment is approved by our potential allies.
 @lerroux_chancellor
 title: Let the Radical Republicans lead the coalition.
 subtitle: [+ prr_leader +] will be chancellor. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: caballeristas_dissent += 5; prietistas_dissent += 5; prr_relation += 10; dlr_relation += 5; pce_relation -= 5; chancellor = "Martinez Barrios" if prr_leader == "Martinez Barrios"; chancellor = "Lerroux" if prr_leader == "Lerroux"; chancellor_party = "PRR"; psoe_in_government = 1; leverage += 5
+on-arrival: caballeristas_dissent += 5; prietistas_dissent += 5; prr_relation += 10; dlr_relation += 5; pce_relation -= 5; chancellor = "Martínez Barrios" if prr_leader == "Martínez Barrios"; chancellor = "Lerroux" if prr_leader == "Lerroux"; chancellor_party = "PRR"; psoe_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the left and center of our party are criticizing this decision.
@@ -628,9 +628,9 @@ This is highly unexpected, and many in the left and center of our party are crit
 
 @azana_chancellor
 title: Let Joseph Wirth of the Center Party be chancellor.
-view-if: president != "Azana"
-subtitle: Azana has a closer position to us than the PRR. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: caballeristas_dissent += 2; ar_relation += 6; prrs_relation += 3; pce_relation -= 5; chancellor = "Azana"; chancellor_party = ar_name; psoe_in_government = 1; leverage += 10
+view-if: president != "Azaña"
+subtitle: Azaña has a closer position to us than the PRR. This may give us a better position in negotiating for other cabinet positions.
+on-arrival: caballeristas_dissent += 2; ar_relation += 6; prrs_relation += 3; pce_relation -= 5; chancellor = "Azaña"; chancellor_party = ar_name; psoe_in_government = 1; leverage += 10
 go-to: ministries
 
 
@@ -668,8 +668,8 @@ go-to: no_govt_2
 
 
 @no_govt_2
-on-arrival: besteiristas_dissent += 25; prietistas_dissent += 20; in_weimar_coalition = 0; in_grand_coalition = 0; chancellor = "Azana" if chancellor == "Alcala-Zamora"; psoe_in_government = 0; grand_coalition_failed = 1
-go-to: right_coalition_post_psoe if right_coalition >= 50 and president == "Alcala-Zamora" and year < 1929; new_elections_psoe if (right_coalition < 50 or year >= 1929) and president != "Braun"; brauns_dilemma if president == "Braun"
+on-arrival: besteiristas_dissent += 25; prietistas_dissent += 20; in_weimar_coalition = 0; in_grand_coalition = 0; chancellor = "Azaña" if chancellor == "Alcalá-Zamora"; psoe_in_government = 0; grand_coalition_failed = 1
+go-to: right_coalition_post_psoe if right_coalition >= 50 and president == "Alcalá-Zamora" and year < 1929; new_elections_psoe if (right_coalition < 50 or year >= 1929) and president != "Braun"; brauns_dilemma if president == "Braun"
 
 
 @right_coalition_post_psoe
@@ -680,34 +680,34 @@ go-to: right_coalition_2
 @new_elections_psoe
 on-arrival: next_election_time = time+3; next_election_month = month + 3; next_election_year = year; next_election_year = year + 1 if next_election_month > 12; next_election_month = next_election_month - 12 if next_election_month > 12; middle_psoe -= 5; workers_psoe -= 3; catholics_psoe -= 3; in_election = 1
 
-Since the remaining bourgeois and right-wing parties cannot form a tolerable governing agreement, new elections have been called for [+ next_election_month : month +] [+ next_election_year +]. The previous chancellor has resigned, and has been replaced by Manuel Azana, of the [+ ar_name +], as a consensus figure until next elections. 
+Since the remaining bourgeois and right-wing parties cannot form a tolerable governing agreement, new elections have been called for [+ next_election_month : month +] [+ next_election_year +]. The previous chancellor has resigned, and has been replaced by Manuel Azaña, of the [+ ar_name +], as a consensus figure until next elections. 
 
 We are seen as responsible for the failure to form a government, and many of our middle-class and even some working-class supporters have deserted the party.
 
 @grand_coalition_ar_lead
 go-to: grand_coalition_ar_lead_2 if ar_relation >= 30; grand_coalition_fail if ar_relation < 30
 
-There are enough votes to form a majority coalition consisting of the PSOE, Radical Republicans (PRR), Socialist Radical Republicans (PRRS), Azana's ([+ ar_name +]), Liberal Republican Right (DLR), and other minor republican parties. Given our rather weak electoral performance, [? if psoe_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_psoe = 1 : and the vote of no confidence against us, ?] President [+ President +] has asked Azana ([+ ar_name +]) to take the lead role in forming a government as a consensus figure.
+There are enough votes to form a majority coalition consisting of the PSOE, Radical Republicans (PRR), Socialist Radical Republicans (PRRS), Azaña's ([+ ar_name +]), Liberal Republican Right (DLR), and other minor republican parties. Given our rather weak electoral performance, [? if psoe_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_psoe = 1 : and the vote of no confidence against us, ?] President [+ President +] has asked Azaña ([+ ar_name +]) to take the lead role in forming a government as a consensus figure.
 
 @grand_coalition_ar_lead_2
 
-The candidate will be Azana [? if chancellor = "Azana": again. ?][? if chancellor != "Azana": . ?] He is known for his progressism and anti-clericalism. [? if austerity >= 2 : Due to the government's austerity policies, many of our members are reluctant to participate in this coalition again. Some support a "toleration" arrangement in which we will provide outside support to prevent the far-right from either entering government or calling a successful no-confidence vote. Others support entering into pure opposition, and letting the right do what it wishes. ?]
+The candidate will be Azaña [? if chancellor = "Azaña": again. ?][? if chancellor != "Azaña": . ?] He is known for his progressism and anti-clericalism. [? if austerity >= 2 : Due to the government's austerity policies, many of our members are reluctant to participate in this coalition again. Some support a "toleration" arrangement in which we will provide outside support to prevent the far-right from either entering government or calling a successful no-confidence vote. Others support entering into pure opposition, and letting the right do what it wishes. ?]
 
-Azana looks to form a coalition with us. Alternatively, we could enter a "toleration" agreement.
+Azaña looks to form a coalition with us. Alternatively, we could enter a "toleration" agreement.
 
-- @join_azana: Join the Azana's coalition.
+- @join_azana: Join the Azaña's coalition.
 - @azana_oppo: Join the opposition.
 - @toleration_azana: We will "tolerate" a minority government.
 
 @join_azana
 view-if: republican_socialist_conjunction >= 50
-on-arrival: psoe_in_government = 1; chancellor = "Azana"; chancellor_party = ar_name; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; leverage = 35 if leverage >= 35; in_republican_socialist_conjunction = 1; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
+on-arrival: psoe_in_government = 1; chancellor = "Azaña"; chancellor_party = ar_name; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; leverage = 35 if leverage >= 35; in_republican_socialist_conjunction = 1; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
 go-to: ministries
 
 [+ chancellor +] welcomes us into his new cabinet. Now, we have our pick of ministries.
 
 @azana_oppo
-on-arrival: psoe_in_government = 0; psoe_toleration = 0; hancellor = "Azana"; chancellor_party = ar_name; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; grand_coalition_failed = 1
+on-arrival: psoe_in_government = 0; psoe_toleration = 0; hancellor = "Azaña"; chancellor_party = ar_name; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; grand_coalition_failed = 1
 
 By refusing to join the grand coalition or tolerating it, we essentially throw the balance of government to the right wing. [? if right_coalition >= 50 : There are enough votes to form a right-wing coalition. ?][? if far_right_coalition >= 50 : There are enough votes to form a right-wing coalition alongside the [+ ap_name +]. ?][? if right_coalition < 50 : There are not enough votes to form a right-wing coalition. This means that there is no route to a majority coalition. ?]
 
@@ -723,9 +723,9 @@ If we do not at least "tolerate" the government, there will be new elections in 
 @toleration_azana
 choose-if: republican_socialist_conjunction >= 50
 unavailable-subtitle: The parties supporting the ar_name do not have a majority.
-on-arrival: psoe_in_government = 0; minority_government = 1; chancellor = "Azana"; chancellor_party = ar_name; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; pro_republic -= 4; middle_ar -= 5; middle_prrs -= 5; middle_ap += 10; rural_ap += 5; in_republican_socialist_conjunction = 0; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
+on-arrival: psoe_in_government = 0; minority_government = 1; chancellor = "Azaña"; chancellor_party = ar_name; foreign_minister_party = "PRR"; interior_minister_party = "DLR"; justice_minister_party = ar_name; labor_minister_party = ar_name; reichswehr_minister_party = ar_name; economic_minister_party = "Regionalists"; finance_minister_party = "PRRS"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRRS"; pro_republic -= 4; middle_ar -= 5; middle_prrs -= 5; middle_ap += 10; rural_ap += 5; in_republican_socialist_conjunction = 0; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
 
-We have decided to tolerate Azana's government. This means that we will vote against no-confidence votes to make sure they fail, but also that we will not be directly participating as ministers in the government. Thus, we can prevent a new election and stop the far right from entering government.
+We have decided to tolerate Azaña's government. This means that we will vote against no-confidence votes to make sure they fail, but also that we will not be directly participating as ministers in the government. Thus, we can prevent a new election and stop the far right from entering government.
 
 
 ########################################## LEFT REPUBLICAN COALITION
@@ -812,8 +812,8 @@ choose-if: (pce_relation >= 60 and communist_coalition >= 2)
 go-to: popular_front_success
 
 @popular_front_azana
-title: Use pressure from President Azana to force the parties to cooperate.
-view-if: president == "Azana"
+title: Use pressure from President Azaña to force the parties to cooperate.
+view-if: president == "Azaña"
 go-to: popular_front_success
 
 @popular_front_success
@@ -873,7 +873,7 @@ go-to: right_coalition_2
 title: The right forms government.
 view-if: right_coalition >= 50
 choose-if: year < 1929
-on-arrival: psoe_in_government = 0; psoe_toleration = 0; in_republican_socialist_conjunction = 0; chancellor = "Lerroux" if prr_leader == "Lerroux"; chancellor = "Martinez Barrios" if prr_leader == "Martinez Barrios"; foreign_minister_party = "Regionalists"; interior_minister_party = "PRR"; justice_minister_party = "Other Right Republicans"; labor_minister_party = "PRR"; reichswehr_minister_party = "PRR"; economic_minister_party = "Other Right Republicans"; finance_minister_party = "PRR"; agriculture_minister_party = "DLR"; public_instruction_minister_party = "PRR"; public_works_minister_party = "PRRE"; in_right_coalition = 1;
+on-arrival: psoe_in_government = 0; psoe_toleration = 0; in_republican_socialist_conjunction = 0; chancellor = "Lerroux" if prr_leader == "Lerroux"; chancellor = "Martínez Barrios" if prr_leader == "Martínez Barrios"; foreign_minister_party = "Regionalists"; interior_minister_party = "PRR"; justice_minister_party = "Other Right Republicans"; labor_minister_party = "PRR"; reichswehr_minister_party = "PRR"; economic_minister_party = "Other Right Republicans"; finance_minister_party = "PRR"; agriculture_minister_party = "DLR"; public_instruction_minister_party = "PRR"; public_works_minister_party = "PRRE"; in_right_coalition = 1;
 
 A majority center-right coalition is formed, with [+ chancellor +] as chancellor.
 
@@ -901,7 +901,7 @@ A far left coalition is impossible.
 
 @left_coalition_possible
 
-The PCE is still a little reluctant to join a coalition, despite grassroots friendliness between our memberships. However the VII Congress of the Comunist International allows alliances with other leftist parties. [? if president == "Alcala-Zamora" : There is no chance whatsoever that President Alcala-Zamora would approve of the appointment of a die-hard communist as president of the governement. ?] If our relations with them are good enough, we could convince them to support the appointment of Largo Caballero as President of the Council of Ministers.
+The PCE is still a little reluctant to join a coalition, despite grassroots friendliness between our memberships. However the VII Congress of the Comunist International allows alliances with other leftist parties. [? if president == "Alcalá-Zamora" : There is no chance whatsoever that President Alcalá-Zamora would approve of the appointment of a die-hard communist as president of the governement. ?] If our relations with them are good enough, we could convince them to support the appointment of Largo Caballero as President of the Council of Ministers.
 
 - @thalmann_chancellor: Appoint Jose Diaz as President of the Council of Ministers.
 - @left_coalition_resources
@@ -909,8 +909,8 @@ The PCE is still a little reluctant to join a coalition, despite grassroots frie
 - @coalition_menu: Try a different governing arrangement.
 
 @thalmann_chancellor
-choose-if: president != "Alcala-Zamora" and besteiristas_strength + prietistas_strength < caballeristas_strength
-unavailable-subtitle: [? if president == "Alcala-Zamora": President [+ president +] would never allow such a thing. ?] [? if besteiristas_strength >= caballeristas_strength : Most in the parliamentary party would not support Diaz as President. ?]
+choose-if: president != "Alcalá-Zamora" and besteiristas_strength + prietistas_strength < caballeristas_strength
+unavailable-subtitle: [? if president == "Alcalá-Zamora": President [+ president +] would never allow such a thing. ?] [? if besteiristas_strength >= caballeristas_strength : Most in the parliamentary party would not support Diaz as President. ?]
 on-arrival: chancellor = "Diaz"; chancellor_party = "PCE"; pce_relation = 80; in_left_front = 1; psoe_in_government = 1 
 
 With great reluctance, President [+ president +] appoints [+ chancellor +] as President of the Council of Ministers.
@@ -984,7 +984,7 @@ There are enough votes for the Radicals and the CEDA to form a coalition alongsi
 @far_right_win
 on-arrival: chancellor = ap_leader; chancellor_party = ap_name
 
-[? if president == "Alcala-Zamora" : President Alcala-Zamora ?][? if president == "Prieto" : President Prieto somehow ?][? if president == "Largo Caballero" : President Largo Caballero somehow ?]  has decided that the [+ ap_name +] and PRR can form governement because it is what the constitution would stipulate.
+[? if president == "Alcalá-Zamora" : President Alcalá-Zamora ?][? if president == "Prieto" : President Prieto somehow ?][? if president == "Largo Caballero" : President Largo Caballero somehow ?]  has decided that the [+ ap_name +] and PRR can form governement because it is what the constitution would stipulate.
 
 - @hitler_takes_power: What do we do now?
 
@@ -1075,8 +1075,8 @@ Yes, an emergency minority government, with the support of the PSOE. Who should 
 
 - @braun_emergency_chancellor: Francisco Largo Caballero for president of the Council of Ministers.
 - @breitscheid_emergency_chancellor: Indalecio Prieto for president of the Council of Ministers.
-- @bruning_emergency_chancellor: Martinez Barrios of the Union Republicana, as a goodwill gesture toward the bourgeoisie.
-- @wirth_emergency_chancellor: Azana of the Izquierda Republicana, as a gesture of republican unity.
+- @bruning_emergency_chancellor: Martínez Barrios of the Unión Republicana, as a goodwill gesture toward the bourgeoisie.
+- @wirth_emergency_chancellor: Azaña of the Izquierda Republicana, as a gesture of republican unity.
 
 @braun_emergency_chancellor
 subtitle: This is unprecedented.
@@ -1099,16 +1099,16 @@ We have appointed Indalecio Prieto as president of the Council of Ministers.
 
 
 @bruning_emergency_chancellor
-on-arrival: chancellor = "Martinez Barrios"; chancellor_party = "UR"; psoe_in_government = 1; in_psoe_majority = 1; pro_republic += 5; foreign_minister_party = "PSOE"; foreign_minister = "Breitscheid"; interior_minister_party = "PSOE"; interior_minister = "Severing"; justice_minister_party = "PSOE"; justice_minister = "Radbruch"; labor_minister_party = "PSOE"; labor_minister = "Wissell"; reichswehr_minister_party = "PSOE"; reichswehr_minister = "Leber"; economic_minister_party = "PSOE"; economic_minister = "Schmidt"; finance_minister_party = "PSOE"; finance_minister = "Hilferding"; agriculture_minister_party = "PSOE"; agriculture_minister = "Baade"; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"; public_works_minister_party = "PSOE"; public_works_minister = "Indalecio Prieto"; ejercito_loyalty -= 0.1; 
+on-arrival: chancellor = "Martínez Barrios"; chancellor_party = "UR"; psoe_in_government = 1; in_psoe_majority = 1; pro_republic += 5; foreign_minister_party = "PSOE"; foreign_minister = "Breitscheid"; interior_minister_party = "PSOE"; interior_minister = "Severing"; justice_minister_party = "PSOE"; justice_minister = "Radbruch"; labor_minister_party = "PSOE"; labor_minister = "Wissell"; reichswehr_minister_party = "PSOE"; reichswehr_minister = "Leber"; economic_minister_party = "PSOE"; economic_minister = "Schmidt"; finance_minister_party = "PSOE"; finance_minister = "Hilferding"; agriculture_minister_party = "PSOE"; agriculture_minister = "Baade"; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"; public_works_minister_party = "PSOE"; public_works_minister = "Indalecio Prieto"; ejercito_loyalty -= 0.1; 
 
-The Union Republicana is pleased, and somewhat surprised, that we have appointed [+ chancellor +] as president of the Council of Ministers.
+The Unión Republicana is pleased, and somewhat surprised, that we have appointed [+ chancellor +] as president of the Council of Ministers.
 
 - @far_right_coup
 - @emergency_no_confidence
 
 @wirth_emergency_chancellor
-view-if: president != "Azana"
-on-arrival: chancellor = "Azana"; chancellor_party = ar_name; psoe_in_government = 1; in_psoe_majority = 1; pro_republic += 5; foreign_minister_party = "PSOE"; foreign_minister = "Breitscheid"; interior_minister_party = "PSOE"; interior_minister = "Severing"; justice_minister_party = "PSOE"; justice_minister = "Radbruch"; labor_minister_party = "PSOE"; labor_minister = "Wissell"; reichswehr_minister_party = "PSOE"; reichswehr_minister = "Leber"; economic_minister_party = "PSOE"; economic_minister = "Schmidt"; finance_minister_party = "PSOE"; finance_minister = "Hilferding"; agriculture_minister_party = "PSOE"; agriculture_minister = "Baade"; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"; public_works_minister_party = "PSOE"; public_works_minister = "Indalecio Prieto"; ejercito_loyalty -= 0.1; 
+view-if: president != "Azaña"
+on-arrival: chancellor = "Azaña"; chancellor_party = ar_name; psoe_in_government = 1; in_psoe_majority = 1; pro_republic += 5; foreign_minister_party = "PSOE"; foreign_minister = "Breitscheid"; interior_minister_party = "PSOE"; interior_minister = "Severing"; justice_minister_party = "PSOE"; justice_minister = "Radbruch"; labor_minister_party = "PSOE"; labor_minister = "Wissell"; reichswehr_minister_party = "PSOE"; reichswehr_minister = "Leber"; economic_minister_party = "PSOE"; economic_minister = "Schmidt"; finance_minister_party = "PSOE"; finance_minister = "Hilferding"; agriculture_minister_party = "PSOE"; agriculture_minister = "Baade"; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"; public_works_minister_party = "PSOE"; public_works_minister = "Indalecio Prieto"; ejercito_loyalty -= 0.1; 
 
 The Izquierda Republicana is pleased that we have appointed [+ chancellor +] as president of the Council of Ministers.
 
@@ -1133,7 +1133,7 @@ title: The CEDA immediately call a no-confidence vote against us...
 view-if: far_right_coalition < 45
 on-arrival: prr_no_confidence = 1 if prr_relation < 45; prrs_no_confidence = 1 if prrs_relation < 45; regionalists_no_confidence = 1 if regionalists_relation < 45; dlr_no_confidence = 1 if dlr_relation < 45; ur_no_confidence = 1 if ur_relation < 45; other_no_confidence = 1 if (other_left_republicans_relation + other_right_republicans_relation)/2 < 45; ar_no_confidence = 1 if ar_relation < 45; mf_strength += 200; pce_no_confidence = 1 if pce_relation < 45; rc_strength += 70; no_confidence_votes = ap_r + agrarios_r + re_r + jons_r; no_confidence_votes += prr_r if prr_no_confidence; no_confidence_votes += prrs_r if prrs_no_confidence; no_confidence_votes += pce_r if pce_no_confidence; no_confidence_votes += ar_r if ar_no_confidence; no_confidence_votes += dlr_r if dlr_no_confidence; no_confidence_votes += ur_r if ur_no_confidence; no_confidence_votes += regionalists_r if regionalists_no_confidence; no_confidence_votes += other_left_republicans_r if other_no_confidence; no_confidence_votes += other_right_republicans_r if other_no_confidence; no_confidence_succeeds = 1 if no_confidence_votes > 50
 
-CAMBIAR EL TEXTO ESTE The CEDA, RE and agrarians will vote against us, of course. The other parties vote their conscience. [? if prr_no_confidence: The Radical Republican Party is voting against us. ?] [? if prrs_no_confidence: The Socialist Radical Republican Party is voting against us. ?] [? if dlr_no_confidence: The Liberal Republican Right is voting against us. ?] [? if ar_no_confidence: The  Republican Left is voting against us. ?] [? if ur_no_confidence: The Republican Union is voting against us. ?] [? if regionalists_no_confidence: The Regionalists are voting against us. ?] [? if pce_no_confidence: The PCE votes against us. ?] [? if other_no_confidence: The assortment of minor republican parties are voting against us. ?]
+CAMBIAR EL TEXTO ESTE The CEDA, RE and agrarians will vote against us, of course. The other parties vote their conscience. [? if prr_no_confidence: The Radical Republican Party is voting against us. ?] [? if prrs_no_confidence: The Socialist Radical Republican Party is voting against us. ?] [? if dlr_no_confidence: The Liberal Republican Right is voting against us. ?] [? if ar_no_confidence: The  Republican Left is voting against us. ?] [? if ur_no_confidence: The Republican Unión is voting against us. ?] [? if regionalists_no_confidence: The Regionalists are voting against us. ?] [? if pce_no_confidence: The PCE votes against us. ?] [? if other_no_confidence: The assortment of minor republican parties are voting against us. ?]
 
 In total, [+ no_confidence_votes +]% of the Cortes is against us. [? if no_confidence_succeeds : We have lost the vote of no confidence. ?]
 
@@ -1253,8 +1253,8 @@ go-to: ministries
 Largo Caballero of the PSOE has been appointed labor minister.
 
 @interior
-title: Gobernacion Ministry (Interior)
-subtitle: Taking the Gobernacion Ministry is expected of us. The Gobernacion Ministry controls public order, civil governors and domestic security.
+title: Gobernación Ministry (Interior)
+subtitle: Taking the Gobernación Ministry is expected of us. The Gobernación Ministry controls public order, civil governors and domestic security.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
@@ -1262,7 +1262,7 @@ view-if: interior_minister_party != "PSOE"
 on-arrival: leverage -= 5; interior_minister_party = "PSOE"; interior_minister = "Galarza"
 go-to: ministries
 
-Angel Galarza of the PSOE has been appointed Gobernacion Minister.
+Angel Galarza of the PSOE has been appointed Gobernación Minister.
 
 @finance
 title: Hacienda Ministry (Finance)
@@ -1327,7 +1327,7 @@ Francisco Largo Caballero of the PSOE has been appointed Agriculture Minister.
 
 @reichswehr
 title: War Ministry
-subtitle: This is usually the domain of Manuel Azana of the AR. The War Ministry responsible for the armed forces. Conservative officers will react with high hostility if we take control of the army.
+subtitle: This is usually the domain of Manuel Azaña of the AR. The War Ministry responsible for the armed forces. Conservative officers will react with high hostility if we take control of the army.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 15 
@@ -1394,7 +1394,7 @@ tags: drop_mins_1928
 go-to: ministries
 
 @drop_interior
-title: Drop the Gobernacion Ministry (Interior).
+title: Drop the Gobernación Ministry (Interior).
 view-if: interior_minister_party = "PSOE"
 on-arrival: interior_minister_party = "I"; interior_minister = "Pozas"; leverage += 5;
 tags: drop_mins_1928
@@ -1438,27 +1438,20 @@ go-to: ministries
 @drop_reichswehr
 title: Drop the War Ministry.
 view-if: reichswehr_minister_party = "PSOE"
-on-arrival: reichswehr_minister_party = ar_name; reichswehr_minister = "Azana"; leverage += 15; reichswehr_minister_party = I if in_popular_front; reichswehr_minister = "Hernandez Saravia" if in_popular_front;
+on-arrival: reichswehr_minister_party = ar_name; reichswehr_minister = "Azaña"; leverage += 15; reichswehr_minister_party = I if in_popular_front; reichswehr_minister = "Hernández Saravia" if in_popular_front;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_public_works
 title: Drop the Public Works Ministry.
 view-if: public_works_minister_party = "PSOE"
-on-arrival: public_works_minister_party = "PRRS"; public_works_minister = "de Albornoz"; leverage += 10; public_works_minister_party = "PCE" if in_left_front; public_works_minister = "Uribe" if in_left_front;
-tags: drop_mins_1928
-go-to: ministries
-
-@drop_public_instruction
-title: Drop the Public Instruction Ministry (Education) 1.
-view-if: public_instruction_minister_party = "PSOE"
-on-arrival: public_instruction_minister_party = "PRRS"; public_works_minister = "Domingo"; leverage += 10; public_instruction_minister_party = "PCE" if in_left_front; public_instruction_minister = "Uribe" if in_left_front;
+on-arrival: public_works_minister_party = "PRRS"; public_works_minister = "De Albornoz"; leverage += 10; public_works_minister_party = "PCE" if in_left_front; public_works_minister = "Uribe" if in_left_front;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_public_instructions
 title: Drop the Public Instruction Ministry (Education) 2.
 view-if: public_instruction_minister_party = "PSOE"
-on-arrival: public_instruction_minister_party = "PRRS"; public_instruction_minister = "Domingo"; leverage += 10; public_instruction_minister_party = "PCE" if in_left_front; public_instruction_minister = "Hernandez Tomas" if in_left_front;
+on-arrival: public_instruction_minister_party = "PRRS"; public_instruction_minister = "Domingo"; leverage += 10; public_instruction_minister_party = "PCE" if in_left_front; public_instruction_minister = "Hernández Tomas" if in_left_front;
 tags: drop_mins_1928
 go-to: ministries
