@@ -383,7 +383,7 @@ Q.economic_records = [];
 // State of the government
 Q.president = "Vacancy";
 // starting chancellor: Alcala-Zamora
-Q.chancellor = "Alcala-Zamora";
+Q.chancellor = "Alcalá-Zamora";
 Q.chancellor_party = 'DLR';
 Q.psoe_in_government = 1;
 Q.ar_in_government = 1;
