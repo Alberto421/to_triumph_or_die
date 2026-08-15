@@ -1349,18 +1349,6 @@ go-to: ministries
 
 Indalecio Prieto of the PSOE has been appointed Minister of Public Works.
 
-@public_instructions
-title: Public Instruction Ministry (Education) 1
-subtitle: Taking the Public Instruction Ministry is expected of us.
-unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
-choose-if: leverage >= 5
-view-if: public_instruction_minister_party != "PSOE"
-on-arrival: leverage -= 5; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"
-go-to: ministries
-
-Fernando de los Ríos of the PSOE has been appointed Minister of Education.
-
 @public_instruction
 title: Public Instruction Ministry (Education) 2
 subtitle: Taking the Public Instruction Ministry is expected of us.
