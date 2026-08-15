@@ -4,7 +4,7 @@ is-card: true
 tags: party_affairs
 view-if: juventudes_timer <= 0
 card-image: img/juventudes_libertarias.jpg
-on-arrival: month_actions += 1; juventudes_timer += 6; js_militarization_cost = 2 if js:militancy > 0.1 else js:militarization_cost = 1; js:militarization_cost = 3 if js:militancy > 0.25
+on-arrival: month_actions += 1; juventudes_timer += 6; js_militarization_cost = 2 if js_militancy > 0.1 else js_militarization_cost = 1; js_militarization_cost = 3 if js_militancy > 0.25
 max-visits: 6
 #subtitle: Youth organization of the PSOE.
 
@@ -25,16 +25,16 @@ The *Socialist Youth* is the youth organization of the Spanish Socialist Workers
 #- Orient reichsbanner towards anti-fascism (only available if we have prioritized anti fascism)
 
 @militant
-choose-if: resources >= js:militarization_cost
-unavailable-subtitle: Not enough resources ([+ js:militarization_cost +] needed).
-subtitle: -[+ js:militarization_cost +] resources
-on-arrival: resources -= js:militarization_cost; js:investment += 1; js:strength += 100; js:militancy += 0.05; caballeristas_strength += 2; caballeristas_dissent -= 2; prietistas_dissent += 2; psoe_militancy += 0.05; workers_psoe += 2*(1-dissent); unemployed_psoe += 2*(1-dissent); prr_relation -= 5
+choose-if: resources >= js_militarization_cost
+unavailable-subtitle: Not enough resources ([+ js_militarization_cost +] needed).
+subtitle: -[+ js_militarization_cost +] resources
+on-arrival: resources -= js_militarization_cost; js_investment += 1; js_strength += 100; js_militancy += 0.05; caballeristas_strength += 2; caballeristas_dissent -= 2; prietistas_dissent += 2; psoe_militancy += 0.05; workers_psoe += 2*(1-dissent); unemployed_psoe += 2*(1-dissent); prr_relation -= 5
 
 Some in our party decry the increasing militarization of the Juventudes Socialistas. They say it is emulating the right-wing nationalists or the communists, and risks alienating our allies in the republican parties. On the other hand, more left-leaning radicals are being lured to our organizations, away from the communists.
 
 @militant_2
 view-if: funded_juventudes >= 1
-on-arrival: js:militancy += 0.02; funded_juventudes -= 1
+on-arrival: js_militancy += 0.02; funded_juventudes -= 1
 
 As we have already funded resources towards the Juventudes Socialistas, we can invest in building up their militancy.
 
@@ -48,7 +48,7 @@ The Juventudes Socialistas is already serving the purpose it needs to serve. The
 
 @cut_js
 subtitle: +1 resources
-on-arrival: resources += 1; js:strength -= 100; js:militancy -= 0.05; caballeristas_strength -= 2; caballeristas_dissent -= 2; psoe_militancy -= 0.05; workers_pce += 2; unemployed_pce += 2
+on-arrival: resources += 1; js_strength -= 100; js_militancy -= 0.05; caballeristas_strength -= 2; caballeristas_dissent -= 2; psoe_militancy -= 0.05; workers_pce += 2; unemployed_pce += 2
 
 Cutting resources to the Juventudes Socialistas causes a drop in the membership, and leads some would-be members to join the Communists instead.
 
@@ -58,7 +58,7 @@ title: Allow women to join the Juventudes Socialistas.
 subtitle: -1 resources - This might cause a backlash from existing members.
 choose-if: resources > 0
 view-if: womens_rights >= 4
-on-arrival: resources -= 1; js:militancy *= 0.85; js:strength += 400; women_in_js = 1; js:militancy += 0.05 if repealed_175; js:militancy += 0.04 if trans_rights; js:militancy += 0.02 if reformed_183;
+on-arrival: resources -= 1; js_militancy *= 0.85; js_strength += 400; women_in_js = 1; js_militancy += 0.05 if repealed_175; js_militancy += 0.04 if trans_rights; js_militancy += 0.02 if reformed_183;
 go-to: homosexual if trans_rights or repealed_175 or reformed_183
 max-visits: 1
 achievement: women_reichsbanner
