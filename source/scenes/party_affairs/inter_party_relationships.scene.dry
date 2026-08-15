@@ -12,7 +12,7 @@ max-visits: 12
 
 The PSOE cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties.
 
-- @left: Strengthen our bonds with the left-liberal ar_name and the radical socialist PRRS.
+- @left: Strengthen our bonds with the left-liberal [+ ar_name +] and the radical socialist PRRS.
 - @center: Strengthen our bonds with the Radical Republican Party.
 - @pce: Work towards an alliance with the Communist Party.
 - @minors: Improve our stance with minor republican parties, national and regional included.
@@ -31,12 +31,12 @@ The [+ ar_name +] has been one of our closest allies through the course of the R
 @left_2
 on-arrival: prrs_relation += 8*(1 - dissent); ar_relation += 1
 
-We have improved our relations with the ar_name and PRSS.
+We have improved our relations with the [+ ar_name +] and PRSS.
 
 @left_3
 on-arrival: ur_relation += 5*(1 - dissent)
 
-We have improved our relations with the ar_name and UR.
+We have improved our relations with the [+ ar_name +] and UR.
 
 @center
 subtitle: -1 resources
