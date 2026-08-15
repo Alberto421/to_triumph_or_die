@@ -14,7 +14,7 @@ We must do something to protect the workers against these predations.
 
 # - @battle: Test our defense units in battle against the fascists!
 - @arm_js: Increase training and armaments for the Reichsbanner.
-- @if_training: Train union members to fight as part of the Iron Front.
+- @jsu_training: Train union members to fight as part of the Unified Socialist Youth (JSU).
 - @prussian_police_training: Use the Prussian police to help train the Reichsbanner.
 - @peace: Try to avoid all militant confrontations, as much as possible.
 - @truce_rfb: Try to make peace with the RFB.
