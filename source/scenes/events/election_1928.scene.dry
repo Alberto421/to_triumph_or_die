@@ -1317,9 +1317,9 @@ Julio Alvarez del Vayo of the PSOE has been appointed Foreign Minister.
 title: Agricultural Ministry
 subtitle: Taking the Agricultural Ministry is expected of us.
 unavailable-subtitle: We do not have enough leverage.
-choose-if: leverage >= 10 
+choose-if: leverage >= 5 
 view-if: agriculture_minister_party != "PSOE"
-on-arrival: leverage -= 10; agriculture_minister_party = "PSOE"; agriculture_minister = "Largo Caballero"
+on-arrival: leverage -= 5; agriculture_minister_party = "PSOE"; agriculture_minister = "Largo Caballero"
 go-to: ministries
 tags: mins_1928
 
@@ -1342,9 +1342,9 @@ title: Public Works/Fomento Ministry
 subtitle: Controls national infrastructure, railways, and public investments.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
-choose-if: leverage >= 10 
+choose-if: leverage >= 5 
 view-if: public_works_minister_party != "PSOE"
-on-arrival: leverage -= 10; public_works_minister_party = "PSOE"; public_works_minister = "Indalecio Prieto"
+on-arrival: leverage -= 5; public_works_minister_party = "PSOE"; public_works_minister = "Indalecio Prieto"
 go-to: ministries
 
 Indalecio Prieto of the PSOE has been appointed Minister of Public Works.
@@ -1354,9 +1354,9 @@ title: Public Instruction Ministry (Education)
 subtitle: Taking the Public Instruction Ministry is expected of us.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
-choose-if: leverage >= 10 
+choose-if: leverage >= 5
 view-if: public_instruction_minister_party != "PSOE"
-on-arrival: leverage -= 10; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"
+on-arrival: leverage -= 5; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"
 go-to: ministries
 
 Fernando de los Ríos of the PSOE has been appointed Minister of Education.
