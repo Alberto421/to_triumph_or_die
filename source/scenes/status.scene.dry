@@ -82,6 +82,8 @@ Economic growth: [+ economic_growth_2 +]%
 
 {!<span class="tooltip-text" title="Other Left Republicans">Other Left Rep.</span>!}: [+ other_left_republicans_relation : relationships +]
 
+{!<span class="tooltip-text" title="Radical Republican Party">PRR</span>!}: [+ prr_relation : relationships +]
+
 {!<span class="tooltip-text" title="Liberal Republican Right">DLR</span>!}: [+ dlr_relation : relationships +]
 
 {!<span class="tooltip-text" title="Other Right Republicans">Other Right Rep.</span>!}: [+ other_right_republicans_relation : relationships +]
