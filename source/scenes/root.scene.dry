@@ -514,7 +514,7 @@ Q.n_advisors = 3;
 Q.timers = ['advisor_action', 'confronting_right', 'crisis_program',
             'fundraising', 'ideology',
             'inter_party_relationships', 'international_relations',
-            'jsu', 'media', 'enemies',
+            'jsu', 'media', 'enemies', 'juventudes',
             'party_organizations', 'rally', 'ugt_affairs',
             'shuffle_leadership', 'streetfighting', 'popular_front',
             'party_disunity',
@@ -541,6 +541,7 @@ Q.inter_party_relationships_timer = 0;
 Q.international_relations_timer = 0;
 Q.jsu_timer = 0;
 Q.media_timer = 0;
+Q.juventudes_timer = 0;
 Q.enemies_timer = 0;
 Q.party_organizations_timer =  0;
 Q.rally_timer = 0;
