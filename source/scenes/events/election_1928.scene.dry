@@ -1356,7 +1356,7 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
 view-if: public_instruction_minister_party != "PSOE"
-on-arrival: leverage -= 10; public_works_minister_party = "PSOE"; public_works_minister = "Fernando de los Ríos"
+on-arrival: leverage -= 10; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"
 go-to: ministries
 
 Fernando de los Ríos of the PSOE has been appointed Minister of Education.
