@@ -5,9 +5,9 @@ tags: party_affairs
 view-if: rally_timer <= 0
 on-arrival: month_actions += 1; rally_timer = 6
 card-image: img/procesion.jpg
-go-to: main_rally; mf_disrupt if sa_strength > 180 and not mf_banned and not return_to_normalcy
+go-to: main_rally; mf_disrupt if mf_strength > 180 and not mf_banned and not return_to_normalcy
 
-@sa_disrupt
+@mf_disrupt
 
 Groups of Falangists have disrupted our rally! Their street troops are preventing us from meeting.
 
