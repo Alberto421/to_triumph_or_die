@@ -1349,7 +1349,7 @@ go-to: ministries
 
 Indalecio Prieto of the PSOE has been appointed Minister of Public Works.
 
-@public_instruction
+@public_instructions
 title: Public Instruction Ministry (Education)
 subtitle: Taking the Public Instruction Ministry is expected of us.
 unavailable-subtitle: We do not have enough leverage.
@@ -1361,8 +1361,7 @@ go-to: ministries
 
 Fernando de los Ríos of the PSOE has been appointed Minister of Education.
 
-@public_instructions
-
+@public_instruction
 title: Public Instruction Ministry (Education)
 subtitle: Taking the Public Instruction Ministry is expected of us.
 unavailable-subtitle: We do not have enough leverage.
@@ -1451,6 +1450,13 @@ tags: drop_mins_1928
 go-to: ministries
 
 @drop_public_instruction
+title: Drop the Public Instruction Ministry (Education).
+view-if: public_instruction_minister_party = "PSOE"
+on-arrival: public_instruction_minister_party = "PRRS"; public_works_minister = "Domingo"; leverage += 10; public_instruction_minister_party = "PCE" if in_left_front; public_instruction_minister = "Uribe" if in_left_front;
+tags: drop_mins_1928
+go-to: ministries
+
+@drop_public_instructions
 title: Drop the Public Instruction Ministry (Education).
 view-if: public_instruction_minister_party = "PSOE"
 on-arrival: public_instruction_minister_party = "PRRS"; public_instruction_minister = "Domingo"; leverage += 10; public_instruction_minister_party = "PCE" if in_left_front; public_instruction_minister = "Hernandez Tomas" if in_left_front;
