@@ -472,8 +472,8 @@ Q.works_program = 0;
 
 // Relations with the Western countries (France, UK).
 Q.west_relation = 0;
-// Relations with Portugal
-Q.portugal_relation = 0;
+// Relations with Mexico
+Q.mexico_relation = 0;
 // Relations with the Soviet Union
 Q.soviet_relation = 0;
 // How much have we exposed the secret rearmament programs?
