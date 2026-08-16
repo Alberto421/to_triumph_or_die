@@ -602,15 +602,17 @@ Q.anarchist_uprising_timer = 0;
 // Advisors
 // Besteiristas
 Q.besteiro_advisor = 1;
-Q.delosrios_advisor = 0;
+Q.saborit_advisor = 0;
 
 // Prietistas
 Q.prieto_advisor = 1;
 Q.negrin_advisor = 0;
+Q.delosrios_advisor = 0;
 
 // Caballeristas
 Q.largo_caballero_advisor = 1;
 Q.nelken_advisor = 0;
+Q.araquistain_advisor = 0;
 !}
 set-bg: img/fondo_manifa.jpg
 new-page: true
