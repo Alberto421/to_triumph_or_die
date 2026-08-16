@@ -1,0 +1,41 @@
+title: Andrés Saborit
+is-pinned-card: true
+tags: advisor, besteiristas
+card-image: img/portraits/saborit.png
+view-if: saborit_advisor = 1
+new-page: true 
+
+= Andrés Saborit
+
+Andrés Saborit is a PSOE politician specialized in communication and organization. He was director of the newspaper "El Socialista", leader of the Socialist Youth and held several positions in the UGT.
+
+- @media
+- @municipal_campaigning
+- @ease_tensions
+- @root: Return to main
+
+@media
+title: Direct Party Press
+subtitle: Redirect to the Media actions.
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
+on-arrival: advisor_action_timer = 6; media_timer = 0;
+go-to: media
+
+@municipal_campaigning
+title: Union-party coordination
+subtitle: Reduce dissent among the unions.
+choose-if: advisor_action_timer <= 0 and cultural_organizations >= 1
+unavailable-subtitle: [? if cultural_organizations < 1 : The Casas del Pueblo lack funds ?] [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; besteiristas_strenght += 10;
+
+Saborit, using his experience in municipal politics, optimizes the Casas del Pueblo, turning them into efficient machines for workers' education and electoral mobilization.
+
+@ease_tensions
+title: Ease Party Tensions
+subtitle: Saborit can use the party and UGT's press to ease internal tensions.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; caballeristas_dissent -= 10; besteiristas_dissent -= 10; orietistas_dissent -= 10;
+
+Through balanced editorials in 'El Socialista' and appeals to party discipline, Saborit uses his prestige to cool down factional rivalries, reminding all wings of the shared socialist objective.
