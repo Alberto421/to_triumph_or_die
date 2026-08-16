@@ -50,3 +50,5 @@ largo_caballero.jpg: Por Anónimo - [1], Dominio público, https://commons.wikim
 nelken.jpg: Por Desconocido - Este archivo procede de la hemeroteca digital de la Biblioteca Nacional de España, y está disponible en línea con el identificador:924d31e8-f355-47c2-83f7-4f7b9ce1bacd, Dominio público, https://commons.wikimedia.org/w/index.php?curid=146915113
 
 negrin.png: Por Desconocido - Канторович А. (сост.) Чапаев. Батальон двадцати одной национальности. М.: Художественная литература, 1939., Dominio público, https://commons.wikimedia.org/w/index.php?curid=59286283
+
+saborit.png: Por Desconocido - Vicente Alberto Serrano. Andrés Saborit en el Corral de Comedias. La Luna de Alcalá. 04/12/2019., Dominio público, https://commons.wikimedia.org/w/index.php?curid=84796565
