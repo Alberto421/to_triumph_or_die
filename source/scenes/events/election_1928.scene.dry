@@ -1350,13 +1350,13 @@ go-to: ministries
 Indalecio Prieto of the PSOE has been appointed Minister of Public Works.
 
 @public_instruction
-title: Public Instruction Ministry (Education) 2
+title: Public Instruction Ministry (Education)
 subtitle: Taking the Public Instruction Ministry is expected of us.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
-choose-if: leverage >= 10 
+choose-if: leverage >= 5
 view-if: public_instruction_minister_party != "PSOE"
-on-arrival: leverage -= 10; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"
+on-arrival: leverage -= 5; public_instruction_minister_party = "PSOE"; public_instruction_minister = "Fernando de los Ríos"
 go-to: ministries
 
 Fernando de los Ríos of the PSOE has been appointed Minister of Education.
@@ -1419,7 +1419,7 @@ go-to: ministries
 @drop_agriculture
 title: Drop the Agriculture Ministry.
 view-if: agriculture_minister_party = "PSOE"
-on-arrival: agriculture_minister_party = PRRS; agriculture_minister = "Domingo"; leverage += 10; agriculture_minister_party = "PCE" if in_left_front; agriculture_minister = "Uribe" if in_left_front;
+on-arrival: agriculture_minister_party = PRRS; agriculture_minister = "Domingo"; leverage += 5; agriculture_minister_party = "PCE" if in_left_front; agriculture_minister = "Uribe" if in_left_front;
 tags: drop_mins_1928
 go-to: ministries
 
@@ -1433,13 +1433,13 @@ go-to: ministries
 @drop_public_works
 title: Drop the Public Works Ministry.
 view-if: public_works_minister_party = "PSOE"
-on-arrival: public_works_minister_party = "PRRS"; public_works_minister = "De Albornoz"; leverage += 10; public_works_minister_party = "PCE" if in_left_front; public_works_minister = "Uribe" if in_left_front;
+on-arrival: public_works_minister_party = "PRRS"; public_works_minister = "De Albornoz"; leverage += 5; public_works_minister_party = "PCE" if in_left_front; public_works_minister = "Uribe" if in_left_front;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_public_instructions
-title: Drop the Public Instruction Ministry (Education) 2.
+title: Drop the Public Instruction Ministry (Education).
 view-if: public_instruction_minister_party = "PSOE"
-on-arrival: public_instruction_minister_party = "PRRS"; public_instruction_minister = "Domingo"; leverage += 10; public_instruction_minister_party = "PCE" if in_left_front; public_instruction_minister = "Hernández Tomas" if in_left_front;
+on-arrival: public_instruction_minister_party = "PRRS"; public_instruction_minister = "Domingo"; leverage += 5; public_instruction_minister_party = "PCE" if in_left_front; public_instruction_minister = "Hernández Tomas" if in_left_front;
 tags: drop_mins_1928
 go-to: ministries
