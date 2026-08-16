@@ -1,13 +1,13 @@
-title: Juan Negrin
+title: Juan Negrín
 is-pinned-card: true
 tags: advisor, prietistas
 card-image: img/portraits/negrin.png
 view-if: negrin_advisor = 1
 new-page: true
 
-= Juan Negrin
+= Juan Negrín
 
-Juan Negrin is a distinguished professor of physiology, polyglot, and highly efficient and pragmatic administrator.
+Juan Negrín is a distinguished professor of physiology, polyglot, and highly efficient and pragmatic administrator.
 
 - @clear_agenda
 - @party_discipline
