@@ -1,7 +1,7 @@
 title: Confronting the Far RIght Threat
 new-page: true
 is-card: true
-view-if: ap_r >= 25 and confronting_right_timer == 0 and jsu_formed == 0
+view-if: ap_r >= 20 and confronting_right_timer == 0 and jsu_formed == 0
 on-arrival: confronting_right_seen += 1; confronting_right_timer = 5; month_actions += 1
 card-image: img/generalisimo.jpg
 tags: party_affairs; antifascism
