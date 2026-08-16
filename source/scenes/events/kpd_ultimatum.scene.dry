@@ -56,7 +56,7 @@ At the start of this government, the PCE presented a list of goals for the coali
 
 [? if foreign_goal = 1 : - Improve our relations with the Soviet Union. - [? if foreign_goal_completed : success ?][? if not foreign_goal_completed: failed ?] ?]
 
-[? if reichswehr_goal = 1 : - Reduce funding for the Reichswehr. - [? if reichswehr_goal_completed : success ?][? if not reichswehr_goal_completed: failed ?] ?]
+[? if reichswehr_goal = 1 : - Reduce funding for the Ejercito. - [? if reichswehr_goal_completed : success ?][? if not reichswehr_goal_completed: failed ?] ?]
 
 @goals_failed
 on-arrival: pce_relation -= 10; workers_spd -= 8; unemployed_spd -= 8;
