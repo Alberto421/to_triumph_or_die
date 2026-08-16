@@ -42,7 +42,7 @@ We have improved our relations with the [+ ar_name +] and UR.
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; prr_relation += 2 if prr_party_leader == "Martinez Barrios"
+on-arrival: resources -= 1; prr_relation += 2 if prr_party_leader == "Martínez Barrios"
 go-to: center_op if prr_in_government = 1 and psoe_in_government = 0 and chancellor != "Lerroux"; center_coalition if psoe_in_government = 1 and prr_in_government = 1; center_bruning if chancellor = "Lerroux"
 
 @center_op
