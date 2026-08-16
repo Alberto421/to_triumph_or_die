@@ -20,15 +20,15 @@ The PCE has called a vote of no confidence against us, due to our various polici
 How do we assuage the PCE?
 
 - @resources: Use our resources to reduce dissent within the coalition.
-- @thalmann: Appoint Diaz as President of the Council of Ministers instead of [+ chancellor +].
+- @thalmann: Appoint Díaz as President of the Council of Ministers instead of [+ chancellor +].
 - @support_left_republicans: Could we form a new government?
 - @let_it_happen: Never mind. Let the vote happen.
 
 @thalmann
-choose-if: president != "Alcala-Zamora"
+choose-if: president != "Alcalá-Zamora"
 subtitle: This would be pretext for a right-wing coup.
-unavailable-subtitle: [? if president == "Alcala-Zamora" : President Alcala-Zamora would never allow this. ?]
-on-arrival: chancellor = "Diaz"; chancellor_party = "PCE"
+unavailable-subtitle: [? if president == "Alcalá-Zamora" : President Alcalá-Zamora would never allow this. ?]
+on-arrival: chancellor = "Díaz"; chancellor_party = "PCE"
 
 With great reluctance, President [+ president +] appoints [+ chancellor +] as President of the Council of Ministers.
 
@@ -52,7 +52,7 @@ By transferring resources to our coalition partners, we can reduce their dissent
 
 @support_left_republicans
 choose-if: (left_republican_coalition >= 50 and ar_relation >= 40 and prrs_relation >= 40) or (republican_socialist_conjunction >= 50 and prr_relation >= 45 and ar_relation >= 45)
-unavailable-subtitle: [? if left_republican_coalition < 50 and republican_socialist_conjunction < 50: This would not give us a majority. ?] [? if ar_relation < 45 : After working with the Communists, Azana does not wish to form a coalition with us. ?] [? if prr_relation < 30 : The PRR would rather see the government fall than rescue us from the Communists. ?]
+unavailable-subtitle: [? if left_republican_coalition < 50 and republican_socialist_conjunction < 50: This would not give us a majority. ?] [? if ar_relation < 45 : After working with the Communists, Azaña does not wish to form a coalition with us. ?] [? if prr_relation < 30 : The PRR would rather see the government fall than rescue us from the Communists. ?]
 
 We could try to boot the PCE from our governing coalition, and form a new government[? if psoe_r <= 50 : with the bourgeois parties ?].
 
@@ -65,7 +65,7 @@ We could try to boot the PCE from our governing coalition, and form a new govern
 @let_it_happen
 view-if: not constructive_vonc
 on-arrival: pce_relation -= 8; workers_pce -= 5; workers_psoe -= 8; unemployed_psoe -= 6
-go-to: let_it_happen_braun if president != "Alcala-Zamora"; let_it_happen_hindenburg if president = "Alcala-Zamora"
+go-to: let_it_happen_braun if president != "Alcalá-Zamora"; let_it_happen_hindenburg if president = "Alcalá-Zamora"
 
 # if Braun is president, we are now a caretaker government. If Hindenburg is president, Brüning is a caretaker government
 
