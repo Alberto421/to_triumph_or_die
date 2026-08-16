@@ -1,0 +1,39 @@
+title: Luis Araquistáin
+is-pinned-card: true
+tags: advisor, caballeristas
+card-image: img/portraits/araquistain.jpg
+view-if: araquistain_advisor = 1
+new-page: true 
+
+= Luis Araquistáin
+
+Luis Araquistáin is an intellectual, journalist, and key strategist for Largo Caballero. To some people like Azaña, he is the reason for the radicalization of the Caballeristas.
+
+- @militarize_js
+- @diplomatic_pressure
+- @jsu
+- @root: Return to main
+
+@militarize_js
+title: Organize the Juventudes Socialistas
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; js_militancy += 0.05; caballeristas_strength += 5; caballeristas_dissent -= 10;
+
+Araquistáin works closely with Santiago Carrillo and other youth leaders, transforming the Juventudes Socailsitas into a more disciplined, uniformed, and militant force. 
+
+@diplomatic_pressure
+title: Leverage European diplomatic connections to build anti-fascist networks.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; west_relation += 1; soviet_relation += 1;
+
+Due to his experiences in Germany as ambassador, Araquistain maintains secret and official lines with foreign socialists and diplomats.
+
+
+@jsu
+title: Forming the Unified Socialist Youth
+choose-if: advisor_action_timer == 0 and jsu_formed == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if jsu_formed : The JSU has already been formed. ?]
+on-arrival: advisor_action_timer = 6; js_strength += 50; js_militancy += 0.1
+go-to: confronting_nazis.jsu 
