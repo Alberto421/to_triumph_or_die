@@ -146,15 +146,15 @@ Milicias Anarquistas Militarization: [+ ma_militancy : militancy +]
 
 Milicias Falangistas Militarization: [+ mf_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The Carlist Requetes are the Carlist paramilitary.">Requetes Carlist</span>!} Strength: [+ rc_strength_2 +] thousand
+{!<span class="tooltip-text" title="The Carlist Requetés are the Carlist paramilitary.">Requetés Carlist</span>!} Strength: [+ rc_strength_2 +] thousand
 
-Requetes Carlist Militarization: [+ rc_militancy : militancy +]
+Requetés Carlist Militarization: [+ rc_militancy : militancy +]
 
 = Security Forces
 
-Ejercito: [+ ejercito_strength +] thousand troops.
+Ejército: [+ ejercito_strength +] thousand troops.
 
-Ejercito Loyalty: [+ ejercito_loyalty : loyalty +]
+Ejército Loyalty: [+ ejercito_loyalty : loyalty +]
 
 Guardia de Asalto: [+ guardia_asalto_strength +] thousand members.
 
