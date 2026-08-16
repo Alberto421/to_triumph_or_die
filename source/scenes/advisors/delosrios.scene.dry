@@ -1,13 +1,13 @@
-title: Fernando de los Rios
+title: Fernando de los Ríos
 is-pinned-card: true
 tags: advisor, besteiristas
 card-image: img/portraits/delosrios.jpg
 view-if: delosrios_advisor = 1
 new-page: true 
 
-= Fernando de los Rios
+= Fernando de los Ríos
 
-Fernando de los Rios is a law professor, humanist and one of the most respected moral figures of democratic socialism. He advocates for republican education as the true driver of social transformation.
+Fernando de los Ríos is a law professor, humanist and one of the most respected moral figures of democratic socialism. He advocates for republican education as the true driver of social transformation.
 
 - @misiones_pedagogicas
 - @education_minister_action
@@ -39,7 +39,7 @@ choose-if: advisor_action_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; pro_republic += 5; democratization += 1; besteiristas_strength += 5; prietistas_strength += 3; workers_psoe += 4*(1-dissent) if democratization >= 2; middle_psoe += 3*(1-dissent) if democratization >= 3
 
-De los Rios helps us to rally the people in defense of democracy.
+De los Ríos helps us to rally the people in defense of democracy.
 
 @constitutional_defense
 title: Constitutional Defense
