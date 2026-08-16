@@ -7,6 +7,9 @@ on-arrival: month_activities += 1; shuffle_leadership_timer = 8;
 card-image: img/reconstruir.jpg
 go-to: rm_main
 
+
+# PENDIENTE: METER A LUIS ARAQUISTÁIN POR LOS CABALLERISTAS Y A ANDRÉS SABORIT POR LOS BESTEIRISTAS
+
 Changing the leadership of the party is painful, but perhaps it is necessary to adapt to changing circumstances.
 
 Removing advisors will increase dissent from their faction of the party, while selecting advisors will increase a faction's strength.
@@ -35,22 +38,13 @@ tags: remove_advisor
 # Besteiristas
 
 @remove_besteiro
-title: Remove Julian Besteiro
+title: Remove Julián Besteiro
 view-if: besteiro_advisor = 1
 on-arrival: besteiro_advisor = 0; besteiristas_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Julian Besteiro has been removed as an advisor. The Besteirista faction disapproves.
-
-@remove_delosrios
-title: Remove Fernando de los Rios
-view-if: delosrios_advisor = 1
-on-arrival: delosrios_advisor = 0; besteiristas_dissent += 5; n_advisors -= 1
-tags: remove_advisor
-go-to: rm_main
-
-Fernando de los Rios has been removed as an advisor. The Besteirista faction disapproves.
+Julián Besteiro has been removed as an advisor. The Besteirista faction disapproves.
 
 # Prietistas
 @remove_prieto
@@ -63,13 +57,22 @@ go-to: rm_main
 Indalecio Prieto has been removed as an advisor. The Prietista faction disapproves.
 
 @remove_negrin
-title: Remove Juan Negrin
+title: Remove Juan Negrín
 view-if: negrin_advisor = 1
 on-arrival: negrin_advisor = 0; prietistas_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Juan Negrin has been removed as an advisor. The Prietista faction disapproves.
+Juan Negrín has been removed as an advisor. The Prietista faction disapproves.
+
+@remove_delosrios
+title: Remove Fernando de los Ríos
+view-if: delosrios_advisor = 1
+on-arrival: delosrios_advisor = 0; prietistas_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Fernando de los Ríos has been removed as an advisor. The Prietista faction disapproves.
 
 # Caballeristas
 @remove_largo_caballero
@@ -128,7 +131,7 @@ view-if: n_advisors < 3
 
 # Besteiristas
 @add_besteiro
-title: Julian Besteiro
+title: Julián Besteiro
 subtitle: Besteiro is a prominent professor, leader of the reformist wing of the PSOE and president of the UGT Union.
 is-card: true
 card-image: img/portraits/besteiro.jpg
@@ -137,19 +140,7 @@ view-if: besteiro_advisor = 0 and n_advisors < 3
 on-arrival: besteiro_advisor = 1; n_advisors += 1; besteiristas_strength += 5
 go-to: advisor_menu
 
-Julian Besteiro is now an advisor.
-
-@add_delosrios
-title: Fernando de los Rios
-subtitle: Fernando de los Rios is a law professor, humanist and one of the most respected moral figures of democratic socialism. He advocates for republican education as the true driver of social transformation.
-is-card: true
-card-image: img/portraits/delosrios.jpg
-tags: besteiristas_advisor
-view-if: delosrios_advisor = 0 and n_advisors < 3
-on-arrival: delosrios_advisor = 1; n_advisors += 1; besteiristas_strength += 5
-go-to: advisor_menu
-
-Fernando de los Rios is now an advisor.
+Julián Besteiro is now an advisor.
 
 # Prietistas
 @add_prieto
@@ -165,8 +156,8 @@ go-to: advisor_menu
 Indalecio Prieto is now an advisor.
 
 @add_negrin
-title: Juan Negrin
-subtitle: Juan Negrin is a distinguished professor of physiology, polyglot, and highly efficient and pragmatic administrator.
+title: Juan Negrín
+subtitle: Juan Negrín is a distinguished professor of physiology, polyglot, and highly efficient and pragmatic administrator.
 is-card: true
 card-image: img/portraits/negrin.png
 tags: prietistas_advisor
@@ -174,7 +165,19 @@ view-if: negrin_advisor = 0 and n_advisors < 3
 on-arrival: negrin_advisor = 1; n_advisors += 1; prietistas_strength += 5
 go-to: advisor_menu
 
-Juan Negrin is now an advisor.
+Juan Negrín is now an advisor.
+
+@add_delosrios
+title: Fernando de los Ríos
+subtitle: Fernando de los Ríos is a law professor, humanist and one of the most respected moral figures of democratic socialism. He advocates for republican education as the true driver of social transformation.
+is-card: true
+card-image: img/portraits/delosrios.jpg
+tags: prietistas_advisor
+view-if: delosrios_advisor = 0 and n_advisors < 3
+on-arrival: delosrios_advisor = 1; n_advisors += 1; prietistas_strength += 5
+go-to: advisor_menu
+
+Fernando de los Ríos is now an advisor.
 
 # Caballeristas
 @add_largo_caballero
