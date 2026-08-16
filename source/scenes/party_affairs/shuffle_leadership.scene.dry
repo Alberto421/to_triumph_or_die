@@ -8,8 +8,6 @@ card-image: img/reconstruir.jpg
 go-to: rm_main
 
 
-# PENDIENTE: METER A LUIS ARAQUISTÁIN POR LOS CABALLERISTAS Y A ANDRÉS SABORIT POR LOS BESTEIRISTAS
-
 Changing the leadership of the party is painful, but perhaps it is necessary to adapt to changing circumstances.
 
 Removing advisors will increase dissent from their faction of the party, while selecting advisors will increase a faction's strength.
@@ -45,6 +43,15 @@ tags: remove_advisor
 go-to: rm_main
 
 Julián Besteiro has been removed as an advisor. The Besteirista faction disapproves.
+
+@remove_saborit
+title: Remove Andrés Saborit
+view-if: saborit_advisor = 1
+on-arrival: saborit_advisor = 0; besteiristas_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Andrés Saborit has been removed as an advisor. The Besteirista faction disapproves.
 
 # Prietistas
 @remove_prieto
@@ -93,6 +100,14 @@ go-to: rm_main
 
 Margarita Nelken has been removed as an advisor. The Caballerista faction disapproves.
 
+@remove_araquistain
+title: Remove Luis Araquistáin
+view-if: araquistain_advisor = 1
+on-arrival: araquistain_advisor = 0; caballeristas_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Luis Araquistáin has been removed as an advisor. The Caballerista faction disapproves.
 
 ####################### adding advisors
 
@@ -141,6 +156,19 @@ on-arrival: besteiro_advisor = 1; n_advisors += 1; besteiristas_strength += 5
 go-to: advisor_menu
 
 Julián Besteiro is now an advisor.
+
+
+@add_saborit
+title: Andrés Saborit
+subtitle: Saborit is a PSOE politician specialized in communication and organization. He was director of the newspaper "El Socialista", leader of the Socialist Youth and held several positions in the UGT.
+is-card: true
+card-image: img/portraits/saborit.png
+tags: besteiristas_advisor
+view-if: saborit_advisor = 0 and n_advisors < 3
+on-arrival: saborit_advisor = 1; n_advisors += 1; besteiristas_strength += 5
+go-to: advisor_menu
+
+Andrés Saborit is now an advisor.
 
 # Prietistas
 @add_prieto
@@ -203,3 +231,15 @@ on-arrival: nelken_advisor = 1; n_advisors += 1; caballeristas_strength += 5
 go-to: advisor_menu
 
 Margarita Nelken is now an advisor.
+
+@add_araquistain
+title: Luis Araquistáin
+subtitle: Araquistáin is an intellectual, journalist, and key strategist for Largo Caballero. He advocates for the radicalization of the youth and international revolutionary contacts.
+is-card: true
+card-image: img/portraits/araquistain.jpg
+tags: caballeristas_advisor
+view-if: araquistain_advisor = 0 and n_advisors < 3
+on-arrival: araquistain_advisor = 1; n_advisors += 1; caballeristas_strength += 5
+go-to: advisor_menu
+
+Luis Araquistáin is now an advisor.
