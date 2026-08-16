@@ -32,9 +32,34 @@ Internal dissent: [+ dissent_percent : dissent +]
 = Government
 
 President of the Republic: [+ president +]
-<img src="img/portraits/person.jpg">
+[? if president = "Vacancy" :<img src="img/portraits/vacancy.png"> ?]
+[? if president = "Alcalá-Zamora" :<img src="img/portraits/alcala-zamora.jpg"> ?]
+[? if president = "Azaña" :<img src="img/portraits/azana.png"> ?]
+[? if president = "Lerroux" :<img src="img/portraits/lerroux.jpg"> ?]
+[? if president = "Gil-Robles" :<img src="img/portraits/gil-robles.jpg"> ?]
+[? if president = "Largo Caballero" :<img src="img/portraits/largo_caballero.jpg"> ?]
+[? if president = "Besteiro" :<img src="img/portraits/besteiro.jpg"> ?]
+[? if president = "Prieto" :<img src="img/portraits/prieto.jpg"> ?]
 President of the Government: [+ chancellor +] ([+ chancellor_party +])
-<img src="img/portraits/alcala-zamora.jpg">
+[? if chancellor = "Alcalá-Zamora" :<img src="img/portraits/alcala-zamora.jpg"> ?]
+[? if chancellor = "Azaña" :<img src="img/portraits/azana.png"> ?]
+[? if chancellor = "Casares Quiroga" :<img src="img/portraits/casares.jpg"> ?]
+[? if chancellor = "Giral Pereira" :<img src="img/portraits/giral.jpg"> ?]
+[? if chancellor = "Lerroux" :<img src="img/portraits/lerroux.jpg"> ?]
+[? if chancellor = "Martínez Barrios" :<img src="img/portraits/barrios.jpg"> ?]
+[? if chancellor = "Chapaprieta" :<img src="img/portraits/chapaprieta.jpg"> ?]
+[? if chancellor = "Portela" :<img src="img/portraits/portela.jpg"> ?]
+[? if chancellor = "Samper" :<img src="img/portraits/samper.jpg"> ?]
+[? if chancellor = "Gil-Robles" :<img src="img/portraits/gil-robles.jpg"> ?]
+[? if chancellor = "Díaz" :<img src="img/portraits/diaz.jpg"> ?]
+[? if chancellor = "Largo Caballero" :<img src="img/portraits/largo_caballero.jpg"> ?]
+[? if chancellor = "Besteiro" :<img src="img/portraits/besteiro.jpg"> ?]
+[? if chancellor = "Prieto" :<img src="img/portraits/prieto.jpg"> ?]
+[? if chancellor = "Negrín" :<img src="img/portraits/negrin.png"> ?]
+
+
+# THe portraits should have 3:4 Proportion aprox
+
 Cortes composition:
 
 {!<span class="tooltip-text" title="Socialist Worker Party of Spain">PSOE</span>!}: [+ psoe_r +]%
