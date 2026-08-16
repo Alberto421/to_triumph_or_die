@@ -14,9 +14,9 @@ In addition to being a political party, the PSOE is a social world onto itself, 
 
 - @newspapers: Fund more newspapers and journalists.
 - @welfare: Fund more mutual aid and welfare programs.
-- @culture: Fund sports leagues, educational, and cultural programs.
 - @js: Fund the Juventudes Socialistas, our youth organization.
 - @youth: Fund other, less organized, youth organizations.
+- @casas: Fund the Casas del Pueblo (Houses of the People). These are our headquarters on different towns, inspired on the Maison du Peuple or Volkshuis in Brussels. 
 - @nothing: Do not increase funding for any program.
 - @easy_discard
 
@@ -38,16 +38,6 @@ on-arrival: resources -= 1; workers_aid += 1; unemployed_psoe += 5*(1 - dissent)
 
 We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : In an age of economic crisis, this will be helpful for improving our standing among the unemployed. ?]
 
-@culture
-choose-if: resources > 0
-unavailable-subtitle: Not enough resources.
-subtitle: -1 resources
-on-arrival: resources -= 1; cultural_organizations += 1; caballeristas_dissent -= 6; prietistas_dissent -= 6; besteiristas_dissent -= 6
-
-It is not enough for the PSOE to solely be a political party. We have various organizations like sports festivals, schools or libraries, which are crucial to our members' lives. Funding these organizations makes our members more committed to the party, even when our policies might not be to their liking.
-
-[? if mf_strength > 500 : However, it feels frivolous to spend on sports and choirs when the fascists are murdering us in the streets. ?]
-
 @js
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
@@ -63,6 +53,15 @@ subtitle: -1 resources
 on-arrival: resources -= 1; js_strength += 50; js_militancy += 0.02; young_socialists += 1; caballeristas_strength += 5; prietistas_strength += 2; radicalization += 1;
 
 Our new youth members flock mostly to the Caballeristas and to the Prietistas wing in a lesser extent. It also bring new members to the Juventudes Socialsitas, many of them radicalizated.
+
+@casas
+choose-if: resources > 0
+unavailable-subtitle: Not enough resources.
+subtitle: -1 resources; cultural_organizations += 1; caballeristas_dissent -= 6; prietistas_dissent -= 6; besteiristas_dissent -= 6; workers_psoe += 3; rural_psoe += 3; unemployed_psoe += 2;
+
+on-arrival: resources -= 1; 
+
+Now the Casas del Pueblo attract a greater influx of workers, unemployed and neighbors in general. With the funds it has been possible to build libraries, cinema screenings and organize cultural activities.
 
 @nothing
 
