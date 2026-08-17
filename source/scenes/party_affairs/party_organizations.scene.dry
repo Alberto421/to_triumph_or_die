@@ -57,9 +57,9 @@ Our new youth members flock mostly to the Caballeristas and to the Prietistas wi
 @casas
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
-subtitle: -1 resources; cultural_organizations += 1; caballeristas_dissent -= 6; prietistas_dissent -= 6; besteiristas_dissent -= 6; workers_psoe += 3; rural_psoe += 3; unemployed_psoe += 2;
+subtitle: -1 resources; 
 
-on-arrival: resources -= 1; 
+on-arrival: resources -= 1; cultural_organizations += 1; caballeristas_dissent -= 6; prietistas_dissent -= 6; besteiristas_dissent -= 6; workers_psoe += 3; rural_psoe += 3; unemployed_psoe += 2;
 
 Now the Casas del Pueblo attract a greater influx of workers, unemployed and neighbors in general. With the funds it has been possible to build libraries, cinema screenings and organize cultural activities.
 
