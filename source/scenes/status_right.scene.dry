@@ -4,40 +4,28 @@ is-special: true
 
 = Government
 
-<div style="text-align: center;">President: Paul von Hindenburg (<span style="color: #808080;">I</span>)</div>
-<div><img src="img/portraits/hindenburger.jpg" alt="Paul von Hindenburg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
-<p style="text-align: center;margin-bottom: 0;">Favorite: Kurt von Schleicher</p>
-<p style="text-align: center;margin-bottom: 5px;">[+ chancellor +] chancellorship: </p>
-<h1>The Camarilla</h1>
-<div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">
-<img src="img/portraits/PapenFranz.jpg" alt="Franz von Papen" style="width: 50%;">
-<img src="img/portraits/SchleicherKurt.jpg" alt="Kurt von Schleicher" style="width: 50%;">
-</div>
-<div style="display: flex; justify-content: space-between; gap: 0px; margin-bottom: 5px;">
-<div style="flex: 1;">
-<p style="font-weight: bold;margin-bottom: 2px;">Franz von Papen</p>
-<p style="white-space: nowrap;margin-bottom: 2px;">Influence: [+ papen_strength : camarilla_strength +]</p>
-<p style="margin-bottom: 2px;">Goal: [+ papen_goal +] </p>
-</div>
-<div style="flex: 1;margin-right: -8px;">
-<p style="white-space: nowrap;text-align: center;font-weight: bold;margin-bottom: 0px;">Kurt von Schleicher</p>
-<p style="margin-bottom: 2px;">Influence: [+ schleicher_strength : camarilla_strength +]</p>
-<p style="margin-bottom: 2px;">Goal: [+ schleicher_goal +]</p>
-</div>
-</div>
-<div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">
-<img src="img/portraits/Meissner.jpg" alt="Otto Meissner" style="width: 50%;">
-<img src="img/portraits/oskar.jpg" alt="Oskar von Hindenburg" style="width: 50%;">
-</div>
-<div style="display: flex; justify-content: space-between; gap: 0px; margin-bottom: 5px;">
-<div style="flex: 1;"> 
-<p style="font-weight: bold;margin-bottom: 2px;">Otto Meissner</p>
-<p style="margin-bottom: 2px;">Influence: [+ meissner_strength : camarilla_strength +]</p>
-<p style="margin-bottom: 2px;">Goal: [+ meissner_goal +]</p>
-</div>
-<div style="flex: 1;">
-<p style="font-weight: bold; margin-bottom: 0px;">Oskar von Hindenburg</p>
-<p style="margin-bottom: 2px;">Influence: [+ oskar_strength : camarilla_strength +]</p>
-<p style="margin-bottom: 2px;">Goal: [+ oskar_goal +]</p>
-</div>
-</div>
+President of the Republic: [+ president +]
+[? if president = "Vacancy" :<img src="img/portraits/vacancy.png"> ?]
+[? if president = "Alcalá-Zamora" :<img src="img/portraits/alcala-zamora.jpg"> ?]
+[? if president = "Azaña" :<img src="img/portraits/azana.png"> ?]
+[? if president = "Lerroux" :<img src="img/portraits/lerroux.jpg"> ?]
+[? if president = "Gil-Robles" :<img src="img/portraits/gil-robles.jpg"> ?]
+[? if president = "Largo Caballero" :<img src="img/portraits/largo_caballero.jpg"> ?]
+[? if president = "Besteiro" :<img src="img/portraits/besteiro.jpg"> ?]
+[? if president = "Prieto" :<img src="img/portraits/prieto.jpg"> ?]
+President of the Government: [+ chancellor +] ([+ chancellor_party +])
+[? if chancellor = "Alcalá-Zamora" :<img src="img/portraits/alcala-zamora.jpg"> ?]
+[? if chancellor = "Azaña" :<img src="img/portraits/azana.png"> ?]
+[? if chancellor = "Casares Quiroga" :<img src="img/portraits/casares.jpg"> ?]
+[? if chancellor = "Giral Pereira" :<img src="img/portraits/giral.jpg"> ?]
+[? if chancellor = "Lerroux" :<img src="img/portraits/lerroux.jpg"> ?]
+[? if chancellor = "Martínez Barrios" :<img src="img/portraits/barrios.jpg"> ?]
+[? if chancellor = "Chapaprieta" :<img src="img/portraits/chapaprieta.jpg"> ?]
+[? if chancellor = "Portela" :<img src="img/portraits/portela.jpg"> ?]
+[? if chancellor = "Samper" :<img src="img/portraits/samper.jpg"> ?]
+[? if chancellor = "Gil-Robles" :<img src="img/portraits/gil-robles.jpg"> ?]
+[? if chancellor = "Díaz" :<img src="img/portraits/diaz.jpg"> ?]
+[? if chancellor = "Largo Caballero" :<img src="img/portraits/largo_caballero.jpg"> ?]
+[? if chancellor = "Besteiro" :<img src="img/portraits/besteiro.jpg"> ?]
+[? if chancellor = "Prieto" :<img src="img/portraits/prieto.jpg"> ?]
+[? if chancellor = "Negrín" :<img src="img/portraits/negrin.png"> ?]
