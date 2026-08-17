@@ -9,12 +9,12 @@ new-page: true
 
 Andrés Saborit is a PSOE politician specialized in communication and organization. He was director of the newspaper "El Socialista", leader of the Socialist Youth and held several positions in the UGT.
 
-- @media
+- @party_press
 - @municipal_campaigning
 - @ease_tensions
 - @root: Return to main
 
-@media
+@party_press
 title: Direct Party Press
 subtitle: Redirect to the Media actions.
 choose-if: advisor_action_timer <= 0
