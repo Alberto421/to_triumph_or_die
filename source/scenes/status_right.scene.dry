@@ -4,59 +4,40 @@ is-special: true
 
 = Government
 
-<div style="position: relative; width: 100%; max-width: 600px; margin: auto;">
-
-  <!-- Nombres de los Cargos y Personajes -->
-  <div style="display: flex; justify-content: space-between; gap: 10px; margin-bottom: 5px;">
-    
-    <!-- Columna Izquierda: Presidente de la República -->
-    <div style="flex: 1; text-align: center;">
-      <p style="font-weight: bold; margin-bottom: 2px; font-size: 0.85em;">President of the Republic</p>
-      <p style="margin-bottom: 5px; font-size: 0.9em;">[+ president +]</p>
-    </div>
-
-    <!-- Columna Derecha: Presidente del Gobierno / Canciller -->
-    <div style="flex: 1; text-align: center;">
-      <p style="font-weight: bold; margin-bottom: 2px; font-size: 0.85em;">President of the Government</p>
-      <p style="margin-bottom: 5px; font-size: 0.9em;">[+ chancellor +] ([+ chancellor_party +])</p>
-    </div>
-
-  </div>
-
-  <!-- Fotos dinámicas en paralelo -->
-  <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-
-    <!-- Foto Presidente de la República -->
-    <div style="flex: 1;">
-      [? if president = "Vacancy" :<img src="img/portraits/vacancy.png" alt="Vacancy" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if president = "Alcalá-Zamora" :<img src="img/portraits/alcala-zamora.jpg" alt="Alcalá-Zamora" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if president = "Azaña" :<img src="img/portraits/azana.png" alt="Azaña" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if president = "Lerroux" :<img src="img/portraits/lerroux.jpg" alt="Lerroux" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if president = "Gil-Robles" :<img src="img/portraits/gil-robles.jpg" alt="Gil-Robles" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if president = "Largo Caballero" :<img src="img/portraits/largo_caballero.jpg" alt="Largo Caballero" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if president = "Besteiro" :<img src="img/portraits/besteiro.jpg" alt="Besteiro" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if president = "Prieto" :<img src="img/portraits/prieto.jpg" alt="Prieto" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-    </div>
-
-    <!-- Foto Presidente del Gobierno -->
-    <div style="flex: 1;">
-      [? if chancellor = "Alcalá-Zamora" :<img src="img/portraits/alcala-zamora.jpg" alt="Alcalá-Zamora" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if chancellor = "Azaña" :<img src="img/portraits/azana.png" alt="Azaña" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if chancellor = "Casares Quiroga" :<img src="img/portraits/casares.jpg" alt="Casares Quiroga" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if chancellor = "Giral Pereira" :<img src="img/portraits/giral.jpg" alt="Giral Pereira" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if chancellor = "Lerroux" :<img src="img/portraits/lerroux.jpg" alt="Lerroux" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if chancellor = "Martínez Barrios" :<img src="img/portraits/barrios.jpg" alt="Martínez Barrios" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if chancellor = "Chapaprieta" :<img src="img/portraits/chapaprieta.jpg" alt="Chapaprieta" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if chancellor = "Portela" :<img src="img/portraits/portela.jpg" alt="Portela" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if chancellor = "Samper" :<img src="img/portraits/samper.jpg" alt="Samper" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if chancellor = "Gil-Robles" :<img src="img/portraits/gil-robles.jpg" alt="Gil-Robles" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if chancellor = "Díaz" :<img src="img/portraits/diaz.jpg" alt="Díaz" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if chancellor = "Largo Caballero" :<img src="img/portraits/largo_caballero.jpg" alt="Largo Caballero" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if chancellor = "Besteiro" :<img src="img/portraits/besteiro.jpg" alt="Besteiro" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if chancellor = "Prieto" :<img src="img/portraits/prieto.jpg" alt="Prieto" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-      [? if chancellor = "Negrín" :<img src="img/portraits/negrin.png" alt="Negrín" style="width: 100%; display: block; margin: auto; border-radius: 4px;"> ?]
-    </div>
-
-  </div>
-
+<div style="text-align: center;">President: Paul von Hindenburg (<span style="color: #808080;">I</span>)</div>
+<div><img src="img/portraits/hindenburger.jpg" alt="Paul von Hindenburg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
+<p style="text-align: center;margin-bottom: 0;">Favorite: Kurt von Schleicher</p>
+<p style="text-align: center;margin-bottom: 5px;">[+ chancellor +] chancellorship: </p>
+<h1>The Camarilla</h1>
+<div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">
+<img src="img/portraits/PapenFranz.jpg" alt="Franz von Papen" style="width: 50%;">
+<img src="img/portraits/SchleicherKurt.jpg" alt="Kurt von Schleicher" style="width: 50%;">
+</div>
+<div style="display: flex; justify-content: space-between; gap: 0px; margin-bottom: 5px;">
+<div style="flex: 1;">
+<p style="font-weight: bold;margin-bottom: 2px;">Franz von Papen</p>
+<p style="white-space: nowrap;margin-bottom: 2px;">Influence: [+ papen_strength : camarilla_strength +]</p>
+<p style="margin-bottom: 2px;">Goal: [+ papen_goal +] </p>
+</div>
+<div style="flex: 1;margin-right: -8px;">
+<p style="white-space: nowrap;text-align: center;font-weight: bold;margin-bottom: 0px;">Kurt von Schleicher</p>
+<p style="margin-bottom: 2px;">Influence: [+ schleicher_strength : camarilla_strength +]</p>
+<p style="margin-bottom: 2px;">Goal: [+ schleicher_goal +]</p>
+</div>
+</div>
+<div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">
+<img src="img/portraits/Meissner.jpg" alt="Otto Meissner" style="width: 50%;">
+<img src="img/portraits/oskar.jpg" alt="Oskar von Hindenburg" style="width: 50%;">
+</div>
+<div style="display: flex; justify-content: space-between; gap: 0px; margin-bottom: 5px;">
+<div style="flex: 1;"> 
+<p style="font-weight: bold;margin-bottom: 2px;">Otto Meissner</p>
+<p style="margin-bottom: 2px;">Influence: [+ meissner_strength : camarilla_strength +]</p>
+<p style="margin-bottom: 2px;">Goal: [+ meissner_goal +]</p>
+</div>
+<div style="flex: 1;">
+<p style="font-weight: bold; margin-bottom: 0px;">Oskar von Hindenburg</p>
+<p style="margin-bottom: 2px;">Influence: [+ oskar_strength : camarilla_strength +]</p>
+<p style="margin-bottom: 2px;">Goal: [+ oskar_goal +]</p>
+</div>
 </div>
