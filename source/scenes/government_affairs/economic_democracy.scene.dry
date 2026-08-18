@@ -2,8 +2,8 @@ title: Economic Democracy
 is-card: true
 new-page: true
 on-arrival: economic_democracy_timer += 10; month_actions += 1
-view-if: spd_in_government and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and (labor_minister_party == "SPD") and economic_democracy_timer <= 0
-card-image: img/portraits/HilferdingRudolf.jpg
+view-if: psoe_in_government and (economic_minister_party == "PSOE" or finance_minister_party == "PSOE") and (labor_minister_party == "PSOE") and economic_democracy_timer <= 0
+card-image: img/portraits/largo_caballero.jpg
 max-visits: 8
 tags: govt_affairs, cabinet
 #subtitle: How can we give workers more control over the means of production?
@@ -14,49 +14,48 @@ A key part of the social democratic platform is that workers should have more co
 
 As we control the Labor [? if economic_minister_party == "SPD" : and Economic ?][? if finance_minister_party == "SPD" : and Finance ?] ministries, we can finally begin to implement our long-standing goals. [? if in_grand_coalition: Our bourgeois coalition partners might not agree, however. ?]
 
-- @expand_councils
-- @expand_councils_2
-- @expand_councils_3
+- @jurados_mixtos_1
+- @jurados_mixtos_2
+- @jurados_mixtos_3
 - @nationalize_1
 - @cooperatives_1
 - @return: Do not enact any policies for now.
 - @easy_discard
 - @cancel_advisor_action
 
-@expand_councils
-title: Support works councils.
-subtitle: Give works councils a greater influence in managing enterprises.
+@jurados_mixtos_1
+title: Implement Mixed Juries in agriculture.
+subtitle: Labor conflicts in agriculture will be resolved by juries with equal representation of employers and rural workers. In these mixed juries, rural workers will be represented by union members (from the UGT) and will be refereed by a representative of the Ministry of Labor.
 view-if: works_councils == 0
-on-arrival: economic_democracy += 1; workers_spd += 7*(1-dissent); capital_strike_progress += 1; works_councils += 1; labor_dissent -= 6; labor_strength += 8; dvp_relation -= 5; coalition_dissent +=1 if in_grand_coalition
+on-arrival: economic_democracy += 1; workers_psoe += 7*(1-dissent); capital_strike_progress += 1; jurados_mixtos += 1; besteiristas_dissent -= 6; caballeristas_dissent -= 8; caballeristas_strength += 8; prr_relation -= 5; dlr_relation -= 5; coalition_dissent +=1 if in_republican_socialist_conjunction
 max-visits: 1
 
-The works councils, elected by workers at each major business, have been in place since the German Revolution of 1918, but they have been largely powerless in the face of capital. Now, we will have worker representation on the boards of companies, giving them more influence in management decisions.
+For the first time, agrarian landowners (terratenientes) and rural workers (jornaleros) sit as equals to arbitrate minimum wages and working conditions. Large landowners view this move as a direct attack on their traditional authority over the countryside.
 
-
-@expand_councils_2
-title: Support national and sectorial works councils.
-subtitle: This is a step towards workers' control over the entire economy.
+@jurados_mixtos_2
+title: Extend Mixed Juries to industry and services.
+subtitle: Establish the same model to urban workers.
 view-if: works_councils == 1
-on-arrival: economic_democracy += 1; workers_spd += 7*(1-dissent); capital_strike_progress += 1; works_councils += 1; labor_dissent -= 6; labor_strength += 8; dvp_relation -= 5; coalition_dissent +=1 if in_grand_coalition; economic_growth += 0.1 if economic_growth < 3
+on-arrival: economic_democracy += 1; workers_psoe += 7*(1-dissent); capital_strike_progress += 1; jurados_mixtos += 1; besteiristas_dissent -= 6; caballeristas_dissent -= 8; caballeristas_strength += 8; prr_relation -= 5; dlr_relation -= 5; coalition_dissent +=1 if in_republican_socialist_conjunction; economic_growth += 0.1 if economic_growth < 3
 max-visits: 1
 
-National and sectorial workers councils have been part of the Weimar Constitution, but they were disempowered in the past, acting as nothing more than advisory bodies. We can change that.
+This way workers strength their position, allowing for higher wages and fewer aribtrary dismissals.
 
 
-@expand_councils_3
-title: Empower sectorial works councils.
-subtitle: Give works councils a role in setting wage and price policy for entire industrial sectors.
+@jurados_mixtos_3
+title: Empower Mixed Juries.
+subtitle: Give mixed juries a role in setting prices, wages and production standars.
 view-if: works_councils == 2
-on-arrival: economic_democracy += 1; workers_spd += 7*(1-dissent); capital_strike_progress += 1; works_councils += 1; labor_dissent -= 6; labor_strength += 8; dvp_relation -= 5; coalition_dissent +=1 if in_grand_coalition; unemployed -= 2 if unemployed > 5; workers += 2; economic_growth += 0.1 if economic_growth < 3
+on-arrival: economic_democracy += 1; workers_psoe += 7*(1-dissent); capital_strike_progress += 1; jurados_mixtos += 1; besteiristas_dissent -= 6; caballeristas_dissent -= 8; caballeristas_strength += 8; prr_relation -= 5; dlr_relation -= 5; coalition_dissent +=1 if in_republican_socialist_conjunction; unemployed -= 2 if unemployed > 5; workers += 2; economic_growth += 0.1 if economic_growth < 3
 max-visits: 1
 
-Sectorial works councils can now negotiate wage and price policies for entire economic sectors, helping to both give workers more of a voice, and to rationalize the economy, smoothing over the anarchy of the market.
+Mixed Juries can now negotiate wage and price policies for entire economic sectors, helping to both give workers more of a voice, and to rationalize the economy, smoothing over the anarchy of the market.
 
 
 @nationalize_1
 title: Begin to socialize key industries.
 subtitle: -1 budget - we should buy out industries and govern them together with workers and consumers.
-on-arrival: economic_democracy += 1; capital_strike_progress += 1; budget -= 1; socializations += 1; workers_spd += 6*(1-dissent); unemployed_spd += 3*(1-dissent); coalition_dissent += 1 if in_grand_coalition; capital_strike_progress += 1 if black_thursday_seen; unemployed -= 1 if unemployed > 9; economic_growth += 0.2 if economic_growth < 5
+on-arrival: economic_democracy += 1; capital_strike_progress += 1; budget -= 1; socializations += 1; workers_psoe += 6*(1-dissent); unemployed_psoe += 3*(1-dissent); prr_relation -= 5; dlr_relation -= 5; coalition_dissent +=1 if in_republican_socialist_conjunction; capital_strike_progress += 1; unemployed -= 1 if unemployed > 9; economic_growth += 0.2 if economic_growth < 5
 choose-if: budget >= 1
 max-visits: 3
 
@@ -65,7 +64,7 @@ We have begun to socialize key industries by buying out the capitalist owners, a
 @cooperatives_1
 title: Support worker and consumer cooperatives.
 subtitle: -1 budget
-on-arrival: economic_democracy += 1; cooperatives += 1; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); budget -= 1; unemployed -= 1 if unemployed > 9; economic_growth += 0.2
+on-arrival: economic_democracy += 1; cooperatives += 1; workers_spd += 4*(1-dissent); unemployed_psoe += 4*(1-dissent); budget -= 1; unemployed -= 1 if unemployed > 9; economic_growth += 0.2
 choose-if: budget >= 1
 max-visits: 3
 
