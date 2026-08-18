@@ -4,8 +4,7 @@ is-special: true
 
 = Government
 
-President of the Republic: [+ president +]
-<img src="img/portraits/alcala-zamora.jpg">
+President of the Republic: [+ president +] ([+ president_party +])
 [? if president = "Vacancy" :<img src="img/portraits/vacancy.png"> ?]
 [? if president = "Alcalá-Zamora" :<img src="img/portraits/alcala-zamora.jpg"> ?]
 [? if president = "Azaña" :<img src="img/portraits/azana.png"> ?]
