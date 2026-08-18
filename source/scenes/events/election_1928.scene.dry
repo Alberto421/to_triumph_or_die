@@ -608,7 +608,7 @@ Largo Caballero's appointment is approved by our potential allies.
 
 @besteiro
 title: Julian Besteiro for President of the Council of Ministers
-subtitle: Otto Wels is a party leader, but can he also be chancellor?
+subtitle:  Besteiro has enough renown to be appointed.
 on-arrival: psoe_in_government = 1; chancellor = "Besteiro"; chancellor_party = "PSOE"; in_republican_socialist_conjunction = 1; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 0; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
 go-to: ministries
 
@@ -627,7 +627,7 @@ This is highly unexpected, and many in the left and center of our party are crit
 [+ chancellor +] has been appointed President of the Council of Ministers.
 
 @azana_chancellor
-title: Let Joseph Wirth of the Center Party be chancellor.
+title: Let Manuel Azaña from the [+ ar_name +] lead the government.
 view-if: president != "Azaña"
 subtitle: Azaña has a closer position to us than the PRR. This may give us a better position in negotiating for other cabinet positions.
 on-arrival: caballeristas_dissent += 2; ar_relation += 6; prrs_relation += 3; pce_relation -= 5; chancellor = "Azaña"; chancellor_party = ar_name; psoe_in_government = 1; leverage += 10
@@ -637,7 +637,7 @@ go-to: ministries
 @no_govt
 title: We do not form the government.
 subtitle: This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties.
-on-arrival: besteiristas_dissent += 5; prietistas_dissent += 5;
+on-arrival: prietistas_dissent += 10;
 
 Are we sure about not participating in government? This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties. Even debating this option causes internal backlash. In addition, it is possible that the bourgeois and right-wing parties will also be unable to form a coalition government, leading to a regime appointed by President [+ president +].
 
@@ -731,46 +731,66 @@ We have decided to tolerate Azaña's government. This means that we will vote ag
 ########################################## LEFT REPUBLICAN COALITION
 
 @left_republican_coalition
-Title: CAMBIAR AYUDA
-view-if: muller_dead = 1
-on-arrival: chancellor = "Besteiro"
+title: We can form a Coalition with Republican Leftists parties.
+view-if: left_republican_coalition >= 50 
+choose-if: ((other_left_republicans_relation >= 45) and (ar_relation >= 45 and prrs_relation >= 45))
+subtitle: PSOE + PRR + PRRS + [+ ar_name +] + Other minor left republican parties ([+ left_republican_coalition +]%)
+unavailable-subtitle: [? if (other_left_republicans_relation < 45): We do not have good enough relations with enough minor republican parties. ?][? if (ar_relation < 45 and prrs_relation < 45): We do not have good enough relations with the [+ ar_name +] and the PRRS. ?]
+on-arrival: in_republican_socialist_conjunction = 0; in_popular_front = 0; in_left_front = 0; in_left_republican_coalition = 1; in_emergency_government = 0; in_psoe_majority = 0; in_minority_government = 0
+go-to: grand_coalition_first if n_elections <= 1; grand_coalition_psoe_lead if (psoe_r >= 30 and largest_party == "PSOE" and n_elections > 1); grand_coalition_z_lead if (prr_r + dlr_r) > 30 and n_elections > 1; grand_coalition_ar_lead if (psoe_r < 30 and prr_r + dlr_r < 30 and n_elections > 1)
 
-Julian Besteiro has become President of the Council of Ministers of the PSOE majority.
+- @prieto_lrc
+- @largo_caballero_lrc
+- @besteiro_lrc
+- @azana_lrc
+- @no_govt_lrc
+
+@prieto_lrc
+title: Indalecio Prieto for President of the Council of Ministers
+view-if: president != "Prieto"
+subtitle: Prieto is popular within the party, and is the preferred candidate of the other parties.
+on-arrival: psoe_in_government = 1; chancellor = "Prieto"; chancellor_party = "PSOE"; 
+go-to: ministries
+
+Prieto's appointment is approved by all our potential allies.
+
+@largo_caballero_lrc
+title: Largo Caballero for President of the Council of Ministers
+view-if: president != "Largo Caballero"
+subtitle: Largo Caballero is the leader of the left wing, his appointment can be a little controversial.
+on-arrival: leverage -= 10; psoe_in_government = 1; chancellor = "Largo Caballero"; chancellor_party = "PSOE";
+go-to: ministries
+
+Largo Caballero's appointment is approved by our potential allies.
+
+@besteiro_lrc
+title: Julian Besteiro for President of the Council of Ministers
+subtitle: Besteiro has enough renown to be appointed.
+on-arrival: psoe_in_government = 1; chancellor = "Besteiro"; chancellor_party = "PSOE"; 
+go-to: ministries
+
+Besteiro's appointment is approved by our potential allies.
+
+@azana_lrc
+title: Let Manuel Azaña of the [+ ar_name +] lead the government.
+view-if: president != "Azaña"
+subtitle: This may give us a better position in negotiating for other cabinet positions.
+on-arrival: caballeristas_dissent += 3; ar_relation += 6; prrs_relation += 3; chancellor = "Azaña"; chancellor_party = ar_name; psoe_in_government = 1; leverage += 10
+go-to: ministries
 
 
+@no_govt_lrc
+title: We do not form the government.
+subtitle: This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties.
+on-arrival: prietistas_dissent += 5;
 
+Are we sure about not participating in government? This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties. Even debating this option causes internal backlash. In addition, it is possible that the bourgeois and right-wing parties will also be unable to form a coalition government, leading to a regime appointed by President [+ president +].
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- @prieto_lrc
+- @largo_caballero_lrc
+- @besteiro_lrc
+- @azana_lrc
+- @no_govt_goals: Yes, we're sure.
 
 ########################################## POPULAR FRONT
 @popular_front
