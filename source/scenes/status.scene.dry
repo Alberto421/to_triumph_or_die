@@ -20,6 +20,8 @@ if (Q.economic_growth) {
 
 Resources available: [+ resources +]
 
+UGT resources available: [+ ugt_resources +]
+
 PSOE position: [? if psoe_toleration : toleration ?][? if psoe_in_government : in government ?][? if psoe_toleration == 0 and psoe_in_government == 0 and psoe_caretaker == 0 : opposition ?][? if psoe_caretaker : caretaker government ?]
 [? if in_republican_socialist_coalition and psoe_in_government: republican-socialist conjunction ?][? if in_popular_front and psoe_in_government: Popular Front ?] [? if in_left_front and psoe_in_government: Left Front ?][? if in_psoe_majority and psoe_in_government: psoe majority ?][? if in_minority_government and psoe_in_government: minority government ?][? if in_emergency_government and psoe_in_government: emergency government ?]
 
@@ -30,35 +32,6 @@ PSOE position: [? if psoe_toleration : toleration ?][? if psoe_in_government : i
 Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
-
-President of the Republic: [+ president +]
-[? if president = "Vacancy" :<img src="img/portraits/vacancy.png"> ?]
-[? if president = "Alcalá-Zamora" :<img src="img/portraits/alcala-zamora.jpg"> ?]
-[? if president = "Azaña" :<img src="img/portraits/azana.png"> ?]
-[? if president = "Lerroux" :<img src="img/portraits/lerroux.jpg"> ?]
-[? if president = "Gil-Robles" :<img src="img/portraits/gil-robles.jpg"> ?]
-[? if president = "Largo Caballero" :<img src="img/portraits/largo_caballero.jpg"> ?]
-[? if president = "Besteiro" :<img src="img/portraits/besteiro.jpg"> ?]
-[? if president = "Prieto" :<img src="img/portraits/prieto.jpg"> ?]
-President of the Government: [+ chancellor +] ([+ chancellor_party +])
-[? if chancellor = "Alcalá-Zamora" :<img src="img/portraits/alcala-zamora.jpg"> ?]
-[? if chancellor = "Azaña" :<img src="img/portraits/azana.png"> ?]
-[? if chancellor = "Casares Quiroga" :<img src="img/portraits/casares.jpg"> ?]
-[? if chancellor = "Giral Pereira" :<img src="img/portraits/giral.jpg"> ?]
-[? if chancellor = "Lerroux" :<img src="img/portraits/lerroux.jpg"> ?]
-[? if chancellor = "Martínez Barrios" :<img src="img/portraits/barrios.jpg"> ?]
-[? if chancellor = "Chapaprieta" :<img src="img/portraits/chapaprieta.jpg"> ?]
-[? if chancellor = "Portela" :<img src="img/portraits/portela.jpg"> ?]
-[? if chancellor = "Samper" :<img src="img/portraits/samper.jpg"> ?]
-[? if chancellor = "Gil-Robles" :<img src="img/portraits/gil-robles.jpg"> ?]
-[? if chancellor = "Díaz" :<img src="img/portraits/diaz.jpg"> ?]
-[? if chancellor = "Largo Caballero" :<img src="img/portraits/largo_caballero.jpg"> ?]
-[? if chancellor = "Besteiro" :<img src="img/portraits/besteiro.jpg"> ?]
-[? if chancellor = "Prieto" :<img src="img/portraits/prieto.jpg"> ?]
-[? if chancellor = "Negrín" :<img src="img/portraits/negrin.png"> ?]
-
-
-# THe portraits should have 3:4 Proportion aprox
 
 Cortes composition:
 
