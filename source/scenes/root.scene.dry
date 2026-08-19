@@ -65,6 +65,7 @@ Q.besteiristas_split = 0;
 Q.caballeristas_split = 0;
 Q.prietistas_resigned = 0;
 Q.new_penal = 0; 
+Q.penal_reform = 0;
 
 // agrarian_reform_urgency indicates how seriously the PSOE is taking the agrarian question - scale from 0 to 10.
 Q.agrarian_reform_urgency = 0;
