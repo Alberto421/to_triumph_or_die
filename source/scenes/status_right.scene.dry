@@ -29,3 +29,26 @@ President of the Government: [+ chancellor +] ([+ chancellor_party +])
 [? if chancellor = "Besteiro" :<img src="img/portraits/besteiro.jpg"> ?]
 [? if chancellor = "Prieto" :<img src="img/portraits/prieto.jpg"> ?]
 [? if chancellor = "Negrín" :<img src="img/portraits/negrin.png"> ?]
+
+
+Current cabinet:
+
+Labor: [+ labor_minister_party +]
+
+Gobernación: [+ interior_minister_party +]
+
+Hacienda: [+ finance_minister_party +]
+
+Economic: [+ economic_minister_party +]
+
+Justice: [+ justice_minister_party +]
+
+Estado: [+ foreign_minister_party +]
+
+War: [+ reichswehr_minister_party +]
+
+Agriculture: [+ agriculture_minister_party +]
+
+Public Works: [+ public_works_minister_party +]
+
+Public Instruction: [+ public_instruction_minister_party +]
