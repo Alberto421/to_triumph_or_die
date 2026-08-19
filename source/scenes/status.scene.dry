@@ -55,6 +55,8 @@ Cortes composition:
 
 
 [? if psoe_in_government = 1 : Budget: [+ budget +] ?]
+[? if psoe_in_government = 1 : Debt: [+ debt +] ?]
+
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
