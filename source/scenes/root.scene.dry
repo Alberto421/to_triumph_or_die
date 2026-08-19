@@ -64,6 +64,7 @@ Q.besteiristas_dissent = 5;
 Q.besteiristas_split = 0;
 Q.caballeristas_split = 0;
 Q.prietistas_resigned = 0;
+Q.new_penal = 0; 
 
 // agrarian_reform_urgency indicates how seriously the PSOE is taking the agrarian question - scale from 0 to 10.
 Q.agrarian_reform_urgency = 0;
@@ -512,7 +513,7 @@ Q.n_advisors = 3;
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
 Q.timers = ['advisor_action', 'confronting_right', 'crisis_program',
-            'fundraising', 'ideology',
+            'fundraising', 'ideology', 
             'inter_party_relationships', 'international_relations',
             'jsu', 'media', 'enemies', 'juventudes',
             'party_organizations', 'rally', 'ugt_affairs',
@@ -522,7 +523,7 @@ Q.timers = ['advisor_action', 'confronting_right', 'crisis_program',
             'agricultural_policy', 'domestic_enemies', 'fiscal_policy',
             'foreign_policy', 'judiciary', 'labor_affairs', 'military_policy',
             'police', 'regional_statutes', 'shuffle_cabinet', 'social_welfare',
-            'economic_policy', 'coalition_affairs', 'moroccan_affairs', 
+            'economic_policy', 'coalition_affairs', 'moroccan_affairs', 'penal',
             'womens_rights', 'economic_democracy', 'dealing_with_toleration', 
             'constitutional_reform', 'labor_rights', 'education_science', 'curriculum',
             // events
@@ -585,6 +586,7 @@ Q.constitutional_reform_timer = 0;
 Q.labor_rights_timer = 0;
 Q.education_science_timer = 0;
 Q.curriculum_timer = 0;
+Q.penal_timer = 0;
 
 // event timers
 Q.emergency_cuts_timer = 0;
