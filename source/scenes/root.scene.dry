@@ -121,7 +121,7 @@ Q.alcala_zamora_relation = 70;
 Q.alcala_zamora_enabled = 0;
 
 // The array of forces - paramilitary groups
-// Number of members in 1931 (in thousands) PLACEHOLDER BUSCAR CIRFAS
+// Number of members in 1931 (in thousands) buscar cifras juventudes de los partidos, fuerzas del orden hecho
 // Ejercito, Guardia Civil, Guardia de Asalto, Juventudes Socialistas, Milicias Comunistas, Milicias Anarquistas, Milicias Falangistas, Requetes Carlistas
 Q.js_strength = 50;
 Q.js_militancy = 0.01;
@@ -139,8 +139,7 @@ Q.rc_strength = 1;
 Q.rc_militancy = 0.7;
 Q.rc_banned = 0;
 
-// Buscar números para guardia de asalto, guardia civil y ejercito. Regulares está bien
-Q.guardia_asalto_strength = 10;
+Q.guardia_asalto_strength = 18;
 Q.guardia_asalto_militancy = 0.1;
 Q.guardia_asalto_loyalty = 0.85;
 
@@ -149,7 +148,7 @@ Q.guardia_civil_militancy = 0.9;
 Q.guardia_civil_loyalty = 0.45;
 
 // strength includes actual military and de facto reserves?
-Q.ejercito_strength = 120;
+Q.ejercito_strength = 170;
 Q.ejercito_militancy = 5;
 Q.ejercito_loyalty = 0.2;
 
