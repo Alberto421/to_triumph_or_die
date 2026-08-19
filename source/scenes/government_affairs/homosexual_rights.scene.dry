@@ -1,58 +1,58 @@
-title: Homosexual Rights
+title: Republican Penal Code
 new-page: true
 is-card: true
-card-image: img/hirschfeld.jpg
+card-image: img/portraits/asua.jpg
 frequency: 25
-max-visits: 3
-view-if: spd_in_government == 1 and (progressive_coalition >= 50) and chancellor_party == "SPD" and homosexual_rights_timer == 0 and homosexual_rights < 3
-on-arrival: homosexual_rights_timer += 11; month_actions += 1
+max-visits: 5
+view-if: psoe_in_government == 1 and advisor_asua == 1 and new_penal == 0
+on-arrival: month_actions += 1; penal_timer = 3
 tags: govt_affairs, cabinet
 
-= Homosexual Rights
+= Penal Code Reform
 
-There is a constellation of different groups that have grown up around divergences in gender and sexuality, including homosexuals, lesbians, transsexuals, transvestites, inverts, etc. Our party's policy is to support their right to live freely and free from persecution; Magnus Hirschfeld, the founder of the Institut für Sexualwissenschaft, is a member of our party and a major advocate for homosexual rights. 
+The current Penal code remains as an anacronic relic of the Primo de Rivera's dictatorship and Alfonso XIII's monarchy. As a renowned criminologist and legal scholar, Luis Jiménez de Asúa has prepared a comprehensive overhaul of the justice system to align Spanish law with modern democratic standards. Now that the 1928's code is abolished we are back to the 1870's one. It is time to adapt the 1870's penal code to the Republican Constitution, fix errors and update different crimes and make a more humane process.
 
-- @repeal_175: Repeal Paragraph 175.
-- @reform_183: Reform Paragraph 183.
-- @change_sex: Create a legal process for changing sex.
-- @return: Do not enact any changes for now.
-- @easy_discard
+- @death_penalty: Abolish the death penalty and reform the prison system.
+- @homosexuality: Decriminalize homosexuality and repeal moral offense laws.
+- @head_of_state: The president is no king, and such he can be judged for his actions. 
+- @various: Abolish or lower the penalty for outdated crimes.
+- @return: We don't need a new penal code, we have more urgent problems.
+- @submit: The new penal code is ready.
 - @cancel_advisor_action
 
-# economic growth due to gay tourism, and creating a new economic niche for the gay populace.
+@death_penalty
+view-if: repealed_dp == 0
+on-arrival: repealed_dp = 1; pro_republic += 5; workers_psoe += 5; rural_psoe += 6; judicial_reform += 1;
 
-@repeal_175
-subtitle: Paragraph 175 currently criminalizes homosexual acts. We can pass a law to change that.
-unavailable-subtitle: We do not have majority support for this policy.
-view-if: repealed_175 == 0
-choose-if: progressive_coalition >= 50 
-on-arrival: repealed_175 = 1; homosexual_rights += 1; z_relation -= 5; kpd_relation += 4*(1-dissent); ddp_relation += 4*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); catholics_spd -= 4; economic_growth += 0.1;
-audio: shuffle music/1928_1933/Das_lila_lied_normalized.mp3
+The death penalty is abolished, it is a dangerous weapon and enough innocents have lost their life. The only exception is under military jurisdiction during war.
 
-Together with the progressives in the KPD and [+ ddp_name +], we have effectively decriminalized homosexual sex in Germany. Persecution of homosexuals for their private acts will stop, as long as the police are loyal to the republic.
-
-Of course, conservatives and the far right accuse us of "degeneracy".
+Of course, conservatives and the far right accuse us of "softness" with the criminals.
 
 
-@reform_183
-subtitle: Paragraph 183 criminalizes public homosexual displays and cross-dressing. We can change that.
-unavailable-subtitle: We do not have majority support for this policy.
-view-if: reformed_183 == 0
-choose-if: progressive_coalition >= 50 
-on-arrival: reformed_183 = 1; homosexual_rights += 1; z_relation -= 5; kpd_relation += 4*(1-dissent); ddp_relation += 4*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); catholics_spd -= 4; economic_growth += 0.1;
-audio: shuffle music/1928_1933/Das_lila_lied_normalized.mp3
+@homosexuality
+view-if: reformed_homo == 0
+on-arrival: reformed_homo = 1; homosexual_rights += 1; pro_republic += 3; middle_psoe += 5; catholics_psoe -= 10; judicial_reform += 0.5
 
-Voting together with the progressives in the KPD and [+ ddp_name +], we have reformed Paragraph 183 so that it no longer criminalizes public homosexuality and cross-dressing.
+Primo de Rivera criminalized homosexuality, it is time to revert this reactionary decision. 
 
 
-@change_sex
-subtitle: We can create a legal process for individuals to change their sex, making their lives easier.
-unavailable-subtitle: We do not have majority support for this policy.
-view-if: trans_rights == 0
-choose-if: progressive_coalition >= 50
-on-arrival: trans_rights = 1; homosexual_rights += 1; z_relation -= 5; kpd_relation += 4*(1-dissent); ddp_relation += 4*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); catholics_spd -= 4; economic_growth += 0.1
-audio: shuffle music/1928_1933/Das_lila_lied_normalized.mp3
+@head_of_state
+view-if: hod == 0
+on-arrival: hod = 1; dlr_relation -= 10; pro_republic += 5; middle_psoe += 5; workers_psoe += 3; rural_psoe += 5; judicial_reform += 0.5
 
-We have passed a bill to allow legal recognition of transsexual and transvestite individuals as the sex in which they live, and allow them to change their name, dress as they wish without police persecution, and undergo medical treatment.
+The king wasn't accountable of his decision as he was above the law. We don't live anymore in the Ancien Régime, the president of the republic must be hold accountable of its actions while acting as head of state.
 
-Of course, conservatives and the far right accuse us of "degeneracy".
+@various
+view-if: var == 0
+on-arrival: var = 1; judicial_reform += 0.5
+
+As we are updating a code from the last century, there are many crimes that are no longer relevant like smugling, piratering or trying to abolish the official religion (Catholicism). There are many laws that needs to be removed or updated. 
+
+@submit
+subtitle: The new penal code is up for the Cortes to vote it.
+unavailable-subtitle: We do not have majority support for this new code.
+view-if: penal_reform >= 1 and new_penal == 0
+choose-if: left_republican_coalition >= 40
+on-arrival: new_penal = 1; pro_republic += 5; middle_psoe += 5; workers_psoe += 6; rural_psoe += 6; polarization += 5;
+
+The new penal code is approbed. It is, nevertheless, provisional just like the penal code of 1870 which is based on. This project is due to the urgency of reforming the old laws, new adjustments shall be done to ensure a modern and democratic rule of the law. 
