@@ -1,15 +1,15 @@
-title: War Guilt Inquiry
+title: Responsability Comission
 new-page: true
 is-card: true
 tags: govt_affairs
-on-arrival: war_guilt_timer = 6; month_actions += 1
-view-if: spd_in_government = 1 and war_guilt_timer = 0
-card-image: img/reichstag_1.jpg
+on-arrival: responsability_timer = 6; month_actions += 1
+view-if: psoe_in_government = 1 and responsability_timer = 0
+card-image: img/picasso.jpg
 max-visits: 1
 
-= Reichstag War Guilt Inquiry
+= The Picasso File and the Responsability Comission
 
-The War Guilt Inquiry has been an intermittent Reichstag committee for investigating the causes of the Great War and the German defeat. So far, it has faced massive resistance from the military establishment up to President Hindenburg.
+The Parliamentary Comission of Responsability has been created to continue with the General Picasso's exhaustive report. This investigation could expose corruption inside the high ranks of the army. We could limit ourself to honor the memory of our fallen soldiers, demand justice for them or extend the inquiry to the crimes commited during Primo de Rivera's Dictatorship.
 
 - @restart: Restart the inquiry.
 - @root: Do nothing.
@@ -21,14 +21,22 @@ on-arrival: war_guilt += 1
 
 What is the goal of this tribunal?
 
-- @pure_history: To provide a historical record of the events of the war.
-- @rewrite: To revise the popular German histories and finally put to rest the "stabbed in the back" myth.
+- @pure_history: To provide a historical record of the events of the war and honor our fallen soldiers.
+- @limit: To demand justice and responsabilities for the Disaster of Annual and the whole Rif war.
+- @rewrite: To demand justice and responsabilties for the Rif war and the Dictatorship. We are going against the old guard both in the army and in the state.
 
 @pure_history
+on-arrival: polarization -= 5; coup_progress -= 1; caballeristas_dissent += 10; prietistas_dissent += 10; besteiristas_dissent += 10; pro_republic -= 5; ar_relation -= 10; prr_relation -= 10; prrs_relation -= 10
 
-The history is being compiled, as it always has been.
+We avoid diggnig up past military failures and convert the comission into a solemn state tribute to the soldiers killed in Africa with symbolic trials. While this appeases the conservatives and the military, our republican allies view it as a cowardly movement. The discontent grows inside our ranks aswell.  
+
+@limit
+on-arrival: polarization += 3; ejercito_loyalty -= 0.1; pro_republic += 3
+
+We restrict the comission to investigate negligence and corruption during the Rif War. King Alfonso XIII is condemned for high treason and Dámaso Berenguer is also found guilty. The results are mostly the same as general Picasso's, satisfaying moderate republicans and avoiding excesive public backslash. However, army officers feel targeted, lowering their approval of the new regime.
+
 
 @rewrite
-on-arrival: pacifism += 1; nationalism -= 5*(1-dissent); pro_republic += 5*(1-dissent); coup_progress += 1
+on-arrival: polarization += 7; ejercito_loyalty -= 0.2; pro_republic += 7; coup_progress += 1; workers_psoe += 2; rural_psoe += 3;
 
-Destroying the "stabbed in the back" myth, in addition to finally correcting the historical record, would do a great deal to improve our party's reputation. This is why it would be resisted by the military establishment every step of the way.
+We need to continue Picasso's File and extend it to the corruption and crimes of the dictatorship. By doing this we've targeted both the Africanist and Peninsular military leadership. King Alfonso XIII is condemned for high treason and Dámaso Berenguer is also found guilty. This way we've solodified the republican legitimacy at the cost of alienating the army leadership completely.
