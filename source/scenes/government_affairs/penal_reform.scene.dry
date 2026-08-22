@@ -46,7 +46,7 @@ The king wasn't accountable of his decision as he was above the law. We don't li
 view-if: var == 0
 on-arrival: var = 1; judicial_reform += 0.5
 
-As we are updating a code from the last century, there are many crimes that are no longer relevant like smugling, piratering or trying to abolish the official religion (Catholicism). There are many laws that needs to be removed or updated. 
+As we are updating a code from the last century, there are many crimes that are no longer relevant like smugling, piracy or trying to abolish the official religion (Catholicism). There are many laws that needs to be removed or updated. 
 
 @submit
 subtitle: The new penal code is up for the Cortes to vote it.
