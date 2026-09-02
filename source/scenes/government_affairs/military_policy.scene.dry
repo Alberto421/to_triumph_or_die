@@ -29,7 +29,7 @@ Conservative generals and right-wing parties are pleasantly surprised that we ar
 subtitle: +1 budget
 unavailable-subtitle: There is nothing left to cut.
 choose-if: ejercito_strength > 0
-on-arrival: budget += 1; coalition_dissent += 1 if in_grand_coalition == 1; prr_relation -= 8; ejercito_militancy -= 1; ejercito_strength -= 20; mf_strength += 15; rc_strength += 5; mf_militancy += 0.05; ejercito_loyalty -= 0.05 if ejercito_loyalty > 0; coup_progress += 1; coup_progress += 1 if ejercito_loyalty < 0.2; coup_progress += 1 if ejercito_loyalty < 0.1; coup_progress += 1 if ejercito_loyalty <= 0; reichswehr_goal_completed = 1; economic_growth -= 0.1
+on-arrival: budget += 1; coalition_dissent += 1 if in_grand_coalition = 1; prr_relation -= 8; ejercito_militancy -= 1; ejercito_strength -= 20; mf_strength += 15; rc_strength += 5; mf_militancy += 0.05; ejercito_loyalty -= 0.05 if ejercito_loyalty > 0; coup_progress += 1; coup_progress += 1 if ejercito_loyalty < 0.2; coup_progress += 1 if ejercito_loyalty < 0.1; coup_progress += 1 if ejercito_loyalty <= 0; reichswehr_goal_completed = 1; economic_growth -= 0.1
 
 We slash military funds to balance our budget. While this frees up capital for social reform, it causes immense bitterness within the garrisons and officers' corps. 
 
