@@ -25,7 +25,7 @@ unavailable-subtitle: Not enough budget.
 choose-if: budget >= 1
 on-arrival: budget -= 1; democratization += 2; coalition_dissent += 1 if in_republican_socialist_conjunction == 1; workers_psoe += 5*(1-dissent) if democratization >= 3; middle_psoe += 5*(1-dissent) if democratization >= 3; rural_psoe += 5*(1-dissent) if democratization >= 3; judicial_reform += 2; pro_republic += 5*(1-dissent); coup_progress += 1
 
-We push for the replacement of biased, anti-republican magistrates with progressive, democratic jurists, and modernize the legal codes. This bold attempt to democratize the courts sparks furious backlash from conservative circles [? if in_republican_socialist_conjunction = 1: and the PRR ?].
+We push for the replacement of biased, anti-republican magistrates with progressive, democratic jurists, and modernize the legal codes. This bold attempt to democratize the courts sparks furious backlash from conservative circles [? if in_republican_socialist_conjunction: and the PRR ?].
 
 @minor_reforms
 on-arrival: democratization += 1; middle_psoe += 2*(1-dissent) if democratization >= 3; judicial_reform += 1; pro_republic += 3*(1-dissent); judiciary_timer += 6
