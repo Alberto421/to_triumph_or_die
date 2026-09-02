@@ -56,6 +56,8 @@ besteiro.jpg: Por Agence de presse Meurisse - Bibliothèque nationale de France,
 
 casares.jpg: Por Desconocido - Todocolección, Dominio público, https://commons.wikimedia.org/w/index.php?curid=74754307
 
+campoamor.jpg: Por Virgilio Muro (1891-1967) - elnortedecastilla.es, Dominio público, https://commons.wikimedia.org/w/index.php?curid=117545722
+
 chapaprieta.jpg: https://commons.wikimedia.org/wiki/File:1923-05-25,_El_Financiero,_Joaqu%C3%ADn_Chapaprieta_(cropped).jpg
 
 delosrios.jpg: By Harris & Ewing, photographer - Library of CongressCatalog: https://lccn.loc.gov/2016878638Image download: https://cdn.loc.gov/master/pnp/hec/33900/33935a.tifOriginal url: https://www.loc.gov/pictures/item/2016878638/, Public Domain, https://commons.wikimedia.org/w/index.php?curid=67757849
