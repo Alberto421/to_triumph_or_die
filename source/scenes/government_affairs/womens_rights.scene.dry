@@ -4,15 +4,15 @@ is-card: true
 tags: govt_affairs, cabinet
 view-if: spd_in_government = 1 and womens_rights_timer = 0 and chancellor_party == "SPD"
 on-arrival: womens_rights_timer += 10; month_actions += 1
-card-image: img/portraits/PfülfAntonie.jpg
+card-image: img/portraits/campoamor.jpg
 frequency: 50
 max-visits: 6
 
 = Women's Rights
 
-According to the Constitution, women are equal to men, but this is not followed in practice. Women in the workforce are not paid equally for the same work, in addition to often being pushed out of employment after marriage. Men are still favored in marriage and family policy, and there are restrictions on women's rights in many other domains. And that is not to mention the overwhelming patriarchal culture present in Germany.
+According to the 1931 Constitution, women are equal to men under the law, but the patriarchal societal traditions remain a obstacle. continue to face unequal wages and are frequently pressure to abandon their jobs upon marriage. Domestic and civil codes still favor male authority in many aspects of daily life, backed by a deeply reactionary catholic culture.
 
-For better or for worse, the Socialists stand virtually alone in supporting increased rights for women, and even within the party, the leadership does not consider it a priority. [? if spd_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
+The left stands mostly united on advancing civil equality, though internal debates persist over the pace of reform.
 
 - @labor: Institute policies that help women in the workforce.
 - @family: Reform marriage, divorce, and property law.
@@ -23,39 +23,38 @@ For better or for worse, the Socialists stand virtually alone in supporting incr
 - @cancel_advisor_action
 
 @labor
-subtitle: Paid maternal leave policies, equal pay policies, and so on.
-on-arrival: womens_work += 1; womens_rights += 1; workers_spd -= 4 if unemployed > 15; new_middle_spd += 4*(1-dissent); workers_spd += 4*(1 - dissent); economic_growth += 0.1;
+subtitle: Paid maternal leave policies, equal pay policies, protection against discrimination at the workplace and so on.
+on-arrival: womens_work += 1; womens_rights += 1; workers_psoe -= 4 if unemployed > 15; middle_psoe += 4*(1-dissent); workers_psoe += 4*(1 - dissent); economic_growth += 0.1;
 max-visits: 3
 
-These policies mean that our party is increasing in popularity among the "new women" who work outside the home. [? if unemployed > 15 : However, many male workers develop a backlash towards women in the workplace, especially given the rising unemployment. ?]
+These policies boost our standing among urban, working women and educated professionals. [? if unemployed > 15 : However, rising unemployment causes resentment among traditional male workers who view female employment as unwanted competition that lowers their working conditions. ?]
 
 @family
-subtitle: Change family and inheritance law to treat women more equally.
-on-arrival: family_law += 1; womens_rights += 1; new_middle_spd += 2*(1-dissent); workers_spd += 3*(1-dissent); old_middle_spd -= 2; rural_spd -= 2; catholics_spd -= 4; coalition_dissent += 1; z_relation -= 4;
+subtitle: Enact comprehensive divorce laws and dismantle traditional patriarchial civil codes.
+on-arrival: family_law += 1; womens_rights += 1; middle_psoe += 4*(1-dissent); workers_psoe += 3*(1-dissent); rural_psoe += 2; catholics_psoe -= 4; polarization += 5;
 max-visits: 2
 
-These policies aim to ensure that women have equal rights within a marriage, including the right to divorce. The more conservative segments of society treat our reforms as deleterious to the social fabric.
+We've enacted legislation legalizing civil divorce and granting women equal standing in marriage. While progressive sectors applaud the change, conservative and catholic groups accuse us of destroying the traditional Spanish family.
 
 
 @welfare
 subtitle: -1 budget
 choose-if: budget > 0
-on-arrival: welfare += 1; workers_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent); budget -= 1; womens_rights += 1; coalition_dissent += 1 if welfare >= 1 and unemployed >= 15; unemployed -= 0.4; inflation += 0.2; economic_growth += 0.3;
+on-arrival: welfare += 1; workers_psoe += 5*(1-dissent); unemployed_psoe += 5*(1-dissent); budget -= 1; womens_rights += 1; unemployed -= 0.4; inflation += 0.2; economic_growth += 0.3;
 
-We have increased welfare spending on women and children. [? if welfare >= 1 and unemployed >= 15 : Some of our coalition partners consider increased welfare spending profligate at this time. ?]
-
+We've expanded public funding for maternity assistance and child welfare programs.
 
 @liberalize
 max-visits: 1
-subtitle: [? if progressive_coalition < 50 : This is unlikely to succeed; we do not have majority support. ?]
-go-to: liberalize_fail if progressive_coalition < 50; liberalize_success if progressive_coalition >= 50
+subtitle: [? if popular_front < 50 : This is unlikely to succeed; we do not have majority support. ?]
+go-to: liberalize_fail if popular_front < 50; liberalize_success if popular_front >= 50 and year >= 1934
 
 @liberalize_fail
-on-arrival: z_relation -= 5; coalition_dissent += 1; workers_spd += 3*(1-dissent); catholics_spd -= 5;
+on-arrival: dlr_relation -= 5; prr_relation -= 5; coalition_dissent += 1; workers_psoe += 3*(1-dissent); catholics_psoe -= 5;
 
-Unfortunately, our proposal is voted down in the Reichstag, with the Catholic Center party (our long-time partners) speaking in particularly vehement opposition, and some of our own members breaking party discipline. The activists, feeling demoralized from this attempt, have decided to bide their time.
+Unfortunately, our proposal for legalizing abortion has been turned down in the Cortes. Moderate and Catholic-leaning deputies join conservative parties in voting it down, while several conservative members of our own coalition express fierce outrage..
 
 @liberalize_success
-on-arrival: abortion_rights += 1; womens_rights += 1; coalition_dissent += 1; z_relation -= 8; catholics_spd -= 10; dvp_relation -= 5; workers_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); workers_z += 3; new_middle_z += 3; old_middle_z += 3; old_middle_dnvp += 3; rural_dnvp += 3; workers_nsdap -= 3; new_middle_nsdap -= 3; old_middle_nsdap -= 2; rural_nsdap -= 2; unemployed_nsdap -= 2; unemployed_z += 3; unemployed_spd += 3*(1-dissent)
+on-arrival: abortion_rights += 1; womens_rights += 1; coalition_dissent += 1; dlr_relation -= 8; catholics_psoe -= 10; prr_relation -= 5; workers_psoe += 3*(1-dissent); middle_psoe += 3*(1-dissent); workers_ap += 3; middle_ap += 3; middle_re += 3; rural_psoe += 3; unemployed_psoe += 3*(1-dissent); polarization += 10;
 
-With the support of a "progressive coalition" including the KPD and [+ ddp_name +], we have successfully passed a bill to legalize abortion in Germany! This has heartened our more progressive supporters, while hurting our relations with the Center Party. With the increasing political discourse around abortion, the religiously-oriented Center Party and DNVP have gained conservative votes at the expense of the NSDAP.
+With the backing of a progressive majority in the Cortes, we pass groundbreaking legislation legalizing abortion! This victory solidifies our standing among radical progressives and feminists, but it sparks widespread outrage among catholic conservatives and right-wing organizations, further polarizing the political landscape.
