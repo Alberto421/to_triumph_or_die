@@ -125,7 +125,7 @@ Current tariff level: [+ tariffs : taxation +]
 
 @raise_tariffs
 title: Raise tariffs on imports.
-subtitle: +2 budget. Other countries will retaliate by increasing tariffs of their own. [? if tariffs > 5 : Further increases in tariffs will not raise revenue, as we have already nearly reached econonmic autarky. ?]
+subtitle: +2 budget. Other countries will retaliate by increasing tariffs of their own.
 choose-if: tariffs <= 5
 on-arrival: tariffs += 1; inflation += 1 if inflation > 0; inflation += 0.5 if inflation <= 0; unemployed += 1.5; budget += 2; workers_psoe -= 5; unemployed_psoe -= 5; west_relation -= 1; economic_growth -= 0.4; capital_strike_progress += 1 if tariffs >= 3
 
@@ -136,12 +136,11 @@ On the other hand, large agricultural producers and some small businesses benefi
 @lower_tariffs
 title: Lower tariffs on imports.
 choose-if: budget >= 2 and tariffs > -5
-subtitle: -2 budget. [? if tariffs <= -5 : There are no tariffs left to cut. ?]
+subtitle: -2 budget.
 on-arrival: tariffs -= 1; budget -= 2; inflation -= 0.5; workers_psoe += 4*(1-dissent); unemployed_psoe += 4*(1-dissent); rural_psoe += 5 if peseta_status == "devalued"; smallholders_psoe += 3 if peseta_status == "devalued"; west_relation += 1; economic_growth += 0.4; economic_growth += 0.1 if peseta_status == "devalued";
 
 Lowering tariffs helps workers and the urban poor by reducing prices for basic necessities. In addition, other countries are pleased by lower tariffs, and are more willing to negotiate on many issues.
 
-Cheap imports are detrimental for small-scale industries aimed at the domestic market. [? if peseta_status == "devalued" : Our agricultural sector benefits from having a devalued coin and the lower external tariffs increasing their exports]
 
 @debts
 title: Manage national debt.
@@ -158,23 +157,18 @@ The Republic faces significant internal debt left behind by the Primo de Rivera 
 title: Repay domestic treasury bonds (-1 budget).
 subtitle: -1 Budget. Improves credit rating and lowers financial panic.
 choose-if: budget >= 1 and public_debt >= 1
-unavailable-subtitle: [? if budget < 1 : We need at least +1 Budget to amortize domestic debt. ?] [? if public_debt < 1 : We don't have any more debt to pay. ?] 
 on-arrival: budget -= 1; public_debt -= 1; capital_strike_progress -= 1; prr_relation += 2;
 
 Paying off internal debt reassures domestic banking institutions, reduces capital flight and stabilizes public financial standing.
 
 @issue_debt
 title: Issue Public Debt Treasury Bonds (+1 Budget)
-subtitle: [? if gold_reserves > 0 : Backed by Bank of Spain gold reserves. Low inflation risk. ?] [? if gold_reserves <= 0 : UNBACKED DEBT! The markets won't take it kindly, we can expect high inflation and economic penalties. ?]
 choose-if: public_debt <= 9
 unavailable-subtitle: We have too much debt, new bonds are practically worthless. 
 on-arrival: budget += 1; public_debt += 1; gold_reserves -= 1 if gold_reserves >= 1; capital_strike_progress += 0.5 if gold_reserves >= 1; inflation += 0.6 if gold_reserves <= 0; economic_growth -= 0.3 if gold_reserves <= 0; capital_strike_progress += 2 if gold_reserves <= 0;
 
-[? if gold_reserves > 0 : We issue new state bonds backed by our gold reserves. The funds allow us to maintain state spending and public works without unsettling the markets. ?][? if gold_reserves <= 0 : With our gold reserves depleted, issuing unbacked debt causes financial alarm. The peseta loses credibility, inflation spikes and private investors lose confidence in the <span style="color: #E3000F;">RE</span><span style="color: #D5AC27;">PUB</span><span style="color: #8845ba;">LIC</span>'s solvency. ?]
-
 @replenish_gold_reserves
 title: Issue Public Debt Treasury Bonds (-2 Budget)
-subtitle: [? if gold_reserves > 0 : Backed by the Banco de España's gold reserves. Low inflation risk. ?] [? if gold_reserves <= 0 : UNBACKED DEBT! The markets won't take it kindly, we can expect high inflation and economic penalties. ?]
 choose-if: budget >= 2 
 unavailable-subtitle: We need at least +2 Budget to replenish our gold reserves.
 on-arrival: budget -= 2; gold_reserves += 1; capital_strike_progress -= 2; inflation -= 0.3;
