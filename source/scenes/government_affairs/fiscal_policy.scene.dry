@@ -157,6 +157,7 @@ The Republic faces significant internal debt left behind by the Primo de Rivera 
 title: Repay domestic treasury bonds (-1 budget).
 subtitle: -1 Budget. Improves credit rating and lowers financial panic.
 choose-if: budget >= 1 and public_debt >= 1
+unavailable-subtitle: [? if budget < 1 : We need at least +1 Budget to amortize domestic debt. ?] [? if public_debt < 1 : We don't have any more debt to pay. ?] 
 on-arrival: budget -= 1; public_debt -= 1; capital_strike_progress -= 1; prr_relation += 2;
 
 Paying off internal debt reassures domestic banking institutions, reduces capital flight and stabilizes public financial standing.
