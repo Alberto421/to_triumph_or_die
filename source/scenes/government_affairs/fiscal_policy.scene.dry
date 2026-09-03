@@ -169,6 +169,7 @@ on-arrival: budget += 1; public_debt += 1; gold_reserves -= 1 if gold_reserves >
 
 @replenish_gold_reserves
 title: Issue Public Debt Treasury Bonds (-2 Budget)
+subtitle: [? if gold_reserves > 0 : Backed by the Banco de España's gold reserves. Low inflation risk. ?] [? if gold_reserves <= 0 : UNBACKED DEBT! The markets won't take it kindly, we can expect high inflation and economic penalties. ?]
 choose-if: budget >= 2 
 unavailable-subtitle: We need at least +2 Budget to replenish our gold reserves.
 on-arrival: budget -= 2; gold_reserves += 1; capital_strike_progress -= 2; inflation -= 0.3;
