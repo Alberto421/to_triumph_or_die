@@ -170,7 +170,7 @@ choose-if: public_debt <= 9
 unavailable-subtitle: We have too much debt, new bonds are practically worthless. 
 on-arrival: budget += 1; public_debt += 1; gold_reserves -= 1 if gold_reserves >= 1; capital_strike_progress += 0.5 if gold_reserves >= 1; inflation += 0.6 if gold_reserves <= 0; economic_growth -= 0.3 if gold_reserves <= 0; capital_strike_progress += 2 if gold_reserves <= 0;
 
-[? if gold_reserves > 0 : We issue new state bonds backed by our gold reserves. The funds allow us to maintain state spending and public works without unsettling the markets. ?][? if gold_reserves <= 0 : With our gold reserves depleted, issuing unbacked debt causes financial alarm. The peseta loses credibility, inflation spikes and private investors lose confidence in the <span style="color: #E3000F;">RE</span><span style="color: #D5AC27;">PUB</span><span style="color: #8845ba;">LIC</span>'s solvency. ?
+[? if gold_reserves > 0 : We issue new state bonds backed by our gold reserves. The funds allow us to maintain state spending and public works without unsettling the markets. ?][? if gold_reserves <= 0 : With our gold reserves depleted, issuing unbacked debt causes financial alarm. The peseta loses credibility, inflation spikes and private investors lose confidence in the <span style="color: #E3000F;">RE</span><span style="color: #D5AC27;">PUB</span><span style="color: #8845ba;">LIC</span>'s solvency. ?]
 
 @replenish_gold_reserves
 title: Issue Public Debt Treasury Bonds (-2 Budget)
