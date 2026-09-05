@@ -197,8 +197,11 @@ Q.capital_strike_progress = 0;
 Q.agrarian_strike_progress = 0;
 Q.general_strike_progress = 0;
 
-Q.budget = 2;
-Q.debt = 2;
+Q.budget = -2;
+Q.public_debt = 2;
+Q.gold_reserves = 5;
+Q.exchange_control = 0;
+Q.peseta_status = "orthodox";
 
 // Proportion of different social groups (Based on Carreras, A y Tanufell, X (2005). Estadísticas históricas de España)
 Q.workers = 28; // industry and trade
@@ -207,7 +210,7 @@ Q.rural = 40; // Landless jornaleros (Andalusia, Extremadura) - prime base for U
 Q.smallholders = 17; // Small landowners, leaseholders
 Q.elites = 2; // large landowners, industrialists, high clergy, military officers
 Q.unemployed = 12;
-Q.catholics = 45; // Very conservative catholics, although most of the population was catholic
+Q.catholics = 35; // Very conservative catholics, although most of the population was catholic
 
 // REVISAR VOCABULARIO REPUBLICANO - TODO PLACEHOLDER POR SI NO QUEDA CLARO
 
