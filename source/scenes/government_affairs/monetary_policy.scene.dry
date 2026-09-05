@@ -2,7 +2,7 @@ title: Monetary Policy
 new-page: true
 is-card: true
 tags: govt_affairs, cabinet
-on-arrival: monetary_policy_timer += 6; month_actions += 1
+on-arrival: monetary_policy_timer += 12; month_actions += 1
 view-if: psoe_in_government = 1 and finance_minister_party = "PSOE" and monetary_policy_timer = 0
 card-image: img/banco.jpg
 go-to: monetary_menu
@@ -18,7 +18,9 @@ Spain isn't tied to the gold standard, this gives us more flexibility to deal wi
 @monetary_menu
 
 Peseta Exchange Status: **[+ peseta_status +]**
+
 Exchange Control: **[? if exchange_control = 1 : Active (State Divisa Monopoly) ?][? if exchange_control = 0 : Inactive (Free Capital Flow) ?]**
+
 Agrarian Exports Level: [+ agricultural_exports +]
 
 - @peseta_orthodox: Maintain an overvalued Peseta and high interest rates (Orthodoxy / Gold Block).
