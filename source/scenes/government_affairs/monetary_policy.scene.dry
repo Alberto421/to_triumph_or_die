@@ -3,9 +3,9 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: monetary_policy_timer += 6; month_actions += 1
-view-if: spd_in_government = 1 and finance_minister_party = "SPD" and fiscal_policy_timer = 0
+view-if: psoe_in_government = 1 and finance_minister_party = "PSOE" and monetary_policy_timer = 0
 card-image: img/portraits/banco.jpg
-go-to: fiscal_menu
+go-to: monetary_menu
 #subtitle: Changes on how the Peseta is handled.
 
 = Monetary Policy
