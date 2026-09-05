@@ -23,7 +23,7 @@ Agrarian Exports Level: [+ agricultural_exports +]
 
 - @peseta_orthodox: Maintain an overvalued Peseta and high interest rates (Orthodoxy / Gold Block).
 - @peseta_devalue: Devalue the Peseta and cut interest rates (Pro-Export Strategy).
-- @toggle_exchange_control: [? if exchange_control = 0 : Implement ?][? if exchange_control = 1 : Lift ?].
+- @toggle_exchange_control: [? if exchange_control = 0 : Implement exchange controls. ?][? if exchange_control = 1 : Lift exchange controls. ?]
 - @root: Do not alter monetary settings.
 - @easy_discard
 - @cancel_advisor_action
