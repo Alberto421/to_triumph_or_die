@@ -77,8 +77,8 @@ Education in Germany has traditionally been organized on religious and class lin
 title: Secularize education and replace religious order schools.
 subtitle: -1 budget
 unavailable-subtitle: Requieres at least 1 budget and having avoided cesions to the Catholic Chuch.
-choose-if: budget >= 1 and modus_vivendi == 0;
-view-if: secularized = 0 and constitution_drafted_seen == 1
+choose-if: budget >= 1 and modus_vivendi = 0;
+view-if: secularized = 0 and constitution_drafted_seen = 1
 on-arrival: budget -= 1; secularized = 1; pro_republic += 6*(1-dissent); catholics_psoe -= 15; dlr_relation -= 10; ar_relation += 6*(1-dissent); prrs_relation += 6*(1-dissent); pce_relation += 6*(1-dissent); middle_psoe += 5*(1-dissent); workers_psoe += 3*(1-dissent); education_science += 0.5; middle_ar += 4; middle_prrs += 4; polarization += 5;
 
 We enforce the constitutional mandate banning religious orders from teaching in secondary and primary education, nationalizing or replacing church-run schools with public statal institutions. We earn praises from other fellow republicans; however, bishops denounce indoctrination and Catholic families organize school boycotts, pushing many devout citizens into open opposition to the regime.
