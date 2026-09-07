@@ -1357,18 +1357,6 @@ go-to: ministries
 
 Francisco Largo Caballero of the PSOE has been appointed War Minister.
 
-@public_works
-title: Public Works/Fomento Ministry
-subtitle: Controls national infrastructure, railways, and public investments.
-unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
-choose-if: leverage >= 5 
-view-if: public_works_minister_party != "PSOE"
-on-arrival: leverage -= 5; public_works_minister_party = "PSOE"; public_works_minister = "Indalecio Prieto"
-go-to: ministries
-
-Indalecio Prieto of the PSOE has been appointed Minister of Public Works.
-
 @public_instruction
 title: Public Instruction Ministry (Education)
 subtitle: Taking the Public Instruction Ministry is expected of us.
@@ -1447,13 +1435,6 @@ go-to: ministries
 title: Drop the War Ministry.
 view-if: reichswehr_minister_party = "PSOE"
 on-arrival: reichswehr_minister_party = ar_name; reichswehr_minister = "Azaña"; leverage += 15; reichswehr_minister_party = I if in_popular_front; reichswehr_minister = "Hernández Saravia" if in_popular_front;
-tags: drop_mins_1928
-go-to: ministries
-
-@drop_public_works
-title: Drop the Public Works Ministry.
-view-if: public_works_minister_party = "PSOE"
-on-arrival: public_works_minister_party = "PRRS"; public_works_minister = "De Albornoz"; leverage += 5; public_works_minister_party = "PCE" if in_left_front; public_works_minister = "Uribe" if in_left_front;
 tags: drop_mins_1928
 go-to: ministries
 
