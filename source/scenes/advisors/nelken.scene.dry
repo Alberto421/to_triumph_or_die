@@ -11,7 +11,6 @@ Margarita Nelken is an art critic, writer, and one of the first female deputies 
 
 - @womens_rights_
 - @organizing_women
-- @structure_
 - @root: Return to main
 
 @womens_rights_
@@ -32,10 +31,3 @@ on-arrival: womens_rights += 1; workers_psoe += 4*(1-dissent); rural_psoe += 3*(
 By focusing on working-class mothers, maternity insurance, and workplace nurseries, Nelken cements the loyalty of female industrial and agricultural workers to the socialist movement.
 
 [? if psoe_r < 50 : Unfortunately, women still disproportionately support the conservative parties. ?]
-
-@structure_
-title: Change the structure and funding of education.
-choose-if: advisor_action_timer = 0 and psoe_in_government and chancellor_party = "PSOE"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psoe_in_government : The PSOE is not currently in government. ?][? if chancellor_party != "PSOE": The PSOE must control the presidency of the ministers' gabinet. ?]
-on-arrival: advisor_action_timer = 6; last_advisor_action = 1
-go-to: education_science.structure
