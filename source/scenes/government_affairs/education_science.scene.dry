@@ -62,17 +62,6 @@ We declare coeducation mandatory across all state-funded primary and secondary s
 
 While many families praise this landmark reform for equality, conservative associations and catholics denounce it as an "immoral attack on natural modesty."
 
-@structure
-title: Change the structure and funding of education.
-
-Education in Germany has traditionally been organized on religious and class lines. Schools are often either Protestant or Catholic (or rarely Jewish), and religious classes are required in most mixed-denomination schools. In addition, the working class has at most eight years of public education in primary and middle schools, while the middle and upper classes have access to private schools and Gymnasiums that prepare students for universities. Thus, the universities tend to be dominated by conservatives and reactionaries, which has negative consequences for bureaucratic recruitment.
-
-- @secularize
-- @public_hs
-- @school_boards
-- @ed_menu: Do not change school funding or organization.
-- @cancel_advisor_action
-
 @secularize
 title: Secularize education and replace religious order schools.
 subtitle: -1 budget
