@@ -25,7 +25,7 @@ view-if: not last_advisor_action
 - @hire_teachers
 - @build_schools
 - @mixed_classrooms
-- @structure
+- @secularize
 - @curriculum
 - @return: Do not enact any policies for now.
 - @cancel_advisor_action
