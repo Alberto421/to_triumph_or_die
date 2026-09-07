@@ -26,7 +26,7 @@ Under the direction of Francisco Largo Caballero and the UGT, the Ministry of La
 
 @termino_municipal
 view-if: termino != 1
-on-arrival: termino == 1; rural_psoe += 8; cnt_militancy -= 1 if Q.cnt_militancy > 0; capital_strike_progress += 1; prr_relation -=5; unemployed -= 0.3;
+on-arrival: termino = 1; rural_psoe += 8; cnt_militancy -= 1 if Q.cnt_militancy > 0; capital_strike_progress += 1; prr_relation -=5; unemployed -= 0.3;
 
 We sign the *Ley de Término Municipal*, barring landowners from importing cheap, unorganized migrant labor from other municipalities to undercut local wage rates.
 
@@ -35,7 +35,7 @@ However, in large municipalities, this has resulted in jornaleros who used to wo
 
 @laboreo_forzoso
 view-if: laboreo != 1
-on-arrival: laboreo == 1; rural_psoe += 8; cnt_militancy -= 1 if Q.cnt_militancy > 0; land_reform_progress += 0.5; capital_strike_progress += 2; prr_relation -=5; unemployed -= 0.3; coup_progress += 1; smallholders_ap += 7; coalition_dissent += 1 if in_republican_socialist_conjunction;
+on-arrival: laboreo = 1; rural_psoe += 8; cnt_militancy -= 1 if Q.cnt_militancy > 0; land_reform_progress += 0.5; capital_strike_progress += 2; prr_relation -=5; unemployed -= 0.3; coup_progress += 1; smallholders_ap += 7; coalition_dissent += 1 if in_republican_socialist_conjunction;
 
 In response to reactionary landowners who refuse to plant their fields as a passive protest against our government, hoping to induce artificial famine and social chaos, we institute mandatory cultivation rules. Fields left intentionally idle will be temporarily seized and worked directly by municipal peasant committees.
 
