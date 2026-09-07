@@ -78,6 +78,8 @@ largo_caballero.jpg: Por Anónimo - [1], Dominio público, https://commons.wikim
 
 lerroux.jpg: Por Desconocido - Narodowe Archiwum Cyfrowe, [1], originally published in Ilustrowany Kurier Codzienny., Dominio público, https://commons.wikimedia.org/w/index.php?curid=59422242
 
+madariaga.jpg: Notice de recueil : https://catalogue.bnf.fr/ark:/12148/cb404994578. Appartient à : [Recueil. Actualités 1932-05-23**1933-10-14. Agence Meurisse MEU 93455 A-105549 A] Notice du catalogue : https://catalogue.bnf.fr/ark:/12148/cb41594476n https://commons.wikimedia.org/wiki/File:Madariaga,_pr%C3%A9sident_de_la_d%C3%A9l%C3%A9gation_espagnole_(Gen%C3%A8ve,_S.D.N.)_-_btv1b9026872z.jpg
+
 nelken.jpg: Por Desconocido - Este archivo procede de la hemeroteca digital de la Biblioteca Nacional de España, y está disponible en línea con el identificador:924d31e8-f355-47c2-83f7-4f7b9ce1bacd, Dominio público, https://commons.wikimedia.org/w/index.php?curid=146915113
 
 negrin.png: Por Desconocido - Канторович А. (сост.) Чапаев. Батальон двадцати одной национальности. М.: Художественная литература, 1939., Dominio público, https://commons.wikimedia.org/w/index.php?curid=59286283
