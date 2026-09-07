@@ -35,7 +35,7 @@ title: Train and hire a new cohort of Republican teachers.
 subtitle: -1 Budget.
 choose-if: budget >= 1
 unavailable-subtitle: Requieres at least 1 budget.
-on-arrival: budget -= 1; education_teachers += 1; workers_psoe += 4*(1-dissent); middle_class_psoe += 3*(1-dissent); unemployed -= 0.1; pro_republic += 3*(1-Q.dissent); education_science += 0.4;
+on-arrival: budget -= 1; education_teachers += 1; workers_psoe += 4*(1-dissent); middle_psoe += 3*(1-dissent); unemployed -= 0.1; pro_republic += 3*(1-dissent); education_science += 0.2;
 max-visits: 3
 
 We drastically reform teacher training, pay higher salaries and adopt modern pedagogical standards to attract thousands of young enthusiastic men and women to the Teacher's Corp.
@@ -47,7 +47,7 @@ title: Expand urban and rural school construction.
 subtitle: -1 Budget 
 choose-if: budget >= 1
 unavailable-subtitle: Requieres at least 1 budget.
-on-arrival: budget -= 1; schools_built += 1; rural_psoe += 4*(1-dissent); smallholders_psoe += 4*(1-dissent); workers_psoe += 4*(1-dissent); pro_republic += 4*(1-dissent); education_science += 0.3;
+on-arrival: budget -= 1; schools_built += 1; rural_psoe += 4*(1-dissent); smallholders_psoe += 4*(1-dissent); workers_psoe += 4*(1-dissent); pro_republic += 4*(1-dissent); education_science += 0.2;
 max-visits: 3
 
 We launch a massive drive to build thousands of primary schools and hundreds of secundary schools all around the country but focusing in neglected agrarian regions. For many landless peasants, this is their first contact with literacy, art and the Republic as a whole.
