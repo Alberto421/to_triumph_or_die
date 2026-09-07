@@ -209,7 +209,7 @@ Q.middle = 15; // small owners, civil servants, professionals, intellectuals
 Q.rural = 40; // Landless jornaleros (Andalusia, Extremadura) - prime base for UGT and CNT
 Q.smallholders = 17; // Small landowners, leaseholders
 Q.elites = 2; // large landowners, industrialists, high clergy, military officers
-Q.unemployed = 12;
+Q.unemployed = 19;
 Q.catholics = 35; // Very conservative catholics, although most of the population was catholic
 
 // REVISAR VOCABULARIO REPUBLICANO - TODO PLACEHOLDER POR SI NO QUEDA CLARO
@@ -448,7 +448,7 @@ Q.economic_minister = 'd\'Olwer';
 Q.economic_minister_party = 'Regionalists';
 Q.finance_minister = 'Prieto';
 Q.finance_minister_party = 'PSOE';
-Q.public_works_minister = 'De Albornoz'; // Fomento
+Q.public_works_minister = 'De Albornoz'; // Fomento BUTTON THAT DOES NOTHING
 Q.public_works_minister_party = 'PRRS';
 Q.public_instruction_minister = 'Domingo';
 Q.public_instruction_minister_party = 'PRRS';
@@ -463,7 +463,6 @@ Q.sanjurjada_seen = 0;
 Q.casas_viejas_seen = 0;
 Q.asturias_revolution_seen = 0;
 Q.straperlo_scandal_seen = 0;
-Q.blutmai = 0; // QUE ES
 
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = 0;
@@ -497,9 +496,11 @@ Q.factory_takeovers = 0;
 // education NO SE SI TENDRE QUE TOCAR PARA VER CUANTAS REFORMAS DE ESTAS METER
 Q.education_teachers = 0;
 Q.education_mix_classrooms = 0;
-Q.education_rural_schools = 0;
+Q.schools_built = 0;
 Q.science = 0;
 Q.education_science = 0;
+Q.major_curriculum = "traditional";
+Q.minor_curriculum = "traditional";
 
 // Tax rates relative to 1931  baseline
 Q.lower_tax_rates = 0;
