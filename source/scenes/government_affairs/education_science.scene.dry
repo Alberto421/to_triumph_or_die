@@ -129,7 +129,7 @@ Our educational curriculum should be focused on the humanities, including arts, 
 @vocational_major
 title: Vocational curriculum
 subtitle: Useful technical skills for future careers
-on-arrival: curriculum_timer = 50; major_curriculum = "vocational"; prr_relation += 3*(1-dissent); pce_relation += 3*(1-dissent); workers_psoe += 5*(1-dissent); rural_psoe += 5*(1-dissent); unemployed_psoe += 3*(1-dissent); middle_psoe -= 1; unemployed -= 0.1; education_science += 0.5; economic_growth +0.3;
+on-arrival: curriculum_timer = 50; major_curriculum = "vocational"; prr_relation += 3*(1-dissent); pce_relation += 3*(1-dissent); workers_psoe += 5*(1-dissent); rural_psoe += 5*(1-dissent); unemployed_psoe += 3*(1-dissent); middle_psoe -= 1; unemployed -= 0.1; education_science += 0.5; economic_growth += 0.3;
 go-to: curriculum_minor
 
 We establish technical and trade schools across urban centers and agricultural districts, equipping working-class youth with practical mechanical, agricultural, and industrial skills to immediately improve productivity and employment.
