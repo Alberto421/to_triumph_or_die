@@ -113,7 +113,7 @@ We overhaul textbooks to emphasize critical thinking, scientific history, hygien
 @science_major
 title: Scientific curriculum
 subtitle: Modern science, mathematics, and technical skills
-on-arrival: curriculum_timer = 50; major_curriculum = "scientific"; education_science += 1; prrs_relation += 4*(1-dissent); pce_relation += 3*(1-dissent); middle_psoe += 3*(1-dissent); workers_psoe += 2*(1-dissent);  economic_growth +0.1;
+on-arrival: curriculum_timer = 50; major_curriculum = "scientific"; education_science += 1; prrs_relation += 4*(1-dissent); pce_relation += 3*(1-dissent); middle_psoe += 3*(1-dissent); workers_psoe += 2*(1-dissent); economic_growth += 0.1;
 go-to: curriculum_minor
 
 We align Spanish education with modern European standards, prioritizing physics, chemistry, natural sciences and laboratory experimentation over classical Latin and scholasticism. This helps lay the groundwork for long-term industrial modernization.
