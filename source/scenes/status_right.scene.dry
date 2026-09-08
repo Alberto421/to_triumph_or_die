@@ -39,8 +39,6 @@ Gobernación: [+ interior_minister_party +]
 
 Hacienda: [+ finance_minister_party +]
 
-Economic: [+ economic_minister_party +]
-
 Justice: [+ justice_minister_party +]
 
 Estado: [+ foreign_minister_party +]
