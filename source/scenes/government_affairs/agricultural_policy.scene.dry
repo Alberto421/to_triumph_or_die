@@ -1,57 +1,94 @@
 title: Agricultural Policy
 new-page: true
 is-card: true
-on-arrival: agricultural_policy_timer += 6; month_actions += 1
-view-if: spd_in_government = 1 and (agriculture_minister_party = "SPD") and agricultural_policy_timer == 0
-card-image: img/portraits/BaadeFritz.jpg
+on-arrival: agricultural_policy_timer += 5; month_actions += 1
+view-if: psoe_in_government = 1 and agriculture_minister_party = "PSOE" and agricultural_policy_timer == 0
+card-image: img/campesino_trabaja.jpg
 tags: govt_affairs, cabinet
-#subtitle: Issues of farmer financing, grain purchasing, and land reform.
 
 = Agricultural Policy
 
-While agricultural policy has historically not been the domain of the SPD, there is much need for policy in this area. Our urban constituencies hope for cheaper and more stable food supplies, while small farmers need economic relief. There is also the movement for land reform, to break up the large aristocratic estates and redistribute land to peasants.
+Spain's countryside is an explosive powder keg. Millions of landless peasants (*jornaleros*) in Andalusia and Extremadura starve under semi-feudal conditions, while vast estates (*latifundios*) remain underutilized by absentee landlords who are unconcerned with productivity, focusing instead on collecting rents to emulate the old aristocracy.
 
-- @land_reform
-- @agricultural_finance
-- @pro_consumer
-- @state_buyer
+The Republic promised land to those who work it but transforming this promise into reality requires monumental financial resources for reparatios, surveys and technical aid. If we move too slowly the countryside will burn under anarchist agitation; if we act too aggressively we will push the landowners and the army into open rebellion.
+
+[? if land_reform_progress > 0: *Land Reform Progress:* [+ land_reform_progress +] / 10. ?]
+
+[? if cnt_militancy > 3: *Agrarian Agitation:* Anarchist influence in the rural south is critically high! ?]
+
+[? if sanjurjada_seen == 1 and sanjurjada_confiscations == 0: *Opportunity:* Landed aristocrats implicated in the Sanjurjada can now have their estates seized without compensation! ?]
+
+- @ira_small
+- @ira_large
+- @radical_seizures
+- @sanjurjo_confiscations
+- @agricultural_credit
+- @irrigation_projects
 - @root: Do not enact any policies for now.
-- @easy_discard
 - @cancel_advisor_action
 
-@land_reform
-title: Land Reform
-subtitle: -1 budget - Break up the large aristocratic estates and give land to landless workers.
-unavailable-subtitle: [? if budget <= 0 : Requires 1 budget. ?] [? if judicial_reform < 2 : The judiciary would never allow this. ?]
-choose-if: judicial_reform >= 2 and budget > 0
-on-arrival: budget -= 1; land_reform += 1; coalition_dissent += 1; rural_spd += 5*(1-dissent); rural_nsdap -= 4*(1-dissent); unemployed -= 1 if unemployed >= 5; dvp_relation -= 5; z_relation -= 4; left_strength += 8; left_dissent -= 5; rural_sol += 3; rural_policy += 1; coup_progress += 1; agriculture_goal_completed += 1;
-max-visits: 4
+@ira_small
+title: Funding the IRA (Small Quantity)
+subtitle: -2 Budget
+view-if: land_reform_progress <= 9;
+choose-if: budget >= 2
+unavailable-subtitle: We need at least 2 budget.
+on-arrival: budget -= 2; land_reform_progress += 1; rural_psoe += 5*(1-Q.dissent); unemployed -= 0.2; cnt_militancy -= 1 if Q.cnt_militancy > 0; capital_strike_progress += 1; agriculture_goal_completed += 1;
 
-With our policy of land reform, we are acquiring farmland from large estates, and giving the land to farmworkers' associations and small peasants. In essence, this brings class struggle to the countryside, breaking the semi-feudal property relations present in East Prussia and other areas with large estates. The bourgeois parties and large farmers despise our intrusion into the sacredness of private property, while leftists are cautiously optimistic.
+We pour state funds into the *Instituto de Reforma Agraria*. Teams of topographers, lawyers and agrarian engineers are sent across Andalusia and Extremadura to survey estates, register land titles and process legal reparations.
 
+It is a meticulous and impeccably legal process, satisfying the moderate Republicans and protecting the state from legal appeals. However, for many of the starving landless peasants, the IRA's bureaucratic machinery moves agonizingly slow.
 
-@agricultural_finance
-title: Agricultural Financing
-subtitle: -1 budget - Increase financing for agricultural credit and insurance.
+@ira_large
+title: Funding the IRA (Large Quantity)
+subtitle: -3 Budget
+view-if: land_reform_progress <= 8;
+choose-if: budget >= 3
+unavailable-subtitle: We need at least 3 budget.
+on-arrival: budget -= 3; land_reform_progress += 2; rural_psoe += 8*(1-Q.dissent); unemployed -= 0.4; cnt_militancy -= 1 if Q.cnt_militancy > 0; capital_strike_progress += 1.5; agriculture_goal_completed += 1;
+
+We pour state funds into the *Instituto de Reforma Agraria*. Teams of topographers, lawyers and agrarian engineers are sent across Andalusia and Extremadura to survey estates, register land titles and process legal reparations.
+
+It is a meticulous and impeccably legal process, satisfying the moderate Republicans and protecting the state from legal appeals. However, for many of the starving landless peasants, the IRA's bureaucratic machinery moves agonizingly slow.
+
+@radical_seizures
+title: Legalize Direct Land Occupations
+view-if: land_reform_progress <= 8;
+unavailable-subtitle: The judiciary would never allow this.
+choose-if: judicial_reform >= 2
+on-arrival: land_reform_progress += 1; rural_psoe += 6*(1-dissent); cnt_militancy += 2; coup_progress += 1; capital_strike_progress += 2.5; prrs_relation -= 6; ar_relation -= 6; prr_relation -= 8; caballeristas_dissent -= 5; caballeristas_strenght += 5; coalition_dissent += 1 if (in_republican_socialist_conjunction or in_left_republican_coalition);  unemployed -= 0.6; agriculture_goal_completed += 1;
+
+Unable or unwilling to pay large reparations to wealthy aristocrats, we issue a decree legalizing the immediate temporary occupation of uncultivated or neglected fields by agrarian unions.
+
+The landless peasants celebrate this revolutionary measure but it breaks the consensus of the Republican coalition. The Radical Party and moderate socialists denounce the violation of private property. In the countryside, social peace vanishes: armed landowners form vigilante paramilitaries and CNT anarchists feel emboldened to push for total agrarian collectivism.
+
+@sanjurjo_confiscations
+title: Confiscate the Estates of Conspirators
+view-if: sanjurjada_seen == 1 and sanjurjada_confiscations == 0 and land_reform_progress <= 9;
+on-arrival: sanjurjada_confiscations = 1; land_reform_progress += 1; rural_psoe += 6*(1-Q.dissent); budget += 1; ejercito_loyalty -= 0.05; 
+
+Taking advantage of the failed monarchist coup led by General Sanjurjo, we pass legislation to confiscate without compensation all landed estates belonging to the nobility and military officers involved in the *Sanjurjada*.
+
+This provides the IRA with hundreds of thousands of fields at zero financial cost to the Treasury.
+
+@agricultural_credit
+title: Rural Credit & Grain Price Stabilization
+subtitle: -1 budget
 choose-if: budget >= 1
-on-arrival: budget -= 1; agricultural_finance += 1; rural_spd += 5*(1-dissent); rural_nsdap -= 3*(1-dissent); peoples_party_support += 1; center_dissent += 5; left_dissent += 4; rural_sol += 4; rural_policy += 1; economic_growth += 0.2;
-
-We have increased financial support for small farmers, providing access to credit and insurance, saving them from privation. The left and center of our party are opposed to our rural policy, seeing these policies as giveaways to petit-bourgeois farmers.
-
-
-@pro_consumer
-title: Food Procurement
-subtitle: -1 budget - Provide inexpensive food for workers.
-choose-if: budget >= 1
-on-arrival: budget -= 1; pro_consumer += 1; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); workers_sol += 4; coalition_dissent += 1 if black_thursday_seen; economic_growth += 0.2;
-
-We have increased state purchasing of food staples to provide to urban workers and the poor. This benefits workers more than it benefits farmers, as we are negotiating for lower purchase prices. [? if black_thursday_seen and (in_weimar_coalition or in_grand_coalition) : Our coalition partners consider this policy to be a wasteful handout. ?]
-
-@state_buyer
-title: State Buyer
-subtitle: -2 budget - Create a state monopoly for grain purchases, guaranteeing prices for farmers and stable prices for consumers. [? if judicial_reform < 2 : The judiciary would never allow this. ?]
-choose-if: budget >= 2 and judicial_reform >= 2
-on-arrival: budget -= 2; state_buyer = 1; rural_spd += 5*(1-dissent); rural_nsdap -= 3*(1-dissent); workers_spd += 4*(1-dissent); unemployed_spd += 5*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); dvp_relation -= 5; z_relation -= 3; peoples_party_support += 1; rural_policy += 2; capital_strike_progress += 1; economic_growth += 0.4;
+unavailable-subtitle: We need at least 1 budget.
+on-arrival: budget -= 1; state_buyer = 1; rural_psoe -= 2; smallholders_ap -= 3*(1-dissent); smallholders_agrarios -= 3*(1-dissent); smallholders_psoe += 4*(1-dissent); rural_policy += 2;
 max-visits: 1
 
-Our new purchasing agency guarantees fair prices for farmers, while also providing lower food prices for workers and the urban poor. This policy necessitates heavy spending and an unprecedented level of state intervention in the economy, raising the ire of conservative economists.
+We establish subsidized rural credit cooperatives and set minimum floor prices for wheat. While this helps smallholders in northern Spain, it does little to solve the structural crisis of the southern landless peasants. 
+
+@irrigation_projects
+title: Expand Irrigation Networks & Hydraulic Works
+subtitle: -1 Budget — Transform drylands (*secano*) into irrigated farmland (*regadío*).
+choose-if: budget >= 1
+unavailable-subtitle: We need at least 1 budget.
+on-arrival: budget -= 1; irrigation_developed += 1; economic_growth += 0.2; smallholders_ap -= 3*(1-dissent); smallholders_agrarios -= 3*(1-dissent); unemployed -= 0.3; middle_psoe += 3*(1-Q.dissent); rural_psoe -= 3*(1-Q.dissent); rural_pce += 3; land_reform_progress += 0.5 if land_reform_progress <= 9.5; smallholders_psoe += 10; cnt_militancy += 0.5
+max-visits: 2
+
+We launch major hydraulic projects: dams, canals and reservoir expansion to transform arid regions into fertile irrigated lands.
+
+This policy boosts agricultural productivity, creates thousands of construction jobs for rural laborers and wins praise from moderate smallholders and engineers. However, transforming ecosystems and building infrastructure takes years; hungry jornaleros in Andalusia demand immediate access to land today not canals tomorrow.
