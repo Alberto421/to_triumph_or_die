@@ -16,6 +16,7 @@ go-to: vonc_menu
 @vonc_menu
 
 - @try_assuage: Try to assuage our partners.
+- @form_left_republican: Could we form a Left Republican Coalition instead?
 - @support_pce: Could we get the PCE to abstain?
 - @let_it_happen: Let the vote happen.
 
@@ -29,14 +30,14 @@ How do we assuage our partners?
 - @let_it_happen: Never mind. Let the vote happen.
 
 @austerity
-view-if: welfare >= 0 and not secularized
+view-if: welfare >= 0 and concordat != 1 and in_republican_socialist_conjunction
 on-arrival: coalition_dissent = 0; workers_psoe -= 10; unemployed_psoe -= 10; workers_pce += 7; workers_ap += 3; unemployed_pce += 5; unemployed_ap += 5; caballeristas_dissent += 15; prietistas_dissent += 10; besteiristas_dissent += 5; welfare -= 2; budget += 1; unemployed += 3; pce_coalition_dissent += 1; pce_relation -= 10 if in_popular_front
 
 Fine. We enacted a massive austerity program to cut welfare, in order to maintain the stability of our coalition. The vote has been called off.
 
 @resources
 view-if: secularized = 0
-choose-if: resources >= 3
+choose-if: resources >= 3 and ar_relation >= 50 and prrs_relation >= 50
 unavailable-subtitle: We do not have enough resources.
 subtitle: -3 resources
 on-arrival: resources -= 3; coalition_dissent -= 1;
@@ -73,6 +74,9 @@ The PCE is not interested in a "toleration" arrangement; they will only support 
 - @election_1928.left_coalition
 - @try_assuage: Never mind. We must deal with this some other way.
 
+@form_left_republican
+view-if: in_republican_socialist_conjunction and left_republican_coalition >= 50 and ar_relation >= 50 and prrs_relation >= 50
+go-to: @election_1928.left_republican_coalition
 
 @let_it_happen
 call: set_next_election_time
