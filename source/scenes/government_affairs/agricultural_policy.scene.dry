@@ -33,7 +33,7 @@ subtitle: -2 Budget
 view-if: land_reform_progress <= 9
 choose-if: budget >= 2
 unavailable-subtitle: We need at least 2 budget.
-on-arrival: budget -= 2; land_reform_progress += 1; rural_psoe += 5*(1-Q.dissent); unemployed -= 0.2; cnt_militancy -= 1 if Q.cnt_militancy > 0; capital_strike_progress += 1; agriculture_goal_completed += 1;
+on-arrival: budget -= 2; land_reform_progress += 1; rural_psoe += 5*(1-dissent); unemployed -= 0.2; cnt_militancy -= 1 if cnt_militancy > 0; capital_strike_progress += 1; agriculture_goal_completed += 1;
 
 We pour state funds into the *Instituto de Reforma Agraria*. Teams of topographers, lawyers and agrarian engineers are sent across Andalusia and Extremadura to survey estates, register land titles and process legal reparations.
 
@@ -45,7 +45,7 @@ subtitle: -3 Budget
 view-if: land_reform_progress <= 8
 choose-if: budget >= 3
 unavailable-subtitle: We need at least 3 budget.
-on-arrival: budget -= 3; land_reform_progress += 2; rural_psoe += 8*(1-Q.dissent); unemployed -= 0.4; cnt_militancy -= 1 if Q.cnt_militancy > 0; capital_strike_progress += 1.5; agriculture_goal_completed += 1;
+on-arrival: budget -= 3; land_reform_progress += 2; rural_psoe += 8*(1-dissent); unemployed -= 0.4; cnt_militancy -= 1 if cnt_militancy > 0; capital_strike_progress += 1.5; agriculture_goal_completed += 1;
 
 We pour state funds into the *Instituto de Reforma Agraria*. Teams of topographers, lawyers and agrarian engineers are sent across Andalusia and Extremadura to survey estates, register land titles and process legal reparations.
 
@@ -65,7 +65,7 @@ The landless peasants celebrate this revolutionary measure but it breaks the con
 @sanjurjo_confiscations
 title: Confiscate the Estates of Conspirators
 view-if: sanjurjada_seen == 1 and sanjurjada_confiscations == 0 and land_reform_progress <= 9
-on-arrival: sanjurjada_confiscations = 1; land_reform_progress += 1; rural_psoe += 6*(1-Q.dissent); budget += 1; ejercito_loyalty -= 0.05; 
+on-arrival: sanjurjada_confiscations = 1; land_reform_progress += 1; rural_psoe += 6*(1-dissent); budget += 1; ejercito_loyalty -= 0.05; 
 
 Taking advantage of the failed monarchist coup led by General Sanjurjo, we pass legislation to confiscate without compensation all landed estates belonging to the nobility and military officers involved in the *Sanjurjada*.
 
@@ -86,7 +86,7 @@ title: Expand Irrigation Networks & Hydraulic Works
 subtitle: -1 Budget — Transform drylands (*secano*) into irrigated farmland (*regadío*).
 choose-if: budget >= 1
 unavailable-subtitle: We need at least 1 budget.
-on-arrival: budget -= 1; irrigation_developed += 1; economic_growth += 0.2; smallholders_ap -= 3*(1-dissent); smallholders_agrarios -= 3*(1-dissent); unemployed -= 0.3; middle_psoe += 3*(1-Q.dissent); rural_psoe -= 3*(1-Q.dissent); rural_pce += 3; land_reform_progress += 0.5 if land_reform_progress <= 9.5; smallholders_psoe += 10; cnt_militancy += 0.5
+on-arrival: budget -= 1; irrigation_developed += 1; economic_growth += 0.2; smallholders_ap -= 3*(1-dissent); smallholders_agrarios -= 3*(1-dissent); unemployed -= 0.3; middle_psoe += 3*(1-dissent); rural_psoe -= 3*(1-dissent); rural_pce += 3; land_reform_progress += 0.5 if land_reform_progress <= 9.5; smallholders_psoe += 10; cnt_militancy += 0.5
 max-visits: 2
 
 We launch major hydraulic projects: dams, canals and reservoir expansion to transform arid regions into fertile irrigated lands.
