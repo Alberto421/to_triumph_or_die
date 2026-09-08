@@ -30,7 +30,7 @@ The Republic promised land to those who work it but transforming this promise in
 @ira_small
 title: Funding the IRA (Small Quantity)
 subtitle: -2 Budget
-view-if: land_reform_progress <= 9;
+: land_reform_progress <= 9
 choose-if: budget >= 2
 unavailable-subtitle: We need at least 2 budget.
 on-arrival: budget -= 2; land_reform_progress += 1; rural_psoe += 5*(1-Q.dissent); unemployed -= 0.2; cnt_militancy -= 1 if Q.cnt_militancy > 0; capital_strike_progress += 1; agriculture_goal_completed += 1;
@@ -42,7 +42,7 @@ It is a meticulous and impeccably legal process, satisfying the moderate Republi
 @ira_large
 title: Funding the IRA (Large Quantity)
 subtitle: -3 Budget
-view-if: land_reform_progress <= 8;
+: land_reform_progress <= 8
 choose-if: budget >= 3
 unavailable-subtitle: We need at least 3 budget.
 on-arrival: budget -= 3; land_reform_progress += 2; rural_psoe += 8*(1-Q.dissent); unemployed -= 0.4; cnt_militancy -= 1 if Q.cnt_militancy > 0; capital_strike_progress += 1.5; agriculture_goal_completed += 1;
@@ -53,7 +53,7 @@ It is a meticulous and impeccably legal process, satisfying the moderate Republi
 
 @radical_seizures
 title: Legalize Direct Land Occupations
-view-if: land_reform_progress <= 8;
+: land_reform_progress <= 8
 unavailable-subtitle: The judiciary would never allow this.
 choose-if: judicial_reform >= 2
 on-arrival: land_reform_progress += 1; rural_psoe += 6*(1-dissent); cnt_militancy += 2; coup_progress += 1; capital_strike_progress += 2.5; prrs_relation -= 6; ar_relation -= 6; prr_relation -= 8; caballeristas_dissent -= 5; caballeristas_strenght += 5; coalition_dissent += 1 if (in_republican_socialist_conjunction or in_left_republican_coalition);  unemployed -= 0.6; agriculture_goal_completed += 1;
@@ -64,7 +64,7 @@ The landless peasants celebrate this revolutionary measure but it breaks the con
 
 @sanjurjo_confiscations
 title: Confiscate the Estates of Conspirators
-view-if: sanjurjada_seen == 1 and sanjurjada_confiscations == 0 and land_reform_progress <= 9;
+: sanjurjada_seen == 1 and sanjurjada_confiscations == 0 and land_reform_progress <= 9
 on-arrival: sanjurjada_confiscations = 1; land_reform_progress += 1; rural_psoe += 6*(1-Q.dissent); budget += 1; ejercito_loyalty -= 0.05; 
 
 Taking advantage of the failed monarchist coup led by General Sanjurjo, we pass legislation to confiscate without compensation all landed estates belonging to the nobility and military officers involved in the *Sanjurjada*.
