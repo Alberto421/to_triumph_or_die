@@ -75,7 +75,7 @@ We've improved our relations with the Soviet Union.
 title: Open negotiations for a 'Modus Vivendi' with the Vatican.
 subtitle: This will likely incur the wrath of our left republican allies.
 view-if: modus_vivendi != 1
-on-arrival: modus_vivendi = 1; polarization -= 10; coup_progress -= 1; catholics_psoe += 8; prr_relation += 5; dlr_relation += 5; other_right_republicans += 5; ar_relation -10; prss_relation -10; pce_relation -20; other_left_republicans_relation -10; coalition_dissent += 1; pce_coalition_dissent += 1; caballeristas_dissent += 10; besteiristas_dissent += 10; prietistas_dissent += 5;
+on-arrival: modus_vivendi = 1; polarization -= 10; coup_progress -= 1; catholics_psoe += 8; prr_relation += 5; dlr_relation += 5; other_right_republicans += 5; ar_relation -= 10; prss_relation -= 10; pce_relation -= 20; other_left_republicans_relation -= 10; coalition_dissent += 1; pce_coalition_dissent += 1; caballeristas_dissent += 10; besteiristas_dissent += 10; prietistas_dissent += 5;
 
 We initiate discreet diplomatic channels with the Papal Nuncio. We offer guarantees regarding Church property rights in exchange for the Holy See recognizing the legal authority of the Republic.
 
@@ -86,7 +86,7 @@ title: Sign a formal Concordat with the Holy See.
 subtitle: We will face a vote of no confidence if we sign the Concordat.
 choose-if: budget >= 1
 unavailable-subtitle: We need at least 1 budget.
-on-arrival: concordat = 1; budget -= 1; catholics_psoe += 10; polarization -= 15; coup_progress -= 2; prr_relation += 5; dlr_relation += 10; ar_relation -25; prss_relation -25; pce_relation -30; other_left_republicans_relation -15; other_right_republicans += 10; caballeristas_dissent += 10; besteiristas_dissent += 10; prietistas_dissent += 5; pro_republic += 20;
+on-arrival: concordat = 1; budget -= 1; catholics_psoe += 10; polarization -= 15; coup_progress -= 2; prr_relation += 5; dlr_relation += 10; ar_relation -= 25; prss_relation -= 25; pce_relation -= 30; other_left_republicans_relation -= 15; other_right_republicans += 10; caballeristas_dissent += 10; besteiristas_dissent += 10; prietistas_dissent += 5; pro_republic += 20;
 go-to: vote_of_no_confidence.vonc_menu
 max-visits: 1
 
@@ -116,6 +116,6 @@ However, France and Britain complain about our heavy-handed unilateral actions i
 @tanger_finance
 on-arrival: budget += 1; economic_growth += 0.2; coup_progress += 1; ejercito_militancy += 0.5
 
-We capitalize on Tangier's international status by lowering tariffs and easing banking regulations. Capital flows into Spanish-held banks in North Africa, providing much-needed revenue for the Treasury (+1 Budget).
+We capitalize on Tangier's international status by lowering tariffs, supporting some key bussisness and easing banking regulations. Some people could call this corruption but the thing is capital flows into Spanish-held banks in North Africa, providing much-needed revenue for the Treasury (+1 Budget).
 
 However, relaxed oversight allows foreign agents and right-wing conspirators to operate in the city with impunity.
