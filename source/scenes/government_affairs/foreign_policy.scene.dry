@@ -3,8 +3,8 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: month_actions += 1; foreign_policy_timer += 8
-view-if: spd_in_government = 1 and foreign_minister_party = "SPD" and  foreign_policy_timer <= 0
-card-image: img/portraits/BreitscheidRudolf.jpg
+view-if: psoe_in_government = 1 and foreign_minister_party = "PSOE" and foreign_policy_timer <= 0
+card-image: img/portraits/madariaga.jpg
 go-to: fp_menu
 #subtitle: International relations and dealing with Versailles.
 
@@ -15,189 +15,107 @@ What should our foreign policy priority be?
 @fp_menu
 
 - @improve_west
-- @improve_east
-- @improve_soviet
-- @customs_union
-- @negotiate
-- @reduce_reparations
-- @expose
-- @european_union
-- @european_union_2
-- @concordat_negotiate
-- @concordat
-- @support_austria
-- @support_austria_2
+- @improve_mexico
+- @improve_soviet_1
+- @improve_soviet_2
+- @vatican_1
+- @vatican_2
+- @tanger_policy
 - @root: Do not enact any policies for now.
-- @easy_discard
 - @cancel_advisor_action
 
 @improve_west
-title: Improve our relations with the Western Allies.
-on-arrival: west_relation += 2; reparations_negotiation += 1
+title: Strengthen ties with France, Great Britain and the League of Nations.
+choose-if: peseta_status = "orthodox"
+unavailable-subtitle: It'll be difficult to approach France and Great Britain after abandoning the Gold Block Alignment.
+on-arrival: west_relation += 2; economic_growth += 0.2; prr_relation += 3; dlr_relation += 3;
 
-The key to peace in Europe is a rapproachment between France and Germany. We are taking steps towards that rapproachment. [? if young_plan_seen == 0 : This is difficult to do when France is occupying a major portion of Germany's territory, but we are working on that part. ?]
+We reaffirm our commitment to the League of Nations and align our foreign policy with Western European democracies. Our diplomats advocate for disarmament and multilateral treaties.
 
-@improve_east
-title: Improve our relations with our eastern neighbors.
-on-arrival: east_relation += 2;
+France and Britain welcome our democratic stability, opening avenues for trade and commercial loans. Our bourgeois coalition partners approve of this orthodox international stance.
 
-We also aim to improve relations with our eastern neighbors, Poland and Czechoslovakia, who are righfully terrified of German aggression. Hopefully we can convince them of our peaceful intentions.
+@improve_mexico
+title: Improve our relations with President Cárdenas.
+on-arrival: mexico_relation += 2; agricultural_exports += 1;
 
-@improve_soviet
-title: Improve our relations with the Soviet Union.
-subtitle: We could also broach the question of the KPD...
+Mexico stands as our most enthusiastic ally in the Americas. President Lázaro Cárdenas' government shares our social-reformist vision and offers unconditional diplomatic backing in international forums.
 
-The Soviet Union also suffered from the international order created by the Treaty of Versailles; they have been participating in our secret rearmament program. The Treaty of Rapallo in 1922 affirmed our friendly relations.
+@improve_soviet_1
+title: Normalizes relations with Moscow.
+subtitle: Could influence local communist dynamics...
+max-visits: 1
 
-The Soviets are asking for economic and developmental assistance. They are still a poor country on the whole, and are desperately trying to catch up to the western powers. There is a chance that our anti-communist coalition partners would be upset, but we could assuage them by asking the Soviets for secret assistance in training and equiping the Reichswehr.
+Unlike most Western powers, the Republic has not yet fully normalized relations with the Soviet Union. Moscow is eager to open embassies and expand trade in the Mediterranean.
 
-- @soviet_economic_aid_yes_mil: Provide aid, in exchange for Reichswehr assistance.
-- @soviet_economic_aid_yes: Provide aid, in exchange for only good relations.
-- @soviet_economic_aid_no: Don't provide aid.
+However, establishing ties with Stalin's government will alarm our conservative coalition partners and the military establishment.
 
-@soviet_economic_aid_yes_mil
+- @soviet_trade_yes: Normalize relations and sign commercial agreements.
+- @soviet_trade_pce: Normalize relations, using Moscow's influence to tame the PCE.
+- @fp_menu: Do not normalize relations with the USSR at this time.
+
+@soviet_trade_yes
+on-arrival: soviet_relation += 2; economic_growth += 0.2; ejercito_loyalty -= 0.1; caballeristas_dissent -= 3; caballeristas_strenght += 5; coup_progress += 1; prr_relation -= 5; dlr_relation -= 5; other_right_republicans -= 5; foreign_goal_completed += 1; coalition_dissent += 1 if in_republican_socialist_conjunction
+
+We exchange ambassadors with Moscow and sign trade agreements. The socialist left celebrates this step towards international working-class solidarity but Republican centrists and conservative officers view the Soviet presence with intense suspicion.
+
+@soviet_trade_pce
+on-arrival: soviet_relation += 2; pce_relation += 8*(1-dissent); ejercito_loyalty -= 0.1; caballeristas_dissent -= 3; caballeristas_strenght += 5; coup_progress += 1; prr_relation -= 5; dlr_relation -= 5; other_right_republicans -= 5; foreign_goal_completed += 1; coalition_dissent += 1 if in_republican_socialist_conjunction
+
+In private diplomatic talks, we urge Moscow to instruct the PCE (Communist Party of Spain) to cease disruptive strikes and support the Republic's parliamentary framework. Following Comintern directives, the PCE tempers its attacks against the PSOE government, choosing instead to cooperate on broader anti-fascist fronts.
+
+@improve_soviet_2
+title: Normalizes relations with Moscow.
+subtitle: Could influence local communist dynamics...
+view-if: soviet_relation >= 2
+on-arrival: soviet_relation += 1; pce_relation += 3*(1-dissent); caballeristas_dissent -= 3; caballeristas_strenght += 5
+
+We've improved our relations with the Soviet Union.
+
+@vatican_1
+title: Open negotiations for a 'Modus Vivendi' with the Vatican.
+subtitle: This will likely incur the wrath of our left republican allies.
+view-if: modus_vivendi != 1
+on-arrival: modus_vivendi = 1; polarization -= 10; coup_progress -= 1; catholics_psoe += 8; prr_relation += 5; dlr_relation += 5; other_right_republicans += 5; ar_relation -10; prss_relation -10; pce_relation -20; other_left_republicans_relation -10; coalition_dissent += 1; pce_coalition_dissent += 1; caballeristas_dissent += 10; besteiristas_dissent += 10; prietistas_dissent += 5;
+
+We initiate discreet diplomatic channels with the Papal Nuncio. We offer guarantees regarding Church property rights in exchange for the Holy See recognizing the legal authority of the Republic.
+
+While Catholics and conservatives welcome the gesture, left republicans like Manuel Azaña and secular socialist factions express immediate concern over compromising on constitutional principles.
+
+@vatican_2
+title: Sign a formal Concordat with the Holy See.
+subtitle: We will face a vote of no confidence if we sign the Concordat.
 choose-if: budget >= 1
-subtitle: -1 budget
-on-arrival: budget -= 1; soviet_relation += 1; reichswehr_militancy += 0.2; reichswehr_loyalty += 0.05; foreign_goal_completed += 1
-
-The Soviets are pleased that we have sent them aid, and have agreed to help train our military. The Reichswehr appreciates our support.
-
-@soviet_economic_aid_yes
-choose-if: budget >= 1
-subtitle: -1 budget
-on-arrival: budget -= 1; soviet_relation += 2; coalition_dissent += 1; foreign_goal_completed += 1
-
-The Soviets are pleased that we have sent them aid, and have not asked for anything specific in exchange. Our coalition partners are less pleased.
-
-- @kpd: Ask if Moscow could help repair our relations with the KPD.
-- @wittorf: Do the Soviets know about the Wittorf Affair? Do they know that we know?
-- @root: Do not mention the KPD.
-
-@soviet_economic_aid_no
-
-The Soviets are slightly upset, but they seemed to expect this answer.
-
-
-@kpd
-on-arrival: kpd_relation += 8*(1-dissent); communist_coalition += 1 if kpd_foreign_seen == 0; kpd_foreign_seen = 1
-
-We also mention the KPD in our conversations with the Soviet ambassador. They claim that the KPD is entirely independent of the Soviet government, and that the conflict is Thälmann's doing. But, soon after our conversation we notice a slight improvement in attitudes from the KPD.
-
-@wittorf
-view-if: wittorf_secret = 1 and ((year = 1929 and month < 6) or year = 1928) and wittorf_soviet_union = 0
-unavailable-subtitle: It is impossible that Stalin and the Comintern could be moved on their policy.
-on-arrival: wittorf_soviet_union = 1; kpd_relation += 6*(1-dissent); kpd_foreign_seen = 1
+unavailable-subtitle: We need at least 1 budget.
+on-arrival: concordat = 1; budget -= 1; catholics_psoe += 10; polarization -= 15; coup_progress -= 2; prr_relation += 5; dlr_relation += 10; ar_relation -25; prss_relation -25; pce_relation -30; other_left_republicans_relation -15; other_right_republicans += 10; caballeristas_dissent += 10; besteiristas_dissent += 10; prietistas_dissent += 5; pro_republic += 20;
+go-to: vote_of_no_confidence.vonc_menu
 max-visits: 1
 
-Of course Stalin and the various leaders of the Comintern know about the Wittorf Affair, but they do not seem to know that we know as well. The Comintern was planning to build a narrative around the affair that absolves Thälmann, but perhaps now they will be less inclined to defend him.
+The Church secures guarantees for religious education and state stipends for clergy, while formally instructing Spanish bishops to respect the Republican constitution.
 
+This agreement drastically undercuts the [+ ap_name +]'s crusade against the Republic and pacifies conservative circles. However, it triggers a political earthquake on the left. Azaña and the PRRS have called a Vote of No Confidence against this government.
 
-@customs_union
-title: Form a customs union with Austria?
-subtitle: This will likely incur the wrath of France.
-unavailable-subtitle: This is superseded by the European Union.
-choose-if: eu = 0
-view-if: black_thursday_seen = 1 and customs_union = 0
-
-The right has long desired closer ties with Austria, with the eventual goal of the merger of the two German-speaking countries. A customs union with Austria is the first step towards this goal. Additionally, many believe that a union with Austria would improve our current economic circumstances.
-
-However, the Allies, especially France, are likely to object. This agreement would break the terms of the Versailles Treaty, and could lead to economic sanctions, further hurting our economy.
-
-- @customs_union_2: Yes, do it!
-- @fp_menu: No, we should do something else.
-
-@customs_union_2
-on-arrival: banking_crisis_timer = 2; customs_union = 1; west_relation -= 2; east_relation -= 2; z_relation += 6; dvp_relation += 6; coalition_dissent -= 1 if coalition_dissent > 0; coup_progress -= 1
+@tanger_policy
+title: Assert Spanish influence in the Tangier International Zone.
+subtitle: Tangier is a hub for international finance, espionage, and arms smuggling.
 max-visits: 1
 
-We have formed a customs union with Austria! The right-wing parties are praising us for this unexpected turn of events.
+As a co-protector of the Tangier International Zone alongside France and Britain, our Ministry of State can alter our posture in the city. We don't have a lot of influence here, so we'll be able to do just one policy.
 
-Immediately, France and other neighboring countries lodge their protests. The longer-term response is yet to be seen.
+- @tanger_security: Enforce strict anti-smuggling patrols to prevent arms trade.
+- @tanger_finance: Turn Tangier into an open trade hub to generate state revenue.
+- @fp_menu: Maintain the current status quo in Tangier.
 
+@tanger_security
+on-arrival: coup_progress -= 1 if guardia_civil_loyalty >= 0.65; west_relation -= 1; military_loyalty -= 0.1
 
-@negotiate
-title: Negotiate regarding our remaining obligations from the Treaty of Versailles.
-subtitle: [? if young_plan_seen == 1 : After passing the Young Plan, France has committed to withdrawing from the Rhineland. Now, we must see if they can reduce our reparations further, given the economic depression. ?]
-view-if: reparations > -2 and reparations_negotiation < 3
-on-arrival: west_relation += 1; reparations_negotiation += 1; reparations_negotiation += 1 if pacifism >= 3; reparations_negotiations += 1 if nationalism <= 50; reparations_negotiation += 1 if west_relation >= 3
+We deploy additional Civil Guard and diplomatic inspectors to police the international zone. [? if guardia_civil_loyalty >= 0.65 : We dismantle secret financial accounts and intercept illegal arms shipments bound for conspiratorial military officers in Morocco. ?] [? if guardia_civil_loyalty < 0.65 : The smuggling hasn't been stopped, the Guardia Civil keeps looking to the other side ?] 
 
-Negotiations procede smoothly for the most part. The Western powers are convinced of Germany's sincerity and goodwill. [? if nationalism <= 50 or pacifism >= 3 : They are pleased to see that we are renouncing militarism. ?]
-
-
-@reduce_reparations
-title: The Western Allies are finally willing to pause our reparations payments!
-subtitle: Our negotiations have been successful.
-view-if: reparations_negotiation >= 3 and black_thursday_seen == 1 and reparations > -2
-on-arrival: west_relation += 1; reparations = -2; budget += 2 if hoover_memorandum_seen == 0; budget += 1 if hoover_memorandum_seen == 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); coup_progress -= 2 if coup_progress > 2; economic_growth += 0.7; economic_growth += 0.5 if economic_growth < 0
-max-visits: 1
-
-Finally, given both the economic circumstances and our continued negotiations, the Western Allies are willing to pause our reparations payments! Much of the credit must go to American president Hoover, who has been friendlier towards us than the Europeans.
-
-This has reduced tensions within our government, and our party has gotten credit for the achievement.
-
-@expose
-title: Expose the secret rearmament plans of the previous foreign ministry!
-view-if: rearmament_exposed == 0
-on-arrival: west_relation += 2; east_relation += 1; nationalism -= 5*(1-dissent); pro_republic += 5*(1-dissent); coalition_dissent += 1; rearmament_exposed += 1; reparations_negotiation += 3; coup_progress += 2
-
-The previous foreign ministry, despite its benevolent and peaceful face, was secretly helping the Reichswehr to build up its forces, in contravention of the Treaty of Versailles.
-
-The Allies are grateful of our exposure and repudiation of militarism. Our partners in the coalition are less supportive.
+However, France and Britain complain about our heavy-handed unilateral actions in the neutral city. The army is also upset about this new measure.
 
 
-@concordat_negotiate
-title: Negotiate a Concordat between the Germany and the Vatican.
-view-if: prussian_concordat = 1 and reichskonkordat = 0 and reichskonkordat_progress < 4
-on-arrival: reichskonkordat_progress += 2; reichskonkordat_progress -= 1 if abortion_rights; reichskonkordat_progress -= 1 if family_law; z_relation += 3*(1-dissent)
+@tanger_finance
+on-arrival: budget += 1; economic_growth += 0.2; coup_progress += 1; ejercito_militancy += 0.5
 
-The Roman Catholic Church is interested in furthering relations with the German Republic, seeing us as preferable to the old anti-Catholic policies of the Empire. We are working towards the signing of a Concordat, an agreement between the Vatican and the Republic that formally recognizes the Church's rights and interests in the country. The Center Party is especially interested in making this agreement.
+We capitalize on Tangier's international status by lowering tariffs and easing banking regulations. Capital flows into Spanish-held banks in North Africa, providing much-needed revenue for the Treasury (+1 Budget).
 
-[? if family_law : Our liberalized divorce policies make it difficult to build relations with the Vatican. ?] [? if abortion : Our legalization of abortion make it difficult to connect with the Church. ?]
-
-@concordat
-title: We can sign a Concordat with the Vatican!
-view-if: reichskonkordat_progress >= 4 and reichskonkordat = 0
-on-arrival: reichskonkordat = 1; z_relation += 15*(1-dissent); catholics_spd += 8*(1-dissent); catholics_z += 5 if in_weimar_coalition or in_grand_coalition or in_popular_front;
-achievement: reichskonkordat
-
-We have successfully signed a Concordat between Germany and the Roman Catholic Church! This treaty defines a formal relationship between the Church and the German state, guaranteeing freedom of worship for Catholics, and the right of the church to appoint their own clergy. Catholics in Germany are pleased, as are their representatives in the Center Party.
-
-@support_austria
-title: Diplomatically support Austrian democracy against the Dollfuß dictatorship.
-view-if: austrian_parliament_seen = 1 and austrian_civil_war_seen = 0
-on-arrival: sdapo_strength += 1; left_dissent -= 3; center_dissent -= 3
-
-We provide verbal backing to Austrian democracy, wage a war of words against Austrofascism, and promulgate additional trade sanctions. Time will tell if it will be enough.
-
-@support_austria_2
-title: Provide material support to Austrian democracy against the Dollfuß dictatorship.
-subtitle: -1 budget
-choose-if: budget >= 1
-view-if: austrian_parliament_seen = 1 and austrian_civil_war_seen = 0
-on-arrival: budget -= 1; sdapo_strength += 3; left_dissent -= 6; center_dissent -= 6
-
-In public, we provide verbal backing to Austrian democracy, wage a war of words against Austrofascism, and promulgate additional trade sanctions. Privately, we provide financial and various forms of "support" to our comrades in Austria in their struggle against dictatorship.
-
-@european_union
-title: Take steps to form a "European Union".
-subtitle: Is a "United States of Europe" possible?
-unavailable-subtitle: [? if west_relation < 5 : Our relations with the West are not good enough. ?] [? if east_relation < 4 : Our relations with the East are not good enough. ?]
-view-if: reparations <= -2 and eu_progress < 2 and eu = 0
-choose-if: west_relation >= 5 and east_relation >= 4
-on-arrival: eu_progress += 1; west_relation += 1
-
-Forming a "United States of Europe" has long been part of the Social Democratic foreign program. Finally, we are taking steps towards it. Given our positive relations with the other countries of Europe, we can begin to hold multilateral negotiations for more European federalism. It will take time to hammer out the exact shape of this future "European Union", however.
-
-
-@european_union_2
-title: We can sign a treaty to form a European Union!
-view-if: west_relation >= 5 and east_relation >= 4 and eu_progress >= 2 and eu = 0
-on-arrival: eu = 1; unemployed -= 2 if unemployed >= 10; inflation += 2 if inflation <= -2; inflation -= 1 if inflation >= 4.5; workers_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); old_middle_spd += 5*(1-dissent); rural_spd += 4*(1-dissent); catholics_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); pro_republic += 5; nationalism -= 5; budget += 1; economic_growth += 1; economic_growth += 1 if economic_growth < 3
-max-visits: 1
-achievement: eu
-
-Along with France, Great Britain, and many other states of Western and Eastern Europe, we have signed a treaty to form a European Union! It is hoped that Europe has learned the lessons of the Great War; never again will there be another war that tears the continent apart.
-
-A major component of the union is the free movement of people and goods across the countries of Europe, as well as the stabilization of currency exchange rates. This provides new markets for German products and new sources of investment.
-
-Fascist Italy remains a problem, and the Soviet Union also lies outside the system. But for now, there is new hope for peace and prosperity throughout the continent.
+However, relaxed oversight allows foreign agents and right-wing conspirators to operate in the city with impunity.
