@@ -162,11 +162,13 @@ Ejército: [+ ejercito_strength +] thousand troops.
 
 Ejército Loyalty: [+ ejercito_loyalty : loyalty +]
 
-Guardia de Asalto: [+ guardia_asalto_strength +] thousand members.
+[? if assault_guard_formed = 1 : Guardia de Asalto: [+ guardia_asalto_strength +] thousand members. ?]
 
 Guardia de Asalto: [+ guardia_asalto_loyalty : loyalty +]
 
-[? if psoe_in_government : Guardia Civil loyalty: [+ guardia_civil_loyalty : loyalty +] ?]
+Guardia Civil: [+ guardia_civil_strength +] thousand members.
+
+Guardia Civil loyalty: [+ guardia_civil_loyalty : loyalty +]
 
 @polls
 on-arrival: {!
