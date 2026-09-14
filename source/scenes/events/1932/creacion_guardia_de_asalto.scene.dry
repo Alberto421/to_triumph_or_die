@@ -1,0 +1,33 @@
+title: Creation of the Assault Guard
+subtitle: It's time to create a true <span style="color: #E3000F;">REP</span><span style="color: #D5AC27;">UBLI</span><span style="color: #8845ba;">CAN</span> police force
+new-page: true
+view-if: year == 1932 and month >= 2 and assault_guard_formed == 0
+max-visits: 1
+tags: event
+
+= Creation of the Assault Guard
+
+The reliance on the Guardia Civil to control urban order is proving catastrophic. Trained for military-style counter-insurgency, their response to strikes and street protests often results in bloodshed, driving working-class sentiment against the Provisional Government.
+
+The Minister of the Gobernación [? if interior_minister_party == "DLR" : Miguel Maura ?] and republican strategists propose the creation of a specialized, motor-equipped and republican urban force: the **Cuerpo de Seguridad y Asalto** (*Guardia de Asalto*).
+
+- @fund_assault_guard: Authorize the creation of the Guardia de Asalto (-2 Budget).
+- @delay_assault_guard: We can't afford this now. We can rely on the Guardia Civil for public order.
+
+@fund_assault_guard
+title: Create the Assault Guard
+subtitle: -2 Budget. This will anger the Guardia Civil. 
+choose-if: budget >= 2
+unavailable-subtitle: We need at least 2 budget.
+on-arrival: budget -= 2; assault_guard_formed = 1; pro_republic += 5; guardia_asalto_loyalty = 0.85; workers_psoe += 4*(1-dissent); middle_psoe += 3*(1-dissent); guardia_civil_loyalty -= 0.05; cnt_militancy -= 1
+
+We recruit loyal republican policemen, former soldiers and disciplined unionists into the new *Guardia de Asalto*. Equipped with blue uniforms, motorized vans and non-lethal riot control tactics alongside firearms. Let's hope that this will improve the polarization at the streets.
+
+While the working class views them as a republican police force, the conservative Guardia Civil sees them as a politized rival.
+
+@delay_assault_guard
+title: Postpone the creation
+subtitle: We can't afford or we aren't intereseted in this new security corp.
+on-arrival: assault_guard_formed = 0; pro_republic -= 3; guardia_civil_loyalty += 0.05
+
+Urban public order remains in the hands of the conservative Guardia Civil and the reactionary Army, with all its implications.
