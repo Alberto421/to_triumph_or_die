@@ -2,6 +2,7 @@ title: Creation of the Assault Guard
 subtitle: It's time to create a true <span style="color: #E3000F;">REP</span><span style="color: #D5AC27;">UBLI</span><span style="color: #8845ba;">CAN</span> police force
 new-page: true
 view-if: year == 1932 and month >= 2 and assault_guard_formed == 0
+face-image: img/guardia_asalto_revista.jpg
 max-visits: 1
 tags: event
 
