@@ -3,40 +3,80 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: police_timer += 6; month_actions += 1
-view-if: spd_in_government = 1 and interior_minister_party = "SPD" and police_timer <= 0
+view-if: psoe_in_government = 1 and interior_minister_party = "PSOE" and police_timer <= 0
 card-image: img/guardia_civil_ametralladora.jpg
 
 = Internal Security
 
-The Interior Ministry controls internal security throughout the German Republic. While most police work is delegated to the states, the national security agency can perform special investigations.
+The Gobernación Ministry controls internal security throughout the German Republic. While most police work is delegated to the states, the national security agency can perform special investigations.
 
 As with the state police units and the Reichswehr, the internal police tends to be reactionary, and has serious issues with loyalty to the elected government of the Republic.
 
-- @loyalty: Improve the loyalty of the Interior Ministry forces.
+- @loyalty: Improve the loyalty of the Guardia Civil.
+- @reform_security_forces: Reform and rebalance the two main Security Forces (Guardia Civil & Guardia de Asalto).
 - @investigate_corruption: Investigate corruption by big businesses.
 - @investigate_far_right: Investigate illegal activity among the far right.
 - @domestic_enemies: Investigate or ban our domestic enemies.
 - @root: Take no action for now.
-- @easy_discard
+- @fund_assault_guard: It's time to create a republican police force. 
 - @cancel_advisor_action
 
 @loyalty
-on-arrival: interior_police_loyalty += 0.1
+on-arrival: guardia_civil_loyalty += 0.1
+view-if: assault_guard_formed != 1
 
-As with the Prussian state police, there are measures we can take to root out reactionary and anti-democratic sentiment in the police. We can improve training and recruiting procedures, and identify and remove known fascists and the like.
+The Guardia Civil, despite having sworn loyalty to the republic, is a conservative force. However, we can take a number of steps to increase the body's loyalty.
 
-Current interior police loyalty: [+ interior_police_loyalty : loyalty +]
+Current Guardia Civil loyalty: [+ guardia_civil_loyalty : loyalty +]
 
+@reform_security_forces
+title: Rebalance and Modernize the Security Forces
+subtitle: Manage the internal loyalty of the Civil Guard and Assault Guard.
+go-to: security_rebalance_menu
+
+@security_rebalance_menu
+
+- @favor_civil_guard: Favor the Guardia Civil with better equipment and fundings at the expense of the Guardia de Asalto.
+- @favor_assault_guard: Empower the Guardia de Asalto with more funding and resources at the expense of the Guardia Civil.
+- @joint_modernization: Execute a comprehensive joint modernization program (-2 Budget).
+- @interior_menu: Return to main security menu.
+
+@favor_civil_guard
+title: Prioritize the Guardia Civil
+subtitle: Boost Guardia Civil morale and eficiency at the expense of the Guardia de Asalto.
+choose-if: guardia_asalto_militancy >= 0.1
+unavailable-subtitle: We can't substract more funds from the Guardia de Asalto.
+on-arrival: guardia_civil_loyalty += 0.15; guardia_asalto_loyalty -= 0.10; caballeristas_dissent += 3; pce_relation -= 3; guardia_civil_militancy += 0.1; guardia_asalto_militancy -= 0.1;
+
+We allocate new rifles and barracks Guardia Civil. While their officers appreciate the government's recognition, the Guardia de Asalto feels sidelined.
+
+@favor_assault_guard
+title: Expand and Favor the Assault Guard
+subtitle: Strengthen the loyal urban police force while alienating the Guardia Civil.
+choose-if: guardia_civil_militancy >= 0.1
+unavailable-subtitle: We can't substract more funds from the Guardia Civil
+on-arrival: guardia_asalto_loyalty += 0.15; guardia_civil_loyalty -= 0.10; guardia_civil_militancy -= 0.1; guardia_asalto_militancy += 0.1;
+
+We expand the Guardia de Asalto with new rifles, riot material and motorized units. The urban police grows fiercely loyal to the Republic, but rural Civil Guard officers grow increasingly suspicious of our intentions.
+
+@joint_modernization
+title: Invest in a general modernization program
+subtitle: -1 Budget — Increase the loyalty and efficiency of both corps simultaneously.
+choose-if: budget >= 1
+unavailable-subtitle: We need at least 1 budget.
+on-arrival: budget -= 1; civil_guard_loyalty += 0.12; assault_guard_loyalty += 0.12; coup_progress -= 0.5;
+
+We increase the salary of the perssonel, improve the radio communication and provide motorized transport for both forces, increasing the loyalty of the Guardia Civil and Guardia de Asalto at the same time.
 
 @investigate_corruption
-go-to: investigate_corruption_success if interior_police_loyalty >= 0.5; investigate_corruption_failure if interior_police_loyalty < 0.5
+go-to: investigate_corruption_success if guardia_civil_loyalty >= 0.5; investigate_corruption_failure if guardia_civil_loyalty < 0.5
 
 @investigate_corruption_success
-on-arrival: investigate_corruption += 1; workers_spd += 5*(1-dissent); inflation -= 0.1 if inflation > 3; inflation -= 0.2 if inflation >= 8
+on-arrival: investigate_corruption += 1; workers_psoe += 5*(1-dissent); inflation -= 0.1 if inflation > 3; inflation -= 0.2 if inflation >= 8; capital_strike_progress -= 1 if capital_strike_progress >= 1; 
 
-[? if investigate_corruption < 1 : Corruption in big business is rampant, of course. We have uncovered a number of scandals, and publicizing them brings new attention to the work of Interior Minister [+ interior_minister +], building up his popular appeal and that of the SPD. ?]
+[? if investigate_corruption < 1 : The Guardia Civil uncover financial ties linking billionaire Juan March and conservative magnates to clandestine military funds and weapons smuggling from abroad. Seizing accounts and blocking illicit transfers starves the conspirators of vital liquid capital. ?]
 
-[? if investigate_corruption >= 1 : Corruption in big business is rampant, of course. We have uncovered a number of scandals, and publicizing them brings new attention to the work of Interior Minister [+ interior_minister +], building up his popular appeal and that of the SPD. ?]
+[? if investigate_corruption >= 1 : Corruption in big business is rampant, of course. We have uncovered a number of scandals and publicizing them brings new attention to the work of Gobernación Ministry building its popular appeal and that of the PSOE. ?]
 
 
 @investigate_corruption_failure
@@ -44,19 +84,25 @@ on-arrival: investigate_corruption += 1; workers_spd += 5*(1-dissent); inflation
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the police.
 
 @investigate_far_right
-go-to: investigate_far_right_success if interior_police_loyalty >= 0.55; investigate_far_right_failure if interior_police_loyalty < 0.55
+go-to: investigate_far_right_success if guardia_asalto_loyalty >= 0.55; investigate_far_right_failure if guardia_asalto_loyalty < 0.55
 
 @investigate_far_right_success
-on-arrival: investigate_far_right += 1; sa_strength -= 20; workers_nsdap -= 3; new_middle_nsdap -= 3; nazi_urgency += 1 if investigate_far_right == 2; nazi_urgency += 2 if investigate_far_right == 3; workers_nsdap -= 3 if investigate_far_right == 3; new_middle_nsdap -= 3 if investigate_far_right == 3; old_middle_nsdap -= 3 if investigate_far_right == 3; unemployed_spd -= 3 if investigate_far_right == 3; coup_progress -= 1 if coup_progress >= 7
+on-arrival: investigate_far_right += 1; mf_strength -= 10 if year <= 1934: mf_strength -= 20 if year => 1935; workers_ap -= 3; middle_ap -= 3; falange_urgency += 1 if investigate_far_right == 2; falange_urgency += 2 if investigate_far_right == 3; rural_ap -= 3 if investigate_far_right == 3; smallholders_ap -= 3 if investigate_far_right == 3; middle_ap -= 3 if investigate_far_right == 3; unemployed_ap -= 3 if investigate_far_right == 3; coup_progress -= 1 if coup_progress >= 7
 
-[? if investigate_far_right == 1 : We have discovered collusion between Hjalmar Schacht, president of the Reichsbank, and the Nazis. This is very useful information. ?]
-[? if investigate_far_right == 2 : We have discovered illegal arms smuggling by the SA, the Nazi paramilitary. ?]
-[? if investigate_far_right == 3 : We have discovered a secret cache of documents from the NSDAP detailing their plan to violently take over the country if they enter into power. This is an anti-constitutional plot, and will be publicized and persecuted. ?]
-[? if investigate_far_right > 3 : Of course the Nazis are doing crimes; everyone knows that. Now, we finally have proof. ?]
-
-[? if coup_progress >= 6: There are reports of an imminent coup by the far-right. We have attempted to disrupt some of these plans, but the threat is still present. ?]
+[? if investigate_far_right == 1 : We have uncovered secret documetns detailing the *Unión Militar Española (UME)*, a covert network of right-wing officers, alongside promises of  fascist Italian financing signed in Rome. ?]
+[? if investigate_far_right == 2 : We have discovered illegal arms smuggling by the Requetés, the Carlist paramilitary. ?]
+[? if investigate_far_right == 3 : We have found a link of various military officers with the Sanjurjada and some rumours of a new coup. We must do something to stop this plot. ?]
+[? if investigate_far_right > 3 : We keep striking paramilitaries and investigating high ranking officers.  [? if coup_progress >= 6: There are reports of an imminent coup by the far-right. We have attempted to disrupt some of these plans, but the threat is still present. ?]
 
 
 @investigate_far_right_failure
 
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the police.
+
+@fund_assault_guard
+title: Establish the Guardia de Asalto
+subtitle: -2 Budget. This will anger the Guardia Civil.
+choose-if: budget >= 2
+unavailable-subtitle: We need at least 2 budget.
+view-if: assault_guard_formed != 1 and delay_ga = 1
+on-arrival: budget -= 2; assault_guard_formed = 1; pro_republic += 5; guardia_asalto_loyalty = 0.85; workers_psoe += 4*(1-dissent); middle_psoe += 3*(1-dissent); guardia_civil_loyalty -= 0.05; cnt_militancy -= 1
