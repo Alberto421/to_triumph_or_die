@@ -19,7 +19,7 @@ title: Create the Assault Guard
 subtitle: -2 Budget. This will anger the Guardia Civil. 
 choose-if: budget >= 2
 unavailable-subtitle: We need at least 2 budget.
-on-arrival: budget -= 2; assault_guard_formed = 1; pro_republic += 5; guardia_asalto_loyalty = 0.85; workers_psoe += 4*(1-dissent); middle_psoe += 3*(1-dissent); guardia_civil_loyalty -= 0.05; cnt_militancy -= 1
+on-arrival: budget -= 2; assault_guard_formed = 1; delay_ga = 1; pro_republic += 5; guardia_asalto_loyalty = 0.85; workers_psoe += 4*(1-dissent); middle_psoe += 3*(1-dissent); guardia_civil_loyalty -= 0.05; cnt_militancy -= 1
 
 We recruit loyal republican policemen, former soldiers and disciplined unionists into the new *Guardia de Asalto*. Equipped with blue uniforms, motorized vans and non-lethal riot control tactics alongside firearms. Let's hope that this will improve the polarization at the streets.
 
