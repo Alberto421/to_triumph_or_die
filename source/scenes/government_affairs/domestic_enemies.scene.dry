@@ -6,6 +6,8 @@ on-arrival: domestic_enemies_timer += 6; month_actions += 1
 view-if: psoe_in_government = 1 and interior_minister_party = "PSOE" and domestic_enemies <= 0
 card-image: img/ga_casas_viejas.jpg
 
+# TODO: AÑADIR FLAVOUR A LAS DECISIONES ESTAS
+
 = Investigating Domestic Enemies
 
 As we have control over the Gobernación Ministry, we can direct police and intelligence services to investigate internal enemies. We can proscribe various organizations.
