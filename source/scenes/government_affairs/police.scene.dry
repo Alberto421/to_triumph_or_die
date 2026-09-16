@@ -89,7 +89,7 @@ Unfortunately, our investigations have failed to turn up anything. Rumors are th
 go-to: investigate_far_right_success if guardia_asalto_loyalty >= 0.55; investigate_far_right_failure if guardia_asalto_loyalty < 0.55
 
 @investigate_far_right_success
-on-arrival: investigate_far_right += 1; mf_strength -= 10 if year <= 1934: mf_strength -= 20 if year => 1935; workers_ap -= 3; middle_ap -= 3; falange_urgency += 1 if investigate_far_right == 2; falange_urgency += 2 if investigate_far_right == 3; rural_ap -= 3 if investigate_far_right == 3; smallholders_ap -= 3 if investigate_far_right == 3; middle_ap -= 3 if investigate_far_right == 3; unemployed_ap -= 3 if investigate_far_right == 3; coup_progress -= 1 if coup_progress >= 7
+on-arrival: investigate_far_right += 1; mf_strength -= 10 if year <= 1934; mf_strength -= 20 if year => 1935; workers_ap -= 3; middle_ap -= 3; falange_urgency += 1 if investigate_far_right == 2; falange_urgency += 2 if investigate_far_right == 3; rural_ap -= 3 if investigate_far_right == 3; smallholders_ap -= 3 if investigate_far_right == 3; middle_ap -= 3 if investigate_far_right == 3; unemployed_ap -= 3 if investigate_far_right == 3; coup_progress -= 1 if coup_progress >= 7
 
 [? if investigate_far_right == 1 : We have uncovered secret documetns detailing the *Unión Militar Española (UME)*, a covert network of right-wing officers, alongside promises of  fascist Italian financing signed in Rome. ?]
 [? if investigate_far_right == 2 : We have discovered illegal arms smuggling by the Requetés, the Carlist paramilitary. ?]
