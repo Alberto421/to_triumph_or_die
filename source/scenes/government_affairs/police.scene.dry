@@ -134,7 +134,7 @@ We've found no trace of any ilegality in Mola's Headquarters, nothing links him 
 
 @arrest_primo
 title: Arrest José Antonio Primo de Rivera
-view-if: investigate_far_right >= 3 and 
+view-if: investigate_far_right >= 3 
 choose-if: fe_persecuted >= 1
 unavailable-subtitle: We need to strike the Falange Española at least once before we can go for its leader. 
 on-arrival: primo_detained = 1; pro_republic += 5; polarization += 5; mf_militancy -= 0.1
