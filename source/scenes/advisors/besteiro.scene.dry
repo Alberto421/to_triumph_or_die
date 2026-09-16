@@ -16,7 +16,7 @@ Besteiro is a prominent professor, leader of the reformist wing of the PSOE and 
 - @root: Return to main
 
 @white_collar
-title: Organizing white-collar workers
+title: Organizing the white-collar workers union (Unión de Empleados de Oficinas)
 subtitle: Improve our standing among the middle class.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
