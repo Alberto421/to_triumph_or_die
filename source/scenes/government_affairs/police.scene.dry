@@ -118,10 +118,10 @@ on-arrival: generals_dispersed = 1; coup_progress -= 1; polarization += 10;  eje
 Using intelligence on the UME, we order key officers to distant posts: General Mola to Pamplona, Franco to the Canary Islands and Goded to the Balearic Islands. Deprived of direct command in Madrid and Barcelona, their ability to launch a synchronized coup is severely damaged.
 
 @raid_mola
+view-if: mola_raid == 0 and investigate_far_right >= 4
 go-to: raid_mola_success if guardia_asalto_loyalty >= 0.75 and guardia_civil_loyalty >= 0.75; raid_mola_failure if guardia_asalto_loyalty < 0.75 or guardia_civil_loyalty < 0.75
 
 @raid_mola_success
-view-if: mola_raid == 0
 on-arrival: coup_progress -= 1; mola_detained = 1; ejercito_militancy -= 1; mola_raid = 1
 
 We've found many plans and codebooks for an on-going coup preparation. General Mola and key conspirators are place under arrest. Some officers express their disconfort with the detainment of high ranking officers but we have proof of their crimes. 
