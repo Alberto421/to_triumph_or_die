@@ -41,7 +41,7 @@ go-to: security_rebalance_menu
 - @favor_civil_guard: Favor the Guardia Civil with better equipment and fundings at the expense of the Guardia de Asalto.
 - @favor_assault_guard: Empower the Guardia de Asalto with more funding and resources at the expense of the Guardia Civil.
 - @joint_modernization: Execute a comprehensive joint modernization program (-2 Budget).
-- @interior_menu: Return to main security menu.
+- @police: Return to main security menu.
 
 @favor_civil_guard
 title: Prioritize the Guardia Civil
