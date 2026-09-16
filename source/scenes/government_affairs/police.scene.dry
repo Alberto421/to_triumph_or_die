@@ -20,6 +20,7 @@ As with the state police units and the Reichswehr, the internal police tends to 
 - @fund_assault_guard: It's time to create a republican police force. 
 - @disperse_generals: Relocate suspicious right-wing generals away from vital centers.
 - @raid_mola: Order a decisive raid against General Mola’s headquarters in Pamplona to uncover the plot.
+- @arrest_primo: Arrest José Antonio Primo de Rivera, Falange's leader.
 - @root: Take no action for now.
 - @cancel_advisor_action
 
@@ -130,3 +131,12 @@ We've found many plans and codebooks for an on-going coup preparation. General M
 on-arrival: mola_raid = 1; coup_progress += 1; ejercito_militancy += 1;
 
 We've found no trace of any ilegality in Mola's Headquarters, nothing links him to the coup. Probably we've been looking at the wrong place. Mola accuses the government of illegal persecution and there's no excuse for us. 
+
+@arrest_primo
+title: Arrest José Antonio Primo de Rivera
+view-if: investigate_far_right >= 3 and 
+choose-if: fe_persecuted >= 1
+unavailable-subtitle: We need to strike the Falange Española at least once before we can go for its leader. 
+on-arrival: primo_detained = 1; pro_republic += 5; polarization += 5; mf_militancy -= 0.1
+
+Following the assassination attempt against Professor Jiménez de Asúa, police raid Falange headquarters, arresting José Antonio Primo de Rivera on charges of illegal firearms possession and sedition.
