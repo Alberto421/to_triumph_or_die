@@ -35,6 +35,7 @@ Current Guardia Civil loyalty: [+ guardia_civil_loyalty : loyalty +]
 @reform_security_forces
 title: Rebalance and Modernize the Security Forces
 subtitle: Manage the internal loyalty of the Civil Guard and Assault Guard.
+view-if: assault_guard_formed == 1
 go-to: security_rebalance_menu
 
 @security_rebalance_menu
