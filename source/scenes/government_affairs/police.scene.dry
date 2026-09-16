@@ -17,8 +17,10 @@ As with the state police units and the Reichswehr, the internal police tends to 
 - @investigate_corruption: Investigate corruption by big businesses.
 - @investigate_far_right: Investigate illegal activity among the far right.
 - @domestic_enemies: Investigate or ban our domestic enemies.
-- @root: Take no action for now.
 - @fund_assault_guard: It's time to create a republican police force. 
+- @disperse_generals: Relocate suspicious right-wing generals away from vital centers.
+- @raid_mola: Order a decisive raid against General Mola’s headquarters in Pamplona to uncover the plot.
+- @root: Take no action for now.
 - @cancel_advisor_action
 
 @loyalty
@@ -106,3 +108,25 @@ choose-if: budget >= 2
 unavailable-subtitle: We need at least 2 budget.
 view-if: assault_guard_formed != 1 and delay_ga = 1
 on-arrival: budget -= 2; assault_guard_formed = 1; pro_republic += 5; guardia_asalto_loyalty = 0.85; workers_psoe += 4*(1-dissent); middle_psoe += 3*(1-dissent); guardia_civil_loyalty -= 0.05; cnt_militancy -= 1
+
+@disperse_generals
+title: Relocate Suspicious Generals
+subtitle: Transfer right-wing military commanders linked to the coup away from strategic mainland garrisons.
+view-if: investigate_far_right >= 3 and generals_dispersed == 0
+on-arrival: generals_dispersed = 1; coup_progress -= 1; polarization += 10;  ejercito_militancy -= 0.5;
+
+Using intelligence on the UME, we order key officers to distant posts: General Mola to Pamplona, Franco to the Canary Islands and Goded to the Balearic Islands. Deprived of direct command in Madrid and Barcelona, their ability to launch a synchronized coup is severely damaged.
+
+@raid_mola
+go-to: raid_mola_success if guardia_asalto_loyalty >= 0.75 and guardia_civil_loyalty >= 0.75; raid_mola_failure if guardia_asalto_loyalty < 0.75 or guardia_civil_loyalty < 0.75
+
+@raid_mola_success
+view-if: mola_raid == 0
+on-arrival: coup_progress -= 1; mola_detained = 1; ejercito_militancy -= 1; mola_raid = 1
+
+We've found many plans and codebooks for an on-going coup preparation. General Mola and key conspirators are place under arrest. Some officers express their disconfort with the detainment of high ranking officers but we have proof of their crimes. 
+
+@raid_mola_failure
+on-arrival: mola_raid = 1; coup_progress += 1; ejercito_militancy += 1;
+
+We've found no trace of any ilegality in Mola's Headquarters, nothing links him to the coup. Probably we've been looking at the wrong place. Mola accuses the government of illegal persecution and there's no excuse for us. 
