@@ -16,6 +16,8 @@ labarraca.jpg: Por Desconocido - El País, Faro de Vigo ..., Dominio público, h
 
 picasso.jpg: Por Exoristo Salmerón - (1922-12-21). "Figuras y figurones". La Libertad V (953): 1. ISSN 2174-5935.Taken from Biblioteca Virtual de Prensa Histórica (CC BY 4.0), Dominio público, https://commons.wikimedia.org/w/index.php?curid=75787353
 
+UGT_logo.jpg: https://commons.wikimedia.org/wiki/File:UGT_logo_(1930).jpg - UGT, CC BY 4.0 <https://creativecommons.org/licenses/by/4.0>, via Wikimedia Commons
+
 
 = Images (posters):
 aidez.jpg: https://www.flickr.com/photos/halloweenhjb/51171561202/in/album-72157714070279236
