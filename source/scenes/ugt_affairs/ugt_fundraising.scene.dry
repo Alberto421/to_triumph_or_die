@@ -1,39 +1,58 @@
-title: Fundraising
+title: Union Fundraising
 new-page: true
-view-if: fundraising_timer <= 0 and (not historical_mode)
-on-arrival: fundraising_timer = 6; month_actions += 1
+view-if: ugt_fundraising_timer <= 0
+on-arrival: ugt_fundraising_timer = 6; month_actions += 1
 frequency: 300
 is-card: true
-card-image: img/alegoria1.jpg
-tags: party_affairs
+card-image: img/organitzeu.jpg
+tags: ugt_affairs
 
-= Fundraising
+=  Union Fundraising
 
-For better or for worse, the party cannot exist without money.
+As a worker's union, the UGT relies on member dues to fund long strikes (*cajas de resistencia*), legal defense for its members and different organizations for the working class.
+
+The party and union's treasury are nominally separated; however, funds can be shifted between them when necessary.
 
 - @maintain: Maintain our current dues.
 - @reduce: Reduce dues.
 - @increase: Increase dues.
+- @fund_party: Transfer union funds to the PSOE party treasury.
+- @fund_ugt: Siphon PSOE party funds into the UGT treasury.
 
 @maintain
-subtitle: [+ dues +] resources gained.
-on-arrival: resources += dues;
+subtitle: [+ ugt_dues +] resources gained.
+on-arrival: ugt_resources += ugt_dues;
 
 We maintain our current dues.
 
 @reduce
-subtitle: [+ dues - 1 +] resources gained.
-choose-if: dues > 1
-on-arrival: dues -= 1; resources += dues; caballeristas_dissent -= 8; prietistas_dissent -= 8; besteiristas_dissent -= 8;
+subtitle: [+ ugt_dues - 1 +] resources gained.
+choose-if: ugt_dues > 1
+on-arrival: ugt_dues -= 1; ugt_resources += ugt_dues; js_strength += 20; rural_psoe += 5;
 
-Our current members appreciate this, but no one decides to join a party because of the low dues.
+Our current members appreciate this. Lowering dues makes union membership accesible to more landless peasants, some of them join our Juventudes Socialistas.
 
 @increase
-subtitle: [+ dues + 1 +] resources gained. [? if unemployed >= 15 : Given the present economic situation, this may be painful. ?][? if dues >= 4 : Dues are already rather high; increasing them might reduce our membership. ?]
-on-arrival: dues += 1; resources += dues; workers_spd -= 2; unemployed_spd -= 2; workers_spd -= 10 if unemployed >= 20; unemployed_spd -= 10 if unemployed >= 20; workers_spd -= 3*dues if dues >= 5; unemployed_spd -= 3*dues if dues >= 5
-view-if: dues <= 4
+subtitle: [+ ugt_dues + 1 +] resources gained. [? if unemployed >= 15 : Given the present economic situation, this may be painful. ?][? if ugt_dues >= 4 : Dues are already rather high; increasing them might reduce our membership. ?]
+on-arrival: ugt_dues += 1; ugt_resources += ugt_dues; workers_psoe -= 2; unemployed_psoe -= 2; rural_psoe -= 4; workers_psoe -= 10 if unemployed >= 20; unemployed_psoe -= 10 if unemployed >= 20; workers_psoe -= 3*dues if dues >= 5; unemployed_psoe -= 3*dues if dues >= 5; js_strength -= 20; 
+view-if: ugt_dues <= 4
 
 Our members grumble at this, and some of the less committed members leave. But now, we have access to additional resources. 
 
 [? if unemployed >= 20 : Because of the presently high unemployment, our members are feeling the extra burden hard. ?]
 
+@fund_party
+subtitle: -1 UGT Resource, +1 Party Resource
+choose-if: ugt_resources > 0
+unavailable-subtitle: The UGT treasury does not have spare resources.
+on-arrival: ugt_resources -= 1; resources += 1; prietistas_dissent -= 2;
+
+We transfer union funds to support the political campaigns and press organs of the PSOE.
+
+@fund_ugt
+subtitle: -1 Party Resource, +1 UGT Resource
+choose-if: resources > 0
+unavailable-subtitle: The PSOE party treasury is empty.
+on-arrival: resources -= 1; ugt_resources += 1;
+
+We redirect party funds into the UGT to strengthen labor mobilization and strike funds.
