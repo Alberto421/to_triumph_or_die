@@ -10,7 +10,7 @@ if (Q.advisor_action_timer <= 0) {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
 !}
-max-cards: 3
+max-cards: 4
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
@@ -18,6 +18,7 @@ max-cards: 3
 
 - @party
 - @govt
+- @ugt
 - #advisor
 - @shuffle_leadership_pinned
 
@@ -34,3 +35,10 @@ card-image: img/cortes_1.jpg
 is-deck: true
 
 - #govt_affairs
+
+@ugt
+title: UGT Affairs
+card-image: img/UGT_logo.jpg
+is-deck: true
+
+- #ugt_affairs
