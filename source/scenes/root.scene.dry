@@ -538,7 +538,10 @@ Q.timers = ['advisor_action', 'confronting_right', 'crisis_program',
             'emergency_cuts', 'unemployment_insurance',
             'fe_ban', 'cnt_ban', 'pce_ban', 'sanjurjada',
             'pce_policy', 'pce_ultimatum', 'popular_front_dispute',
-            'peseta_crisis', 'banking_crisis', 'anarchist_uprising'];
+            'peseta_crisis', 'banking_crisis', 'anarchist_uprising'
+            // ugt
+            'ugt_fundraising', 'ugt_revolution', 'ugt_defense', 'ugt_agrarian', 'ugt_leadership'];
+
 Q.advisor_action_timer = 0;
 
 // party affairs timers
@@ -613,6 +616,14 @@ Q.popular_front_dispute_timer = 0;
 Q.peseta_crisis_timer = 0;
 Q.banking_crisis_timer = 0;
 Q.anarchist_uprising_timer = 0;
+
+
+// ugt timers
+Q.ugt_fundraising_timer = 0;
+Q.ugt_agrarian_timer = 0;
+Q.ugt_revolution_timer = 0;
+Q.ugt_defense_timer = 0;
+Q.ugt_leadership_timer = 0;
 
 
 // Advisors
