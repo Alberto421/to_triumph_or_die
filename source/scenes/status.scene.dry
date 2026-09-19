@@ -36,23 +36,21 @@ Internal dissent: [+ dissent_percent : dissent +]
 Cortes composition:
 
 {!<span class="tooltip-text" title="Socialist Worker Party of Spain">PSOE</span>!}: [+ psoe_r +]%
-[? if ur_formed and ur_r > 0: UR: [+ ur_r +]% ?]
+{!<span class="tooltip-text" title="Communist Party of Spain">PCE</span>!}: [+ pce_votes +]%
 [? if poum_formed and poum_r > 0: POUM: [+ poum_r +]% ?]
-[? if re_formed and re_r > 0: RE: [+ re_r +]% ?]
 {!<span class="tooltip-text" title="Republican Action">!}[? if not ar_name: AR?][? if ar_name != 0 : [+ ar_name +]?]{!</span>!}: [+ ar_r +]%
-{!<span class="tooltip-text" title="Radical Socialist Republican Party">PRRS</span>!}: [+ prrs_votes +]%
 {!<span class="tooltip-text" title="Other Left Republicans">Other Left Rep.</span>!}: [+ other_left_republicans_votes +]%
+{!<span class="tooltip-text" title="Radical Socialist Republican Party">PRRS</span>!}: [+ prrs_votes +]%
+[? if ur_formed and ur_r > 0: UR: [+ ur_r +]% ?]
 {!<span class="tooltip-text" title="Radical Republican Party">PRR</span>!}: [+ prr_votes +]%
 {!<span class="tooltip-text" title="Liberal Republican Right">DLR</span>!}: [+ dlr_votes +]%
 {!<span class="tooltip-text" title="Other Right Republicans">Other Right Rep.</span>!}: [+ other_right_republicans_votes +]%
-{!<span class="tooltip-text" title="Communist Party of Spain">PCE</span>!}: [+ pce_votes +]%
+{!<span class="tooltip-text" title*="Regionalist Parties">Regionalists</span>!}: [+ regionalists_votes +]%
 {!<span class="tooltip-text" title="Agrarian Party">Agrarios</span>!}: [+ agrarios_votes +]%
 {!<span class="tooltip-text" title="Popular Action">!}[? if not ap_name: AP?][? if ap_name != 0 : [+ ap_name +]?]{!</span>!}: [+ ap_r +]%
-{!<span class="tooltip-text" title="Popular Action / CEDA">AP</span>!}: [+ ap_votes +]%
 {!<span class="tooltip-text" title="Other Monarchists / Carlists">Monarchists</span>!}: [+ other_monarchists_votes +]%
+[? if re_formed and re_r > 0: RE: [+ re_r +]% ?]
 {!<span class="tooltip-text" title="National-Syndicalist Offensive Juntas">!}[? if not jons_name: JONS?][? if jons_name != 0 : [+ jons_name +]?]{!</span>!}: [+ jons_r +]%
-{!<span class="tooltip-text" title*="Regionalist Parties">Regionalists</span>!}: [+ regionalists_votes +]%
-
 
 [? if psoe_in_government = 1 : Budget: [+ budget +] ?]
 
@@ -88,7 +86,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 {!<span class="tooltip-text" title="Other Right Republicans">Other Right Rep.</span>!}: [+ other_right_republicans_relation : relationships +]
 
-{!<span class="tooltip-text" title="Communist Party of Germany">PCE</span>!}: [+ pce_relation : relationships +]
+{!<span class="tooltip-text" title="Communist Party of Spain">PCE</span>!}: [+ pce_relation : relationships +]
 
 {!<span class="tooltip-text" title="Agrarian Party">Agrarian</span>!}: [+ agrarios_relation : relationships +]
 
@@ -177,8 +175,6 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 PSOE: [+ psoe_votes +]%
 
-PRRS: [+ prrs_votes +]%
-
 PCE: [+ pce_votes +]%
 
 [? if poum_formed: POUM: [+ poum_votes +]% ?]
@@ -186,6 +182,8 @@ PCE: [+ pce_votes +]%
 [? if not ar_name: AR?][? if ar_name != 0 : [+ ar_name +]?]: [+ ar_votes +]%
 
 Other Left Republicans: [+ other_left_republicans_votes +]%
+
+PRRS: [+ prrs_votes +]%
 
 [? if ur_formed: UR: [+ ur_votes +]% ?]
 
