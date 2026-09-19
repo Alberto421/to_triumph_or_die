@@ -546,29 +546,48 @@ table {
     stroke-width: 1.5px;
 }
 .seat.prrs {
-    fill: #DCCA4A;
+    fill: #fa9105;
+}
+.seat.ar {
+    fill: #8845ba;
+}
+.seat.other_left_republicans {
+    fill: #C2B280;
 }
 .seat.dlr {
-    fill: #000;
+    fill: #998033;
 }
 .seat.agrarios {
-    fill: #69A2BE;
+    fill: #228B22;
 }
 .seat.prr {
     fill: #D5AC27;
 }
-.seat.other {
-    fill: #909090;
+.seat.other_right_republicans {
+    fill: #A0A0A0;
+}
+.seat.other_monarchists {
+    fill: #000043;
+}
+.seat.regionalists {
+    fill: #cee817;
 }
 .seat.ap {
-    fill: #3F7BC1;
+    fill: #00008B;
 }
 .seat.jons {
-    fill: #954B00;
+    fill: #000000;
 }
-.seat.other_left_republicans {
-    fill: #C40000;
+.seat.re {
+    fill: #52a4ad;
 }
+.seat.ur {
+    fill: #9f7c60;
+}
+.seat.poum {
+    fill: #A30000;
+}
+
 
 .tooltip-text {
     text-decoration: underline;
