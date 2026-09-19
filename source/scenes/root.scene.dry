@@ -538,7 +538,7 @@ Q.timers = ['advisor_action', 'confronting_right', 'crisis_program',
             'emergency_cuts', 'unemployment_insurance',
             'fe_ban', 'cnt_ban', 'pce_ban', 'sanjurjada',
             'pce_policy', 'pce_ultimatum', 'popular_front_dispute',
-            'peseta_crisis', 'banking_crisis', 'anarchist_uprising'
+            'peseta_crisis', 'banking_crisis', 'anarchist_uprising',
             // ugt
             'ugt_fundraising', 'ugt_revolution', 'ugt_defense', 'ugt_agrarian', 'ugt_leadership'];
 
