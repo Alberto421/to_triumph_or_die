@@ -4,32 +4,46 @@ is-special: true
 
 = Government
 
-President of the Republic: [+ president +] ([+ president_party +])
-[? if president = "Vacancy" :<img src="img/portraits/vacancy.png"> ?]
-[? if president = "Alcalá-Zamora" :<img src="img/portraits/alcala-zamora.jpg"> ?]
-[? if president = "Azaña" :<img src="img/portraits/azana.png"> ?]
-[? if president = "Lerroux" :<img src="img/portraits/lerroux.jpg"> ?]
-[? if president = "Gil-Robles" :<img src="img/portraits/gil-robles.jpg"> ?]
-[? if president = "Largo Caballero" :<img src="img/portraits/largo_caballero.jpg"> ?]
-[? if president = "Besteiro" :<img src="img/portraits/besteiro.jpg"> ?]
-[? if president = "Prieto" :<img src="img/portraits/prieto.jpg"> ?]
-President of the Government: [+ chancellor +] ([+ chancellor_party +])
-[? if chancellor = "Alcalá-Zamora" :<img src="img/portraits/alcala-zamora.jpg"> ?]
-[? if chancellor = "Azaña" :<img src="img/portraits/azana.png"> ?]
-[? if chancellor = "Casares Quiroga" :<img src="img/portraits/casares.jpg"> ?]
-[? if chancellor = "Giral Pereira" :<img src="img/portraits/giral.jpg"> ?]
-[? if chancellor = "Lerroux" :<img src="img/portraits/lerroux.jpg"> ?]
-[? if chancellor = "Martínez Barrios" :<img src="img/portraits/barrios.jpg"> ?]
-[? if chancellor = "Chapaprieta" :<img src="img/portraits/chapaprieta.jpg"> ?]
-[? if chancellor = "Portela" :<img src="img/portraits/portela.jpg"> ?]
-[? if chancellor = "Samper" :<img src="img/portraits/samper.jpg"> ?]
-[? if chancellor = "Gil-Robles" :<img src="img/portraits/gil-robles.jpg"> ?]
-[? if chancellor = "Díaz" :<img src="img/portraits/diaz.jpg"> ?]
-[? if chancellor = "Largo Caballero" :<img src="img/portraits/largo_caballero.jpg"> ?]
-[? if chancellor = "Besteiro" :<img src="img/portraits/besteiro.jpg"> ?]
-[? if chancellor = "Prieto" :<img src="img/portraits/prieto.jpg"> ?]
-[? if chancellor = "Negrín" :<img src="img/portraits/negrin.png"> ?]
+<div style="display: flex; gap: 5px; margin-bottom: 5px; margin-left: -3px;">
+  <div style="width: 50%;">
+    [? if president = "Vacancy" :<img src="img/portraits/vacancy.png" style="width: 100%;"> ?]
+    [? if president = "Alcalá-Zamora" :<img src="img/portraits/alcala-zamora.jpg" style="width: 100%;"> ?]
+    [? if president = "Azaña" :<img src="img/portraits/azana.png" style="width: 100%;"> ?]
+    [? if president = "Lerroux" :<img src="img/portraits/lerroux.jpg" style="width: 100%;"> ?]
+    [? if president = "Gil-Robles" :<img src="img/portraits/gil-robles.jpg" style="width: 100%;"> ?]
+    [? if president = "Largo Caballero" :<img src="img/portraits/largo_caballero.jpg" style="width: 100%;"> ?]
+    [? if president = "Besteiro" :<img src="img/portraits/besteiro.jpg" style="width: 100%;"> ?]
+    [? if president = "Prieto" :<img src="img/portraits/prieto.jpg" style="width: 100%;"> ?]
+  </div>
+  <div style="width: 50%;">
+    [? if chancellor = "Alcalá-Zamora" :<img src="img/portraits/alcala-zamora.jpg" style="width: 100%;"> ?]
+    [? if chancellor = "Azaña" :<img src="img/portraits/azana.png" style="width: 100%;"> ?]
+    [? if chancellor = "Casares Quiroga" :<img src="img/portraits/casares.jpg" style="width: 100%;"> ?]
+    [? if chancellor = "Giral Pereira" :<img src="img/portraits/giral.jpg" style="width: 100%;"> ?]
+    [? if chancellor = "Lerroux" :<img src="img/portraits/lerroux.jpg" style="width: 100%;"> ?]
+    [? if chancellor = "Martínez Barrios" :<img src="img/portraits/barrios.jpg" style="width: 100%;"> ?]
+    [? if chancellor = "Chapaprieta" :<img src="img/portraits/chapaprieta.jpg" style="width: 100%;"> ?]
+    [? if chancellor = "Portela" :<img src="img/portraits/portela.jpg" style="width: 100%;"> ?]
+    [? if chancellor = "Samper" :<img src="img/portraits/samper.jpg" style="width: 100%;"> ?]
+    [? if chancellor = "Gil-Robles" :<img src="img/portraits/gil-robles.jpg" style="width: 100%;"> ?]
+    [? if chancellor = "Díaz" :<img src="img/portraits/diaz.jpg" style="width: 100%;"> ?]
+    [? if chancellor = "Largo Caballero" :<img src="img/portraits/largo_caballero.jpg" style="width: 100%;"> ?]
+    [? if chancellor = "Besteiro" :<img src="img/portraits/besteiro.jpg" style="width: 100%;"> ?]
+    [? if chancellor = "Prieto" :<img src="img/portraits/prieto.jpg" style="width: 100%;"> ?]
+    [? if chancellor = "Negrín" :<img src="img/portraits/negrin.png" style="width: 100%;"> ?]
+  </div>
+</div>
 
+<div style="display: flex; justify-content: space-between; gap: 5px; margin-bottom: 5px;">
+  <div style="flex: 1; text-align: center;">
+    <p style="font-weight: bold; margin-bottom: 2px;">President of the Republic</p>
+    <p style="margin-bottom: 2px;">[+ president +] ([+ president_party +])</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <p style="font-weight: bold; margin-bottom: 2px;">Prime Minister</p>
+    <p style="margin-bottom: 2px;">[+ chancellor +] ([+ chancellor_party +])</p>
+  </div>
+</div>
 
 Current cabinet:
 
