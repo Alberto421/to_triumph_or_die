@@ -2,7 +2,7 @@ title: Government
 new-page: true
 is-special: true
 
-= Government
+=  Government
 
 <div style="display: flex; gap: 5px; margin-bottom: 5px; margin-left: -3px;">
   <div style="width: 50%;">
@@ -40,7 +40,7 @@ is-special: true
     <p style="margin-bottom: 2px;">[+ president +] ([+ president_party +])</p>
   </div>
   <div style="flex: 1; text-align: center;">
-    <p style="font-weight: bold; margin-bottom: 2px;">Prime Minister</p>
+    <p style="font-weight: bold; margin-bottom: 2px;">President of the Government</p>
     <p style="margin-bottom: 2px;">[+ chancellor +] ([+ chancellor_party +])</p>
   </div>
 </div>
