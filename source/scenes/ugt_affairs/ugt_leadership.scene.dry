@@ -5,6 +5,7 @@ on-arrival: ugt_leadership_timer = 6; month_actions += 1
 frequency: 150
 is-card: true
 card-image: img/sindicato_ferroviario.jpg
+max-visits: 4
 tags: ugt_affairs
 
 = Direction of the UGT
