@@ -25,7 +25,7 @@ Our ruling in the Mixed Juries favors union wage claims and employment guarantee
 
 @support_employers
 subtitle: Popular among the bourgeoisie, much less so among the workers.
-on-arrival: besteiristas_dissent += 8; caballeristas_dissent += 8; workers_psoe -= 5 if jurados_mixtos >= 2; rural_psoe -= 5; coalition_dissent -= 1 if in_republican_socialist_conjunction == 1; prr_relation += 5; dlr_relation += 5; workers_pce += 3; pce_coalition_dissent += 1; pce_relation -= 8; capital_strike_progress -= 1 if capital_strike_progress > 1; capital_strike_progress -= 1 if capital_strike_progress > 8; pro_labor -= 1; strike_term_seen += 1
+on-arrival: besteiristas_dissent += 8; caballeristas_dissent += 8; workers_psoe -= 5 if jurados_mixtos >= 2; rural_psoe -= 5; coalition_dissent -= 1 if in_republican_socialist_conjunction == 1; prr_relation += 5; dlr_relation += 5; workers_pce += 3; pce_coalition_dissent += 1; pce_relation -= 8; capital_strike_progress -= 1 if capital_strike_progress > 1; capital_strike_progress -= 1 if capital_strike_progress > 8; pro_labor -= 1; strike_term_seen += 1; cnt_relation -= 10;
 
 By ruling in favor of the employers, we restore business confidence at the expense of working-class'. Militants within the party accuse us of betraying the socialist movement, driving frustrated workers toward the CNT and PCE.
 
