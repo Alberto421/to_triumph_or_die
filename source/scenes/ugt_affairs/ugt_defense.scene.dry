@@ -1,39 +1,50 @@
-title: Fundraising
+title: Workers' Defense Committees
 new-page: true
-view-if: fundraising_timer <= 0 and (not historical_mode)
-on-arrival: fundraising_timer = 6; month_actions += 1
-frequency: 300
+view-if: ugt_defense_timer <= 0 and year >= 1934
+on-arrival: ugt_defense_timer = 6; month_actions += 1
+frequency: 150
 is-card: true
-card-image: img/alegoria1.jpg
-tags: party_affairs
+card-image: img/que_has_fet.jpg
+tags: ugt_affairs
 
-= Fundraising
+= Workers' Defense Committees
 
-For better or for worse, the party cannot exist without money.
+In response to armed attacks by Falangist squads and Carlist Requetés, UGT local branches have formed self-defense groups. These groups protect strike pickets, guard union headquarters, and retaliate against far-right violence.They are linked to the Juventudes Socialistas.
 
-- @maintain: Maintain our current dues.
-- @reduce: Reduce dues.
-- @increase: Increase dues.
+- @expand_militia: Arm and expand the Defense Committees alongside the Juventudes Socialistas.
+- @target_falange: Direct paramilitary operations against Falange.
+- @target_requete: Direct paramilitary operations against the Carlist Requetés.
+- @cnt_cooperation: Seek tactical cooperation with the CNT.
+- @root: Stand down for now.
 
-@maintain
-subtitle: [+ dues +] resources gained.
-on-arrival: resources += dues;
+@expand_militia
+subtitle: -1 UGT Resource
+choose-if: ugt_resources >= 1
+unavailable-subtitle: Not enough UGT resources.
+on-arrival: ugt_resources -= 1; js_strength += 15; js_militancy += 0.05; prietistas_dissent += 3;
 
-We maintain our current dues.
+We allocate union funds to procure guns and tactical training for UGT and Juventudes Socialistas members. The reformist wing warns that arming workers risks inviting a military backlash.
 
-@reduce
-subtitle: [+ dues - 1 +] resources gained.
-choose-if: dues > 1
-on-arrival: dues -= 1; resources += dues; caballeristas_dissent -= 8; prietistas_dissent -= 8; besteiristas_dissent -= 8;
+@target_falange
+choose-if: ugt_resources >= 1
+unavailable-subtitle: Not enough UGT resources.
+on-arrival: ugt_resources -= 1; mf_strength -= 20*js_militancy; js_strength -= 20*mf_militancy; js_militancy += 0.03; middle_psoe -= 3; prietistas_dissent += 4; street_violence += 1; polarization += 5; pro_republic -= 3 if street_violence >= 2; coup_progress += 1 if street_violence >= 4; guardia_asalto_loyalty -= 0.07
 
-Our current members appreciate this, but no one decides to join a party because of the low dues.
+Socialist squads clash directly with Falangist militants in street brawls and gunfights. While Falange operational capacity is disrupted, street violence escalates sharply.
 
-@increase
-subtitle: [+ dues + 1 +] resources gained. [? if unemployed >= 15 : Given the present economic situation, this may be painful. ?][? if dues >= 4 : Dues are already rather high; increasing them might reduce our membership. ?]
-on-arrival: dues += 1; resources += dues; workers_spd -= 2; unemployed_spd -= 2; workers_spd -= 10 if unemployed >= 20; unemployed_spd -= 10 if unemployed >= 20; workers_spd -= 3*dues if dues >= 5; unemployed_spd -= 3*dues if dues >= 5
-view-if: dues <= 4
+@target_requete
+subtitle: -1 UGT Resource - Counter Carlist paramilitaries in rural strongholds.
+choose-if: ugt_resources >= 1
+unavailable-subtitle: Not enough UGT resources.
 
-Our members grumble at this, and some of the less committed members leave. But now, we have access to additional resources. 
+on-arrival: ugt_resources -= 1; rc_strength -= 20*js_militancy; js_strength -= 20*rc_militancy; js_militancy += 0.03; middle_psoe -= 3; prietistas_dissent += 4; street_violence += 1; polarization += 5; pro_republic -= 3 if street_violence >= 2; coup_progress += 1 if street_violence >= 4; guardia_civil_loyalty -= 0.07
 
-[? if unemployed >= 20 : Because of the presently high unemployment, our members are feeling the extra burden hard. ?]
+Socialist squads clash directly with Carlist militants in street brawls and gunfights. While Carlist operational capacity is disrupted, street violence escalates sharply.
 
+@cnt_cooperation
+subtitle: Build a unified working-class defense front with the CNT.
+choose-if: cnt_relation >= 30
+unavailable-subtitle: Relations with the CNT are too strained for paramilitary cooperation.
+on-arrival: cnt_cooperation = 1; cnt_relation += 10; js_militancy += 0.05; ma_militancy += 0.05;
+
+Overcoming decades of hostility, UGT and CNT local defense committees agree to share intelligence, coordinate strike security, and jointly counter fascists.
