@@ -1,6 +1,6 @@
 title: FNTT & Agrarian Reform Pressure
 new-page: true
-view-if: ugt_agrarian_timer <= 0
+view-if: ugt_agrarian_timer <= 0 and fntt_power > ugt_reformists and fntt_power > ugt_revolutionary
 on-arrival: ugt_agrarian_timer = 6; month_actions += 1
 frequency: 100
 is-card: true
