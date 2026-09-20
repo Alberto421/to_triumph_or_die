@@ -1,39 +1,44 @@
-title: Fundraising
+title: FNTT & Agrarian Reform Pressure
 new-page: true
-view-if: fundraising_timer <= 0 and (not historical_mode)
-on-arrival: fundraising_timer = 6; month_actions += 1
-frequency: 300
+view-if: ugt_agrarian_timer <= 0
+on-arrival: ugt_agrarian_timer = 6; month_actions += 1
+frequency: 100
 is-card: true
-card-image: img/alegoria1.jpg
-tags: party_affairs
+card-image: img/camperols.jpg
+tags: ugt_affairs
 
-= Fundraising
+= FNTT & Agrarian Reform Pressure
 
-For better or for worse, the party cannot exist without money.
+The *Federación Nacional de Trabajadores de la Tierra* (FNTT) has become the dominant and most militant branch of the UGT. Representing hundreds of thousands of landless day-laborers (*jornaleros*) across Andalusia, Extremadura, and La Mancha, the rural proletariat demands immediate access to the land.
 
-- @maintain: Maintain our current dues.
-- @reduce: Reduce dues.
-- @increase: Increase dues.
+With rural hunger driving impatience, the FNTT leadership insists that the Republic fulfill its promises without bureaucratic delays.
 
-@maintain
-subtitle: [+ dues +] resources gained.
-on-arrival: resources += dues;
+- @reform_agriculture: Direct union pressure toward the Ministry of Agriculture.
+- @direct_occupations: Encourage peaceful land occupations and force government settlement.
+- @strike_landlords: Organize a nationwide rural strike against landlord lockouts.
+- @root: Urge the rural workers to remain patient for now.
 
-We maintain our current dues.
+@reform_agriculture
+title: Push for Agrarian Reform in Cabinet
+subtitle: Redirect to the Ministry of Agriculture's policies to accelerate legal land reform.
+view-if: psoe_in_government == 1
+go-to: agricultural_policy
 
-@reduce
-subtitle: [+ dues - 1 +] resources gained.
-choose-if: dues > 1
-on-arrival: dues -= 1; resources += dues; caballeristas_dissent -= 8; prietistas_dissent -= 8; besteiristas_dissent -= 8;
+Leveraging the large membership of the FNTT, we bring the full weight of the union to the Ministry of Agriculture, demanding immediate expropriations and IRA funding.
 
-Our current members appreciate this, but no one decides to join a party because of the low dues.
+@direct_occupations
+title: Authorize Direct Land Occupations
+subtitle: Support peasant committees taking over idle fields.
+on-arrival: land_reform_progress += 1; fntt_power += 2; rural_psoe += 6*(1-dissent); capital_strike_progress += 1; polarization += 6; cnt_relation += 4; cnt_militancy += 1; js_strength += 5*(fntt_power-dissent); unemployed -= 0.1; ma_strength += 10;
 
-@increase
-subtitle: [+ dues + 1 +] resources gained. [? if unemployed >= 15 : Given the present economic situation, this may be painful. ?][? if dues >= 4 : Dues are already rather high; increasing them might reduce our membership. ?]
-on-arrival: dues += 1; resources += dues; workers_spd -= 2; unemployed_spd -= 2; workers_spd -= 10 if unemployed >= 20; unemployed_spd -= 10 if unemployed >= 20; workers_spd -= 3*dues if dues >= 5; unemployed_spd -= 3*dues if dues >= 5
-view-if: dues <= 4
+Bypassing Madrid's slow legal bureaucracy, local FNTT unions march onto uncultivated fields marking out boundaries and beginning communal plowing. Unemployed peasants receive these news with joy, many of them join the FNTT and others the CNT.
 
-Our members grumble at this, and some of the less committed members leave. But now, we have access to additional resources. 
+@strike_landlords
+title: Launch a Nationwide Agrarian Harvest Strike
+subtitle: Paralyze agricultural work during peak harvest to enforce wage decrees and hiring laws.
+on-arrival: fntt_power += 1; rural_psoe += 5*(1-dissent); agricultural_exports -= 0.5; unemployed += 1.2 if psoe_in_government == 0; economic_growth -= 0.2 if psoe_in_government == 1; cnt_militancy += 1; prietistas_dissent += 5; pro_republic -= 3; coalition_dissent += 1; ar_relation -= 10 if psoe_in_government == 1; prrs_relation -= 10 if psoe_in_government == 1; other_left_republicans_relation -= 10; other_right_republicans_relation -= 10; prr_relation -= 10; dlr_relation -= 10; regionalists_relation -= 10;
 
-[? if unemployed >= 20 : Because of the presently high unemployment, our members are feeling the extra burden hard. ?]
+The FNTT calls a mass strike across southern wheat fields and olive groves to demand higher wages and better conditions.
 
+[? if psoe_in_government == 1 : Our political allies aren't happy with this strike. ?]
+[? if psoe_in_government == 0 : However; the government creates a public service to hire new peasants in substitution of the striking ones. After the failure of the Strike, large landowners refuse to re-hire the strikers, "Let them eat republic" ?]
