@@ -89,7 +89,7 @@ We have arrested more of the PCE's leaders and confiscated their weapons.
 
 @ban_cnt
 view-if: ma_banned = 0 and cnt_persecuted >= 1
-on-arrival: ma_strength -= 50; ma_banned = 1; ma_militancy += 0.2; prr_relation += 5; prrs_relation += 5; ar_relation += 5; guardia_civil_loyalty += 0.1; guardia_asalto_loyalty += 0.1; cnt_militancy -= 2
+on-arrival: ma_strength -= 50; ma_banned = 1; ma_militancy += 0.2; prr_relation += 5; prrs_relation += 5; ar_relation += 5; guardia_civil_loyalty += 0.1; guardia_asalto_loyalty += 0.1; cnt_militancy -= 2; cnt_relation -= 50 if psoe_in_government == 1;
 
 The ban is enthusiastically carried out by the Guardia Civil, perhaps too enthusiastically. The Anarchists take this as one more reason why the Socialists are traitors to the working class. However, the moderate and center-right parties approve, as do the police.
 
@@ -104,6 +104,6 @@ The Anarchist CNT is no longer banned.
 @persecute_cnt
 title: Persecute the CNT.
 view-if: guardia_civil_loyalty >= 0.5
-on-arrival: ma_strength *= 0.7; ma_militancy -= 0.05; cnt_militancy -= 1; cnt_persecuted += 1
+on-arrival: ma_strength *= 0.7; ma_militancy -= 0.05; cnt_militancy -= 1; cnt_persecuted += 1; cnt_relation -= 15;
 
 We have arrested more of the CNT's leaders and confiscated their weapons.
