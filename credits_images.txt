@@ -50,6 +50,8 @@ jsu.jpg: ABIANO LOZANO, Desiderio. 2º Aniversario de la Unidad de la Juventud S
 
 juventudes_libertarias.jpg: ALUMBREROS, E. La juventud defiende la Unión, Juventudes Libertarias de Madrid. https://www.flickr.com/photos/halloweenhjb/49828089441/in/album-72157714070279236
 
+la_union_del_proletariado.jpg: La Unión del Proletario exterminará a la Reacción, c. 1937. https://www.flickr.com/photos/halloweenhjb/52612660624/in/album-72157714070279236
+
 librosfrente.jog: GIRÓN. Libros y periódicos al frente, 1937. Public Domain. https://www.flickr.com/photos/halloweenhjb/49880521093/in/album-72157714070279236
 
 pabloiglesias.jpg: Public Domain. https://commons.wikimedia.org/wiki/File:Pabloiglesias.jpg
