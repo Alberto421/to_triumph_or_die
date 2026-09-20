@@ -1,39 +1,64 @@
-title: Fundraising
+title: Preparing for Revolutionary Action
 new-page: true
-view-if: fundraising_timer <= 0 and (not historical_mode)
-on-arrival: fundraising_timer = 6; month_actions += 1
-frequency: 300
+view-if: ugt_revolution_timer <= 0 and psoe_in_government == 0 and casas_viejas_seen == 1 and asturias_revolution_seen == 0
+on-arrival: ugt_revolution_timer = 3; month_actions += 1
+frequency: 100
 is-card: true
-card-image: img/alegoria1.jpg
-tags: party_affairs
+card-image: img/la_union_del_proletariado.jpg
+tags: ugt_affairs
 
-= Fundraising
+= Preparing for Revolutionary Action
 
-For better or for worse, the party cannot exist without money.
+With the rise of reactionary parties and the threat of fascism entering government, the revolutionary wing of the UGT and PSOE argues that legal parliamentary roads are closing. If the Republic falls into reactionary hands, an armed uprising—centered in the mining basins of Asturias and industrial centers—may be necessary.
 
-- @maintain: Maintain our current dues.
-- @reduce: Reduce dues.
-- @increase: Increase dues.
+- @secure_arms: Smuggle and cache weapons in mining districts and cities.
+- @infiltrate_forces: Contact sympathetic officers in the Guardia Civil.
+- @alliance_building_1: Push for the creation of the Workers' Alliance with CNT and PCE.
+- @alliance_building_2: Form the Workers' Alliance with CNT and PCE.
+- @launch_revolution: Trigger the General Strike and Revolutionary Uprising!
+- @root: Postpone preparations.
 
-@maintain
-subtitle: [+ dues +] resources gained.
-on-arrival: resources += dues;
+@secure_arms
+subtitle: -1 UGT Resource
+choose-if: ugt_resources >= 1
+unavailable-subtitle: Not enough UGT resources.
+on-arrival: rev_weapons += 1; ugt_resources -= 1; js_militancy += 0.07; revolutionary_fervour += 5;
+max-visits: 3
 
-We maintain our current dues.
+Covert smuggling networks transport explosives, rifles and ammunition into union headquarters.
 
-@reduce
-subtitle: [+ dues - 1 +] resources gained.
-choose-if: dues > 1
-on-arrival: dues -= 1; resources += dues; caballeristas_dissent -= 8; prietistas_dissent -= 8; besteiristas_dissent -= 8;
+@infiltrate_forces
+subtitle: -1 UGT Resource
+choose-if: ugt_resources >= 1
+unavailable-subtitle: Not enough UGT resources.
+on-arrival: ugt_resources -= 1; guardia_civil_loyalty += 0.03; ejercito_loyalty += 0.02; revolutionary_fervour += 5;
+max-visits: 3
 
-Our current members appreciate this, but no one decides to join a party because of the low dues.
+Underground work gains us contacts among army officers and Guardia Civiles.
 
-@increase
-subtitle: [+ dues + 1 +] resources gained. [? if unemployed >= 15 : Given the present economic situation, this may be painful. ?][? if dues >= 4 : Dues are already rather high; increasing them might reduce our membership. ?]
-on-arrival: dues += 1; resources += dues; workers_spd -= 2; unemployed_spd -= 2; workers_spd -= 10 if unemployed >= 20; unemployed_spd -= 10 if unemployed >= 20; workers_spd -= 3*dues if dues >= 5; unemployed_spd -= 3*dues if dues >= 5
-view-if: dues <= 4
+@alliance_building_1
+title: Call for Working-Class Unity
+subtitle: Begin public speeches and appeals to other labor organizations.
+view-if: alianza_asturias == 0
+on-arrival: alianza_asturias = 1; revolutionary_fervour += 10; cnt_relation += 15; pce_relation += 15; caballeristas_strength += 10; prietistas_strength -= 10;
 
-Our members grumble at this, and some of the less committed members leave. But now, we have access to additional resources. 
+Largo Caballero and UGT leaders issue passionate speeches calling on all working-class organizations to put aside factional rivalries and unite against the fascist threat.
 
-[? if unemployed >= 20 : Because of the presently high unemployment, our members are feeling the extra burden hard. ?]
+The grassroots membership of both the PCE and CNT responds enthusiastically to the calls for unity, improving relations and spreading revolutionary fervor among rural and urban workers.
 
+@alliance_building_2
+title: Negotiate the Workers' Alliance
+subtitle: Unite UGT, CNT, PCE and anti-stalinist Communist into a single insurrectionary front. We need good relations with both the PCE and the CNT.
+view-if: alianza_asturias == 1
+on-arrival: alianza_asturias = 2; revolutionary_fervour += 5; revolutionary_fervour += 5 if pce_relation >= 50; revolutionary_fervour += 5 if cnt_relation >= 50; revolutionary_fervour += 5 if cnt_relation >= 70; pce_relation += 10 if pce_relation >= 50; pce_asturias = 1 if pce_relation >= 50; cnt_relation += 10 if cnt_relation >= 70; cnt_asturias = 1 if cnt_relation >= 50; cnt_asturias = 2 if cnt_relation >= 70; caballeristas_strength += 10; prietistas_strength -= 10;
+
+[? if pce_relation >= 50 : The socialist and communists agree to join a common front to overthrow the fascists. ?] [? if pce_relation < 50 : Negotiations with the PCE have failed, we only got support from smaller trotskist associations. ?] [? if cnt_relation >= 50 and cnt_relation < 70 : The CNT leadership refuses a nationwide alliance, but the regional anarcho-syndicalists in Asturias sign the pact under the slogan "UHP" (Uníos Hermanos Proletarios). ?] [? if cnt_relation >= 70 : Surprisingly, we've been able to convince the National Committee of the CNT to join the general strike nationwide! ?] [? if cnt_relation < 50 : As expected, our differences with the CNT are too big to be accepted just like that ?].
+
+@launch_revolution
+title: Preemptively Trigger the Revolutionary Insurrection!
+subtitle: Call a nationwide general strike and mobilize armed militias before the reactionary forces can organize.
+choose-if: rev_weapons >= 2 and revolutionary_fervour >= 50
+unavailable-subtitle: [? if rev_weapons < 2 : We lack sufficient weapon stockpiles to launch an uprising. ?] [? if revolutionary_fervour < 50 : Workers lack the revolutionary fervour needed for a full uprising. ?]
+# go-to: asturias_revolution_early
+
+The order is given. Across the country, UGT sirens blow, factories stop, and armed columns take to the streets!
