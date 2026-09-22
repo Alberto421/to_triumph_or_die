@@ -17,9 +17,8 @@ The PCE denounces the Provisional Government as "social-fascist traitors," while
 - @question: Question Maura's actions.
 
 @nothing
-go-to: root
+go-to: @root
 
 @question
 subtitle: This will damage our relations with the republican right. 
 on-arrival: pce_relation += 10; guardia_civil_loyalty -= 0.05; caballeristas_dissent -= 5; prr_relation -= 10; dlr_relation -= 10
-go-to: root.
