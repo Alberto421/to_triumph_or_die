@@ -1,0 +1,20 @@
+title: Azaña's Military Reforms
+subtitle: Minister of War, Manuel Azaña approbes some decrees to modernize the army.
+new-page: true
+view-if: year = 1931 and month = 4
+face-image: img/portraits/azana.png
+on-arrival: ejercito_loyalty -= 0.05; army_strength = (army_strength*0.85); coup_progress -= 1; budget += 1;
+tags: event
+
+= Azaña's Military Reforms
+
+The War Minister, Manuel Azaña, has enacted a serie of decrees aimed at removing the army's historical political influence and make them bow to the civilian power by reducing the absurdly big officer corps.
+
+Azaña's decrees offer full-pay retirement to all officers who pledge loyalty to the Republic but wish to leave active service. Thousands of conservative officers take the offer. Furthermore, the War Ministry retroactively deny the wartime promotions granted during the Moroccan campaigns and decrees the closure of the General Military Academy of Zaragoza, whose director, General Francisco Franco, delivers a bitter farewell address to the cadets.
+
+While these measures successfully reduce the military budget and temporarily disrupt officer conspiracies, they provoke deep, lasting hatred among the conservative *africanista* military elite.
+
+- @continue: The army must obey the Republic.
+
+@continue:
+go-to: root
