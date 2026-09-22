@@ -17,4 +17,4 @@ While these measures successfully reduce the military budget and temporarily dis
 - @continue: The army must obey the Republic.
 
 @continue
-go-to: root
+go-to: @root
