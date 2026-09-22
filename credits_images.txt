@@ -102,6 +102,8 @@ negrin.png: Por Desconocido - Канторович А. (сост.) Чапаев.
 
 portela.jpg: Por Desconocido - Narodowe Archiwum Cyfrowe, 1-E-6555, Dominio público, https://commons.wikimedia.org/w/index.php?curid=59392901
 
+proclamacion_macia.jpg: DICCARQ, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons. https://commons.wikimedia.org/wiki/File:Proclamaci%C3%B3_Segona_Rep%C3%BAblica_Francesc_Maci%C3%A0._Amadeu_Aragay._14_abril_1931.jpg
+
 saborit.png: Por Desconocido - Vicente Alberto Serrano. Andrés Saborit en el Corral de Comedias. La Luna de Alcalá. 04/12/2019., Dominio público, https://commons.wikimedia.org/w/index.php?curid=84796565
 
 samper.jpg: Por Desconocido - Narodowe Archiwum Cyfrowe, [1], originally published in Ilustrowany Kurier Codzienny., Dominio público, https://commons.wikimedia.org/w/index.php?curid=59421991
