@@ -2,6 +2,7 @@ title: May Day in San Sebastián
 subtitle: Communist demonstrations in San Sebastián
 new-page: true
 view-if: year = 1931 and month = 5
+max-visits: 1
 on-arrival: pce_relation -= 10; guardia_civil_loyalty += 0.05; caballeristas_dissent += 5
 tags: event
 
