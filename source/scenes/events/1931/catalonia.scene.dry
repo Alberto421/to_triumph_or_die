@@ -1,8 +1,9 @@
 title: Catalan Republic Proclaimed
 subtitle: Francesc Macià proclaims the Catalan State in Barcelona
 new-page: true
-view-if: year == 1931 and month == 4
+view-if: year = 1931 and month = 4
 face-image: img/proclamacion_macia.jpg
+max-visits: 1
 priority: 90
 tags: event
 
