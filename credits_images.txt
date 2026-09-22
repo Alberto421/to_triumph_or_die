@@ -18,6 +18,10 @@ organitzeu.jpg: UGT, Obrers, Organitzeu els Campionats de Treball de cara a la g
 
 picasso.jpg: Por Exoristo Salmerón - (1922-12-21). "Figuras y figurones". La Libertad V (953): 1. ISSN 2174-5935.Taken from Biblioteca Virtual de Prensa Histórica (CC BY 4.0), Dominio público, https://commons.wikimedia.org/w/index.php?curid=75787353
 
+proclamacion_macia.jpg: DICCARQ, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons. https://commons.wikimedia.org/wiki/File:Proclamaci%C3%B3_Segona_Rep%C3%BAblica_Francesc_Maci%C3%A0._Amadeu_Aragay._14_abril_1931.jpg
+
+quema_conventos.jpg: https://commons.wikimedia.org/wiki/File:Hem_cronica_19310517.jpg. Memoria de Madrid [1], Public domain, via Wikimedia Commons
+
 sindicato_ferroviario.jpg: Por Desconocido - Claridade Fundación Luís Tilve, setembro de 2007. Especial homenaxe., Dominio público, https://commons.wikimedia.org/w/index.php?curid=51961841
 
 UGT_logo.jpg: https://commons.wikimedia.org/wiki/File:UGT_logo_(1930).jpg - UGT, CC BY 4.0 <https://creativecommons.org/licenses/by/4.0>, via Wikimedia Commons
@@ -101,8 +105,6 @@ nelken.jpg: Por Desconocido - Este archivo procede de la hemeroteca digital de l
 negrin.png: Por Desconocido - Канторович А. (сост.) Чапаев. Батальон двадцати одной национальности. М.: Художественная литература, 1939., Dominio público, https://commons.wikimedia.org/w/index.php?curid=59286283
 
 portela.jpg: Por Desconocido - Narodowe Archiwum Cyfrowe, 1-E-6555, Dominio público, https://commons.wikimedia.org/w/index.php?curid=59392901
-
-proclamacion_macia.jpg: DICCARQ, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons. https://commons.wikimedia.org/wiki/File:Proclamaci%C3%B3_Segona_Rep%C3%BAblica_Francesc_Maci%C3%A0._Amadeu_Aragay._14_abril_1931.jpg
 
 saborit.png: Por Desconocido - Vicente Alberto Serrano. Andrés Saborit en el Corral de Comedias. La Luna de Alcalá. 04/12/2019., Dominio público, https://commons.wikimedia.org/w/index.php?curid=84796565
 
