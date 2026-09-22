@@ -1,0 +1,25 @@
+title: May Day in San Sebastián
+subtitle: Communist demonstrations in San Sebastián
+new-page: true
+view-if: year = 1931 and month = 5
+on-arrival: pce_relation -= 10; guardia_civil_loyalty += 0.05; caballeristas_dissent += 5
+tags: event
+
+= May Day in San Sebastián
+
+On May 1, 1931, the Spanish Communist Party (PCE) calls for unauthorized mass demonstrations in San Sebastián, antagonizing the Provisional Government and demanding an immediate Soviet-style revolution.
+
+The Minister of the Interior, Miguel Maura, orders the *Guardia Civil* to disperse the illegal marches by force. Violent clashes break out in the streets, resulting in multiple arrests and wounded protesters.
+
+The PCE denounces the Provisional Government as "social-fascist traitors," while conservative republicans praise Maura for upholding public order and preventing revolutionary anarchy.
+
+- @nothing: They knew what they were doing.
+- @question: Question Maura's actions.
+
+@nothing
+go-to: root
+
+@question
+subtitle: This will damage our relations with the republican right. 
+on-arrival: pce_relation += 10; guardia_civil_loyalty -= 0.05; caballeristas_dissent -= 5; prr_relation -= 10; dlr_relation -= 10
+go-to: root.
