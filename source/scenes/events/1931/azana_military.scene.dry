@@ -3,6 +3,7 @@ subtitle: Minister of War, Manuel Azaña approbes some decrees to modernize the 
 new-page: true
 view-if: year = 1931 and month = 4
 face-image: img/portraits/azana.png
+max-visits: 1
 on-arrival: ejercito_loyalty -= 0.05; army_strength = (army_strength*0.85); coup_progress -= 1; budget += 1;
 tags: event
 
