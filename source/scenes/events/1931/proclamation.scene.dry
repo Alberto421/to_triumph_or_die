@@ -1,7 +1,7 @@
 title: Proclamation of the Republic
 subtitle: April 14, 1931. A day to remember
 new-page: true
-view-if: year == 1931 and month == 4
+view-if: year = 1931 and month = 4
 on-arrival: pro_republic += 5
 max-visits: 1
 priority: 100
