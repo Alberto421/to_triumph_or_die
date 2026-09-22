@@ -1,0 +1,20 @@
+title: Proclamation of the Republic
+subtitle: April 14, 1931. A day to remember
+new-page: true
+view-if: year == 1931 and month == 4
+on-arrival: pro_republic += 5
+max-visits: 1
+tags: event
+face-image: img/14_abril.jpg
+
+= Proclamation of the Republic
+
+After the victory of the Republican-Socialist Conjunction in the municipal election, general Sanjurjo, director of the Guardia Civil, arrives to the Ministry of the Interiro to place himself and his corp at the disposal of president Niceto Alcalá-Zamora and the Revolutionary Committee.
+
+Sensing the irreversible tide, King Alfonso XIII flees from the Orient Palace in Madrid, leaving the capital in a state of euphoric celebration. While some monarchist ministers like Calvo Sotelo make a call to fight for the monarchy to the last man, most of them flee to Portugal that same day. 
+
+In the Puerta del Sol, crowds carry the tricolor flag. Without a single drop of blood, the Second Spanish Republic is born.
+
+As part of the Pact of Sebastian we have three ministers in the Provisional Government: Largo Caballero (Labor), Indalecio Prieto (Hacienda) and Fernando de los Ríos (Justice).
+
+- ¡Viva la República!

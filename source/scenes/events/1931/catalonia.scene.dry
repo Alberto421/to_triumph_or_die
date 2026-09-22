@@ -1,0 +1,42 @@
+title: Catalan Republic Proclaimed
+subtitle: Francesc Macià proclaims the Catalan State in Barcelona
+new-page: true
+view-if: year == 1931 and month == 4
+face-image: img/proclamacion_macia.jpg
+tags: event
+
+= Catalan Republic Proclaimed
+
+Just hours before the proclamation in Madrid, Francesc Macià declared from the balcony of the Palau de la Generalitat "the Catalan Republic under the federation of Iberian Republics." 
+
+This unilateral action has alarmed centralist republicans in Madrid, who fear the immediate fragmentation of Spain before a constitution can even be drafted. The Provisional Government dispatches ministers Marcelino Domingo, Nicolau d'Olwer and Fernando de los Ríos to Barcelona to negotiate a compromise: replacing the proclaimed "Catalan Republic" with a restored historical *Generalitat de Catalunya*, while promising a future Statute of Autonomy (Estatut d'Autonomia).
+
+Within the PSOE, we must decide our stance regarding peripheral nationalism and the decentralization of the state.
+
+- @support_autonomy: Support regional autonomy and a federal structure.
+- @support_centralism: Demand a unified, jacobine Republic to protect national solidarity.
+- @compromise_autonomy: Back the Provisional Government's compromise of the Generalitat.
+
+@support_autonomy
+on-arrival:regionalists_relation += 15; regionalists_r += 2; middle_psoe -= 3; catalan_statute_support = 1; ejercito_loyalty -= 0.05
+
+We embrace the self-determination of the peoples of Spain. We must avoid the centralist conception of Spain legated by the monarchy and reforced by the dictatorship. 
+
+While traditional Spanish nationalists and conservatives view our position with suspicion, our alliance with Catalan left-wing Republicans (*ERC*) strengthens the broader anti-monarchist coalition.
+
+Macià agrees to lead the *Generalitat de Catalunya* and a commitment to process an autonomy statute once the new parliament is elected.
+
+@support_centralism
+on-arrival: regionalists_relation -= 15; middle_psoe += 4; ejercito_loyalty += 0.05; catalan_statute_support = 0;
+
+Decentralization will only serve regional burgoise elite. We won't support additional struggles as there is one struggle, the class struggle. As there is just one working class we must ensure that all the social rights are uniform across the entire territory.
+
+This stance earns us praise among centralist republicans and military officers, but deeply alienates our allies in Catalonia and the Basque Country.
+
+Macià agrees to lead the *Generalitat de Catalunya* and a commitment to process an autonomy statute once the new parliament is elected.
+
+@compromise_autonomy
+subtitle: Accept the Generalitat as a temporary solution until the Constituent Cortes convene.
+on-arrival: regionalists_relation += 5; middle_psoe += 2; catalan_statute_support = 0.5;
+
+We support the diplomatic middle ground negotiated by de los Ríos and Domingo. Macià agrees to lead the *Generalitat de Catalunya* and a commitment to process an autonomy statute once the new parliament is elected.
