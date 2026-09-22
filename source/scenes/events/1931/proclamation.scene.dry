@@ -4,6 +4,7 @@ new-page: true
 view-if: year == 1931 and month == 4
 on-arrival: pro_republic += 5
 max-visits: 1
+priority: 100
 tags: event
 face-image: img/14_abril.jpg
 
@@ -17,4 +18,7 @@ In the Puerta del Sol, crowds carry the tricolor flag. Without a single drop of 
 
 As part of the Pact of Sebastian we have three ministers in the Provisional Government: Largo Caballero (Labor), Indalecio Prieto (Hacienda) and Fernando de los Ríos (Justice).
 
-- ¡Viva la República!
+- @celebration: ¡Viva la República!
+
+@celebration
+go-to: root
