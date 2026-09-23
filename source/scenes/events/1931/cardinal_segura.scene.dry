@@ -1,0 +1,36 @@
+title: The Expulsion of Cardinal Segura
+subtitle: A confrontation with the Primate of Spain
+new-page: true
+view-if: year = 1931 and month = 5 and quema_seen = 1
+tags: event
+face-image: img/portraits/segura.jpg
+max-visits: 1
+
+= The Expulsion of Cardinal Segura
+
+Pedro Segura, Cardinal Primate of Toledo, publishes a fiery pastoral letter praising the exiled King Alfonso XIII and calling upon Spanish Catholics to organize against the new Republican regime. He finds in the legislation of the Republic an attack to Catholicism and especifically to the 1851's Concordat: civil marriage, divorce, optional catholic education...
+
+[? if burning_reaction == 0 : Following the unpunished burning of religious buildings, Segura's tone is overtly hostile and rebellious, declaring a spiritual war against the Republic. ?][? if burning_reaction == 1 : Despite the government's previous efforts to protect churches, Segura refuses to accept the secular Republic which would establish a separation between State and Church. ?]
+
+Some ministers define his an "unacceptable interference". He's too dangerous for the Republic to be kept as archbishop of Toledo. 
+
+- @expel_segura: Arrest Cardinal Segura and expel him from Spain.
+- @diplomatic_solution: Avoid expulsion and seek a diplomatic solution with the Vatican.
+
+@expel_segura
+title: Arrest and expel Cardinal Segura
+subtitle: Demonstrate state supremacy over the Catholic Church.
+on-arrival: polarization += 5; caballeristas_dissent -= 10; pce_relation += 5; dlr_relation -= 5; prr_relation -= 2; ar_relation += 4; prrs_relation += 5; catholics_psoe -= 7; workers_psoe += 5; rural_psoe += 5; pro_republic += 3; middle_ap += 3; workers_ap += 5
+
+The Guardia Civil detain Cardinal Segura at the border and escort him out of the country. The expulsion is receivied with joy from the anti-clerical workers and radical republicans, who celebrate the government's firmness.
+
+However, the Catholic right portrays Segura as a martyr of religious persecution, accelerating the radicalization of conservative voters toward more conservative movements.
+
+@diplomatic_solution
+title: Seek diplomatic channels with the Vatican
+subtitle: Request Segura's replacement through Nuncio Tedeschini without forcible expulsion.
+on-arrival: polarization -= 7; caballeristas_dissent += 10; pce_relation -= 5; cnt_relation -= 5; dlr_relation += 5; prr_relation += 2; ar_relation -= 4; prrs_relation -= 5; catholics_psoe += 10; workers_psoe -= 5; rural_psoe -= 5; diplomat_solution = 1; pro_republic -= 3
+
+The government avoids dramatic physical expulsion, opting instead to negotiate privately with Pius XII. Left republicans like Azaña feel that this is giving concessions to the right. 
+
+While the Poped eventually recalls Segura to Rome, our restraint infuriates the more radical members of the PSOE and UGT, who accuse the cabinet of weakness toward reactionary discourses.
