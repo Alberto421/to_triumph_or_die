@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: domestic_enemies_timer += 6; month_actions += 1
-view-if: psoe_in_government = 1 and interior_minister_party = "PSOE" and domestic_enemies <= 0
+view-if: psoe_in_government = 1 and interior_minister_party = "PSOE" and domestic_enemies_timer <= 0
 card-image: img/ga_casas_viejas.jpg
 
 # TODO: AÑADIR FLAVOUR A LAS DECISIONES ESTAS
@@ -49,7 +49,7 @@ We have arrested more of the Falange Española's leaders and confiscated their w
 
 @ban_rc
 on-arrival: rc_strength *= 0.85; rc_strength *= 0.7 if guardia_civil_loyalty >= 0.7; rc_banned = 1;
-view-if: rc_banned == 0 and carlist_persecuted >= 1
+view-if: rc_banned == 0 and carlist_persecuted >= 2
 
 Due to its armed paramilitary, the Requetés, we've banned the Comunión Carlista. However, they keep working underground.
 
@@ -69,7 +69,7 @@ We have arrested more of the Comunión Carlista's leaders and confiscated their 
 
 
 @ban_pce
-view-if: communist_coalition < 3 and pce_banned = 0 and pce_persecuted >= 1
+view-if: communist_coalition < 3 and mc_banned = 0 and pce_persecuted >= 2
 on-arrival: pce_relation -= 15; pce_strength -= 50; mc_banned = 1; communist_coalition -= 1; prr_relation += 5; prrs_relation += 5; ar_relation += 5; guardia_civil_loyalty += 0.1; guardia_asalto_loyalty += 0.1; pce_coalition_dissent += 5;
 
 The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The Communists take this as one more reason why the Socialists are traitors to the left. However, the moderate and center-right parties approve, as do the police.
@@ -88,7 +88,7 @@ We have arrested more of the PCE's leaders and confiscated their weapons.
 
 
 @ban_cnt
-view-if: ma_banned = 0 and cnt_persecuted >= 1
+view-if: ma_banned = 0 and cnt_persecuted >= 2
 on-arrival: ma_strength -= 50; ma_banned = 1; ma_militancy += 0.2; prr_relation += 5; prrs_relation += 5; ar_relation += 5; guardia_civil_loyalty += 0.1; guardia_asalto_loyalty += 0.1; cnt_militancy -= 2; cnt_relation -= 50 if psoe_in_government == 1;
 
 The ban is enthusiastically carried out by the Guardia Civil, perhaps too enthusiastically. The Anarchists take this as one more reason why the Socialists are traitors to the working class. However, the moderate and center-right parties approve, as do the police.
@@ -103,7 +103,6 @@ The Anarchist CNT is no longer banned.
 
 @persecute_cnt
 title: Persecute the CNT.
-view-if: guardia_civil_loyalty >= 0.5
 on-arrival: ma_strength *= 0.7; ma_militancy -= 0.05; cnt_militancy -= 1; cnt_persecuted += 1; cnt_relation -= 15;
 
 We have arrested more of the CNT's leaders and confiscated their weapons.
