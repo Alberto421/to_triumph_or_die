@@ -109,3 +109,6 @@ portela.jpg: Por Desconocido - Narodowe Archiwum Cyfrowe, 1-E-6555, Dominio púb
 saborit.png: Por Desconocido - Vicente Alberto Serrano. Andrés Saborit en el Corral de Comedias. La Luna de Alcalá. 04/12/2019., Dominio público, https://commons.wikimedia.org/w/index.php?curid=84796565
 
 samper.jpg: Por Desconocido - Narodowe Archiwum Cyfrowe, [1], originally published in Ilustrowany Kurier Codzienny., Dominio público, https://commons.wikimedia.org/w/index.php?curid=59421991
+
+
+segura.jpg: Por Thomon - Trabajo propio, Dominio público, https://commons.wikimedia.org/w/index.php?curid=36141729
