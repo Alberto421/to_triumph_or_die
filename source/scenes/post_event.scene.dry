@@ -35,12 +35,11 @@ if (Q.polarization < 0) {
 if (Q.polarization >= 100) {
     Q.polarization = 99;
 }
-
-if (Q.polarization < 0) {
-    Q.polarization = 0;
+if (Q.cnt_relation >= 100) {
+    Q.cnt_relation = 99;
 }
-if (Q.literacy >= 100) {
-    Q.literacy = 99;
+if (Q.cnt_relation < 0) {
+    Q.cnt_relation = 0;
 }
 
 // re-calculate party support
