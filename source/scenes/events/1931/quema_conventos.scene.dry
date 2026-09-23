@@ -3,6 +3,7 @@ subtitle: Anti-clerical violence erupts across Spain
 new-page: true
 view-if: year = 1931 and month = 5
 tags: event
+on-arrival: quema_seen = 1
 face-image: img/quema_conventos.jpg
 max-visits: 1
 
