@@ -21,7 +21,6 @@ As leaders of the PSOE, we must take a stance in this crisis.
 
 @send_guardia_civil
 title: Order the Guardia Civil to suppress the riots
-subtitle: Protect religious property and reassure the Catholic hierarchy and middle classes.
 on-arrival: guardia_civil_loyalty += 0.05; cnt_relation -= 15; pce_relation -= 15; workers_psoe -= 8; polarization -= 15; burning_reaction = 1; catholics_psoe += 10; church_reconciliation += 1
 
 The Guardia Civil charges into the crowds, dispersing rioters with firearms and bayonets. Several protesters are killed, including two kids. As the unrest grows, martial law is declared.
@@ -30,7 +29,6 @@ Order is restored, earning praise from the Vatican, Catholic organizations and c
 
 @refuse_force
 title: Refrain from using military force
-subtitle: Avoid bloodshed among workers, even if it leaves churches unprotected.
 on-arrival: polarization += 10; middle_psoe -= 5; cnt_relation += 5; guardia_civil_loyalty -= 0.05; catholics_psoe -= 15; 
 
 The government adopts a passive stance, allowing dozens of historic convents, churchs and schools to burn to the ground. Minister Miguel Maura leaves temporarily the government before rejoining.
