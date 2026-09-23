@@ -15,7 +15,16 @@ Azaña's decrees offer full-pay retirement to all officers who pledge loyalty to
 
 While these measures successfully reduce the military budget and temporarily disrupt officer conspiracies, they provoke deep, lasting hatred among the conservative *africanista* military elite.
 
-- @continue: The army must obey the Republic.
+- @1931_main: The army must obey the Republic.
 
-@continue
-go-to: @root
+@1931_main
+new-page: true
+go-to: main
+
+= 1931
+
+The Second Republic was greeted with great hope, particulary in rural areas characterized by sustained population growth and a highly unequal land-ownership structure. Unemployement, lack of schooling and hunger was what the Bourbons left behind upon their departure. Following the proclamation of the republic, a provisional government has been formed, bringing together the country's main republican forces from both the left and the right. 
+
+Miguel Primo de Rivera's dictatorship left Spain with a big deficit and some debts due to his large industrial and infraestructure programs. If we want to change this country we'll need to start economical reforms as soon as possible. 
+
+Now, the task of Social Democracy is to prepare for the constituent's election in June. As the strongest political force in the Coalition, the PSOE holds the ministries of Labor, Justice and Finance. We must drive forward the secularization of education, create modern labor frameworks and execute the crucial Agrarian Reform to relieve the jornaleros (landless peasants). Let us swear to triumph or die.
