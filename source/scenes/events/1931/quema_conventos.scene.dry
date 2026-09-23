@@ -1,0 +1,38 @@
+title: The Burning of Convents
+subtitle: Anti-clerical violence erupts across Spain
+new-page: true
+view-if: year = 1931 and month = 5
+tags: event
+face-image: img/quema_conventos.jpg
+max-visits: 1
+
+= The Burning of Convents
+
+Following a monarchist provocation from the *Círculo Monárquico* in Madrid and the rumours of a republican taxi-driver being murdered by monarchists, riots break out in the capital focusing on the monarchist newspaper ABC, the headquarters of the Security General Direction, the Military Casino and armories.
+
+Gobernación Minister, Miguel Maura, tried to calm the unrest but he was recieved by the chant "¡Maura no!", the same way his father Antonio Maura was received during the Tragic Week of 1909. At the same tine, gunfights between rioters and the Guardia Civil have been reported, and the army warns that religious buildings are going to be the next targets.
+
+The cabinet is fiercely divided over how to respond. Miguel Maura demands the immediate deployment of the Guardia Civil and the declaration of martial law to suppress the riots by force. However, War Minister Manuel Azaña fierly opposes using troops against the populace, famously declaring that *"all the convents of Madrid are not worth the life of a single Republican."*
+
+As leaders of the PSOE, we must take a stance in this crisis.
+
+- @send_guardia_civil: Falling into chaos is what the reactionary forces want to justify couping the republic. Support Maura's call to deploy the Guardia Civil and restore order by force.
+- @refuse_force: We must avoid a blood bath, Maura and the Guardia Civil have gone too far. Align with Azaña and refrain from sending troops against the working-class crowd.
+
+@send_guardia_civil
+title: Order the Guardia Civil to suppress the riots
+subtitle: Protect religious property and reassure the Catholic hierarchy and middle classes.
+on-arrival: guardia_civil_loyalty += 0.05; cnt_relation -= 15; pce_relation -= 15; workers_psoe -= 8; polarization -= 15; burning_reaction = 1; catholics_psoe += 10; church_reconciliation += 1
+
+The Guardia Civil charges into the crowds, dispersing rioters with firearms and bayonets. Several protesters are killed, including two kids. As the unrest grows, martial law is declared.
+
+Order is restored, earning praise from the Vatican, Catholic organizations and conservative republicans. However, the working-class base of the PSOE, the CNT and the PCE denounces our stance as a "cowardly and traitorous alignment with the elites". Minister Manuel Azaña leaves temporarily the government before rejoining.
+
+@refuse_force
+title: Refrain from using military force
+subtitle: Avoid bloodshed among workers, even if it leaves churches unprotected.
+on-arrival: polarization += 10; middle_psoe -= 5; cnt_relation += 5; guardia_civil_loyalty -= 0.05; catholics_psoe -= 15; 
+
+The government adopts a passive stance, allowing dozens of historic convents, churchs and schools to burn to the ground. Minister Miguel Maura leaves temporarily the government before rejoining.
+
+While we avoid a bloody confrontation with working-class crowds, the destruction shocks conservative society. Catholic organizations, the Vatican, and right-wing newspapers mobilize against the Republic, viewing it as an anti-religious regime incapable of protecting private property.
