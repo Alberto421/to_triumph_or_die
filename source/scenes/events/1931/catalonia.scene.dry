@@ -11,7 +11,7 @@ tags: event
 
 Just hours before the proclamation in Madrid, Francesc Macià declared from the balcony of the Palau de la Generalitat "the Catalan Republic under the federation of Iberian Republics." 
 
-This unilateral action has alarmed centralist republicans in Madrid, who fear the immediate fragmentation of Spain before a constitution can even be drafted. The Provisional Government dispatches ministers Marcelino Domingo, Nicolau d'Olwer and Fernando de los Ríos to Barcelona to negotiate a compromise: replacing the proclaimed "Catalan Republic" with a restored historical *Generalitat de Catalunya*, while promising a future Statute of Autonomy (Estatut d'Autonomia).
+This unilateral action has alarmed centralist republicans in Madrid, who fear the immediate fragmentation of Spain before a constitution can even be drafted. The Provisional Government dispatches ministers Marcelino Domingo, Nicolau d'Olwer and Fernando de los Ríos to Barcelona to negotiate a compromise: replacing the proclaimed "Catalan Republic" with a restored historical *Generalitat de Catalunya*, while promising a future Statute of Autonomy (*Estatut d'Autonomia*).
 
 Within the PSOE, we must decide our stance regarding peripheral nationalism and the decentralization of the state.
 
@@ -38,7 +38,6 @@ This stance earns us praise among centralist republicans and military officers, 
 Macià agrees to lead the *Generalitat de Catalunya* and a commitment to process an autonomy statute once the new parliament is elected.
 
 @compromise_autonomy
-subtitle: Accept the Generalitat as a temporary solution until the Constituent Cortes convene.
 on-arrival: regionalists_relation += 5; middle_psoe += 2; catalan_statute_support = 0.5;
 
 We support the diplomatic middle ground negotiated by de los Ríos and Domingo. Macià agrees to lead the *Generalitat de Catalunya* and a commitment to process an autonomy statute once the new parliament is elected.
