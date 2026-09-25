@@ -422,6 +422,8 @@ Q.in_psoe_majority = 0;
 Q.republican_socialist_coalition_failed = 0;
 // if the PSOE is ruling as part of a minority government
 Q.in_minority_government = 0;
+// republican coalition without PSOE for being too radical
+Q.in_republican_radical_coalition = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the burguois parties.
 Q.coalition_dissent = 0;
