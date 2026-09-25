@@ -86,7 +86,7 @@ title: Expand Irrigation Networks & Hydraulic Works
 subtitle: -1 Budget — Transform drylands (*secano*) into irrigated farmland (*regadío*).
 choose-if: budget >= 1
 unavailable-subtitle: We need at least 1 budget.
-on-arrival: budget -= 1; irrigation_developed += 1; economic_growth += 0.2; smallholders_ap -= 3*(1-dissent); smallholders_agrarios -= 3*(1-dissent); unemployed -= 0.3; middle_psoe += 3*(1-dissent); rural_psoe -= 3*(1-dissent); rural_pce += 3; land_reform_progress += 0.5 if land_reform_progress <= 9.5; smallholders_psoe += 10; cnt_militancy += 0.5
+on-arrival: budget -= 1; agricultural_exports += 1; irrigation_developed += 1; economic_growth += 0.2; smallholders_ap -= 3*(1-dissent); smallholders_agrarios -= 3*(1-dissent); unemployed -= 0.3; middle_psoe += 3*(1-dissent); rural_psoe -= 3*(1-dissent); rural_pce += 3; land_reform_progress += 0.5 if land_reform_progress <= 9.5; smallholders_psoe += 10; cnt_militancy += 0.5
 max-visits: 2
 
 We launch major hydraulic projects: dams, canals and reservoir expansion to transform arid regions into fertile irrigated lands.
