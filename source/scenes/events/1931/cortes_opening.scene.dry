@@ -1,0 +1,23 @@
+title: Opening of the Constituyent Cortes
+new-page: true
+view-if: year = 1931 and month = 7
+tags: event
+face-image: img/portraits/asua.jpg
+max-visits: 1
+
+= Opening of the Constituyent Cortes
+
+Following the Constituyent Elections of June 28, the elected deputies 
+meet in the Cortes to prepare and discuss a Constitution that governs the republican regime. The Republican-Socialist Conjunction has a very large majority thanks to the disorganization of the monarchical forces.
+
+The jurist Adolfo Posada has delivered a first draft based on the Spanish 1812, 1837 and 1869 liberal constitutions and in the german 1919's Constitution. The highlights are the concept of autonomies as a middle point between a unitary and a fededral State, a secularism that recognizes a preferential place of the Catholic Church and bicameral Cortes. Both the Catholic Church and most of the republican and socialist parties opposed this draft, beings the only exception the DLR.
+
+After this backlash, a new Constitutional Comission lead by the socialist jurist Jiménez de Asúa was created. The new draft created a socially progressive Constitution that maintained the autonomies but implemented a much more radical secularism with the suppression of religious orders and the nationalization of their assets, and unciameral Cortes.
+
+
+- @hope: Let's hope the Conjunction stands together until the Constitution is drafted.
+
+@hope
+subtitle: Prepare for the constitutional debates on women's sufragge, status of the Church and regional conflicts.
+on-arrival: pro_republic += 5;
+go-to: @root
