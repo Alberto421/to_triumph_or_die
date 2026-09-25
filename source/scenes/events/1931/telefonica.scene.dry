@@ -32,7 +32,7 @@ The crackdown restores public services and pleases our republican coalition part
 title: Stand with the CNT and demand an end to state violence
 subtitle: Largo Caballero leads the PSOE into a trade-union front against the republican ministers. This would mean the end of the Republican-Socialist Conjunction.
 on-arrival: cnt_relation += 20; ugt_revolutionary += 2; prr_relation -= 15; prrs_relation -= 10; dlr_relation -= 15; ar_relation -= 15; other_right_republicans_relation -=5; other_left_republicans_relation -= 5; caballeristas_dissent -= 10; prietistas_dissent += 15; caballeristas_strength += 10; cnt_front = 1; grand_coalition_failed = 1; coup_progress += 1; polarization += 10; ma_militancy += 0.1; ma_strength += 15; 
-choose-if: cabelleristas_strength > prietistas_strength and caballeristas_strenght > besteiristas_strength
+choose-if: caballeristas_strength > prietistas_strength and caballeristas_strength > besteiristas_strength
 unavailable-subtitle: The Caballerist Wing isn't strong enough to force the party to take such a drastic move.
 go-to: @election_1928.republican_radical_coalition
 
