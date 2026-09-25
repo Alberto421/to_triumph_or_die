@@ -104,6 +104,7 @@ Q.right_coalition = Q.prr_r + Q.agrarios_r + Q.dlr_r + Q.other_right_republicans
 Q.far_right_coalition = Q.prr_r + Q.ap_r + Q.agrarios_r + Q.re_r;
 Q.left_front = Q.psoe_r + Q.pce_r + Q.poum_r;
 Q.anti_democratic_coalition = Q.pce_r + Q.ap_r + Q.re_r + jons_r + other_monarchists;
+Q.republican_radical_coalition = Q.ar_r + Q.prrs_r + Q.prr_r + Q.dlr_r + Q.other_left_republicans_r + Q.other_right_republicans_r
 
 Q.leverage = Q.psoe_r;
 
@@ -115,6 +116,7 @@ Q.psoe_in_government = 0;
 Q.in_left_republican_coalition = 0;
 Q.in_republican_socialist_conjunction = 0;
 Q.in_left_front = 0;
+Q.in_republican_radical_coalition = 0;
 Q.in_popular_front = 0;
 Q.in_emergency_government = 0;
 Q.in_minority_government = 0;
@@ -404,6 +406,7 @@ There are some potential coalition arrangements.
 - @republican_socialist_conjunction
 - @left_republican_coalition
 - @popular_front
+- @republican_radical_coalition
 - @right_coalition
 - @left_coalition
 - @far_right_coalition
@@ -578,7 +581,7 @@ on-arrival: leverage -= 15 if prr_relation < 20
 
 As expected, the PSOE is the largest party, and this time, we are expected to take the lead role in the formation of the next government, including selecting the President of the Government. President [+ president +] has asked us to form a majority coalition with the Radical Republicans (PRR), Socialist Radical Republicans (PRRS), Azaña's ([+ ar_name +]), Liberal Republican Right (DLR), and other minor republican parties.
 
-[? if dvp_relation < 20 : As our relation with the DVP is poor, they are demanding more minister posts in order to remain part of the coalition. ?]
+[? if prr_relation < 20 : As our relation with the PRR is poor, they are demanding more minister posts in order to remain part of the coalition. ?]
 
 Who should be the chancellor?
 
@@ -865,6 +868,20 @@ In response to the victory of the Popular Front, the right-wing immediately laun
 The President manages to diffuse some of the hostility from the Ejercito and the Security Forces, but fail to prevent the outbreak of fighting. We are forced to fight on the same side as the PCE and CNT, whether we want to or not.
 
 - @civil_war: A civil war, then.
+
+
+
+########################################## REPUBLICAN RADICAL COALITION
+
+@republican_radical_coalition
+title: The <span style="color: #E3000F;">REP</span><span style="color: #D5AC27;">UBLI</span><span style="color: #8845ba;">CAN</span> parties ally themself without the PSOE due to our past actions.
+subtitle: PRR + DLR + AR + PRRS + Other Republicans
+view-if: republican_radical_coalition >= 50 and (ar_relation < 45 or grand_coalition_failed = 1)
+choose-if: right_coalition < 50
+unavailable-subtitle: The PRR would rather form a Right Coalition.
+on-arrival: psoe_in_government = 0; psoe_toleration = 0; in_republican_socialist_conjunction = 0; in_left_republican_coalition = 0; chancellor = "Lerroux" if prr_leader == "Lerroux"; chancellor = "Martínez Barrios" if prr_leader == "Martínez Barrios"; foreign_minister_party = "Regionalists"; interior_minister_party = "PRR"; justice_minister_party = "Other Right Republicans"; labor_minister_party = "PRR"; reichswehr_minister_party = ar_name ; economic_minister_party = "Other Right Republicans"; finance_minister_party = "PRR"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRR"; in_republican_radical_coalition = 1;
+
+Most republican parties join in a coalition to avoid letting in the government both the far-right and the socialists with [+ chancellor +] as President of the Council of Ministers.
 
 
 ########################################## RIGHT COALITION
