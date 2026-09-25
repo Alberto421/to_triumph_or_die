@@ -31,7 +31,7 @@ The crackdown restores public services and pleases our republican coalition part
 @trade_union_solidarity
 title: Stand with the CNT and demand an end to state violence
 subtitle: Largo Caballero leads the PSOE into a trade-union front against the republican ministers. This would mean the end of the Republican-Socialist Conjunction.
-on-arrival: cnt_relation += 20; ugt_revolutionary += 2; prr_relation -= 15; prrs_relation -= 10; dlr_relation -= 15 ar_relation -= 15; other_right_republicans_relation -=5; other_left_republicans_relation -= 5; caballeristas_dissent -= 10; prietistas_dissent += 15; caballeristas_strength += 10; cnt_front = 1; grand_coalition_failed = 1; coup_progress += 1; polarization += 10; ma_militancy += 0.1; ma_strength += 15; 
+on-arrival: cnt_relation += 20; ugt_revolutionary += 2; prr_relation -= 15; prrs_relation -= 10; dlr_relation -= 15; ar_relation -= 15; other_right_republicans_relation -=5; other_left_republicans_relation -= 5; caballeristas_dissent -= 10; prietistas_dissent += 15; caballeristas_strength += 10; cnt_front = 1; grand_coalition_failed = 1; coup_progress += 1; polarization += 10; ma_militancy += 0.1; ma_strength += 15; 
 choose-if: cabelleristas_strength > prietistas_strength and caballeristas_strenght > besteiristas_strength
 unavailable-subtitle: The Caballerist Wing isn't strong enough to force the party to take such a drastic move.
 go-to: @election_1928.republican_radical_coalition
@@ -44,7 +44,7 @@ Our stance causes an explosive crisis in the cabinet. Republican ministers accus
 @treintista_mediation
 title: Negotiate with Angel Pestaña and moderate syndicalists
 subtitle: Promote a legal, parliamentary path for posibilist CNT unionists (*Treintistas*).
-on-arrival: cnt_relation += 10; treintistas_influence += 1; caballeristas_dissent += 2; middle_psoe += 3; workers_psoe += 3; polarization -= 7; ma_militancy -= 0.05
+on-arrival: cnt_relation += 10; treintistas_influence += 1; caballeristas_dissent += 2; middle_psoe += 3; workers_psoe += 3; polarization -= 7; ma_militancy -= 0.05; coalition_dissent += 1; dlr_relation -= 10; prr_relation -= 5;
 
 Prieto and Largo Caballero meet secretly with Ángel Pestaña and moderate CNT leaders (*los Treintistas*). We pressure AT&T to grant minor wage concessions while urging Pestaña's faction to reject the armed revolution of the *Federación Anarquista Ibérica (FAI)* (Iberic Anarchist Federation).
 
