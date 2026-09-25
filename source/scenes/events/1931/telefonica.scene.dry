@@ -1,0 +1,51 @@
+title: Telefonica Strike
+subtitle: Anarchist CNT strike in Telefonica
+new-page: true
+view-if: year = 1931 and month = 7
+on-arrival: ma_militancy += 0.05; ma_strength += 5; 
+max-visits: 1
+tags: event
+
+= Telefonica Strike
+
+The anarcho-syndicalist *Confederación Nacional del Trabajo (CNT)* (Work's National Confederation) calls a nationwide strike against the *Compañía Telefónica Nacional de España*, a monopoly controlled by the American corporation AT&T Inc. The strikers demand wage increases and the dismissal of American managers.
+
+The conflict escalates rapidly as strikers sabotage telephone lines and cut communications. [? if interior_minister_party != "PSOE" : Gobernación Minister Miguel Maura declares the strike illegal and orders the *Guardia Civil* and the army to use lethal force, resulting in violent gun battles in Seville and Madrid, leaving dozens of workers dead. ?]
+
+[? if interior_minister_party == "PSOE" : The cabinet demands that the PSOE enforce public order, but within our party, Largo Caballero argues that using military force against striking workers damages the spirit of socialism. How should we react? ?]
+
+- @repression: Support the government's crackdown to preserve republican legality and public order.
+- @trade_union_solidarity: Break with the coalition and support the CNT strikers.
+- @treintista_mediation: Mediate between AT&T, the government and moderate CNT leaders.
+
+@repression
+title: Support state intervention against the strike
+subtitle: Prioritize the stability of the Republic over anarcho-syndicalist disruption.
+on-arrival: cnt_relation -= 25; cnt_militancy += 1; guardia_civil_loyalty += 0.05; prr_relation += 5; dlr_relation += 5; ar_relation += 5; prrs_relation += 5; other_right_republicans_relation += 5; other_left_republicans_relation += 5; caballeristas_dissent += 6; prietistas_dissent -= 6; prietistas_strength += 5; workers_psoe -= 4; middle_psoe += 2; cnt_attack = 1;
+
+We side with the coalition government, denouncing the strike as an irresponsible action orchestrated by FAI extremists to destabilize the <span style="color: #E3000F;">REP</span><span style="color: #D5AC27;">UBLI</span><span style="color: #8845ba;">CAN</span> regime. The deployment of Guardia Civil to crush the strike leads to weeks of street gunfighting between police officers and anarchists militias. 
+
+The crackdown restores public services and pleases our republican coalition partners; however, the CNT declares open war against the "social-bourgeois Republic," setting the stage for future armed insurrection.
+
+
+@trade_union_solidarity
+title: Stand with the CNT and demand an end to state violence
+subtitle: Largo Caballero leads the PSOE into a trade-union front against the republican ministers. This would mean the end of the Republican-Socialist Conjunction.
+on-arrival: cnt_relation += 20; ugt_revolutionary += 2; prr_relation -= 15; prrs_relation -= 10; dlr_relation -= 15 ar_relation -= 15; other_right_republicans_relation -=5; other_left_republicans_relation -= 5; caballeristas_dissent -= 10; prietistas_dissent += 15; caballeristas_strength += 10; cnt_front = 1; grand_coalition_failed = 1; coup_progress += 1; polarization += 10; ma_militancy += 0.1; ma_strength += 15; 
+choose-if: cabelleristas_strength > prietistas_strength and caballeristas_strenght > besteiristas_strength
+unavailable-subtitle: The Caballerist Wing isn't strong enough to force the party to take such a drastic move.
+go-to: @election_1928.republican_radical_coalition
+
+Largo Caballero issues a manifesto calling for inmediate negotiation for the Telefonica's workers and the removal of any represive measure calling for solidarity within the working class. 
+
+Our stance causes an explosive crisis in the cabinet. Republican ministers accuse the PSOE of disloyalty, forcing us out of the Provisional Government. However, our alliance with the working class is strengthened. The seeds of a unified UGT-CNT labor front have been sown. If we want to align ourself back to the republicans we'll need a lot of efforts.
+
+
+@treintista_mediation
+title: Negotiate with Angel Pestaña and moderate syndicalists
+subtitle: Promote a legal, parliamentary path for posibilist CNT unionists (*Treintistas*).
+on-arrival: cnt_relation += 10; treintistas_influence += 1; caballeristas_dissent += 2; middle_psoe += 3; workers_psoe += 3; polarization -= 7; ma_militancy -= 0.05
+
+Prieto and Largo Caballero meet secretly with Ángel Pestaña and moderate CNT leaders (*los Treintistas*). We pressure AT&T to grant minor wage concessions while urging Pestaña's faction to reject the armed revolution of the *Federación Anarquista Ibérica (FAI)* (Iberic Anarchist Federation).
+
+While radical anarchists denounce Pestaña as a traitor, moderate unionists appreciate our intervention. This successful mediation opens the door for a future parliamentary CNT option that can work within the Republic.
