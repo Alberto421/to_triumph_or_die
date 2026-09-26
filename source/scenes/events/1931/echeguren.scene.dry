@@ -1,0 +1,35 @@
+title: The Echeguren Case
+new-page: true
+view-if: year = 1931 and month = 8 
+tags: event
+max-visits: 1
+
+= The Echeguren Case
+
+Authorities at the French border arrest Vitoria Vicar, Justo Echeguren, while attempting to smuggle instructions by Cardinal Segura for the bishops. The investigation reveals a serie of instructions to commit capital flights in order to destabilize the Republican economy and save themself from nationalizations.
+
+[? if finance_minister_party == "PSOE" : In the Ministry of Hacienda, Indalecio Prieto faces a critical decision: establish strict exchange controls to stop the hemorrhage of Church's capital or maintain free monetary movement to preserve international investor confidence. ?]
+
+[? if finance_minister_party == "PSOE" : The Ministry of Hacienda in response establish strict exchange controls to avoid the flight of Church's capital from Spain ?].
+
+- @exchange_control: Implement strict state control over foreign currency and capital exports.
+- @free_market: Reject capital controls to maintain free international trade and investment.
+- @continue: That'll serve them well. 
+
+@exchange_control
+subtitle: Stop capital flight for now. It damages economic growth and agricultural exports.
+on-arrival: exchange_control = 1; economic_growth -= 0.15; agricultural_exports -= 1; capital_strike_progress -= 2; caballeristas_dissent -= 4; prietistas_dissent -= 4; besteiristas_dissent -= 4; middle_psoe -= 3; smallholders_psoe -= 15
+
+Prieto decrees mandatory state authorization for all international financial transfers and foreign currency purchases. 
+
+Sstrict exchange restrictions slow down international trade, hamper agrarian exports and depress overall economic growth.
+
+@free_market
+subtitle: Preserve foreign trade by allowing capital flight to continue covertly.
+on-arrival: exchange_control = 0; economic_growth += 0.05; capital_strike_progress += 2; prietistas_dissent += 10
+
+The Ministry refuses to restrict the peseta arguing that controls would panic international markets.
+
+@continue
+on-arrival: exchange_control = 1; economic_growth -= 0.15; agricultural_exports -= 1; capital_strike_progress -= 2; 
+go-to: @root
