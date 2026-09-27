@@ -1,0 +1,40 @@
+title: Constitutional Debates: Regional Statutes
+subtitle: The Cortes debate on the decentralization of the <span style="color: #E3000F;">Re</span><span style="color: #D5AC27;">pub</span><span style="color: #8845ba;">lic</span>
+new-page: true
+view-if: year == 1931 and month == 9
+face-image: img/estatut.jpg
+tags: event
+
+= Constitutional Debates: Regional Statutes
+
+The Cortes turn their attention to the territorial structure of the Republic. Delegates from Catalonia bring the draft of the *Estatut de Núria*, overwhelmingly approved by Catalan voters, while Basque and Navarre representatives present the conservative, clerical *Estatuto de Estella*.
+
+Centralist deputies from the PRR and right-wing agrarian minority fiercely denounce any form of regional autonomy as the "dismemberment of the Spanish Fatherland." However, regionalists and left-republicans argue that a modern Republic must accommodate regional identities.
+
+Jiménez de Asúa's commission proposes the compromise concept of the *"Estado Integral"* (Integral State), allowing provinces to form autonomous regions under the supreme sovereignty of the Republic.
+
+- @support_integral_state: Fully back the "Estado Integral" formula to grant regional autonomy.
+- @reject_clerical_estella: Support autonomy in principle, but reject the clerical Basque statute.
+- @reject_autonomy: We won't support these demands from the petite bourgeoisie.
+
+@support_integral_state
+title: Vote in favor of the "Estado Integral" and regional autonomy
+on-arrival: regionalists_relation += 15; regionalists_r += 2; ejercito_loyalty -= 0.05; regional_autonomy_approved = 1;
+
+The PSOE delegation votes solidly in favor of Asúa's constitutional proposal. The article passes by a wide margin, enshrining the right of Spanish regions to draft Statutes of Autonomy.
+
+The vote seals a firm alliance with *Esquerra Republicana de Catalunya* (ERC) and regionalist republicans, although conservative military officers view the decentralized model with deep hostility.
+
+@reject_clerical_estella
+title: Accept Catalan autonomy but block the Carlist-Clerical Basque Statute
+on-arrival: regionalists_relation += 5; regional_autonomy_approved = 1; rural_other_monarchists += 2;
+
+While supporting the general framework of the *Estado Integral*, we demand an explicit amendment banning regional statutes from overriding secular state laws. This supress the clerical *Estatuto de Estella* promoted by the PNV and Carlists.
+
+The constitutional right to autonomy passes regardless. However, Basque nationalist elites feel betrayed and withdraw from the Cortes, while Catalan autonomy proceeds on a secular basis.
+
+@reject_autonomy
+view-if: catalan_statute_support == 0
+on-arrival: regionalists_relation -= 30; ar_relation -= 5; prrs_relation -= 5; prietistas_dissent += 5; regional_autonomy_approved = 1; prr_relation += 10; dlr_relation += 10; polarization -= 2; pro_republic -= 3;
+
+The PSOE leadership orders a vote against the autonomy in favour of a centralist state to fight regional bourgeoisie elites. However the party splits, with some deputies following the order and others supporting Assúa's proposal. The Estado Integral prevails for a really slim difference.
