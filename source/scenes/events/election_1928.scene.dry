@@ -1,3 +1,4 @@
+
 title: Cortes Elections
 new-page: true
 tags: event
@@ -879,7 +880,7 @@ subtitle: PRR + DLR + AR + PRRS + Other Republicans
 view-if: republican_radical_coalition >= 50 and (ar_relation < 45 or grand_coalition_failed = 1)
 choose-if: right_coalition < 50
 unavailable-subtitle: The PRR would rather form a Right Coalition.
-on-arrival: psoe_in_government = 0; psoe_toleration = 0; in_republican_socialist_conjunction = 0; in_left_republican_coalition = 0; chancellor = "Lerroux" if prr_leader == "Lerroux"; chancellor = "Martínez Barrios" if prr_leader == "Martínez Barrios"; foreign_minister_party = "Regionalists"; interior_minister_party = "PRR"; justice_minister_party = "Other Right Republicans"; labor_minister_party = "PRR"; reichswehr_minister_party = ar_name ; economic_minister_party = "Other Right Republicans"; finance_minister_party = "PRR"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRR"; in_republican_radical_coalition = 1;
+on-arrival: psoe_in_government = 0; psoe_toleration = 0; in_republican_socialist_conjunction = 0; in_left_republican_coalition = 0; chancellor = "Alcalá-Zamora" if chancellor == "Alcalá-Zamora"; chancellor = "Lerroux" if prr_leader == "Lerroux" and chancellor != "Alcalá-Zamora"; chancellor = "Martínez Barrios" if prr_leader == "Martínez Barrios"; foreign_minister_party = "Regionalists"; interior_minister_party = "DLR"; justice_minister_party = "Other Right Republicans"; labor_minister_party = "PRR"; reichswehr_minister_party = ar_name ; economic_minister_party = "Other Right Republicans"; finance_minister_party = "PRR"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRR"; in_republican_radical_coalition = 1;
 
 Most republican parties join in a coalition to avoid letting in the government both the far-right and the socialists with [+ chancellor +] as President of the Council of Ministers.
 
