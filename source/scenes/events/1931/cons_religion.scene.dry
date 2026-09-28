@@ -1,0 +1,43 @@
+title: Constitutional Debates: Separation of Church and State
+subtitle: The Cortes debate on the Women's Suffrage
+new-page: true
+view-if: year == 1931 and month == 10 and women_suffrage_debate_seen = 1
+face-image: img/portraits/alcala-zamora.jpg
+tags: event
+
+= Constitutional Debates: Separation of Church and State
+
+The Cortes turn their attention to the Separation of Church and State. Article 26 of the constitutional draft demands the immediate secularization of education, the nationalization of church property, the end of state salaries for priests and the dissolution of religious orders with vows of obedience to a foreign power (mainly Jesuits).
+
+President Niceto Alcalá-Zamora (DLR) and Gobernación Minister Miguel Maura (DLR) threaten to resign immediately if this radical text passes, warning that it will alienate millions of Catholic Spaniards from the Republic. The defend instead the previous draft option, "a free church in a free state".
+
+This radical secularization is supported by most of the socialist deputies and the PRRS. Azaña's *Acción Republicana* and Lerroux's radicals are open to negotiate a less harsh article; however they set their red line on religious schooling. 
+
+The monarchist minority opposes fierly to any "attack to the Church" and states that they'll reform the constitution to change it if this article passes. Manuel Azaña delivers a monumental speech defending the radical text, famously declaring that *"Spain has ceased to be Catholic."*
+
+Within the PSOE, Fernando de los Ríos and Jiménez de Asúa explore whether a moderate compromise is still possible to prevent the collapse of the government.
+
+- @support_radical: Support Azaña's radical text. Dissolve the Jesuits and secularize education immediately.
+- @support_moderate: Back de los Ríos' moderate text to keep Alcalá-Zamora and the DLR in government.
+
+@support_radical
+title: Support the maximalist secular draft
+on-arrival: dlr_collapsed = 1; polarization += 10; middle_dlr -= 20; smallholders_dlr -= 20; catholics_dlr -= 20; catholics_ap += 20; middle_ap += 5; smallholders_ap += 5; chancellor = "Azaña"; chancellor_party = ar_name; workers_psoe += 5; workers_ar += 5; workers_prrs += 5; middle_ar += 5; middle_prrs += 5; middle_prr += 5; interior_minister_party = Regionalists if interior_minister_party == "DLR";
+
+The PSOE delegation votes overwhelmingly for the draft. Article 26 passes amidst wild cheers from the left and bitter silence from Catholic deputies.
+
+Niceto Alcalá-Zamora and Miguel Maura resign in protest, causing the collapse of the Provisional Cabinet. The DLR is severely damaged, leaving conservative Catholics without a strong moderate party and paving the way for the radical right.
+
+Without Alcalá-Zamora a new president had to be chosen. [? if psoe_in_government == 1 : We won't support a Lerroux presidency and the radicals won't support us either, so Lerroux supported an Azaña's presidency as a middle point between all the remaining parties. ?] [? if psoe_in_government == 1 : The PRRS won't support a Lerroux presidency and the PRR won't support Marcelino Domingo either, so Lerroux supported an Azaña's presidency as a middle point between all the remaining parties. ?]
+
+@support_moderate
+title: Back a moderate compromise on religious orders
+subtitle: Protect state secularism while avoiding the ban on all religious teaching to keep the DLR in the coalition.
+choose-if: resources >= 2
+view-if: convent_burning_suppressed == 1 and cardinal_segura_diplomatic == 1
+unavailable-subtitle: We don't have enough resources (2 needed).
+on-arrival: polarization -= 10; dlr_collapsed = 0; caballeristas_dissent += 40; besteiristas_dissent += 20; prrs_relation -= 20; prr_relation += 10; ar_relation += 5; dlr_relation += 20; other_right_republicans_relation += 20; middle_dlr += 15; catholics_ap -= 5; catholics_dlr += 10; smallholders_dlr += 5; workers_dlr += 5; middle_prr -= 5; cnt_relation -= 50; pce_relation -= 50; middle_psoe += 6; workers_psoe -= 10; workers_pce += 5; 
+
+Having built a foundation of legal restraint during the Convent Burnigns and the Segura crisis, the PSOE leadership successfully whips the party to pass a moderated version of Article 26. State funding for the clergy is phased out in a period of two years but religious orders are permitted to retain some of their educational institutions under state supervision.
+
+Alcalá-Zamora and Maura remain in government! The *Derecha Liberal Republicana* (DLR) survives as a viable, conservative-democratic pillar capable of attracting moderate Catholic voters away from radical anti-republican movements. However, UGT workers and radical leftists accuse the PSOE of "spineless appeasement of the clergy."
