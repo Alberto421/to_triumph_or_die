@@ -1,0 +1,46 @@
+title: Promulgation of the Constitution
+subtitle: The Cortes debate on the Women's Suffrage
+new-page: true
+view-if: year == 1931 and month == 12 and women_suffrage_debate_seen = 1
+face-image: img/constitucion1931.jpg
+tags: event
+
+= Promulgation of the Constitution
+
+On December 9, 1931, the Constituent Cortes solemnly approve the Constitution of the Second Spanish Republic. Spain is officially defined as a "democratic Republic of workers of all classes, organized under a regime of Liberty and Justice. The power of all its institutions come from the people".
+
+The Republic organizes itself as a "Integral State" which recognices the autonomy of the municipies and regions. President of the Constituyent Comission Luis Jiménez de Asúa defined the model as a "light parlamentarism", being a fussion between the Weimar Consitution and the Third French Republic's. The President of the Republic is the Head of State, is elected for a single 6-year term by indirect suffragge and holds the power to appoint and dismiss the President of the Council of Ministers, and to dissolve the Cortes a maximum f two times during their mandate. The President of the Council of Ministers is the head of the government, the executive power lies on him, needs the support of both the President of the Republic and the single-chamber Cortes and can be overthrow by a vote of no confidence.
+
+Alejandro Lerroux (PRR), the eldest republican, flatly refuses any nomination for President of the Republic, dismissing the position as a "golden cage" designed to neutralize his political ambition, while demanding the dissolution of the constituyent Cortes to get early elections in hopes to dismantle the left-wing majority.
+
+Niceto Alcalá-Zamora initially rejects taking the Head of State after the bitter religious debate. However, out of state responsibility and heavy pressure from all parliamentary factions seeking an anchor of stability, Alcalá-Zamora agrees to become the First President of the Republic. [? if dlr_collapsed == 1 : Having previously resigned over Article 26, Alcalá-Zamora's election as Head of State acts as a national reconciliation gesture, while Manuel Azaña renounces to be appointed constituionally by Alcalá-Zamora. ?] [? if dlr_collapsed == 0 : After assuming the Presidency of the Republic, the Head of Government remains empty. ?]
+
+Two important decisions must be made: whether to convert the current Constituent Cortes into ordinary Legislative Cortes to implement the reformist agenda immediately and whether the PSOE should remain in the executive cabinet.
+
+- @convert_cortes_stay_govt: Convert Cortes into Legislative Cortes & Maintain PSOE in government.
+- @convert_cortes_leave_govt: Convert Cortes into Legislative Cortes & Withdraw PSOE from government.
+- @dissolve_cortes_elections: Support the call for immediate General Elections.
+
+@convert_cortes_stay_govt
+subtitle: Enforce the reformist program from inside the Ministry.
+view-if: psoe_in_goverment == 1
+on-arrival: chancellor = "Azaña"; chancellor_party = "AR"; president = "Alcalá-Zamora"; president_party = "DLR"; prietistas_dissent -= 5; prietistas_strength += 5; ugt_reformist += 1; middle_psoe += 5; in_republican_socialist_conjunction = 0; in_left_republican_coalition = 1; foreign_minister_party = "I"; interior_minister_party = "Regionalists"
+go-to: @election_1928.ministries
+
+The majority of deputies vote to transform the Constituent Cortes into ordinary Legislative Cortes, avoiding immediate elections that could derail the reformist momentum.
+
+After a hard debate Indalecio Prieto and Fernando de los Ríos convince the PSOE National Committee that staying in power is essential to execute the Agrarian, Military, and Educational reforms. Manuel Azaña tries to renovate the Republican-Socialist Conjunction but Lerroux refuses to enter the same government as the socialists, leading to his official first coalition government with the PSOE, PRRS, Left Regionalists and other left republicans.
+
+@convert_cortes_leave_govt
+subtitle: Support reforms from the opposition without cabinet responsibility.
+on-arrival: psoe_in_government = 0; chancellor = "Lerroux"; chancellor_party = "PRR"; president = "Alcalá-Zamora"; president_party = "DLR"; in_republican_radical_coalition = 1; in_republican_socialist_conjunction = 0; ugt_revolutionary += 3; prietistas_dissent -= 10; prietistas_strength -= 10; workers_psoe += 6; pro_republic -= 8; pce_relation += 5; cnt_relation += 5; ar_relation -= 10; prrs_relation -= 10
+
+After a hard debate Largo Caballero's convinced the PSOE National Committee to stay out of the government as the Constitution was done. After failing to renovate the Republican-Socialist Conjunction and with the PSOE outside of the Cabinet, Lerroux claims for himself the head of the government, making this a more moderated and cosnervative government.
+
+@dissolve_cortes_elections
+subtitle: This will favour the right.
+on-arrival: pro_republic -= 5; next_election_time = time + 2 if next_election_time >= time + 2; next_election_month = month + 2 if next_election_time >= time + 2; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; psoe_in_government = 0; in_republican_socialist_conjunction = 0; workers_prr += 5; workers_ap += 5; middle_prr += 5; middle_ap += 5; smallholders_agrarian += 5; smallholders_ap += 5; middle_dlr += 5 if dlr_collapsed == 0; smallholders_dlr += 5 if dlr_collapsed == 0; regionalists_workers += 5;
+
+Arguing that the Constituent Cortes have fulfilled their sole purpose of drafting the Constitution, parliament votes to dissolve itself and call immediate general elections for February 1932.
+
+The country prepares for an early electoral clash. The reformist decrees are frozen until a new parliament convenes, giving conservative and Catholic forces an early opportunity to organize their resistance.
