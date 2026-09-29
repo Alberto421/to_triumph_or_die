@@ -100,11 +100,11 @@ if (Q.ap_r >= Q.psoe_r && Q.ap_r >= Q.prr_r) {
 // coalitions
 Q.republican_socialist_conjunction = Q.psoe_r + Q.ar_r + Q.prrs_r + Q.prr_r + Q.dlr_r + Q.other_left_republicans_r + Q.other_right_republicans_r + Q.regionalists_r;
 Q.left_republican_coalition = Q.psoe_r + Q.ar_r + Q.prrs_r + Q.other_left_republicans_r;
-Q.popular_front = Q.psoe_r + Q.ar_r + Q.prrs_r + Q.other_left_republicans_r + Q.pce_r + Q.regionalists_r + Q.poum_r + Q.ur_r;
+Q.popular_front = Q.psoe_r + Q.ar_r + Q.prrs_r + Q.other_left_republicans_r + Q.pce_r + Q.regionalists_r + Q.poum_r + Q.ur_r + Q.ps_r;
 Q.right_coalition = Q.prr_r + Q.agrarios_r + Q.dlr_r + Q.other_right_republicans_r;
 Q.far_right_coalition = Q.prr_r + Q.ap_r + Q.agrarios_r + Q.re_r;
-Q.left_front = Q.psoe_r + Q.pce_r + Q.poum_r;
-Q.anti_democratic_coalition = Q.pce_r + Q.ap_r + Q.re_r + jons_r + other_monarchists;
+Q.left_front = Q.psoe_r + Q.pce_r + Q.poum_r + Q.ps_r;
+Q.anti_democratic_coalition = Q.pce_r + Q.ap_r + Q.re_r + jons_r + other_monarchists + Q.ps_r;
 Q.republican_radical_coalition = Q.ar_r + Q.prrs_r + Q.prr_r + Q.dlr_r + Q.other_left_republicans_r + Q.other_right_republicans_r
 
 Q.leverage = Q.psoe_r;
@@ -179,6 +179,14 @@ data = [
         "seats": Math.round(Q.pce_r*4.73),
     }
 ];
+if (Q.ps_formed && Q.ps_r) {
+    data.push({
+        "id": "ps",
+        "legend": "PS",
+        "name": "PS",
+        "seats": Math.round(Q.ps_r*4.73),
+    });
+}
 if (Q.poum_formed && Q.poum_r) {
     data.push({
         "id": "poum",
@@ -307,6 +315,8 @@ go-to: coalition_menu
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **PSOE:** {!</td><td>!} **[+ psoe_r +]%** {!</td><td>!} **[+ str_change_psoe +]** {!</td></tr>!}
+
+[? if ps_formed : {!<tr><td><div class="box" style='background-color:#4B0A02'> </div> !}PS: {!</td><td>!} [+ ps_r +]% {!</td><td>!} [+ str_change_ps +] {!</td></tr>!} ?]
 
 [? if poum_formed : {!<tr><td><div class="box" style='background-color:#A30000'> </div> !}POUM: {!</td><td>!} [+ poum_r +]% {!</td><td>!} [+ str_change_poum +] {!</td></tr>!} ?]
 
@@ -801,8 +811,8 @@ Are we sure about not participating in government? This will cause significant i
 ########################################## POPULAR FRONT
 @popular_front
 title: Form a Popular Front against the anti-republican right
-subtitle: PSOE + PRRS + Other Left Republicans + [+ ar_name +] + PCE [? if ur_formed: + UR ?] [? if poum_formed: + POUM ?]([+ popular_front_coalition +]%)
-unavailable-subtitle: PSOE + PRRS + Other Left Republicans + [+ ar_name +] + PCE [? if ur_formed: + UR ?] [? if poum_formed: + POUM ?]([+ popular_front_coalition +]%) - [? if (pce_relation < 65): We do not have good enough relations with the PCE. ?][? if (ar_relation < 45 and prrs_relation < 45): We do not have good enough relations with the [+ ar_name +] and the PRRS. ?][? if communist_coalition < 2 : The Communists are unwilling to compromise at all. ?]
+subtitle: PSOE + PRRS + Other Left Republicans + [+ ar_name +] + PCE [? if ur_formed: + UR ?] [? if poum_formed: + POUM ?] [? if ps_formed: + PS ?]([+ popular_front_coalition +]%)
+unavailable-subtitle: PSOE + PRRS + Other Left Republicans + [+ ar_name +] + PCE [? if ur_formed: + UR ?] [? if poum_formed: + POUM ?] [? if ps_formed: + PS ?]([+ popular_front_coalition +]%) - [? if (pce_relation < 65): We do not have good enough relations with the PCE. ?][? if (ar_relation < 45 and prrs_relation < 45): We do not have good enough relations with the [+ ar_name +] and the PRRS. ?][? if communist_coalition < 2 : The Communists are unwilling to compromise at all. ?]
 view-if: popular_front_coalition >= 50
 choose-if: ((pce_relation >= 65) and (ar_relation >= 45 and prrs_relation >= 45))
 
@@ -921,8 +931,8 @@ A majority center-right coalition is formed, with [+ chancellor +] as chancellor
 
 @left_coalition
 title: Is a United Left coalition possible?
-subtitle: PSOE + PCE [? if poum_formed: + POUM ?] ([+ left_coalition +]%)
-unavailable-subtitle: PSOE + PCE [? if poum_formed: + POUM ?] ([+ left_coalition +]%). [? if pce_relation < 50 : We do not have adequate relations with the PCE. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?] [? if poum_formed and poum_relation < 50 : We do not have adequate relations with the POUM. ?]
+subtitle: PSOE + PCE [? if poum_formed: + POUM ?] [? if ps_formed: + PS ?] ([+ left_coalition +]%)
+unavailable-subtitle: PSOE + PCE [? if poum_formed: + POUM ?] [? if ps_formed: + PS ?] ([+ left_coalition +]%). [? if pce_relation < 50 : We do not have adequate relations with the PCE. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?] [? if poum_formed and poum_relation < 50 : We do not have adequate relations with the POUM. ?]
 view-if: left_coalition >= 50
 choose-if: (pce_relation >= 50 and (poum_formed == 0 or poum_relation >=50)) and communist_coalition >= 3
 
