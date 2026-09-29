@@ -27,6 +27,6 @@ We treat Pestaña's party as merely another splinter group. The CNT remains domi
 title: Build a electoral and trade-union alliance with Pestaña
 subtitle: Leverage previous mediation to pull moderate syndicalists into the parliamentary system.
 view-if: treintistas_influence >= 1
-on-arrival: partido_sindicalista_allied = 1; pestaña_influence += 2; cnt_relation += 15; workers_psoe += 6; workers_ps += 1; rural_ps += 2;
+on-arrival: partido_sindicalista_allied = 1; treintistas_influence += 2; cnt_relation += 15; workers_psoe += 6; workers_ps += 1; rural_ps += 2;
 
 Building on our prior dialogue during the 1931 strikes, Largo Caballero and Prieto support Ángel Pestaña's Partido Sindicalista. While most of the anarchist refuse to vote in elections, a minority of them change from abstention to this new party.
