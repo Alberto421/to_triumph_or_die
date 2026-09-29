@@ -1,0 +1,18 @@
+title: Secularization Laws
+new-page: true
+view-if: year == 1932 and month == 3
+tags: event
+
+= Secularization Laws
+
+Minister of Justice pushes through the Cortes a serie of secular legislation to complement the Constitution: civil marriage, Divorce Law, civil cemeteries and the decree of dissolution of the Company of Jesus.
+
+However, the confiscation of Jesuit assets have turned negligible funds for the public treasury. Anticipating the decree, the order had transferred its colleges, real estate and financial holdings to screen companies and trusted people.
+
+- @enforce_laicism
+
+@enforce_laicism
+title: Proceed with educational and secular reforms
+on-arrival: buddget += 1; polarization += 5; middle_prrs += 5; workers_prss += 5 if public_instruction_party == "PRRS";
+
+As the secular laws take effect, many progressist Spaniards celebrate civil liberties, while the Catholic right mobilizes against this goverment.
