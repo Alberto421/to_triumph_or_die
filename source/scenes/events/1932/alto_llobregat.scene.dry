@@ -1,0 +1,32 @@
+title: Insurrection in Alto Llobregat & The Syndicalist Split
+subtitle: The Cortes debate on the Women's Suffrage
+new-page: true
+view-if: year == 1932 and month == 1
+face-image: img/gc_asturias_1.jpg
+tags: event
+
+= Insurrection in Alto Llobregat & The Syndicalist Split
+
+In the mining basin of Alto Llobregat (Barcelona), workers demand better working conditions and the fulfillment of the constitutional rights after a gas explosion in a mine that lead to the death of 30 miners. Next day FAI anarchists declare "libertarian communism," seizing mines, burning property registers, burning republican flags to set black flags and disarming local police. 
+
+The government dispatches army units from near barracks suppressing the revolt within days and preparing to deport dozens of anarchist to Spanish Guinea.
+
+This failed uprising triggers an explosive purge within the CNT. Moderate syndicalists led by Ángel Pestaña and Joan Peiró (*Los Treintistas*) denounce the FAI's "insurrectional adventurism" and demand a realistic strategy that respects democratic institutions. Pestaña is expelled from the CNT leadership and begins organizing the **Partido Sindicalista**.
+
+- @historical_psoe_distance 
+- @alliance_partido_sindicalista
+
+@historical_psoe_distance
+title: Keep distance from the Syndicalist Party
+subtitle: Insist that UGT and PSOE are the sole legitimate representatives of the working class.
+on-arrival: cnt_relation -= 10
+
+We treat Pestaña's party as merely another splinter group. The CNT remains dominated by the  FAI and the Partido Sindicalista turns out as a not viable way, deepening the distance between social democrats and anarcho-syndicalists.
+
+@alliance_partido_sindicalista
+title: Build a electoral and trade-union alliance with Pestaña
+subtitle: Leverage previous mediation to pull moderate syndicalists into the parliamentary system.
+view-if: treintistas_influence >= 1
+on-arrival: partido_sindicalista_allied = 1; pestaña_influence += 2; cnt_relation += 15; workers_psoe += 6; workers_ps += 1; rural_ps += 2;
+
+Building on our prior dialogue during the 1931 strikes, Largo Caballero and Prieto support Ángel Pestaña's Partido Sindicalista. While most of the anarchist refuse to vote in elections, a minority of them change from abstention to this new party.
