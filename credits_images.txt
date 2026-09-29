@@ -6,6 +6,8 @@ azana5gob.jpg: Narodowe Archiwum Cyfrowe,1-E-6635, Public domain, via Wikimedia 
 
 banco.jpg: Desconocido (Publicada por Léon & Lévy), Public domain, via Wikimedia Commons. https://commons.wikimedia.org/wiki/File:Madrid,_postales_250.jpg
 
+constitucion1931.jpg: Por España, en uso de su soberanía, y representada por las Cortes Constituyentes. - Sucesores de Rivadeneyra (S. A.). Paseo de San Vicente 20. MADRID., Dominio público, https://commons.wikimedia.org/w/index.php?curid=1101216
+
 cortes_1.jpg: Por Desconocido - Colección propia, Dominio público, https://commons.wikimedia.org/w/index.php?curid=140092141. Public domain.
 
 el_socialista.jpg: Por Psoe - Hemeroteca Fundación Pablo Iglesias, Dominio público, https://commons.wikimedia.org/w/index.php?curid=14588353. Public Domain.
