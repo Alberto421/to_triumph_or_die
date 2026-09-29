@@ -1,26 +1,31 @@
-title: Creation of the Assault Guard
+title: Rural Violence & Guardia de Asalto
 subtitle: It's time to create a true <span style="color: #E3000F;">REP</span><span style="color: #D5AC27;">UBLI</span><span style="color: #8845ba;">CAN</span> police force
 new-page: true
-view-if: year == 1932 and month >= 2 and assault_guard_formed == 0
+view-if: year == 1932 and month == 1 and assault_guard_formed == 0
 face-image: img/guardia_asalto_revista.jpg
+on-arrival: cnt_militancy += 1; ma_militancy += 0.05; ma_strength += 10
 max-visits: 1
 tags: event
 
-= Creation of the Assault Guard
+= Rural Violence & Guardia de Asalto
+
+1932 opens with a wave of horrific agrarian conflicts across the countryside. In *Castilblanco* (Badajoz), desperate day-laborers lynched four Guardia Civil officers that were blockading the entry to the *Casa del Pueblo*; days later in *Arnedo* (La Rioja), the Guardia Civil opened fire on a crowd of striking workers, killing eleven civilians including women, elders and children. Further bloody clashes erupt in *Épila*, *Jeresa*, and *Zalamea*.
 
 The reliance on the Guardia Civil to control urban order is proving catastrophic. Trained for military-style counter-insurgency, their response to strikes and street protests often results in bloodshed, driving working-class sentiment against the Provisional Government.
 
-The Minister of the Gobernación [? if interior_minister_party == "DLR" : Miguel Maura ?] and republican strategists propose the creation of a specialized, motor-equipped and republican urban force: the **Cuerpo de Seguridad y Asalto** (*Guardia de Asalto*).
+The Minister of the Gobernación [? if interior_minister_party == "Regionalists" : Santiago Casares Quiroga ?] and republican strategists propose the creation of a specialized, motor-equipped and republican urban force: the *Cuerpo de Seguridad y Asalto* (*Guardia de Asalto*).
 
 - @fund_assault_guard: Authorize the creation of the Guardia de Asalto (-2 Budget).
 - @delay_assault_guard: We can't afford this now. We can rely on the Guardia Civil for public order.
+- @ai_fund: The Guardia de Asalto is created.
 
 @fund_assault_guard
 title: Create the Assault Guard
 subtitle: -2 Budget. This will anger the Guardia Civil. 
 choose-if: budget >= 2
+view-if: psoe_in_government == 1
 unavailable-subtitle: We need at least 2 budget.
-on-arrival: budget -= 2; assault_guard_formed = 1; delay_ga = 1; pro_republic += 5; guardia_asalto_loyalty = 0.85; workers_psoe += 4*(1-dissent); middle_psoe += 3*(1-dissent); guardia_civil_loyalty -= 0.05; cnt_militancy -= 1
+on-arrival: budget -= 2; assault_guard_formed = 1; pro_republic += 5; guardia_asalto_loyalty = 0.85; workers_psoe += 4*(1-dissent); middle_psoe += 3*(1-dissent); guardia_civil_loyalty -= 0.05; cnt_militancy -= 1
 
 We recruit loyal republican policemen, former soldiers and disciplined unionists into the new *Guardia de Asalto*. Equipped with blue uniforms, motorized vans and non-lethal riot control tactics alongside firearms. Let's hope that this will improve the polarization at the streets.
 
@@ -29,6 +34,13 @@ While the working class views them as a republican police force, the conservativ
 @delay_assault_guard
 title: Postpone the creation
 subtitle: We can't afford or we aren't intereseted in this new security corp.
-on-arrival: assault_guard_formed = 0; pro_republic -= 3; guardia_civil_loyalty += 0.05
+view-if: psoe_in_government == 1
+on-arrival: assault_guard_formed = 0; pro_republic -= 3; guardia_civil_loyalty += 0.05; delay_ga = 1
 
 Urban public order remains in the hands of the conservative Guardia Civil and the reactionary Army, with all its implications.
+
+@ai_fund
+on-arrival: budget -= 2; assault_guard_formed = 1; pro_republic += 5; guardia_asalto_loyalty = 0.85; guardia_civil_loyalty -= 0.05
+view-if: psoe_in_government == 0
+
+The Guardia de Asalto rapidly deploys across Spain's major cities. They gain a reputation as a modern republican alternative to the feared Guardia Civil.
