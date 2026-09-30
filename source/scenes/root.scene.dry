@@ -197,7 +197,7 @@ Q.capital_strike_progress = 0;
 Q.agrarian_strike_progress = 0;
 Q.general_strike_progress = 0;
 
-Q.budget = -2;
+Q.budget = -1;
 Q.public_debt = 2;
 Q.gold_reserves = 5;
 Q.exchange_control = 0;
