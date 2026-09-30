@@ -1,0 +1,29 @@
+title: The Sanjurjada
+new-page: true
+view-if: year == 1932 and month == 8 and chancellor != "Lerroux"
+face-image: img/sanjurjada.jpg
+on-arrival: sanjurjada_seen = 1; coup_progress -= 2;
+tags: event
+
+= The Sanjurjada
+
+Today, August 10th, at 3:30 a.m., a cavalry squadron led by Captain Fernández Silvestre mutinied in Madrid, marching on the War Ministry. At the same time, in Seville, General Sanjurjo succeeded in inciting a large part of the Guardia Civil and the units stationed in the city to join the revolt.
+
+The government orders the supression of insurgent forces in Madrid and Seville while anarchists and communists start a general strike to fight this coup. 
+
+[? if ejercito_loyalty < 0.35 and guardia_civil_loyalty < 0.5 and assault_guard_formed = 0 : Without a true republican security force and with both the Ejercito and the Guardia Civil siding with the rebels, Sajurjo's troops march into the Ministry without firing a shot. In the next few hours Manuel Azaña and the cabinet are arrested, the Cortes dissolved and General Sanjurjo proclaims a Directory to restore "order". ?] [? if ejercito_loyalty >= 0.35 or guardia_civil_loyalty >= 0.5 or assault_guard_formed = 1 : The rebels are unable to capture the Ministry of War and suffer heavy loses against order forces. After the failure in Madrid, other officers refuse to join the coup leaving Sanjurjo alone in Seville. As the military columns approach Seville, Sanjurjo’s officers inform him that they will not confront government troops and following the defeat of the rebels in Cádiz, Sanjurjo attempts to flee to Portugal but is captured in Huelva. ?]
+
+- @nothing: There's nothing we can do.
+- @victory: This proves that the Monarchy won't return. 
+
+@nothing
+go-to: @game-over
+
+Over the next few weeks, socialist, communist and anarchist militias were crushed by the army and Alfonso XIII was pardoned.
+
+@victory
+on-arrival: ejercito_loyalty += 0.1; guardia_civil_loyalty += 0.05; polarization -= 10; pro_republic += 10
+
+In the aftermath, the Guardia Civil stops being an independent organ to be under the jurisdiction of the Ministry of Gobernación, 109 newspapers were closed, 5.000 collaborators were imprisoned and their rural estates are open to nationalization without reparations. 
+
+Sanjurjo was condemned to death penalty for treason, but he was finally condemned to life sentence with a decree of the President of the Republic. 
