@@ -17,11 +17,13 @@ The government orders the supression of insurgent forces in Madrid and Seville w
 - @victory: This proves that the Monarchy won't return. 
 
 @nothing
+view-if: ejercito_loyalty < 0.35 and guardia_civil_loyalty < 0.5 and assault_guard_formed = 0
 go-to: @game-over
 
 Over the next few weeks, socialist, communist and anarchist militias were crushed by the army and Alfonso XIII was pardoned.
 
 @victory
+view-if: ejercito_loyalty >= 0.35 or guardia_civil_loyalty >= 0.5 or assault_guard_formed = 1 
 on-arrival: ejercito_loyalty += 0.1; guardia_civil_loyalty += 0.05; polarization -= 10; pro_republic += 10
 
 In the aftermath, the Guardia Civil stops being an independent organ to be under the jurisdiction of the Ministry of Gobernación, 109 newspapers were closed, 5.000 collaborators were imprisoned and their rural estates are open to nationalization without reparations. 
