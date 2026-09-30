@@ -18,7 +18,7 @@ The government orders the supression of insurgent forces in Madrid and Seville w
 
 @nothing
 view-if: ejercito_loyalty < 0.35 and guardia_civil_loyalty < 0.5 and assault_guard_formed = 0
-go-to: @game-over
+go-to: @game_over
 
 Over the next few weeks, socialist, communist and anarchist militias were crushed by the army and Alfonso XIII was pardoned.
 
