@@ -1,0 +1,18 @@
+title: Autonomy for Catalonia
+new-page: true
+view-if: year == 1932 and month == 9
+tags: event
+
+= Autonomy for Catalonia
+
+After being stuck in tramitation for 4 months, the failed coup of Sanjurjo unfreezed the debate grating Catalonia its *Estatut d'autonomia* with [ ? if catalan_statute_support == 1 : 314 votes in favor, 24 against and 100 abstentions ? ] [ ? if catalan_statute_support == 0 : more than half of the Cortes in favor ? ].
+
+To pass through the legislative, many changes were made to the Statute of Autonomy, removing any reference to autodetermination of the Catalan people and suppresing many regional competencies. While this finally allowed its approval, many Catalan nationalists find this statute lacking. 
+
+
+- @continue
+
+@continue
+on-arrival: middle_regionalists += 3; elites_regionalists += 3; smallholders_regionalists += 2
+
+The first elections for the *Parlament* will be hosted on november. Polls suggest a victory of the leftist nationalist ERC.
