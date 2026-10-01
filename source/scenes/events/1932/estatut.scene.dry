@@ -9,8 +9,7 @@ After being stuck in tramitation for 4 months, the failed coup of Sanjurjo unfre
 
 To pass through the legislative, many changes were made to the Statute of Autonomy, removing any reference to autodetermination of the Catalan people and suppresing many regional competencies. While this finally allowed its approval, many Catalan nationalists find this statute lacking. 
 
-
-- @continue
+- @continue: Primo de Rivera must be rolling over in his grave.
 
 @continue
 on-arrival: middle_regionalists += 3; elites_regionalists += 3; smallholders_regionalists += 2
