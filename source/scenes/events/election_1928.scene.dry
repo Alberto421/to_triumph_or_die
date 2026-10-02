@@ -104,7 +104,7 @@ Q.popular_front = Q.psoe_r + Q.ar_r + Q.prrs_r + Q.other_left_republicans_r + Q.
 Q.right_coalition = Q.prr_r + Q.agrarios_r + Q.dlr_r + Q.other_right_republicans_r;
 Q.far_right_coalition = Q.prr_r + Q.ap_r + Q.agrarios_r + Q.re_r;
 Q.left_front = Q.psoe_r + Q.pce_r + Q.poum_r + Q.ps_r;
-Q.anti_democratic_coalition = Q.pce_r + Q.ap_r + Q.re_r + jons_r + other_monarchists + Q.ps_r;
+Q.anti_democratic_coalition = Q.pce_r + Q.ap_r + Q.re_r + Q.jons_r + Q.other_monarchists + Q.ps_r;
 Q.republican_radical_coalition = Q.ar_r + Q.prrs_r + Q.prr_r + Q.dlr_r + Q.other_left_republicans_r + Q.other_right_republicans_r
 
 Q.leverage = Q.psoe_r;
