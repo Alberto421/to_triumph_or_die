@@ -163,6 +163,42 @@ if (Q.ap_r >= 20) {
     Q.understanding_enemy_timer = 2;
 }
 
+
+// calculate seats per party to display at the table
+Q.total_seats = 473;
+
+Q.psoe_seats = Math.round((Q.psoe_r / 100) * Q.total_seats);
+if (Q.ps_formed) { Q.ps_seats = Math.round((Q.ps_r / 100) * Q.total_seats); }
+if (Q.poum_formed) { Q.poum_seats = Math.round((Q.poum_r / 100) * Q.total_seats); }
+if (Q.ur_formed) { Q.ur_seats = Math.round((Q.ur_r / 100) * Q.total_seats); }
+if (Q.re_formed) { Q.re_seats = Math.round((Q.re_r / 100) * Q.total_seats); }
+
+Q.pce_seats = Math.round((Q.pce_r / 100) * Q.total_seats);
+Q.ar_seats = Math.round((Q.ar_r / 100) * Q.total_seats);
+Q.other_left_republicans_seats = Math.round((Q.other_left_republicans_r / 100) * Q.total_seats);
+Q.prrs_seats = Math.round((Q.prrs_r / 100) * Q.total_seats);
+Q.prr_seats = Math.round((Q.prr_r / 100) * Q.total_seats);
+Q.dlr_seats = Math.round((Q.dlr_r / 100) * Q.total_seats);
+Q.other_right_republicans_seats = Math.round((Q.other_right_republicans_r / 100) * Q.total_seats);
+Q.regionalists_seats = Math.round((Q.regionalists_r / 100) * Q.total_seats);
+Q.agrarios_seats = Math.round((Q.agrarios_r / 100) * Q.total_seats);
+Q.ap_seats = Math.round((Q.ap_r / 100) * Q.total_seats);
+Q.other_monarchists_seats = Math.round((Q.other_monarchists_r / 100) * Q.total_seats);
+Q.jons_seats = Math.round((Q.jons_r / 100) * Q.total_seats);
+
+for (var party of Q.parties) {
+    Q['old_' + party + '_seats'] = Q[party + '_seats'] || 0;
+    Q[party + '_seats'] = Math.round((Q[party + '_r'] / 100) * Q.total_seats);
+    var seat_diff = Q[party + '_seats'] - Q['old_' + party + '_seats'];
+if (seat_diff > 0) {
+        Q['str_seat_change_' + party] = '+' + seat_diff;
+    } else if (seat_diff < 0) {
+        Q['str_seat_change_' + party] = '' + seat_diff; // El signo menos ya se incluye automáticamente
+    } else {
+        Q['str_seat_change_' + party] = '=';
+    }
+}
+
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
 for (var party of Q.parties) {
     election_result[party] = Q[party + '_r'];
@@ -314,7 +350,7 @@ go-to: coalition_menu
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **PSOE:** {!</td><td>!} **[+ psoe_r +]%** {!</td><td>!} **[+ str_change_psoe +]** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **PSOE:** {!</td><td>!} **[+ psoe_r +]%** {!</td><td>!} **[+ str_change_psoe +]** {!</td><td>!} **[+ psoe_seats +]** {!</td><td>!} **[+ str_seat_change_psoe +]** {!</td></tr>!}
 
 [? if ps_formed : {!<tr><td><div class="box" style='background-color:#4B0A02'> </div> !}PS: {!</td><td>!} [+ ps_r +]% {!</td><td>!} [+ str_change_ps +] {!</td></tr>!} ?]
 
