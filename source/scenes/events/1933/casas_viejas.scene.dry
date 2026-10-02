@@ -20,7 +20,7 @@ Taking advantage of the government’s crisis, monarchists Antonio Goicoechea an
 
 - @defend_azana: Stand firmly by Azaña and defend the Guardia's institutional integrity.
 - @condemn_excesses: Condemn police brutality publicly to protect the PSOE’s standing among workers.
-- @condemn_azaña: Condemn police brutality publicly and demand Azaña to be removed from the Cabinet for his responsability.
+- @condemn_azana: Condemn police brutality publicly and demand Azaña to be removed from the Cabinet for his responsability.
 
 @defend_azana
 subtitle: Blame the tragedy on anarchist provocateurs and maintain coalition loyalty.
@@ -36,7 +36,7 @@ view-if: psoe_in_government == 1
 
 Largo Caballero and UGT leaders publicly condemn the police executions in Casas Viejas, demanding justice for the murdered peasants. While this preserves partly our credibility with the working class, it mortally weakens Azaña's governing coalition from within.
 
-@condemn_azaña
+@condemn_azana
 subtitle: Condemn the brutal actions of Captain Rojas and lay the blame on [+ chancellor +].
 view-if: psoe_in_government == 0
 on-arrival: prietistas_dissent += 5;
