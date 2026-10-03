@@ -1,6 +1,6 @@
 title: Promulgation of the Constitution
 new-page: true
-view-if: year == 1931 and month == 12 and women_suffrage_debate_seen = 1
+view-if: year == 1931 and month == 12
 face-image: img/constitucion1931.jpg
 max-visits: 1
 tags: event
