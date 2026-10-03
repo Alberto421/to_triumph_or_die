@@ -1,6 +1,7 @@
 title: Secularization Laws
 new-page: true
 view-if: year == 1932 and month == 3
+max-visits: 1
 tags: event
 
 = Secularization Laws
