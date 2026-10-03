@@ -37,6 +37,38 @@ Let us hope this does not backfire.
 
 @post_election_1928
 on-arrival: {!
+Q.total_seats = 473;
+Q.psoe_seats = Math.round((Q.psoe_r / 100) * Q.total_seats);
+if (Q.ps_formed) { Q.ps_seats = Math.round((Q.ps_r / 100) * Q.total_seats); }
+if (Q.poum_formed) { Q.poum_seats = Math.round((Q.poum_r / 100) * Q.total_seats); }
+if (Q.ur_formed) { Q.ur_seats = Math.round((Q.ur_r / 100) * Q.total_seats); }
+if (Q.re_formed) { Q.re_seats = Math.round((Q.re_r / 100) * Q.total_seats); }
+
+Q.pce_seats = Math.round((Q.pce_r / 100) * Q.total_seats);
+Q.ar_seats = Math.round((Q.ar_r / 100) * Q.total_seats);
+Q.other_left_republicans_seats = Math.round((Q.other_left_republicans_r / 100) * Q.total_seats);
+Q.prrs_seats = Math.round((Q.prrs_r / 100) * Q.total_seats);
+Q.prr_seats = Math.round((Q.prr_r / 100) * Q.total_seats);
+Q.dlr_seats = Math.round((Q.dlr_r / 100) * Q.total_seats);
+Q.other_right_republicans_seats = Math.round((Q.other_right_republicans_r / 100) * Q.total_seats);
+Q.regionalists_seats = Math.round((Q.regionalists_r / 100) * Q.total_seats);
+Q.agrarios_seats = Math.round((Q.agrarios_r / 100) * Q.total_seats);
+Q.ap_seats = Math.round((Q.ap_r / 100) * Q.total_seats);
+Q.other_monarchists_seats = Math.round((Q.other_monarchists_r / 100) * Q.total_seats);
+Q.jons_seats = Math.round((Q.jons_r / 100) * Q.total_seats);
+
+for (var party of Q.parties) {
+    Q['old_' + party + '_seats'] = Q[party + '_seats'] || 0;
+    Q[party + '_seats'] = Math.round((Q[party + '_r'] / 100) * Q.total_seats);
+    var seat_diff = Q[party + '_seats'] - Q['old_' + party + '_seats'];
+    if (seat_diff > 0) {
+        Q['str_seat_change_' + party] = '+' + seat_diff;
+    } else if (seat_diff < 0) {
+        Q['str_seat_change_' + party] = '' + seat_diff;
+    } else {
+        Q['str_seat_change_' + party] = '=';
+    }
+}
 // set old results
 // election threshold constitutional reform
 // banning parties
@@ -311,40 +343,41 @@ go-to: coalition_menu
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
-{!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **PSOE:** {!</td><td>!} **[+ psoe_r +]%** {!</td><td>!} **[+ str_change_psoe +]** {!</td></tr>!}
+{!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Seats</td><td>Seat Change</td></tr>!}
 
-[? if ps_formed : {!<tr><td><div class="box" style='background-color:#4B0A02'> </div> !}PS: {!</td><td>!} [+ ps_r +]% {!</td><td>!} [+ str_change_ps +] {!</td></tr>!} ?]
+{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **PSOE:** {!</td><td>!} **[+ psoe_r +]%** {!</td><td>!} **[+ str_change_psoe +]** {!</td><td>!} **[+ psoe_seats +]** {!</td><td>!} **[+ str_seat_change_psoe +]** {!</td></tr>!}
 
-[? if poum_formed : {!<tr><td><div class="box" style='background-color:#A30000'> </div> !}POUM: {!</td><td>!} [+ poum_r +]% {!</td><td>!} [+ str_change_poum +] {!</td></tr>!} ?]
+[? if ps_formed : {!<tr><td><div class="box" style='background-color:#4B0A02'> </div> !}PS: {!</td><td>!} [+ ps_r +]% {!</td><td>!} [+ str_change_ps +] {!</td><td>!} [+ ps_seats +] {!</td><td>!} [+ str_seat_change_ps +] {!</td></tr>!} ?]
 
-[? if ur_formed : {!<tr><td><div class="box" style='background-color:#9f7c60'> </div> !}UR: {!</td><td>!} [+ ur_r +]% {!</td><td>!} [+ str_change_ur +] {!</td></tr>!} ?]
+[? if poum_formed : {!<tr><td><div class="box" style='background-color:#A30000'> </div> !}POUM: {!</td><td>!} [+ poum_r +]% {!</td><td>!} [+ str_change_poum +] {!</td><td>!} [+ poum_seats +] {!</td><td>!} [+ str_seat_change_poum +] {!</td></tr>!} ?]
 
-[? if re_formed : {!<tr><td><div class="box" style='background-color:#52a4ad'> </div> !}RE: {!</td><td>!} [+ re_r +]% {!</td><td>!} [+ str_change_re +] {!</td></tr>!} ?]
+[? if ur_formed : {!<tr><td><div class="box" style='background-color:#9f7c60'> </div> !}UR: {!</td><td>!} [+ ur_r +]% {!</td><td>!} [+ str_change_ur +] {!</td><td>!} [+ ur_seats +] {!</td><td>!} [+ str_seat_change_ur +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}PCE: {!</td><td>!} [+ pce_r +]% {!</td><td>!} [+ str_change_pce +] {!</td></tr>!}
+[? if re_formed : {!<tr><td><div class="box" style='background-color:#52a4ad'> </div> !}RE: {!</td><td>!} [+ re_r +]% {!</td><td>!} [+ str_change_re +] {!</td><td>!} [+ re_seats +] {!</td><td>!} [+ str_seat_change_re +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8845ba'> </div> !} [+ ar_name +]: {!</td><td>!} [+ ar_r +]% {!</td><td>!} [+ str_change_ar +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}PCE: {!</td><td>!} [+ pce_r +]% {!</td><td>!} [+ str_change_pce +] {!</td><td>!} [+ pce_seats +] {!</td><td>!} [+ str_seat_change_pce +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#EB496E'> </div> !} Other Left Republicans: {!</td><td>!} [+ other_left_republicans_r +]% {!</td><td>!} [+ str_change_other_left_republicans +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8845ba'> </div> !} [+ ar_name +]: {!</td><td>!} [+ ar_r +]% {!</td><td>!} [+ str_change_ar +] {!</td><td>!} [+ ar_seats +] {!</td><td>!} [+ str_seat_change_ar +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#fa9105'> </div> !} PRRS: {!</td><td>!} [+ prrs_r +]% {!</td><td>!} [+ str_change_prrs +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#EB496E'> </div> !} Other Left Republicans: {!</td><td>!} [+ other_left_republicans_r +]% {!</td><td>!} [+ str_change_other_left_republicans +] {!</td><td>!} [+ other_left_republicans_seats +] {!</td><td>!} [+ str_seat_change_other_left_republicans +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} PRR: {!</td><td>!} [+ prr_r +]% {!</td><td>!} [+ str_change_prr +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#fa9105'> </div> !} PRRS: {!</td><td>!} [+ prrs_r +]% {!</td><td>!} [+ str_change_prrs +] {!</td><td>!} [+ prrs_seats +] {!</td><td>!} [+ str_seat_change_prrs +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#3DD8DB'> </div> !} DLR: {!</td><td>!} [+ dlr_r +]% {!</td><td>!} [+ str_change_dlr +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} PRR: {!</td><td>!} [+ prr_r +]% {!</td><td>!} [+ str_change_prr +] {!</td><td>!} [+ prr_seats +] {!</td><td>!} [+ str_seat_change_prr +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#A0A0A0'> </div> !} Other Right Republicans: {!</td><td>!} [+ other_right_republicans_r +]% {!</td><td>!} [+ str_change_other_right_republicans +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#3DD8DB'> </div> !} DLR: {!</td><td>!} [+ dlr_r +]% {!</td><td>!} [+ str_change_dlr +] {!</td><td>!} [+ dlr_seats +] {!</td><td>!} [+ str_seat_change_dlr +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#cee817'> </div> !} Regionalists (Lliga/PNV/ERC): {!</td><td>!} [+ regionalists_r +]% {!</td><td>!} [+ str_change_regionalists +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#A0A0A0'> </div> !} Other Right Republicans: {!</td><td>!} [+ other_right_republicans_r +]% {!</td><td>!} [+ str_change_other_right_republicans +] {!</td><td>!} [+ other_right_republicans_seats +] {!</td><td>!} [+ str_seat_change_other_right_republicans +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#228B22'> </div> !} Agrarios: {!</td><td>!} [+ agrarios_r +]% {!</td><td>!} [+ str_change_agrarios +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#cee817'> </div> !} Regionalists (Lliga/PNV/ERC): {!</td><td>!} [+ regionalists_r +]% {!</td><td>!} [+ str_change_regionalists +] {!</td><td>!} [+ regionalists_seats +] {!</td><td>!} [+ str_seat_change_regionalists +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#00008B'> </div> !} [+ ap_name +]: {!</td><td>!} [+ ap_r +]% {!</td><td>!} [+ str_change_ap +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#228B22'> </div> !} Agrarios: {!</td><td>!} [+ agrarios_r +]% {!</td><td>!} [+ str_change_agrarios +] {!</td><td>!} [+ agrarios_seats +] {!</td><td>!} [+ str_seat_change_agrarios +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#000043'> </div> !} Monarchists / Traditionalists: {!</td><td>!} [+ other_monarchists_r +]% {!</td><td>!} [+ str_change_other_monarchists +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#00008B'> </div> !} [+ ap_name +]: {!</td><td>!} [+ ap_r +]% {!</td><td>!} [+ str_change_ap +] {!</td><td>!} [+ ap_seats +] {!</td><td>!} [+ str_seat_change_ap +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#6B2500'> </div> !} [+ jons_name +]: {!</td><td>!} [+ jons_r +]% {!</td><td>!} [+ str_change_jons +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#000043'> </div> !} Monarchists / Traditionalists: {!</td><td>!} [+ other_monarchists_r +]% {!</td><td>!} [+ str_change_other_monarchists +] {!</td><td>!} [+ other_monarchists_seats +] {!</td><td>!} [+ str_seat_change_other_monarchists +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#6B2500'> </div> !} [+ jons_name +]: {!</td><td>!} [+ jons_r +]% {!</td><td>!} [+ str_change_jons +] {!</td><td>!} [+ jons_seats +] {!</td><td>!} [+ str_seat_change_jons +] {!</td></tr>!}
 
 {!</table>!}
 
