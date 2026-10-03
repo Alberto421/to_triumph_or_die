@@ -3,6 +3,7 @@ subtitle: The Cortes debate on the decentralization of the <span style="color: #
 new-page: true
 view-if: year == 1931 and month == 9
 face-image: img/estatut.jpg
+max-visits: 1
 tags: event
 
 = Constitutional Debates: Regional Statutes
