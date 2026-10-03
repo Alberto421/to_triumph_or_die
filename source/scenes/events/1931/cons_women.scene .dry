@@ -3,6 +3,7 @@ subtitle: The Cortes debate on the Women's Suffrage
 new-page: true
 view-if: year == 1931 and month == 10
 face-image: img/portraits/campoamor.jpg
+max-visits: 1
 on-arrival: women_suffrage_debate_seen = 1
 tags: event
 
