@@ -1,6 +1,7 @@
 title: Constitutional Debates: Separation of Church and State
-subtitle: The Cortes debate on the Women's Suffrage
+subtitle: The Cortes debate on the Status of the Church
 new-page: true
+max-visits: 1
 view-if: year == 1931 and month == 10 and women_suffrage_debate_seen = 1
 face-image: img/portraits/alcala-zamora.jpg
 tags: event
