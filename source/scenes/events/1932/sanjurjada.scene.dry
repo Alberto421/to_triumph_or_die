@@ -3,6 +3,7 @@ new-page: true
 view-if: year == 1932 and month == 8 and chancellor != "Lerroux"
 face-image: img/sanjurjada.jpg
 on-arrival: sanjurjada_seen = 1; coup_progress -= 2;
+max-visits: 1
 tags: event
 
 = The Sanjurjada
