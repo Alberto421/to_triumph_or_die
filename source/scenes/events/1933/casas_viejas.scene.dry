@@ -4,6 +4,7 @@ new-page: true
 on-arrival: workers_ar -= 2; rural_ar -= 2; middle_ar -= 10; middle_prrs -= 7; smallholders_ar -= 2; pro_republic -= 10; smallholders_prr += 5; workers_prr += 3
 view-if: year == 1933 and month == 1
 face-image: img/casas_viejas.jpg
+max-visits: 1
 tags: event
 
 = The Casas Viejas Massacre
