@@ -1,8 +1,8 @@
 title: Promulgation of the Constitution
-subtitle: The Cortes debate on the Women's Suffrage
 new-page: true
 view-if: year == 1931 and month == 12 and women_suffrage_debate_seen = 1
 face-image: img/constitucion1931.jpg
+max-visits: 1
 tags: event
 
 = Promulgation of the Constitution
