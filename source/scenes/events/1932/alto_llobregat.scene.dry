@@ -3,6 +3,7 @@ subtitle: The Cortes debate on the Women's Suffrage
 new-page: true
 view-if: year == 1932 and month == 1
 face-image: img/gc_asturias_1.jpg
+max-visits: 1
 tags: event
 
 = Insurrection in Alto Llobregat & The Syndicalist Split
