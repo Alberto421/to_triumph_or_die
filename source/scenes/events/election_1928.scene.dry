@@ -38,6 +38,19 @@ Let us hope this does not backfire.
 @post_election_1928
 on-arrival: {!
 Q.total_seats = 473;
+
+for (var party of Q.parties) {
+    Q['old_' + party + '_seats'] = Q[party + '_seats'] || 0;
+    Q[party + '_seats'] = Math.round((Q[party + '_r'] / 100) * Q.total_seats);
+    var seat_diff = Q[party + '_seats'] - Q['old_' + party + '_seats'];
+    if (seat_diff > 0) {
+        Q['str_seat_change_' + party] = '+' + seat_diff;
+    } else if (seat_diff < 0) {
+        Q['str_seat_change_' + party] = '' + seat_diff;
+    } else {
+        Q['str_seat_change_' + party] = '=';
+    }
+}
 Q.psoe_seats = Math.round((Q.psoe_r / 100) * Q.total_seats);
 if (Q.ps_formed) { Q.ps_seats = Math.round((Q.ps_r / 100) * Q.total_seats); }
 if (Q.poum_formed) { Q.poum_seats = Math.round((Q.poum_r / 100) * Q.total_seats); }
@@ -57,18 +70,6 @@ Q.ap_seats = Math.round((Q.ap_r / 100) * Q.total_seats);
 Q.other_monarchists_seats = Math.round((Q.other_monarchists_r / 100) * Q.total_seats);
 Q.jons_seats = Math.round((Q.jons_r / 100) * Q.total_seats);
 
-for (var party of Q.parties) {
-    Q['old_' + party + '_seats'] = Q[party + '_seats'] || 0;
-    Q[party + '_seats'] = Math.round((Q[party + '_r'] / 100) * Q.total_seats);
-    var seat_diff = Q[party + '_seats'] - Q['old_' + party + '_seats'];
-    if (seat_diff > 0) {
-        Q['str_seat_change_' + party] = '+' + seat_diff;
-    } else if (seat_diff < 0) {
-        Q['str_seat_change_' + party] = '' + seat_diff;
-    } else {
-        Q['str_seat_change_' + party] = '=';
-    }
-}
 // set old results
 // election threshold constitutional reform
 // banning parties
