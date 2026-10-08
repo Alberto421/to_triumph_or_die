@@ -390,6 +390,8 @@ Left Republican Coalition (PSOE + [+ ar_name +] + PRRS + Other Left Republicans)
 
 Popular Front (PSOE + [+ ar_name +] + PRRS + Other Left Republicans + PCE + Regionalists): [+ popular_front +]%
 
+Republican Front (PRR + DLR + AR + PRRS + Other Republicans): [+ republican_radical_coalition +]%
+
 Right Wing Coalition (PRR + Agrarians + DLR + Other Right Republicans): [+ right_coalition +]%
 
 Left Wing Coalition (PSOE + PCE): [+ left_front +]%
