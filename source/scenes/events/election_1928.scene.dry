@@ -41,7 +41,7 @@ Q.total_seats = 473;
 
 for (var party of Q.parties) {
     Q['old_' + party + '_seats'] = Q[party + '_seats'] || 0;
-    Q[party + '_seats'] = Math.round((Q[party + '_r'] / 100) * Q.total_seats);
+    Q[party + '_seats'] = Math.round(Q[party + '_r'] * 4.73);
     var seat_diff = Q[party + '_seats'] - Q['old_' + party + '_seats'];
     if (seat_diff > 0) {
         Q['str_seat_change_' + party] = '+' + seat_diff;
