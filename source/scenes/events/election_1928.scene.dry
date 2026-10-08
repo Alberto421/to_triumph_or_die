@@ -41,7 +41,7 @@ Q.total_seats = 473;
 
 for (var party of Q.parties) {
     Q['old_' + party + '_seats'] = Q[party + '_seats'] || 0;
-    Q[party + '_seats'] = Math.round((Q[party + '_r'] / 100) * Q.total_seats);
+    Q[party + '_seats'] = Math.roundQ[party + '_r']*4.73;
     var seat_diff = Q[party + '_seats'] - Q['old_' + party + '_seats'];
     if (seat_diff > 0) {
         Q['str_seat_change_' + party] = '+' + seat_diff;
@@ -51,24 +51,24 @@ for (var party of Q.parties) {
         Q['str_seat_change_' + party] = '=';
     }
 }
-Q.psoe_seats = Math.round((Q.psoe_r / 100) * Q.total_seats);
-if (Q.ps_formed) { Q.ps_seats = Math.round((Q.ps_r / 100) * Q.total_seats); }
-if (Q.poum_formed) { Q.poum_seats = Math.round((Q.poum_r / 100) * Q.total_seats); }
-if (Q.ur_formed) { Q.ur_seats = Math.round((Q.ur_r / 100) * Q.total_seats); }
-if (Q.re_formed) { Q.re_seats = Math.round((Q.re_r / 100) * Q.total_seats); }
+Q.psoe_seats = Math.roundQ.psoe_r*4.73;
+if (Q.ps_formed) { Q.ps_seats = Math.roundQ.ps_r*4.73; }
+if (Q.poum_formed) { Q.poum_seats = Math.roundQ.poum_r*4.73}
+if (Q.ur_formed) { Q.ur_seats = Math.roundQ.ur_r*4.73}
+if (Q.re_formed) { Q.re_seats = Math.roundQ.re_r*4.73}
 
-Q.pce_seats = Math.round((Q.pce_r / 100) * Q.total_seats);
-Q.ar_seats = Math.round((Q.ar_r / 100) * Q.total_seats);
-Q.other_left_republicans_seats = Math.round((Q.other_left_republicans_r / 100) * Q.total_seats);
-Q.prrs_seats = Math.round((Q.prrs_r / 100) * Q.total_seats);
-Q.prr_seats = Math.round((Q.prr_r / 100) * Q.total_seats);
-Q.dlr_seats = Math.round((Q.dlr_r / 100) * Q.total_seats);
-Q.other_right_republicans_seats = Math.round((Q.other_right_republicans_r / 100) * Q.total_seats);
-Q.regionalists_seats = Math.round((Q.regionalists_r / 100) * Q.total_seats);
-Q.agrarios_seats = Math.round((Q.agrarios_r / 100) * Q.total_seats);
-Q.ap_seats = Math.round((Q.ap_r / 100) * Q.total_seats);
-Q.other_monarchists_seats = Math.round((Q.other_monarchists_r / 100) * Q.total_seats);
-Q.jons_seats = Math.round((Q.jons_r / 100) * Q.total_seats);
+Q.pce_seats = Math.roundQ.pce_r*4.73;
+Q.ar_seats = Math.roundQ.ar_r*4.73;
+Q.other_left_republicans_seats = Math.roundQ.other_left_republicans_r*4.73;
+Q.prrs_seats = Math.roundQ.prrs_r*4.73;
+Q.prr_seats = Math.roundQ.prr_r*4.73;
+Q.dlr_seats = Math.roundQ.dlr_r*4.73;
+Q.other_right_republicans_seats = Math.roundQ.other_right_republicans_r*4.73;
+Q.regionalists_seats = Math.roundQ.regionalists_r*4.73;
+Q.agrarios_seats = Math.roundQ.agrarios_r*4.73;
+Q.ap_seats = Math.roundQ.ap_r*4.73;
+Q.other_monarchists_seats = Math.roundQ.other_monarchists_r*4.73;
+Q.jons_seats = Math.roundQ.jons_r*4.73;
 
 // set old results
 // election threshold constitutional reform
