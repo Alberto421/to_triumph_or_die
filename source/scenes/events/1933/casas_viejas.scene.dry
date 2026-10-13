@@ -1,7 +1,7 @@
 title: The Casas Viejas Massacre
 subtitle: Blood waters the fields of Cádiz
 new-page: true
-on-arrival: workers_ar -= 2; rural_ar -= 2; middle_ar -= 10; middle_prrs -= 7; smallholders_ar -= 2; pro_republic -= 10; smallholders_prr += 5; workers_prr += 3; re_formed = 1; middle_re += 2; elites_re += 5; catholics_re += 5; workers_re += 1; smallholders_re += 3;
+on-arrival: workers_ar -= 2; rural_ar -= 2; middle_ar -= 10; middle_prrs -= 7; smallholders_ar -= 2; pro_republic -= 10; smallholders_prr += 5; workers_prr += 3; re_formed = 1; middle_re += 2; elites_re += 5; catholics_re += 5; workers_re += 1; smallholders_re += 3; re_relation = 5
 view-if: year == 1933 and month == 1
 face-image: img/casas_viejas.jpg
 max-visits: 1
