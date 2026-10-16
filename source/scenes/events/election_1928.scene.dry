@@ -38,37 +38,11 @@ Let us hope this does not backfire.
 @post_election_1928
 on-arrival: {!
 Q.total_seats = 473;
+
 for (var party of Q.parties) {
-    Q['old_' + party + '_seats'] = Q[party + '_seats'] || 0;
-    Q[party + '_seats'] = Math.round(Q[party + '_r'] * 4.73);
-    var seat_diff = Q[party + '_seats'] - Q['old_' + party + '_seats'];
-    if (seat_diff > 0) {
-        Q['str_seat_change_' + party] = '+' + seat_diff;
-    } else if (seat_diff < 0) {
-        Q['str_seat_change_' + party] = '' + seat_diff;
-    } else {
-        Q['str_seat_change_' + party] = '=';
-    }
+    Q['old_' + party + '_seats'] =
+        Q[party + '_seats'] || 0;
 }
-
-Q.psoe_seats = Math.round((Q.psoe_r / 100) * Q.total_seats);
-if (Q.ps_formed) { Q.ps_seats = Math.round((Q.ps_r / 100) * Q.total_seats); }
-if (Q.poum_formed) { Q.poum_seats = Math.round((Q.poum_r / 100) * Q.total_seats); }
-if (Q.ur_formed) { Q.ur_seats = Math.round((Q.ur_r / 100) * Q.total_seats); }
-if (Q.re_formed) { Q.re_seats = Math.round((Q.re_r / 100) * Q.total_seats); }
-
-Q.pce_seats = Math.round((Q.pce_r / 100) * Q.total_seats);
-Q.ar_seats = Math.round((Q.ar_r / 100) * Q.total_seats);
-Q.other_left_republicans_seats = Math.round((Q.other_left_republicans_r / 100) * Q.total_seats);
-Q.prrs_seats = Math.round((Q.prrs_r / 100) * Q.total_seats);
-Q.prr_seats = Math.round((Q.prr_r / 100) * Q.total_seats);
-Q.dlr_seats = Math.round((Q.dlr_r / 100) * Q.total_seats);
-Q.other_right_republicans_seats = Math.round((Q.other_right_republicans_r / 100) * Q.total_seats);
-Q.regionalists_seats = Math.round((Q.regionalists_r / 100) * Q.total_seats);
-Q.agrarios_seats = Math.round((Q.agrarios_r / 100) * Q.total_seats);
-Q.ap_seats = Math.round((Q.ap_r / 100) * Q.total_seats);
-Q.other_monarchists_seats = Math.round((Q.other_monarchists_r / 100) * Q.total_seats);
-Q.jons_seats = Math.round((Q.jons_r / 100) * Q.total_seats);
 
 // set old results
 // election threshold constitutional reform
@@ -116,6 +90,22 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
         Q['str_change_' + party] = sign + Q['change_' + party + '_r'];//.toFixed(1);
     }
 }
+
+for (var party of Q.parties) {
+    Q[party + '_seats'] = Math.round(
+        Q[party + '_r'] * Q.total_seats / 100
+    );
+
+    var seat_diff =
+        Q[party + '_seats'] - Q['old_' + party + '_seats'];
+
+    if (seat_diff > 0) {
+        Q['str_seat_change_' + party] = '+' + seat_diff;
+    } else if (seat_diff < 0) {
+        Q['str_seat_change_' + party] = '' + seat_diff;
+    } else {
+        Q['str_seat_change_' + party] = '=';
+    }
 
 // get change arrows and signs
 
@@ -207,7 +197,7 @@ data = [
         "id": "pce",
         "legend": "PCE",
         "name": "PCE",
-        "seats": Math.round(Q.pce_r*4.73),
+        "seats": Q.pce_seats,
     }
 ];
 if (Q.ps_formed && Q.ps_r) {
@@ -215,7 +205,7 @@ if (Q.ps_formed && Q.ps_r) {
         "id": "ps",
         "legend": "PS",
         "name": "PS",
-        "seats": Math.round(Q.ps_r*4.73),
+        "seats": Q.ps_seats,
     });
 }
 if (Q.poum_formed && Q.poum_r) {
@@ -223,7 +213,7 @@ if (Q.poum_formed && Q.poum_r) {
         "id": "poum",
         "legend": "POUM",
         "name": "POUM",
-        "seats": Math.round(Q.poum_r*4.73),
+        "seats": Q.poum_seats,
     });
 }
 data = data.concat([
@@ -231,13 +221,13 @@ data = data.concat([
         "id": "psoe",
         "legend": "PSOE",
         "name": "PSOE",
-        "seats": Math.round(Q.psoe_r*4.73),
+        "seats":Q.psoe_seats,
     },
     {
         "id": "ar",
         "legend": Q.ar_name,
         "name": Q.ar_name,
-        "seats": Math.round(Q.ar_r*4.73),
+        "seats": Q.ar_seats,
     }
 ]);
 if (Q.ur_formed && Q.ur_r) {
@@ -245,7 +235,7 @@ if (Q.ur_formed && Q.ur_r) {
         "id": "ur",
         "legend": "UR",
         "name": "UR",
-        "seats": Math.round(Q.ur_r*4.73),
+        "seats": Q.ur_seats,
     });
 }
 data = data.concat([
@@ -253,55 +243,55 @@ data = data.concat([
         "id": "other_left_republicans",
         "legend": "Other Left Republicans",
         "name": "Other Left Republicans",
-        "seats": Math.round(Q.other_left_republicans_r*4.73),
+        "seats": Q.other_left_republicans_seats,
     },
     {
         "id": "prrs",
         "legend": "PRRS",
         "name": "PRRS",
-        "seats": Math.round(Q.prrs_r*4.73),
+        "seats": Q.prrs_seats,
     },
     {
         "id": "prr",
         "legend": "PRR",
         "name": "PRR",
-        "seats": Math.round(Q.prr_r*4.73),
+        "seats": Q.prr_seats,
     },
     {
         "id": "regionalists",
         "legend": "Regionalists",
         "name": "Regionalists",
-        "seats": Math.round(Q.regionalists_r*4.73),
+        "seats": Q.regionalists_seats,
     },
     {
         "id": "dlr",
         "legend": "DLR",
         "name": "DLR",
-        "seats": Math.round(Q.dlr_r*4.73),
+        "seats": Q.dlr_seats,
     },
     {
         "id": "other_right_republicans",
         "legend": "Other Right Republicans",
         "name": "Other Right Republicans",
-        "seats": Math.round(Q.other_right_republicans_r*4.73),
+        "seats": Q.other_right_republicans_seats,
     },
     {
         "id": "agrarios",
         "legend": "Agrarios",
         "name": "Agrarios",
-        "seats": Math.round(Q.agrarios_r*4.73),
+        "seats": Q.agrarios_seats,
     },
     {
         "id": "ap",
         "legend": Q.ap_name,
         "name": Q.ap_name,
-        "seats": Math.round(Q.ap_r*4.73),
+        "seats": Q.ap_seats,
     },
     {
         "id": "other_monarchists",
         "legend": "Other Monarchists",
         "name": "Other Monarchists",
-        "seats": Math.round(Q.other_monarchists_r*4.73),
+        "seats": Q.other_monarchists_seats,
     }
 ]);
 if (Q.re_formed && Q.re_r) {
@@ -309,14 +299,14 @@ if (Q.re_formed && Q.re_r) {
         "id": "re",
         "legend": "RE",
         "name": "RE",
-        "seats": Math.round(Q.re_r*4.73),
+        "seats": Q.re_seats,
     });
 }
 data.push({
     "id": "jons",
     "legend": Q.jons_name,
     "name": Q.jons_name,
-    "seats": Math.round(Q.jons_r*4.73),
+    "seats": Q.jons_seats,
 });
 
 
