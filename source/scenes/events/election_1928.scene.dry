@@ -106,7 +106,7 @@ for (var party of Q.parties) {
     } else {
         Q['str_seat_change_' + party] = '=';
     }
-
+}
 // get change arrows and signs
 
 
