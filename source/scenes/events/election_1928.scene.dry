@@ -38,7 +38,6 @@ Let us hope this does not backfire.
 @post_election_1928
 on-arrival: {!
 Q.total_seats = 473;
-
 for (var party of Q.parties) {
     Q['old_' + party + '_seats'] = Q[party + '_seats'] || 0;
     Q[party + '_seats'] = Math.round(Q[party + '_r'] * 4.73);
@@ -51,6 +50,7 @@ for (var party of Q.parties) {
         Q['str_seat_change_' + party] = '=';
     }
 }
+
 Q.psoe_seats = Math.round((Q.psoe_r / 100) * Q.total_seats);
 if (Q.ps_formed) { Q.ps_seats = Math.round((Q.ps_r / 100) * Q.total_seats); }
 if (Q.poum_formed) { Q.poum_seats = Math.round((Q.poum_r / 100) * Q.total_seats); }
