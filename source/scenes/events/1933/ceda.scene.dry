@@ -1,0 +1,21 @@
+title: The Catholic Right Unites!
+new-page: true
+view-if: year == 1933 and month == 3
+face-image: img/ceda_logo.webp
+on-arrival: ap_name = "CEDA"; smallholders_rural -= 3; smallholders_ap += 3; workers_other_right_republicans -= 3; workers_ap += 3; catholics_ap += 15;
+max-visits: 1
+tags: event
+
+= The Catholic Right Unites!
+
+Taking advantage of the government weakness and looking forward to an election to overturn the progressive constitution, José María Gil-Robles from *Acción Popular* unifies Catholic agrarian leagues, women's organizations and conservative intellectuals to found the CEDA (*Confederación Española de Derechas Autónomas*/Spanish Confederation of Autonomous Rights).
+
+The failure of Alcalá-Zamora’s attempt to establish a Catholic, republican right-wing movement has driven many Catholics into the arms of the CEDA. While this represents a shift toward a more conservative and authoritarian stance, the CEDA has not declared itself in favor of a restoration of the monarchy; instead, it has maintained a posibilist approach, seeking to advance Catholic principles from within the <span style="color: #E3000F;">RE</span><span style="color: #D5AC27;">PUB</span><span style="color: #8845ba;">LIC</span>. Hardline monarchists join *Renovación Española* instead.
+
+The CEDA quickly becomes the main opposition party at the Municipal Elections of April, signaling a massive rightward shift in public opinion.
+
+- @concerning: Concerning.
+- @victory: This proves that the Monarchy won't return. 
+
+@concerning
+on-arrival: pro_republic -= 5
