@@ -15,7 +15,6 @@ The failure of Alcalá-Zamora’s attempt to establish a Catholic, republican ri
 The CEDA quickly becomes the main opposition party at the Municipal Elections of April, signaling a massive rightward shift in public opinion.
 
 - @concerning: Concerning.
-- @victory: This proves that the Monarchy won't return. 
 
 @concerning
 on-arrival: pro_republic -= 5
