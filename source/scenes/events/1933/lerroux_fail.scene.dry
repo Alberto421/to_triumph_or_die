@@ -1,0 +1,51 @@
+title: President Zamora sacks Azaña's Government Again
+new-page: true
+view-if: year == 1933 and month == 9
+face-image: img/portraits/lerroux.jpg
+on-arrival: pro_republic -= 5
+max-visits: 1
+tags: event
+
+= President Zamora sacks Azaña's Government Again
+
+Despite securing a vote of confidence from the Cortes, facing pressure from the CEDA, President Alcalá-Zamora withdrew his support for Azaña for a second time, precipitating the fall of Azaña's government. 
+
+On September 8, he tasked Alejandro Lerroux, of the PRR, to form a republican government. To comply, Lerroux formed a cabinet of prominent figures, such as philosopher José Ortega y Gasset. However, the proposal lacked the backing from both the President and the Cortes, a situation compounded by Lerroux’s hostility toward left-wing republicans, which ultimately doomed his cabinet.
+
+Lerroux presents his cabinet to the Cortes, seeking a vote of confidence. However, the PSOE, along with Left Republicans and Catalan regionalists, views Lerroux as an unprincipled opportunist eager to dismantle the social legislation of the Biennio.
+
+- @vote_down_lerroux: Reaffirm our total opposition to Lerroux’s centrist maneuvering.
+
+@vote_down_lerroux
+on-arrival: prr_relation -= 20; pro_republic -= 1; workers_prr -= 2; workers_ap += 2; workers_psoe -= 2; workers_ap += 2; chancellor = "Martínez Barrios"; chancellor_party = "PRR"
+face-image: img/portraits/barrios.jpg
+
+Lerroux’s government falls immediately [? if prrs_leader == "Gordón Ordás" : , not even PRRS' votes can save the situation ?]. After the failure of Lerroux, president Alcalá-Zamora tasks Diego Martínez Barrio, second in charge inside the PRR to form a new republican government.
+
+Socialist president of the Cortes, Julián Besteiro has asked the PSOE executive to support Barrio's government to ensure the parliamentary wellbeing. [? if prrs_leader == "Gordón Ordás" : However, PRRS' leadership makes that impossible ?]. If this government fails again the President of the Republic will dissolve the Cortes and call for new legislative elections in a context of growing conservative forces.
+
+- @support_barrios
+- @reject_barrios
+
+@support_barrios
+title: Support Martínez Barrios
+view-if: prrs_relation >= 65 and psoe_in_government == 1
+on-arrival: prrs_relation += 5; ar_relation += 5; prr_relation += 15; caballeristas_dissent += 5; workers_psoe -= 3; middle_psoe += 3; prr_leader = "Martínez Barrios"
+
+Against the loud protests of Largo Caballero’s revolutionary wing, the PSOE National Committee approves parliamentary support for Martínez Barrios. 
+
+While radical workers and peasants accuse us of traition, supporting this government is the lesser evil when the alternative is a CEDA-lead government.
+
+- @continue: By any votes necessary.
+
+@reject_barrios
+title: Vote against Martínez Barrios
+view-if: prrs_relation < 65
+on-arrival: prrs_relation -= 5; prr_relation -= 15; ar_relation -= 5; other_left_republicans -= 2; other_right_republicans -= 5; pro_republic -= 5; next_election_time = time + 2 if next_election_time >= time + 2; next_election_month = month + 2 if next_election_time >= time + 2; next_election_year = year if next_election_time >= time + 2; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; in_republican_socialist_conjunction = 0; in_republican_radical_coalition = 1; psoe_in_government = 0; foreign_minister_party = "Regionalists"; interior_minister_party = "DLR"; justice_minister_party = "Other Right Republicans"; labor_minister_party = "PRR"; reichswehr_minister_party = ar_name ; economic_minister_party = "Other Right Republicans"; finance_minister_party = "PRR"; agriculture_minister_party = "PRRS"; public_instruction_minister_party = "PRRS"; public_works_minister_party = "PRR"
+
+After refusing to join the new government, Martínez Barrios asks President Alcalá-Zamora to dissolve the Cortes to break the parliamentary deadlock. The bases are energized by our stance; however, by doing this we've weakened our relation with other republican parties aswell, threatening to fragment the left's vote and hand a easy victory to the Right. 
+
+New elections have been called for [+ next_election_month +].
+
+@continue
+go-to: @root
