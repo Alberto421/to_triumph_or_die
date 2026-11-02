@@ -240,14 +240,14 @@ Q.ps_formed = 0; // Partido Sindicalista (Anarchists)
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_psoe = 60;
+Q.workers_psoe = 56;
 Q.workers_ar = 5;
 Q.workers_prrs = 15;
 Q.workers_other_left_republicans = 10;
-Q.workers_prr = 6;
+Q.workers_prr = 10;
 Q.workers_dlr = 3;
 Q.workers_other_right_republicans = 2;
-Q.workers_regionalists = 10;
+Q.workers_regionalists = 12;
 Q.workers_pce = 3;
 Q.workers_agrarios = 0;
 Q.workers_ap = 3;
